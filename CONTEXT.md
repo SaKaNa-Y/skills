@@ -47,3 +47,23 @@ _Avoid_: Caller skill, router skill
 **Explicit-only Skill**:
 A skill activated only by direct user selection when the client supports that invocation policy.
 _Avoid_: Always-on skill, implicit skill
+
+**Decision Load**:
+The human effort and synchronous interruption required to resolve choices during an agent workflow. Reducing Decision Load does not imply reducing model reasoning time or eliminating the underlying decisions.
+_Avoid_: Question count, reasoning latency
+
+**Modifier Skill**:
+An Explicit-only Skill that deliberately specializes named parts of the current task workflow without taking ownership of the User Problem or expanding the agent's authority. Its specialization governs ordinary process rules, while the task skill retains its work and mandatory safety, authorization, external-effect, and human checkpoints.
+_Avoid_: Co-active Skill, wrapper skill
+
+**Decision Boundary**:
+The rule separating user-owned decisions that require synchronous input from delegated choices the agent may resolve. A conservative Decision Boundary delegates only evidence-backed, local, reversible implementation choices that do not change scope, acceptance criteria, user-visible behavior, domain rules, public contracts, persistent data, authorization, or external effects.
+_Avoid_: Question limit, autonomy budget
+
+**Decision Ledger**:
+A compact checkpoint or completion summary of material delegated choices, with enough context for the user to veto them. Routine implementation details are omitted so the ledger does not recreate the Decision Load it removes.
+_Avoid_: Assumption dump, question transcript
+
+**Decision Pruning**:
+The selective removal of candidate questions from synchronous interaction after they are found answerable, redundant, premature, or safely delegated across the Decision Boundary. It preserves user-owned decisions and mandatory checkpoints rather than deleting decisions to meet a question count.
+_Avoid_: Question cutting, decision deletion

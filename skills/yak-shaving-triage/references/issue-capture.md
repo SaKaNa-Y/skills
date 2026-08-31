@@ -1,6 +1,6 @@
 # Issue Capture
 
-Use this reference only after another observable problem is discovered while working on the User Problem.
+Use this reference when a newly observed problem may be distinct from the User Problem, before expanding or switching work because of it.
 
 ## Qualify the Problem
 
@@ -9,7 +9,9 @@ Record a Discovered Problem when all of the following are true:
 - an observable behavior, failure, or violated expectation confirms it;
 - it has a practical impact beyond a stylistic preference;
 - it can be verified independently from the User Problem; and
-- it is distinct from the problem currently being resolved.
+- it falls outside the work required to resolve the User Problem and can be deferred without blocking that resolution.
+
+Necessary investigation or repair continues under the active task workflow rather than being deferred.
 
 Qualification depends on the observed problem, not on whether the current change introduced it. Preserve confirmed pre-existing problems under the same standard.
 
@@ -63,12 +65,12 @@ Keep the issue factual. Mark uncertainty explicitly instead of guessing a cause 
 
 ## Reconcile With the Tracker
 
-1. After the Discovered Problem appears, read project-provided tracker instructions before choosing a tool, destination, template, or label. Yak Triage reads no Tracker Guidance merely because the skill was activated.
+1. After the Discovered Problem appears, read project-provided tracker instructions before choosing a tool, destination, template, or label. Yak Shaving Triage reads no Tracker Guidance merely because the skill was activated.
 2. Search existing open and closed items using the distinctive symptom, affected component, and evidence location.
 3. When an issue already represents the same problem, reuse it. Add only missing evidence that materially improves a future agent's ability to understand, reproduce, or verify the problem. When nothing material is missing, link the existing issue without adding a comment.
 4. Otherwise create one issue for each independently actionable problem, following the project's structure. Apply labels only when Tracker Guidance defines their use.
 
-When Tracker Guidance is absent, keep the completed template as the draft. Do not invent a tracker or configure one as part of Yak Triage.
+When Tracker Guidance is absent, keep the completed template as the draft. Do not invent a tracker or configure one as part of Yak Shaving Triage.
 
 ## Notify and Return
 

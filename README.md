@@ -1,6 +1,6 @@
 # Agent Skills
 
-Explicit agent skills for keeping long-running AI work focused, understandable, and under user control. `make-it-land` gives substantive messages enough context to be understood and acted on; `prune-the-tree` reduces decision load without taking user-owned decisions away; `yak-triage` preserves valid problems discovered along the way without derailing the current task.
+Explicit agent skills for keeping long-running AI work focused, understandable, and under user control. `make-it-land` gives substantive messages enough context to be understood and acted on; `prune-the-tree` reduces decision load without taking user-owned decisions away; `yak-shaving-triage` continuously guards the current problem while preserving valid problems discovered along the way.
 
 ## Skills
 
@@ -8,7 +8,7 @@ Explicit agent skills for keeping long-running AI work focused, understandable, 
 |---|---|---|
 | [`make-it-land`](skills/make-it-land/SKILL.md) | Questions or answers arrive without enough context | Explains the relevant background, terms, examples, evidence, implications, and next action |
 | [`prune-the-tree`](skills/prune-the-tree/SKILL.md) | A workflow generates too many low-value questions | Resolves factual, redundant, premature, or safely delegated choices while preserving user-owned decisions |
-| [`yak-triage`](skills/yak-triage/SKILL.md) | Work reveals other valid problems | Preserves them as reconciled issues or issue-ready drafts, then returns to the current problem |
+| [`yak-shaving-triage`](skills/yak-shaving-triage/SKILL.md) | Work risks branching into other valid problems | Checks potential task switches, preserves distinct problems, and returns to the current problem |
 
 ## Installation
 
@@ -17,7 +17,7 @@ Install a skill into the current project with the [skills CLI](https://skills.sh
 ```bash
 npx skills@latest add SaKaNa-Y/skills --skill make-it-land
 npx skills@latest add SaKaNa-Y/skills --skill prune-the-tree
-npx skills@latest add SaKaNa-Y/skills --skill yak-triage
+npx skills@latest add SaKaNa-Y/skills --skill yak-shaving-triage
 ```
 
 Append `--agent codex` to install specifically for Codex, and append `--global` when the skill should be available across projects:
@@ -50,14 +50,14 @@ $prune-the-tree Build this feature and ask only for decisions that affect what I
 $prune-the-tree $grill-with-docs Stress-test this product idea without offloading routine choices to me.
 ```
 
-Use Yak Triage alone or alongside another skill:
+Use Yak Shaving Triage alone or alongside another skill:
 
 ```text
-$yak-triage Fix the checkout failure without losing other confirmed problems.
+$yak-shaving-triage Fix the checkout failure without losing other confirmed problems.
 ```
 
 ```text
-$yak-triage $grilling Stress-test this design and preserve unrelated findings.
+$yak-shaving-triage $grilling Stress-test this design and preserve unrelated findings.
 ```
 
 ## Make It Land
@@ -92,21 +92,23 @@ Material defaults appear in a compact **Decision Ledger** at a natural checkpoin
 
 For the complete behavior, see [`skills/prune-the-tree/SKILL.md`](skills/prune-the-tree/SKILL.md).
 
-## Yak Triage
+## Yak Shaving Triage
 
 Agents often discover another unfinished problem while working, switch over to solve it, discover yet another problem, and keep going until the original work is lost.
 
-Yak Triage keeps one problem in progress. It preserves other confirmed problems as self-contained tracker issues or drafts, then returns to the current work. A problem is still recorded when it already existed or was not caused by the current change.
+Yak Shaving Triage stays active from explicit invocation through the current User Problem. It silently checks newly discovered problems and contemplated task switches before they become detours. Work needed to resolve the User Problem remains with the active task workflow; distinct confirmed problems are preserved as self-contained tracker issues or drafts, then work returns to the User Problem. A problem is still recorded when it already existed or was not caused by the current change.
 
 ### How It Works
 
-- Normal task and workflow skills continue solving the user's current problem.
-- When another observable problem appears, Yak Triage captures enough context for a future agent to understand and verify it.
+- Normal task and workflow skills continue deciding how to solve the user's current problem and how deeply to investigate it.
+- When a new problem appears or the next action would change the line of work, Yak Shaving Triage silently checks the potential branch against the User Problem.
+- A check that remains within the User Problem produces no user-visible update.
+- A distinct observable problem is preserved without following the branch to diagnose or repair it.
 - It follows the project's tracker guidance, checks for duplicates, and creates, updates, or reuses an issue at a natural checkpoint.
 - Without tracker guidance, it keeps an issue-ready draft and asks once where to record it after the current work.
 - Urgent security, data-loss, and destructive risks are reported and preserved immediately without silently expanding the current repair.
 
-For the complete behavior, see [`skills/yak-triage/SKILL.md`](skills/yak-triage/SKILL.md).
+For the complete behavior, see [`skills/yak-shaving-triage/SKILL.md`](skills/yak-shaving-triage/SKILL.md).
 
 ## Combining Skills
 
@@ -114,6 +116,6 @@ The active task workflow still owns the User Problem.
 
 - Prune the Tree is a Modifier Skill: it specializes ordinary question routing while preserving mandatory safety, authorization, external-effect, and human checkpoints.
 - Make It Land is a Modifier Skill: it makes the remaining questions and all substantive answers understandable without changing who owns a decision.
-- Yak Triage is a Co-active Skill: it independently preserves distinct discovered problems without invoking, managing, or limiting the active workflow.
+- Yak Shaving Triage is a Co-active Skill: it continuously checks potential detours and preserves distinct discovered problems without invoking, managing, or limiting the workflow used to solve the User Problem.
 
 The shared vocabulary and composition rules live in [`CONTEXT.md`](CONTEXT.md). The Modifier Skill decision is recorded in [`docs/adr/0001-explicit-modifier-skills.md`](docs/adr/0001-explicit-modifier-skills.md).

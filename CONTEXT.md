@@ -4,16 +4,16 @@ This context defines the language used to design skills that keep agent work ali
 
 ## Language
 
-**Yak Triage**:
-The discipline of continuing work on the User Problem while preserving each distinct Discovered Problem instead of silently ignoring it or switching over to repair it. It does not judge necessary work within the User Problem, limit investigation depth, or display a separate problem anchor.
-_Avoid_: Task switching, silent dismissal
+**Yak Shaving Triage**:
+The continuous, silent discipline of checking newly discovered problems and contemplated task switches against the User Problem, preserving each distinct Discovered Problem instead of silently ignoring it or switching over to repair it. It stays active from explicit invocation through the current User Problem without judging investigation depth, displaying a separate problem anchor, or managing another skill.
+_Avoid_: Recurring scope report, task switching, silent dismissal
 
 **User Problem**:
 The problem the user has authorized the current conversation to solve, together with the conditions that show it is resolved and the agreed boundaries. It changes when the user explicitly revises the request.
 _Avoid_: User Goal, original prompt, immutable task
 
 **Discovered Problem**:
-Another observable problem encountered while working on the User Problem. Yak Triage handles it only when it is distinct from the problem currently being solved.
+An observable problem encountered while working on the User Problem that falls outside the work required to resolve it and can be deferred without blocking that resolution. Yak Shaving Triage preserves it instead of switching over to repair it.
 _Avoid_: Side quest, tangent, speculation
 
 **Issue-ready Problem**:

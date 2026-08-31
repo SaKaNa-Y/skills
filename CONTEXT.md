@@ -75,3 +75,87 @@ _Avoid_: Assumption dump, question transcript
 **Decision Pruning**:
 The selective removal of candidate questions from synchronous interaction after they are found answerable, redundant, premature, or safely delegated across the Decision Boundary. It preserves user-owned decisions and mandatory checkpoints rather than deleting decisions to meet a question count.
 _Avoid_: Question cutting, decision deletion
+
+**Anchor Project**:
+The project whose users, capabilities, necessary boundaries, and cross-project possibilities are being examined. It may be named by the user or inferred from the active workspace.
+_Avoid_: User-supplied candidate list, project to expand at all costs
+
+**Expansion Aim**:
+The one-sentence user-owned statement of which existing value from the Anchor Project should become useful in more concrete contexts. It guides discovery without naming or presupposing a candidate project or solution.
+_Avoid_: Search query, feature request, mandatory growth target
+
+**Necessary Boundary**:
+A framework, domain, platform, or experience constraint whose removal would change the value or identity the Anchor Project is meant to preserve. It may remain specific even when underlying capabilities become reusable.
+_Avoid_: Limitation to remove, accidental coupling, obstacle to growth
+
+**Incidental Constraint**:
+A historical or technical restriction that narrows where an Anchor Project's existing value can apply without being necessary to that value. Removing it may enlarge the eligible contexts without redefining the project.
+_Avoid_: Necessary Boundary, missing feature, arbitrary inconvenience
+
+**Universal Core**:
+A stable mechanism supported by evidence from more than one concrete project or usage context, while each project may retain its specific integrations and experience. A larger feature set or audience is not by itself a Universal Core.
+_Avoid_: Bigger scope, feature union, generic abstraction
+
+**Bounded Discovery**:
+Agent-owned research that starts from an Anchor Project and Expansion Aim, investigates a finite set of real adjacent projects through declared technical, shared-problem, complementary-capability, and cross-ecosystem search paths, and stops under an explicit limit or evidence condition. The user may supply useful seeds but is not responsible for finding candidates.
+_Avoid_: User-dependent search, open-ended browsing, exhaustive ecosystem search
+
+**Candidate Evidence**:
+Traceable evidence from both the Anchor Project and at least one real adjacent project that shows a shared or complementary problem and a plausible stable mechanism or integration seam. Conceptual similarity or technical connectability alone is insufficient.
+_Avoid_: One-sided evidence, plausible idea, shared technology
+
+**Expansion Candidate**:
+An hypothesis supported by Candidate Evidence that an Anchor Project could serve another concrete context as a Universal Core, Adapter Opportunity, or Platform Opportunity. It is an exploration result, not authorization to change or combine projects.
+_Avoid_: Scope expansion, feature idea, implementation authorization
+
+**Evidence-adjusted Value**:
+The comparative value of an Expansion Candidate after accounting for Candidate Evidence, preserved Necessary Boundaries, concrete additional contexts, maintenance burden, and reversibility. Reach or abstraction elegance alone does not establish it.
+_Avoid_: Audience size, reuse score, technical elegance
+
+**Adapter Opportunity**:
+An Expansion Candidate where the Anchor Project keeps its specific core and a bounded integration seam makes that core useful to another concrete project or context. It does not claim that the integrated behavior is universal.
+_Avoid_: Universal Core, merged project, duplicated implementation
+
+**Platform Opportunity**:
+An Expansion Candidate where a stable interface or protocol could let a family of specific projects participate while retaining their own integrations and experience.
+_Avoid_: One-off adapter, feature bundle, ecosystem branding
+
+**Recommended Candidate**:
+An Expansion Candidate with sufficient Evidence-adjusted Value and a plausible maintenance model covering ownership, verification scope, compatibility commitments, and an exit path. Candidates may remain in the report without qualifying for recommendation.
+_Avoid_: Interesting candidate, highest-reach idea, implementation commitment
+
+**Candidate Card**:
+A self-contained account of one Expansion Candidate covering its type, Candidate Evidence, shared or complementary problem, preserved Necessary Boundaries, proposed seam, maintenance model, material risks, and next experiment.
+_Avoid_: Ranked idea, score row, project summary
+
+**Candidate Disposition**:
+The qualitative decision assigned to a Candidate Card: Recommended when it passes the recommendation gate, Needs Evidence when its Evidence Boundary names a resolvable gap, or Rejected when a material boundary or cost defeats it. It communicates judgment without a pseudo-precise numeric score.
+_Avoid_: Candidate score, rank alone, confidence percentage
+
+**Rejection Record**:
+A compact explanation of a material rejected candidate and the evidence, Necessary Boundary, or maintenance cost that defeated it. Discovery Reports preserve only the most decision-relevant rejections rather than dumping the raw candidate pool.
+_Avoid_: Rejected idea list, omitted candidate, exhaustive search log
+
+**Experiment Ladder**:
+A progressive plan that first verifies the second context and its problem, then tests one proposed seam against both concrete cases, and recommends a throwaway prototype only when the cheaper checks pass. Bounded Discovery designs this ladder without executing implementation.
+_Avoid_: Automatic prototype, implementation plan, proof by demo
+
+**Evidence Boundary**:
+The explicit limit of a discovery result, stating which search paths were checked, which material evidence remains unavailable, and how that uncertainty limits recommendation. It supports a No-expansion Result or a non-recommended candidate without transferring search work to the user.
+_Avoid_: Research disclaimer, speculative fill-in, user homework
+
+**Exploration Checkpoint**:
+The user decision after a discovery result to select a candidate, authorize targeted additional research, or accept a No-expansion Result. Implementation begins only after the User Problem is explicitly revised to include it.
+_Avoid_: Automatic handoff, highest-score selection, implementation approval
+
+**Discovery Report**:
+The conversational deliverable of Bounded Discovery containing Candidate Cards, recommendations, the Evidence Boundary, and Experiment Ladders. It becomes a repository artifact only when the user explicitly asks to save it.
+_Avoid_: Automatic report file, implementation specification, ecosystem catalog
+
+**No-expansion Result**:
+A valid terminal result of Bounded Discovery when no Expansion Candidate has sufficient shared-problem evidence, a stable seam, and acceptable maintenance cost.
+_Avoid_: Failed search, lack of imagination, mandatory opportunity
+
+**Set Theory for Projects**:
+The explicit, read-only discovery skill inspired by Antfu's "The Set Theory" that applies Bounded Discovery to an Anchor Project, distinguishes its Necessary Boundaries from Incidental Constraints, and proposes evidence-backed Universal Core, Adapter, or Platform opportunities. Its name preserves the source concept while identifying the project-discovery context; it is not an official Antfu publication and does not require expansion.
+_Avoid_: Mathematical set theory, Antfu-authored skill, project combination mandate

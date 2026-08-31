@@ -1,6 +1,6 @@
 # Agent Skills
 
-Explicit agent skills for keeping long-running AI work focused, understandable, and under user control. `make-it-land` gives substantive messages enough context to be understood and acted on; `prune-the-tree` reduces decision load without taking user-owned decisions away; `yak-shaving-triage` continuously guards the current problem while preserving valid problems discovered along the way.
+Explicit agent skills for keeping long-running AI work focused, understandable, and under user control. `make-it-land` gives substantive messages enough context to be understood and acted on; `prune-the-tree` reduces decision load without taking user-owned decisions away; `yak-shaving-triage` continuously guards the current problem while preserving valid problems discovered along the way; `set-theory-for-projects` explores evidence-backed ways a project's existing value could serve more real contexts without forcing expansion.
 
 ## Skills
 
@@ -9,6 +9,7 @@ Explicit agent skills for keeping long-running AI work focused, understandable, 
 | [`make-it-land`](skills/make-it-land/SKILL.md) | Questions or answers arrive without enough context | Explains the relevant background, terms, examples, evidence, implications, and next action |
 | [`prune-the-tree`](skills/prune-the-tree/SKILL.md) | A workflow generates too many low-value questions | Resolves factual, redundant, premature, or safely delegated choices while preserving user-owned decisions |
 | [`yak-shaving-triage`](skills/yak-shaving-triage/SKILL.md) | Work risks branching into other valid problems | Checks potential task switches, preserves distinct problems, and returns to the current problem |
+| [`set-theory-for-projects`](skills/set-theory-for-projects/SKILL.md) | A project may have reusable value beyond its current boundaries | Searches real adjacent contexts, tests candidate seams against bilateral evidence, and stops at a discovery report |
 
 ## Installation
 
@@ -18,6 +19,7 @@ Install a skill into the current project with the [skills CLI](https://skills.sh
 npx skills@latest add SaKaNa-Y/skills --skill make-it-land
 npx skills@latest add SaKaNa-Y/skills --skill prune-the-tree
 npx skills@latest add SaKaNa-Y/skills --skill yak-shaving-triage
+npx skills@latest add SaKaNa-Y/skills --skill set-theory-for-projects
 ```
 
 Append `--agent codex` to install specifically for Codex, and append `--global` when the skill should be available across projects:
@@ -58,6 +60,12 @@ $yak-shaving-triage Fix the checkout failure without losing other confirmed prob
 
 ```text
 $yak-shaving-triage $grilling Stress-test this design and preserve unrelated findings.
+```
+
+Use Set Theory for Projects when you want bounded cross-project discovery rather than implementation:
+
+```text
+$set-theory-for-projects Examine this project and find evidence-backed ways its existing value could serve more real contexts.
 ```
 
 ## Make It Land
@@ -110,6 +118,16 @@ Yak Shaving Triage stays active from explicit invocation through the current Use
 
 For the complete behavior, see [`skills/yak-shaving-triage/SKILL.md`](skills/yak-shaving-triage/SKILL.md).
 
+## Set Theory for Projects
+
+Set Theory for Projects begins with one Anchor Project and an Expansion Aim. It searches technical adjacencies, shared user problems, complementary capabilities, and cross-ecosystem analogues. A candidate survives only when both the Anchor and a real adjacent project provide evidence for a shared or complementary problem and a plausible stable seam.
+
+The skill distinguishes a Universal Core from Adapter and Platform opportunities, rejects feature-bundle fusion, and treats preservation of the current scope as a valid result. It ranks candidates qualitatively, applies a maintenance gate, and designs falsifiable experiments without implementing them. The result stays conversational unless the user asks to save it, and implementation requires a new or revised User Problem.
+
+The method is inspired by Anthony Fu's “The Set Theory” while remaining an independent, unofficial skill. The source review lives in [`docs/research/antfu-set-theory.md`](docs/research/antfu-set-theory.md), and the explicit bounded-discovery decision is recorded in [`docs/adr/0002-cross-project-discovery-is-explicit-and-bounded.md`](docs/adr/0002-cross-project-discovery-is-explicit-and-bounded.md).
+
+For the complete behavior, see [`skills/set-theory-for-projects/SKILL.md`](skills/set-theory-for-projects/SKILL.md).
+
 ## Combining Skills
 
 The active task workflow still owns the User Problem.
@@ -117,5 +135,6 @@ The active task workflow still owns the User Problem.
 - Prune the Tree is a Modifier Skill: it specializes ordinary question routing while preserving mandatory safety, authorization, external-effect, and human checkpoints.
 - Make It Land is a Modifier Skill: it makes the remaining questions and all substantive answers understandable without changing who owns a decision.
 - Yak Shaving Triage is a Co-active Skill: it continuously checks potential detours and preserves distinct discovered problems without invoking, managing, or limiting the workflow used to solve the User Problem.
+- Set Theory for Projects is a standalone Explicit-only Skill: it deliberately expands the candidate-direction set under bounded, read-only discovery, then returns control at the Exploration Checkpoint.
 
-The shared vocabulary and composition rules live in [`CONTEXT.md`](CONTEXT.md). The Modifier Skill decision is recorded in [`docs/adr/0001-explicit-modifier-skills.md`](docs/adr/0001-explicit-modifier-skills.md).
+The shared vocabulary and composition rules live in [`CONTEXT.md`](CONTEXT.md). The architectural decisions are recorded in [`docs/adr/0001-explicit-modifier-skills.md`](docs/adr/0001-explicit-modifier-skills.md) and [`docs/adr/0002-cross-project-discovery-is-explicit-and-bounded.md`](docs/adr/0002-cross-project-discovery-is-explicit-and-bounded.md).

@@ -52,6 +52,14 @@ _Avoid_: Always-on skill, implicit skill
 The human effort and synchronous interruption required to resolve choices during an agent workflow. Reducing Decision Load does not imply reducing model reasoning time or eliminating the underlying decisions.
 _Avoid_: Question count, reasoning latency
 
+**Substantive Message**:
+A user-visible question or answer that materially affects the user's understanding, judgment, authorization, or next action. Greetings and acknowledgements without a material status change are not Substantive Messages.
+_Avoid_: Substantive Interaction, every message
+
+**Context Sufficiency**:
+The condition where a Substantive Message contains the relevant background, term meanings, evidence, examples, consequences, and action detail needed for the user to understand, judge, or act without first requesting clarification. Sufficiency is proportional to the current purpose, not exhaustive coverage of the topic.
+_Avoid_: Context Completeness, exhaustive explanation, context dump
+
 **Modifier Skill**:
 An Explicit-only Skill that deliberately specializes named parts of the current task workflow without taking ownership of the User Problem or expanding the agent's authority. Its specialization governs ordinary process rules, while the task skill retains its work and mandatory safety, authorization, external-effect, and human checkpoints.
 _Avoid_: Co-active Skill, wrapper skill

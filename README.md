@@ -1,19 +1,21 @@
 # Agent Skills
 
-Explicit agent skills for keeping long-running AI work focused while preserving user control. `prune-the-tree` reduces decision load without taking user-owned decisions away; `yak-triage` preserves valid problems discovered along the way without derailing the current task.
+Explicit agent skills for keeping long-running AI work focused, understandable, and under user control. `make-it-land` gives substantive messages enough context to be understood and acted on; `prune-the-tree` reduces decision load without taking user-owned decisions away; `yak-triage` preserves valid problems discovered along the way without derailing the current task.
 
 ## Skills
 
 | Skill | Use it when | What it does |
 |---|---|---|
+| [`make-it-land`](skills/make-it-land/SKILL.md) | Questions or answers arrive without enough context | Explains the relevant background, terms, examples, evidence, implications, and next action |
 | [`prune-the-tree`](skills/prune-the-tree/SKILL.md) | A workflow generates too many low-value questions | Resolves factual, redundant, premature, or safely delegated choices while preserving user-owned decisions |
 | [`yak-triage`](skills/yak-triage/SKILL.md) | Work reveals other valid problems | Preserves them as reconciled issues or issue-ready drafts, then returns to the current problem |
 
 ## Installation
 
-Install either skill into the current project with the [skills CLI](https://skills.sh):
+Install a skill into the current project with the [skills CLI](https://skills.sh):
 
 ```bash
+npx skills@latest add SaKaNa-Y/skills --skill make-it-land
 npx skills@latest add SaKaNa-Y/skills --skill prune-the-tree
 npx skills@latest add SaKaNa-Y/skills --skill yak-triage
 ```
@@ -26,7 +28,17 @@ npx skills@latest add SaKaNa-Y/skills --skill prune-the-tree --agent codex --glo
 
 ## Usage
 
-Invoke both skills explicitly.
+Invoke these skills explicitly.
+
+Use Make It Land after an unclear message or alongside a task whose questions and answers need more context:
+
+```text
+$make-it-land Re-pitch your last answer so I can understand its terms, evidence, implications, and next step.
+```
+
+```text
+$make-it-land Explain this architecture choice and recommend what fits the current project.
+```
 
 Use Prune the Tree alone or with a question-heavy workflow:
 
@@ -47,6 +59,16 @@ $yak-triage Fix the checkout failure without losing other confirmed problems.
 ```text
 $yak-triage $grilling Stress-test this design and preserve unrelated findings.
 ```
+
+## Make It Land
+
+Make It Land creates **Context Sufficiency**: each Substantive Message carries the relevant information the user needs to understand, judge, or act without first requesting clarification. It can re-pitch the last unclear message or remain active for the current problem.
+
+For questions, it supplies the current situation, explains why user input is needed, defines terms, makes viable options concrete, states their implications, and gives a recommendation. For answers, it leads with the result, adds checkable evidence and relevant context, explains implications and uncertainty, and closes with the next action.
+
+The information contract is fixed, but its presentation is proportional. Simple messages stay short; abstract concepts, important claims, and risky actions receive the examples, evidence, safeguards, and verification their stakes require. Deliverables keep their requested style unless the user explicitly asks to apply the skill inside them.
+
+For the complete behavior, see [`skills/make-it-land/SKILL.md`](skills/make-it-land/SKILL.md).
 
 ## Prune the Tree
 
@@ -91,6 +113,7 @@ For the complete behavior, see [`skills/yak-triage/SKILL.md`](skills/yak-triage/
 The active task workflow still owns the User Problem.
 
 - Prune the Tree is a Modifier Skill: it specializes ordinary question routing while preserving mandatory safety, authorization, external-effect, and human checkpoints.
+- Make It Land is a Modifier Skill: it makes the remaining questions and all substantive answers understandable without changing who owns a decision.
 - Yak Triage is a Co-active Skill: it independently preserves distinct discovered problems without invoking, managing, or limiting the active workflow.
 
 The shared vocabulary and composition rules live in [`CONTEXT.md`](CONTEXT.md). The Modifier Skill decision is recorded in [`docs/adr/0001-explicit-modifier-skills.md`](docs/adr/0001-explicit-modifier-skills.md).

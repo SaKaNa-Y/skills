@@ -1,6 +1,6 @@
 # Agent Skills
 
-Explicit agent skills for keeping long-running AI work focused, understandable, and under user control. `make-it-land` gives substantive messages enough context to be understood and acted on; `prune-the-tree` reduces decision load without taking user-owned decisions away; `yak-shaving-triage` continuously guards the current problem while preserving valid problems discovered along the way; `set-theory-for-projects` explores evidence-backed ways a project's existing value could serve more real contexts without forcing expansion.
+Explicit agent skills for keeping long-running AI work focused, understandable, and under user control. `make-it-land` gives substantive messages enough context to be understood and acted on; `prune-the-tree` reduces decision load without taking user-owned decisions away; `yak-shaving-triage` continuously guards the current problem while preserving valid problems discovered along the way; `set-theory-for-projects` explores evidence-backed ways a project's existing value could serve more real contexts without forcing expansion; `tool-fit-for-projects` evaluates whether external tools fit a concrete repository need without forcing adoption.
 
 ## Skills
 
@@ -10,6 +10,7 @@ Explicit agent skills for keeping long-running AI work focused, understandable, 
 | [`prune-the-tree`](skills/prune-the-tree/SKILL.md) | A workflow generates too many low-value questions | Resolves factual, redundant, premature, or safely delegated choices while preserving user-owned decisions |
 | [`yak-shaving-triage`](skills/yak-shaving-triage/SKILL.md) | Work risks branching into other valid problems | Checks potential task switches, preserves distinct problems, and returns to the current problem |
 | [`set-theory-for-projects`](skills/set-theory-for-projects/SKILL.md) | A project may have reusable value beyond its current boundaries | Searches real adjacent contexts, tests candidate seams against bilateral evidence, and stops at a discovery report |
+| [`tool-fit-for-projects`](skills/tool-fit-for-projects/SKILL.md) | A repository needs a tool decision or a bounded audit for material tool opportunities | Compares the current baseline with evidence-backed candidates and returns progressive choices without implementation |
 
 ## Installation
 
@@ -20,6 +21,7 @@ npx skills@latest add SaKaNa-Y/skills --skill make-it-land
 npx skills@latest add SaKaNa-Y/skills --skill prune-the-tree
 npx skills@latest add SaKaNa-Y/skills --skill yak-shaving-triage
 npx skills@latest add SaKaNa-Y/skills --skill set-theory-for-projects
+npx skills@latest add SaKaNa-Y/skills --skill tool-fit-for-projects
 ```
 
 Append `--agent codex` to install specifically for Codex, and append `--global` when the skill should be available across projects:
@@ -66,6 +68,18 @@ Use Set Theory for Projects when you want bounded cross-project discovery rather
 
 ```text
 $set-theory-for-projects Examine this project and find evidence-backed ways its existing value could serve more real contexts.
+```
+
+Use Tool Fit for Projects for a concrete framework, library, infrastructure, platform, or service decision:
+
+```text
+$tool-fit-for-projects Compare the current test setup with suitable alternatives for this repository and stop before implementation.
+```
+
+Or explicitly request its first-stage repository audit:
+
+```text
+$tool-fit-for-projects Audit this repository for material tool opportunities, then let me choose which decision to explore.
 ```
 
 ## Make It Land
@@ -128,6 +142,18 @@ The method is inspired by Anthony Fu's “The Set Theory” while remaining an i
 
 For the complete behavior, see [`skills/set-theory-for-projects/SKILL.md`](skills/set-theory-for-projects/SKILL.md).
 
+## Tool Fit for Projects
+
+Tool Fit for Projects begins with a Tool Decision Context and Current Baseline rather than a product list. It treats user-named tools as Candidate Seeds, searches independent solution shapes to Evidence Saturation, applies category-specific hard gates, and compares benefits with discovery, learning, price, adoption, migration, maintenance, and exit costs. A No-change Result is valid.
+
+The skill covers code and developer tools, data and infrastructure, cloud and deployment platforms, and hosted or commercial services through separate on-demand profiles. It scales analysis from Quick to High-stakes decisions, gives every user candidate a visible disposition, and provides Progressive Adoption Paths for Recommended and Trial candidates. It may inspect the repository and run existing validation, but it does not install, prototype, purchase, migrate, or save a report unless the user separately authorizes that action.
+
+Repository Tool Audit is deliberately two-stage: it reports at most five evidence-backed Material Tool Opportunities and stops for the user to select one before candidate research begins. This keeps a broad audit from becoming several unrequested migrations.
+
+The method independently applies Anthony Fu's cost-balance and progressive-path lens to repository tool selection. The source review lives in [`docs/research/antfu-progressive-path.md`](docs/research/antfu-progressive-path.md); repository analysis, candidate discovery, category gates, dispositions, and the report contract are this skill's independent extensions.
+
+For the complete behavior, see [`skills/tool-fit-for-projects/SKILL.md`](skills/tool-fit-for-projects/SKILL.md).
+
 ## Combining Skills
 
 The active task workflow still owns the User Problem.
@@ -136,5 +162,6 @@ The active task workflow still owns the User Problem.
 - Make It Land is a Modifier Skill: it makes the remaining questions and all substantive answers understandable without changing who owns a decision.
 - Yak Shaving Triage is a Co-active Skill: it continuously checks potential detours and preserves distinct discovered problems without invoking, managing, or limiting the workflow used to solve the User Problem.
 - Set Theory for Projects is a standalone Explicit-only Skill: it deliberately expands the candidate-direction set under bounded, read-only discovery, then returns control at the Exploration Checkpoint.
+- Tool Fit for Projects is a standalone Explicit-only Skill: it runs a bounded, read-only Tool Decision or first-stage Repository Tool Audit, then returns control at the Tool Choice Checkpoint.
 
 The shared vocabulary and composition rules live in [`CONTEXT.md`](CONTEXT.md). The architectural decisions are recorded in [`docs/adr/0001-explicit-modifier-skills.md`](docs/adr/0001-explicit-modifier-skills.md) and [`docs/adr/0002-cross-project-discovery-is-explicit-and-bounded.md`](docs/adr/0002-cross-project-discovery-is-explicit-and-bounded.md).

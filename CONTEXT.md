@@ -159,3 +159,83 @@ _Avoid_: Failed search, lack of imagination, mandatory opportunity
 **Set Theory for Projects**:
 The explicit, read-only discovery skill inspired by Antfu's "The Set Theory" that applies Bounded Discovery to an Anchor Project, distinguishes its Necessary Boundaries from Incidental Constraints, and proposes evidence-backed Universal Core, Adapter, or Platform opportunities. Its name preserves the source concept while identifying the project-discovery context; it is not an official Antfu publication and does not require expansion.
 _Avoid_: Mathematical set theory, Antfu-authored skill, project combination mandate
+
+**Tool Decision**:
+A repository-context choice among keeping the current approach, proceeding without an external tool, or adopting an external tool to address a concrete need.
+_Avoid_: Tool replacement, mandatory adoption, popularity contest
+
+**Current Baseline**:
+The present way a repository handles the need behind a Tool Decision, whether through an existing tool, local implementation, manual work, or deliberate absence of a tool.
+_Avoid_: Default candidate, legacy failure, do-nothing option
+
+**No-change Result**:
+A valid Tool Decision outcome in which the Current Baseline has stronger contextual fit than the available alternatives, or no alternative has enough evidence to justify change.
+_Avoid_: Failed search, fallback recommendation, missing winner
+
+**Progressive Adoption Path**:
+A staged, reversible route for trying or adopting a tool through bounded use, coexistence, migration checkpoints, and an explicit exit path.
+_Avoid_: Big-bang migration, automatic implementation, irreversible rollout
+
+**Tool Decision Report**:
+The decision artifact for a Tool Decision, containing the Current Baseline, candidate evidence and dispositions, material uncertainty, and any Progressive Adoption Path.
+_Avoid_: Implementation authorization, feature comparison table, unconditional recommendation
+
+**Tool Fit**:
+The contextual value of a tool for a specific Tool Decision after its benefits, total use and change costs, hard compatibility constraints, and Progressive Adoption Path are considered against the Current Baseline.
+_Avoid_: Best tool, popularity, feature count, universal score
+
+**Candidate Seed**:
+A user-provided or repository-discovered tool that starts candidate discovery without limiting the search or receiving guaranteed finalist status.
+_Avoid_: Finalist, exhaustive shortlist, required recommendation
+
+**Candidate Gate**:
+A non-negotiable compatibility condition that a tool must satisfy before qualitative Tool Fit comparison, such as an applicable runtime, license, security, compliance, or data boundary.
+_Avoid_: Weighted criterion, preference, score penalty
+
+**Evidence Saturation**:
+The bounded-search condition where additional independent search paths no longer produce a materially different qualified candidate for the Tool Decision.
+_Avoid_: Exhaustive search, fixed top three, arbitrary timeout
+
+**Material Tool Opportunity**:
+An evidence-backed Tool Decision discovered during repository-wide audit, grounded in an observable problem, risk, duplicated capability, or maintenance burden rather than the mere existence of an alternative tool.
+_Avoid_: Dependency suggestion, modernization idea, available replacement
+
+**Tool Fit for Projects**:
+The explicit-only, read-only skill that resolves concrete Tool Decisions or audits a repository for Material Tool Opportunities, applies category-relevant Candidate Gates, searches to Evidence Saturation, and returns a Tool Decision Report without implementing its recommendations.
+_Avoid_: Dependency updater, best-tools list, automatic migration
+
+**Tool Category Profile**:
+A category-specific set of Candidate Gates and comparison concerns used within the shared Tool Decision workflow for code and developer tools, data and infrastructure, cloud and deployment platforms, or hosted and commercial services.
+_Avoid_: Universal checklist, product catalog, improvised criteria
+
+**Tool Candidate Card**:
+A self-contained account of one finalist covering repository evidence, passed and unresolved Candidate Gates, expected benefit, total adoption cost, material risk, and any Progressive Adoption Path.
+_Avoid_: Feature table, score row, marketing summary
+
+**Tool Choice Checkpoint**:
+The user decision after a Tool Decision Report to select a candidate, keep the Current Baseline, authorize targeted evidence gathering, or end the decision without a change.
+_Avoid_: Automatic selection, implementation approval, recommendation acceptance by silence
+
+**Tool Decision Context**:
+The concrete repository work, affected users, desired outcome, constraints, and success conditions that make Tool Fit meaningful for a Tool Decision.
+_Avoid_: Product comparison, tool category, generic best practice
+
+**Decision Depth**:
+The evidence and analysis intensity proportional to a Tool Decision's change radius, reversibility, and external risk: Quick for local reversible choices, Standard for workflow or multi-module choices, and High-stakes for architectural, data, platform, identity, or critical-service choices.
+_Avoid_: Fixed report length, tool popularity tier, arbitrary effort level
+
+**Tool Candidate Disposition**:
+The qualitative judgment assigned to a tool candidate: Recommended, Viable Alternative, Trial, Needs Evidence, or Rejected. Trial requires a bounded repository experiment; Needs Evidence requires a missing fact or user-owned constraint.
+_Avoid_: Numeric rank, pass/fail score, recommendation confidence
+
+**Read-only Validation**:
+Evidence gathering that may inspect repository state and run existing checks or benchmarks without installing a candidate, changing source or configuration, or creating a prototype implementation.
+_Avoid_: Trial execution, dependency installation, migration rehearsal
+
+**Repository Tool Audit**:
+The first stage of Tool Fit for Projects that scans the current repository for Material Tool Opportunities and returns at most five prioritized opportunities for the user to choose from before any full Tool Decision begins.
+_Avoid_: Dependency-by-dependency review, batch tool selection, automatic deep dive
+
+**Tool Evidence Hierarchy**:
+The ordered evidence basis for Tool Fit: repository facts and existing validation first, authoritative project or vendor sources second, and reproducible independent evidence for material claims those sources cannot establish.
+_Avoid_: Popularity ranking, uncited consensus, vendor claims alone

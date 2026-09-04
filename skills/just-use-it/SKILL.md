@@ -58,7 +58,7 @@ When the target has no UI, or its UI leaves part of the surface accessible only 
 5. Before assigning the first `Verified` state, read [references/verification-traces.md](references/verification-traces.md). A capability becomes `Verified` only with a complete Verification Trace. As soon as behavior may be an Audit Finding, read [references/finding-packets.md](references/finding-packets.md) before expanding the investigation.
 6. Give every capability in the slice a terminal state, update the Coverage Ledger, and only then move to the next group. `Verified`, `Finding`, and `Blocked` are terminal; `Not Exercised` remains pending.
 
-For a large surface, complete coherent slices without asking the user to approve each group. Use slice boundaries as pause points. When interruption leaves known capabilities `Not Exercised`, preserve the current slice and next action in the Coverage Ledger, report a Partial Audit, and keep implementation source closed so resumed hands-on work remains behaviorally blind.
+For a large surface, complete coherent slices without asking the user to approve each group. Use slice boundaries as pause points. A temporary pause that will resume before tracker reconciliation keeps the target tracker closed. When interruption instead concludes the run with known capabilities `Not Exercised`, preserve the current slice and next action, freeze completed Finding Packets, and report a Partial Audit. A separately active recording workflow may reconcile those frozen packets; audit work after it reads tracker history, including any later resume, is tracker-informed rather than behaviorally blind.
 
 A documentation error is a Finding even when the implementation works through an undocumented correction. Do not use operational metadata or source knowledge to silently rescue a documented journey.
 
@@ -72,9 +72,11 @@ Map every source-confirmed public entrypoint to an existing capability, an expli
 
 Group newly added capabilities by user outcome and complete them slice-first. Label their Verification Traces as source-discovered so they do not masquerade as blind discovery.
 
+After every source-confirmed public entrypoint is accounted for, freeze the independently observed Finding Packets. This opens the Audit Reconciliation Gate for a separately active recording workflow, which owns batch reconciliation and tracker writes; matching an existing record does not change the finding's independent provenance.
+
 After the source surface is accounted for, the target project's public issue history may be sampled as a final coverage calibration. Re-exercise relevant paths through the public interface. Label behavior first encountered there as a known-issue reproduction rather than independent discovery, and keep issue reading separate from tracker mutation or publication.
 
-**Complete when:** every source-confirmed public entrypoint is accounted for and every included capability has a terminal state.
+**Complete when:** every source-confirmed public entrypoint is accounted for, every included capability has a terminal state, and the independently observed Finding Packets are frozen.
 
 ## 5. Report and Clean Up
 
@@ -85,7 +87,7 @@ Return a conversational audit report containing:
 - a compact Verification Trace for every `Verified` capability;
 - functional, documentation, visual, interaction, operational, Capability Gap, and Intermittent Findings with their evidence;
 - Blocked and, for a partial run, Not Exercised capabilities;
-- tracker links only when a separately active recording workflow published them; and
+- tracker links or identifiers returned by a separately active recording workflow for Reused records or successfully published mutations; and
 - cleanup results.
 
 When any known capability remains `Not Exercised`, call the result a **Partial Audit**. Name the completed Vertical Capability Slices, but do not describe the whole Capability Surface as complete.

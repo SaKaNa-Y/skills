@@ -93,9 +93,9 @@ $prune-the-tree Build this feature. Investigate factual questions, use safe loca
 
 **Use it when:** Work on one problem is likely to reveal other valid problems, and you want to preserve those findings without abandoning the current task.
 
-**You get:** Silent scope checks during the task. A distinct, observable problem is preserved as an issue-ready draft, reconciled with the project's tracker at a natural checkpoint, and recorded only after approval.
+**You get:** Silent scope checks during the task. A distinct, observable problem is preserved as an issue-ready draft, reconciled against existing open and closed records in the project's canonical tracker at an eligible checkpoint, and recorded only after approval.
 
-**Boundary:** It does not diagnose or repair the side problem, take over the active workflow, invent a tracker, or mutate a tracker without explicit approval. Urgent security or data-loss risks are surfaced immediately but still do not bypass write approval.
+**Boundary:** It does not diagnose or repair the side problem, take over the active workflow, invent a tracker, or mutate a tracker without explicit approval. Urgent security or data-loss risks are surfaced immediately but still do not bypass reconciliation or write approval.
 
 ```text
 $yak-shaving-triage Fix the checkout failure. Preserve any independently actionable problems we encounter, but keep this task focused on checkout.
@@ -150,7 +150,7 @@ $tool-fit-for-projects Audit this repository for material tool opportunities, th
 Use combinations when two independent responsibilities are both useful:
 
 - `make-it-land` + `prune-the-tree`: ask fewer questions, and make every remaining question easy to understand and answer.
-- `just-use-it` + `yak-shaving-triage`: exercise a tool thoroughly, preserve confirmed findings, and request approval before writing them to a tracker.
+- `just-use-it` + `yak-shaving-triage`: exercise a tool independently, freeze confirmed findings, reconcile each against existing tracker records, and request approval before writing.
 - `make-it-land` + another task skill: keep explanations actionable while the task skill owns the work.
 
 For example:

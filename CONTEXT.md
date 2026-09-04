@@ -21,8 +21,24 @@ A Discovered Problem preserved with enough verified context for an agent without
 _Avoid_: Issue exploration, speculative issue
 
 **Issue Reconciliation**:
-The act of checking whether an Issue-ready Problem is already tracked before proposing a new record. Reuse a complete existing record without mutation; prepare only materially useful missing evidence when an update is needed, and never propose a duplicate merely to preserve the current conversation's version.
+The mandatory act of checking every Issue-ready Problem against the canonical tracker selected by Tracker Guidance before proposing any persistent tracker mutation. Reuse a complete existing record without mutation, prepare only materially useful missing evidence when an update is needed, and never propose a duplicate merely to preserve the current conversation's version.
 _Avoid_: Duplicate issue, unconditional comment
+
+**Problem Identity**:
+The reconciliation boundary between one problem expressed through multiple observations and independently resolvable problems. Finding Packets share an identity when one resolution and acceptance boundary would resolve them together; different wording, entry points, or reproduction paths alone do not split them, while the ability to resolve one without the other does.
+_Avoid_: Title match, shared-component bucket, suspected-root-cause merge
+
+**Audit Reconciliation Gate**:
+The boundary after a Usage-First Audit has reconciled its source-confirmed public surface or explicitly ended as a Partial Audit, and frozen its independently observed findings, at which co-active Yak Shaving Triage may begin tracker-informed Issue Reconciliation. Finding Packets may be handed off before this gate, but target tracker history remains closed until it is reached; once that history is read, the remaining current audit work and any later resume are tracker-informed.
+_Avoid_: Per-slice issue lookup, early duplicate search, silent blind resume
+
+**Reconciliation Disposition**:
+The per-problem result of Issue Reconciliation: Reused, Proposed Update, Proposed New, or Reconciliation Blocked. A checkpoint presents dispositions together, identifies the canonical record for Reused results, and keeps approval separable for every proposed mutation.
+_Avoid_: Blanket approval, per-finding interruption, implicit write
+
+**Reconciliation Blocked**:
+A Reconciliation Disposition used when the canonical tracker cannot be searched well enough to rule out an existing record. The Issue-ready draft remains available, but no creation or update may be proposed until reconciliation becomes possible.
+_Avoid_: Duplicate-risk warning, silent search skip, discarded finding
 
 **Evidence Capture**:
 A bounded act of preserving evidence already encountered or cheaply reconfirmed, without diagnosing or solving the Discovered Problem.
@@ -37,11 +53,11 @@ The user's confirmation of an exact proposed set of persistent tracker mutations
 _Avoid_: Skill invocation, implicit write authorization, blanket future approval
 
 **Capture Checkpoint**:
-A natural boundary between active steps where accumulated Issue-ready Problems can be reconciled, proposed tracker mutations can receive Tracker Write Approval, and approved records can be written without abandoning the current work. At the checkpoint, tell the user what was written, reused, or retained as a draft, then resume the current work.
+A natural boundary between active steps where accumulated Issue-ready Problems can be reconciled, proposed tracker mutations can receive Tracker Write Approval, and approved records can be written without abandoning the current work. Reconciliation begins only when every active independence gate is open; otherwise the problems remain ready for a later checkpoint.
 _Avoid_: Immediate context switch, end-only backlog
 
 **Urgent Discovered Problem**:
-A Discovered Problem with credible security, data-loss, or destructive risk that warrants immediate notice and sanitized draft preparation without silently expanding the current repair scope or bypassing Tracker Write Approval.
+A Discovered Problem with credible security, data-loss, or destructive risk that warrants immediate notice and sanitized draft preparation without silently expanding the current repair scope or bypassing Issue Reconciliation or Tracker Write Approval.
 _Avoid_: Silent deferral, unauthorized repair
 
 **Co-active Skill**:

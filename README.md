@@ -1,6 +1,6 @@
 # Agent Skills
 
-Explicit agent skills for keeping long-running AI work focused, understandable, and under user control. `make-it-land` gives substantive messages enough context to be understood and acted on; `prune-the-tree` reduces decision load without taking user-owned decisions away; `yak-shaving-triage` continuously guards the current problem while preserving valid problems discovered along the way; `set-theory-for-projects` explores evidence-backed ways a project's existing value could serve more real contexts without forcing expansion; `tool-fit-for-projects` evaluates whether external tools fit a concrete repository need without forcing adoption.
+Explicit agent skills for keeping long-running AI work focused, understandable, experiential, and under user control. `make-it-land` gives substantive messages enough context to be understood and acted on; `prune-the-tree` reduces decision load without taking user-owned decisions away; `yak-shaving-triage` guards the current problem while preparing valid discoveries for user-approved recording; `just-use-it` experiences developer tools through their public interfaces before reading source; `set-theory-for-projects` explores evidence-backed ways a project's existing value could serve more real contexts without forcing expansion; `tool-fit-for-projects` evaluates whether external tools fit a concrete repository need without forcing adoption.
 
 ## Skills
 
@@ -9,6 +9,7 @@ Explicit agent skills for keeping long-running AI work focused, understandable, 
 | [`make-it-land`](skills/make-it-land/SKILL.md) | Questions or answers arrive without enough context | Explains the relevant background, terms, examples, evidence, implications, and next action |
 | [`prune-the-tree`](skills/prune-the-tree/SKILL.md) | A workflow generates too many low-value questions | Resolves factual, redundant, premature, or safely delegated choices while preserving user-owned decisions |
 | [`yak-shaving-triage`](skills/yak-shaving-triage/SKILL.md) | Work risks branching into other valid problems | Checks potential task switches, preserves distinct problems, and returns to the current problem |
+| [`just-use-it`](skills/just-use-it/SKILL.md) | A library or developer tool should be experienced as a user before its source shapes the investigation | Exercises every discovered public capability, reports observable findings, and cleans its disposable environment |
 | [`set-theory-for-projects`](skills/set-theory-for-projects/SKILL.md) | A project may have reusable value beyond its current boundaries | Searches real adjacent contexts, tests candidate seams against bilateral evidence, and stops at a discovery report |
 | [`tool-fit-for-projects`](skills/tool-fit-for-projects/SKILL.md) | A repository needs a tool decision or a bounded audit for material tool opportunities | Compares the current baseline with evidence-backed candidates and returns progressive choices without implementation |
 
@@ -20,6 +21,7 @@ Install a skill into the current project with the [skills CLI](https://skills.sh
 npx skills@latest add SaKaNa-Y/skills --skill make-it-land
 npx skills@latest add SaKaNa-Y/skills --skill prune-the-tree
 npx skills@latest add SaKaNa-Y/skills --skill yak-shaving-triage
+npx skills@latest add SaKaNa-Y/skills --skill just-use-it
 npx skills@latest add SaKaNa-Y/skills --skill set-theory-for-projects
 npx skills@latest add SaKaNa-Y/skills --skill tool-fit-for-projects
 ```
@@ -62,6 +64,20 @@ $yak-shaving-triage Fix the checkout failure without losing other confirmed prob
 
 ```text
 $yak-shaving-triage $grilling Stress-test this design and preserve unrelated findings.
+```
+
+Use Just Use It to experience a source-accessible library or developer tool before inspecting its implementation:
+
+```text
+$just-use-it Exercise every public capability of this developer tool as a user, then read its source to find anything the hands-on passes missed.
+```
+
+When a required runtime or toolchain is missing, Just Use It checks supported alternatives, asks before installing anything, and marks only the affected capabilities `Blocked` when installation is declined or unavailable.
+
+Invoke it with Yak Shaving Triage when confirmed findings should be prepared for durable, user-approved recording:
+
+```text
+$just-use-it $yak-shaving-triage Experience this library end to end and ask before recording any confirmed findings.
 ```
 
 Use Set Theory for Projects when you want bounded cross-project discovery rather than implementation:
@@ -118,7 +134,7 @@ For the complete behavior, see [`skills/prune-the-tree/SKILL.md`](skills/prune-t
 
 Agents often discover another unfinished problem while working, switch over to solve it, discover yet another problem, and keep going until the original work is lost.
 
-Yak Shaving Triage stays active from explicit invocation through the current User Problem. It silently checks newly discovered problems and contemplated task switches before they become detours. Work needed to resolve the User Problem remains with the active task workflow; distinct confirmed problems are preserved as self-contained tracker issues or drafts, then work returns to the User Problem. A problem is still recorded when it already existed or was not caused by the current change.
+Yak Shaving Triage stays active from explicit invocation through the current User Problem. It silently checks newly discovered problems and contemplated task switches before they become detours. Work needed to resolve the User Problem remains with the active task workflow; distinct confirmed problems are reconciled with the project's tracker and prepared for recording, then work returns to the User Problem. A problem can still qualify when it already existed or was not caused by the current change.
 
 ### How It Works
 
@@ -126,11 +142,23 @@ Yak Shaving Triage stays active from explicit invocation through the current Use
 - When a new problem appears or the next action would change the line of work, Yak Shaving Triage silently checks the potential branch against the User Problem.
 - A check that remains within the User Problem produces no user-visible update.
 - A distinct observable problem is preserved without following the branch to diagnose or repair it.
-- It follows the project's tracker guidance, checks for duplicates, and creates, updates, or reuses an issue at a natural checkpoint.
-- Without tracker guidance, it keeps an issue-ready draft and asks once where to record it after the current work.
-- Urgent security, data-loss, and destructive risks are reported and preserved immediately without silently expanding the current repair.
+- It follows the project's tracker guidance and checks for duplicates at a natural checkpoint.
+- Reusing a complete existing record is read-only; every proposed creation, comment, metadata edit, or repository Markdown change is shown to the user for Tracker Write Approval.
+- One checkpoint may batch drafts while allowing the user to approve any subset. Unapproved drafts remain conversational.
+- Without tracker guidance, it keeps an issue-ready draft and asks once where to record it; an explicitly selected repository Markdown destination must follow established repository conventions.
+- Urgent security, data-loss, and destructive risks are reported immediately, but urgency never bypasses Tracker Write Approval.
 
 For the complete behavior, see [`skills/yak-shaving-triage/SKILL.md`](skills/yak-shaving-triage/SKILL.md).
+
+## Just Use It
+
+Just Use It runs a **Usage-First Audit** of one source-accessible library, framework, CLI, or developer tool. It first follows the public documentation, then explores freely without implementation knowledge, and only afterward reads the source to find shipped public capabilities the hands-on passes missed.
+
+Browser-reachable applications, local web interfaces, playgrounds, component browsers, interactive documentation, and web demos are exercised through browser control. When the user explicitly selected an existing browser session, the audit uses it first. Native, IDE, and terminal interfaces require another real user-control surface or remain Blocked; programmatic capabilities run from a disposable consumer workspace and never substitute for UI verification. Cross-project issue research informs generic exploration lenses for operational footprint, configuration seams, lifecycle, surface parity, wrapper fidelity, outcome integrity, realistic scale, accessibility, counterfactuals, and compatibility migrations without hard-coding repository-specific symptoms. Every temporary resource is removed on completion, failure, or interruption, or reported when cleanup fails.
+
+During a complete audit, each capability ends as Verified, Finding, or Blocked; Not Exercised appears only in a partial report after interruption. Findings include functional behavior, documentation, rendered UI, interaction, operational problems, Capability Gaps, and intermittent problems; source-only suspicions stay unverified until observable use reproduces them. Just Use It returns a conversational coverage report and Finding Packets without diagnosing, repairing, or publishing them. When Yak Shaving Triage is separately active, it may reconcile those packets and request approval to record them.
+
+For the complete behavior, see [`skills/just-use-it/SKILL.md`](skills/just-use-it/SKILL.md).
 
 ## Set Theory for Projects
 
@@ -160,8 +188,9 @@ The active task workflow still owns the User Problem.
 
 - Prune the Tree is a Modifier Skill: it specializes ordinary question routing while preserving mandatory safety, authorization, external-effect, and human checkpoints.
 - Make It Land is a Modifier Skill: it makes the remaining questions and all substantive answers understandable without changing who owns a decision.
-- Yak Shaving Triage is a Co-active Skill: it continuously checks potential detours and preserves distinct discovered problems without invoking, managing, or limiting the workflow used to solve the User Problem.
+- Yak Shaving Triage is a Co-active Skill: it continuously checks potential detours, reconciles distinct discovered problems, and requests approval before any persistent recording without invoking, managing, or limiting the workflow used to solve the User Problem.
+- Just Use It is a standalone Explicit-only Skill: it owns usage-first coverage and Finding Packets while leaving repair and persistent recording to separately authorized work.
 - Set Theory for Projects is a standalone Explicit-only Skill: it deliberately expands the candidate-direction set under bounded, read-only discovery, then returns control at the Exploration Checkpoint.
 - Tool Fit for Projects is a standalone Explicit-only Skill: it runs a bounded, read-only Tool Decision or first-stage Repository Tool Audit, then returns control at the Tool Choice Checkpoint.
 
-The shared vocabulary and composition rules live in [`CONTEXT.md`](CONTEXT.md). The architectural decisions are recorded in [`docs/adr/0001-explicit-modifier-skills.md`](docs/adr/0001-explicit-modifier-skills.md) and [`docs/adr/0002-cross-project-discovery-is-explicit-and-bounded.md`](docs/adr/0002-cross-project-discovery-is-explicit-and-bounded.md).
+The shared vocabulary and composition rules live in [`CONTEXT.md`](CONTEXT.md). The architectural decisions are recorded in [`docs/adr/0001-explicit-modifier-skills.md`](docs/adr/0001-explicit-modifier-skills.md), [`docs/adr/0002-cross-project-discovery-is-explicit-and-bounded.md`](docs/adr/0002-cross-project-discovery-is-explicit-and-bounded.md), and [`docs/adr/0003-separate-experience-from-finding-publication.md`](docs/adr/0003-separate-experience-from-finding-publication.md).

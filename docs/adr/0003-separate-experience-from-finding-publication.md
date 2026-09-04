@@ -1,0 +1,3 @@
+# Separate Experience from Finding Publication
+
+Usage-first auditing must stay focused on exercising the Capability Surface while confirmed problems still need durable follow-up. We introduce Just Use It as an Explicit-only Skill that owns hands-on coverage and session-scoped Finding Packets, while a separately invoked Yak Shaving Triage may reconcile those packets and publish only the exact tracker mutations that receive Tracker Write Approval. This keeps both workflows independent, permits either project-defined trackers or explicitly selected repository Markdown records, defers target-checkout record writes until the audit's integrity check and cleanup finish, and prevents audit invocation from implying authority to repair or publish findings.

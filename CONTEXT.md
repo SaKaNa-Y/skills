@@ -5,7 +5,7 @@ This context defines the language used to design skills that keep agent work ali
 ## Language
 
 **Yak Shaving Triage**:
-The continuous, silent discipline of checking newly discovered problems and contemplated task switches against the User Problem, preserving each distinct Discovered Problem instead of silently ignoring it or switching over to repair it. It stays active from explicit invocation through the current User Problem without judging investigation depth, displaying a separate problem anchor, or managing another skill.
+The continuous, silent discipline of checking newly discovered problems and contemplated task switches against the User Problem, preparing each distinct Discovered Problem for reconciliation and user-approved recording instead of silently ignoring it or switching over to repair it. It stays active from explicit invocation through the current User Problem without judging investigation depth, displaying a separate problem anchor, or managing another skill.
 _Avoid_: Recurring scope report, task switching, silent dismissal
 
 **User Problem**:
@@ -21,7 +21,7 @@ A Discovered Problem preserved with enough verified context for an agent without
 _Avoid_: Issue exploration, speculative issue
 
 **Issue Reconciliation**:
-The act of checking whether an Issue-ready Problem is already tracked before creating a new issue. Reuse the existing issue and add only materially useful missing evidence; never create a duplicate merely to preserve the current conversation's version.
+The act of checking whether an Issue-ready Problem is already tracked before proposing a new record. Reuse a complete existing record without mutation; prepare only materially useful missing evidence when an update is needed, and never propose a duplicate merely to preserve the current conversation's version.
 _Avoid_: Duplicate issue, unconditional comment
 
 **Evidence Capture**:
@@ -32,12 +32,16 @@ _Avoid_: Root-cause analysis, issue investigation
 Project-provided instructions that identify where and how Issue-ready Problems are recorded.
 _Avoid_: Assumed tracker, default GitHub
 
+**Tracker Write Approval**:
+The user's confirmation of an exact proposed set of persistent tracker mutations after reconciliation and draft review. Activating a skill does not grant this approval; it applies whether Tracker Guidance selects an external tracker or an explicitly requested repository Markdown record.
+_Avoid_: Skill invocation, implicit write authorization, blanket future approval
+
 **Capture Checkpoint**:
-A natural boundary between active steps where accumulated Issue-ready Problems can be reconciled and recorded without abandoning the current work. At the checkpoint, tell the user what was created, updated, or reused, then resume the current work.
+A natural boundary between active steps where accumulated Issue-ready Problems can be reconciled, proposed tracker mutations can receive Tracker Write Approval, and approved records can be written without abandoning the current work. At the checkpoint, tell the user what was written, reused, or retained as a draft, then resume the current work.
 _Avoid_: Immediate context switch, end-only backlog
 
 **Urgent Discovered Problem**:
-A Discovered Problem with credible security, data-loss, or destructive risk that warrants immediate notice and recording without silently expanding the current repair scope.
+A Discovered Problem with credible security, data-loss, or destructive risk that warrants immediate notice and sanitized draft preparation without silently expanding the current repair scope or bypassing Tracker Write Approval.
 _Avoid_: Silent deferral, unauthorized repair
 
 **Co-active Skill**:
@@ -47,6 +51,34 @@ _Avoid_: Caller skill, router skill
 **Explicit-only Skill**:
 A skill activated only by direct user selection when the client supports that invocation policy.
 _Avoid_: Always-on skill, implicit skill
+
+**Usage-First Audit**:
+An evaluation of a source-accessible library or developer tool that exercises its user-facing behavior before inspecting implementation details, then uses the source to find public capabilities the experience may have missed.
+_Avoid_: Source-first review, static bug scan, implementation audit
+
+**Just Use It**:
+The Explicit-only Skill that performs a Usage-First Audit, using a user-requested existing browser session first when the target exposes a UI. It produces coverage evidence and Finding Packets but does not repair findings or write tracker items.
+_Avoid_: Source reviewer, bug fixer, issue publisher
+
+**Capability Surface**:
+The set of shipped public behaviors identified from user documentation, exposed UI, CLI, or API entry points, and source-confirmed public interfaces. Internal helpers, test-only interfaces, dead code, and unreleased feature flags are not part of the surface.
+_Avoid_: Every code path, source inventory, feature count
+
+**Audit Finding**:
+An observable functional failure, documentation mismatch, visual or interaction defect, operational problem, Capability Gap, unusable path, or product- or documentation-caused blocked capability confirmed while exercising a Capability Surface. It belongs to the Usage-First Audit even when repairing the underlying problem does not; an audit-environment limitation remains Blocked coverage without becoming a Finding.
+_Avoid_: Speculation, source-only suspicion, fix task
+
+**Capability Gap**:
+An Audit Finding where actual use shows that shipped behaviors cannot be combined, scoped, or controlled finely enough to complete a concrete practical path. It records the reproducible limitation and impact without labeling it a bug unless a public promise or consistent product contract is contradicted.
+_Avoid_: Feature wish, automatic bug label, solution design
+
+**Finding Packet**:
+The session-scoped evidence for an Audit Finding, including the affected capability, prerequisites, reproduction path, expected behavior, observed behavior, reproduction attempts, and available evidence. It supports handoff and final reporting without itself publishing or updating a tracker item.
+_Avoid_: Tracker issue, diagnosis, implementation plan
+
+**Intermittent Finding**:
+An Audit Finding observed through actual use but not reproduced consistently under the recorded conditions. Its Finding Packet preserves the observed event, attempt results, relevant state, and uncertainty without claiming stable reproduction or a known cause.
+_Avoid_: Stable reproduction, dismissed flake, confirmed cause
 
 **Decision Load**:
 The human effort and synchronous interruption required to resolve choices during an agent workflow. Reducing Decision Load does not imply reducing model reasoning time or eliminating the underlying decisions.

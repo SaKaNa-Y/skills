@@ -1,0 +1,3 @@
+# Use Slice-First Traversal for Usage-First Audits
+
+Usage-first audits complete documented journeys and free exploration within one Vertical Capability Slice before moving to another, while implementation source remains closed until hands-on slices finish. This trades broad early visibility for honest outcome evidence, bounded discovery, and resumable Partial Audits instead of shallow entrance sweeps. A bounded Reference Audit Suite may validate the general contract through real products, but it must pass the Generalization Gate and never introduce target-specific detection, branches, or rules.

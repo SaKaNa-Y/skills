@@ -109,7 +109,7 @@ These skills create evidence and decision checkpoints. They stop before implemen
 
 **Use it when:** You need to evaluate a source-accessible library, framework, CLI, or developer tool through the experience its users actually receive.
 
-**You get:** A Usage-First Audit that follows the public documentation, explores the public capability surface without implementation knowledge, and only then reads source to find shipped public capabilities the hands-on passes missed. The result includes coverage states and reproducible Finding Packets.
+**You get:** A slice-first Usage-First Audit that completes one user outcome and its discriminating variation before moving to another, then reads source to find shipped public capabilities the hands-on work missed. The result includes honest partial-coverage boundaries, Verification Traces, and reproducible Finding Packets.
 
 **Boundary:** It does not diagnose or repair findings, publish issues, or count source inspection as successful usage. Disposable audit resources are cleaned up or reported if cleanup fails.
 
@@ -211,6 +211,7 @@ skills/
 
 - [`CONTEXT.md`](CONTEXT.md) defines the shared vocabulary used across the skills.
 - [`docs/adr/`](docs/adr/) records the architectural decisions that keep composition, discovery, and finding publication bounded.
+- [`docs/evals/`](docs/evals/) contains maintainer-only Reference Audit Suites that validate general contracts without entering installed skill runtime paths.
 - Each linked `SKILL.md` is the authoritative contract for that skill's complete behavior and stopping conditions.
 
 ## License

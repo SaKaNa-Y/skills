@@ -64,6 +64,58 @@ _Avoid_: Source reviewer, bug fixer, issue publisher
 The set of shipped public behaviors identified from user documentation, exposed UI, CLI, or API entry points, and source-confirmed public interfaces. Internal helpers, test-only interfaces, dead code, and unreleased feature flags are not part of the surface.
 _Avoid_: Every code path, source inventory, feature count
 
+**Capability Journey**:
+An outcome-oriented path through a Capability Surface that reaches an observable user result through the relevant entry points, interactions, and states. Reaching or opening an entry point alone does not complete the journey.
+_Avoid_: Entry click, control inventory, surface visit
+
+**Capability Group**:
+A set of Capability Journeys that serve the same user outcome. A panel, route, menu, or documentation section is not by itself a Capability Group boundary.
+_Avoid_: UI container, navigation section, control collection
+
+**Discriminating Variation**:
+A one-variable change to a Capability Journey whose correct behavior produces an observably different result, state, or recovery path. Repeating a default or choosing an equivalent value is not discriminating.
+_Avoid_: Random second input, ceremonial retry, exhaustive combination
+
+**Vertical Capability Slice**:
+A coherent feature-group audit unit built around a primary Capability Journey and one discriminating variation or recovery path. It reaches a terminal coverage state before the audit moves to another feature group.
+_Avoid_: Shallow feature sweep, panel tour, exhaustive state matrix
+
+**Slice-First Audit**:
+A Usage-First Audit traversal that completes the documented journeys and free exploration for one Vertical Capability Slice before moving to the next, while keeping implementation source closed until the hands-on slices finish.
+_Avoid_: Global entrance sweep, source-interleaved audit, phase-wide button tour
+
+**Coverage Ledger**:
+A compact, resumable account of each Vertical Capability Slice's coverage state and next action, preserving honest boundaries between completed, active, blocked, and unexercised work.
+_Avoid_: Raw browser transcript, screenshot archive, implied coverage
+
+**Verification Trace**:
+Compact positive evidence for a verified Capability Journey: its initial conditions, material interactions, observable result, discriminating variation, and covered modes.
+_Avoid_: Status-only claim, full interaction transcript, success screenshot archive
+
+**Partial Audit**:
+An audit report with one or more known capabilities still Not Exercised. It may claim completion for named Vertical Capability Slices but not for the full Capability Surface.
+_Avoid_: Complete audit, representative completion, implied full coverage
+
+**Surface Discovery Pass**:
+A bounded inspection within the active Vertical Capability Slice that reveals reachable controls, nested surfaces, and off-screen behaviors without treating discovery as verification.
+_Avoid_: Whole-product button tour, control verification, unbounded browsing
+
+**Mode Parity Probe**:
+A replay of a completed Capability Journey's outcome and key interaction states in a sibling mode, expanding only when a material difference appears. Switching modes without replaying the journey is not a parity probe.
+_Avoid_: Mode toggle, full mode matrix, visual glance
+
+**Reference Audit Scenario**:
+A concrete product experience used to derive and validate a general Usage-First Audit contract without changing audit behavior for that product.
+_Avoid_: Product-specific rule, anecdote, special-case adapter
+
+**Reference Audit Suite**:
+A bounded set of complementary Vertical Capability Slices and Mode Parity Probes drawn from one or more Reference Audit Scenarios to validate a general audit contract through real use. It never introduces target detection or scenario-specific branches into that contract.
+_Avoid_: Exhaustive product audit, prose walkthrough, product-specific contract
+
+**Generalization Gate**:
+The admission boundary for promoting scenario-derived learning into a general skill contract: the rule must be expressible through shared outcomes, journeys, states, modes, or interaction boundaries without target-specific names, detection, or branches.
+_Avoid_: Sample patch, product heuristic, second-project prerequisite
+
 **Audit Finding**:
 An observable functional failure, documentation mismatch, visual or interaction defect, operational problem, Capability Gap, unusable path, or product- or documentation-caused blocked capability confirmed while exercising a Capability Surface. It belongs to the Usage-First Audit even when repairing the underlying problem does not; an audit-environment limitation remains Blocked coverage without becoming a Finding.
 _Avoid_: Speculation, source-only suspicion, fix task

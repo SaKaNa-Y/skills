@@ -12,9 +12,32 @@ Operate through controls visible to a user: navigate, click, type, select, scrol
 
 Keep the UI path real. Count a capability as UI-verified only when the visible interface exercised it; script injection, hidden endpoint calls, and direct internal-state changes do not substitute for UI use.
 
-## Inspect Meaningful States
+Reaching a navigation item, tab, panel, dialog, menu, or other container verifies only that entry point. Complete the Capability Journey through the nested controls and resulting states before assigning `Verified` to a capability inside it.
 
-After each meaningful transition, inspect the rendered result rather than relying only on text or structure. Check the states the feature actually exposes, including:
+## UI Journey Gate
+
+Stay inside the active user outcome until its Vertical Capability Slice is terminal. The gate closes only after the nested controls, scroll boundaries, rendered interaction states, native visual surfaces, and applicable sibling modes required below have observable evidence or an explicit exclusion or `Blocked` reason.
+
+### Traverse the Active Slice
+
+Complete the documented journey first, then make one bounded Surface Discovery Pass through the same slice:
+
+- scroll each relevant page, panel, list, and nested container to its terminal boundary, or until further movement repeats content without revealing another control or state;
+- expand disclosures and nested sections;
+- open menus, selectors, tabs, and alternate views to identify the choices they expose; and
+- inspect controls and states revealed beyond the initial viewport.
+
+Discovery adds capabilities to the Coverage Ledger; it does not verify them. Exercise controls needed for the active outcome and its Discriminating Variation through an observable result. Keep an independently useful outcome as a separate `Not Exercised` Capability Group rather than expanding the current slice around its UI container.
+
+### Inspect Meaningful States
+
+At slice entry, inspect the full rendered surface. After each meaningful transition, inspect the changed rendered region rather than relying only on text or structure. Reinspect the full surface after navigation, a mode or viewport change, a cross-region layout change, an unexpected result, and slice completion. Routine pointer movement or scrolling that reveals no new state needs no duplicate full-surface capture.
+
+For every material control used by the Capability Journey, visually inspect its resting state and every interaction state the journey actually enters, such as focus, expanded or open, selected or checked, completed, disabled, loading, error, and recovery. Functional success does not substitute for rendered-state inspection. Compare each state with adjacent controls and the surrounding surface for practical contrast, visual weight, alignment, clipping, and consistency.
+
+Browser and document screenshots may omit browser- or operating-system-owned surfaces such as native select menus, file pickers, permission prompts, and context menus. When one is material to the journey, identify whether the product or its host owns the rendered surface, open it, and attempt an authorized full-window or screen-level observation. If that surface remains unavailable, verify its structure and action outcome separately, mark its visual evidence `Blocked: native surface not observable`, and do not infer its appearance from the DOM, accessibility tree, computed styles, or a successful action. A host-rendered difference becomes a product Finding only when delegating that surface violates an explicit or consistently product-owned visual contract, or causes practical usability harm.
+
+Check the states the feature actually exposes, including:
 
 - initial, active, completed, empty, loading, error, disabled, and recovery states when present;
 - clipping, overlap, overflow, alignment, visibility, and incorrect status presentation;
@@ -24,10 +47,12 @@ After each meaningful transition, inspect the rendered result rather than relyin
 
 Preserve the viewport, visible state, action path, and screenshot or equivalent visual evidence for a visual Finding. A purely aesthetic preference is not a Finding unless it causes practical readability, discoverability, consistency, or operability harm, or violates an explicit contract.
 
-## Preserve Coverage Boundaries
+For sibling visual modes such as light and dark themes, perform the Mode Parity Probe defined in [exploration-lenses.md](exploration-lenses.md). Switching the mode verifies the switch control only; replay the journey's outcome and key interaction states before claiming parity coverage.
+
+### Preserve Coverage Boundaries
 
 When the UI exposes only part of the Capability Surface, finish that part through its real user-control surface and use the programmatic branch for the remainder. An API result cannot verify its corresponding UI behavior.
 
 Treat an unavailable required control surface, an unlaunchable UI, or missing safe test state as Blocked coverage. A documented UI launch that fails may also be a documentation or product Finding. Continue through every unaffected capability.
 
-**Complete when:** every UI-exposed capability has a terminal state, every meaningful rendered state has been visually inspected, and no non-UI path has been counted as UI verification.
+**Complete when:** every UI-exposed capability in the active slice has a terminal state, every meaningful rendered state has been visually inspected at proportionate scope, every applicable sibling mode has a Mode Parity Probe or explicit exclusion, and no entry point or non-UI path has been counted as UI verification.

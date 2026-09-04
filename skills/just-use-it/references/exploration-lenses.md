@@ -4,9 +4,9 @@ Read this reference before the free-exploration pass. These lenses come from how
 
 ## Build a Capability-Shaped Matrix
 
-For each coherent feature group, identify the structure visible to a user: interfaces, modes, configuration scopes, independently controlled members, lifecycle states, created artifacts, external dependencies, wrappers, and neighboring tools. Select only the lenses that this structure makes material.
+For the active Capability Group, identify the structure visible to a user: interfaces, modes, configuration scopes, independently controlled members, lifecycle states, created artifacts, external dependencies, wrappers, and neighboring tools. Select only the lenses that this Vertical Capability Slice makes material.
 
-Use discriminating inputs whose results differ visibly when the behavior is correct or incorrect. Prefer pairwise interactions and one-variable comparisons over a Cartesian product. Record why each selected variation matters; an inapplicable lens needs only a short exclusion, not a ceremonial test.
+Use a Discriminating Variation whose result differs observably when the behavior is correct or incorrect. Prefer pairwise interactions and one-variable comparisons over a Cartesian product. Record why each selected variation matters; an inapplicable lens needs only a short exclusion, not a ceremonial test.
 
 ## Apply the Lenses
 
@@ -24,7 +24,7 @@ Exercise applicable transitions such as first use, immediate repeat, warm repeat
 
 ### Interface and Mode Parity
 
-Treat each shipped UI, CLI, public API, editor integration, interactive or unattended mode, watch mode, and development or production mode as its own surface. When two surfaces claim the same outcome, feed them the same discriminating input and compare results; success in one does not verify another.
+Treat each shipped UI, CLI, public API, editor integration, interactive or unattended mode, watch mode, development or production mode, and materially distinct visual theme as its own surface. Complete the Capability Journey in the primary mode, then run a **Mode Parity Probe** in each applicable sibling mode: replay the same observable outcome and its key interaction states with the same discriminating input. A mode switch or visual glance verifies only the switch itself. Expand coverage locally when the probe reveals a material difference; do not multiply unrelated capabilities and modes into a full Cartesian product.
 
 ### Boundary Fidelity
 
@@ -40,7 +40,7 @@ After the minimal path, use one representative specimen when behavior plausibly 
 
 ### Alternative Interaction and Accessibility
 
-For interactive products, exercise keyboard traversal and activation as well as pointing input, and inspect focus, disabled, loading, error, recovery, resize, and continuous-interaction behavior when present.
+For interactive products, exercise keyboard traversal and activation as well as pointing input, and inspect focus, disabled, loading, error, recovery, resize, and continuous-interaction behavior when present. For composite controls that reveal suggestions, menus, or other choices from an input, inspect their semantic exposure and complete at least one choice with both pointing and keyboard input when both modalities should apply. A pointer-selected result does not verify keyboard selection or assistive-technology semantics.
 
 ### Counterfactual Comparison
 
@@ -50,4 +50,4 @@ When an observation has practical impact but no explicit promise supplies the ex
 
 When the tool claims compatibility with or replacement of another tool, run a representative existing workload incrementally through both. Preserve divergences from the real workload before minimizing them; the smaller reproduction supplements rather than replaces the original evidence.
 
-**Complete when:** every selected lens has an observable result or explicit Blocked reason, the matrix remains proportional to the capability, and its footprint entries are present in the cleanup ledger.
+**Complete when:** every selected lens in the active Vertical Capability Slice has an observable result or explicit exclusion or Blocked reason, every applicable sibling mode has a Mode Parity Probe, the matrix remains proportional to the user outcome, and its footprint entries are present in the cleanup ledger.

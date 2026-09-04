@@ -166,7 +166,7 @@ Set Theory for Projects begins with one Anchor Project and an Expansion Aim. It 
 
 The skill distinguishes a Universal Core from Adapter and Platform opportunities, rejects feature-bundle fusion, and treats preservation of the current scope as a valid result. It ranks candidates qualitatively, applies a maintenance gate, and designs falsifiable experiments without implementing them. The result stays conversational unless the user asks to save it, and implementation requires a new or revised User Problem.
 
-The method is inspired by Anthony Fu's “The Set Theory” while remaining an independent, unofficial skill. The source review lives in [`docs/research/antfu-set-theory.md`](docs/research/antfu-set-theory.md), and the explicit bounded-discovery decision is recorded in [`docs/adr/0002-cross-project-discovery-is-explicit-and-bounded.md`](docs/adr/0002-cross-project-discovery-is-explicit-and-bounded.md).
+The method is inspired by Anthony Fu's [“The Set Theory”](https://antfu.me/posts/roads-to-oss-set-theory-vuefesjapan-2023) while remaining an independent, unofficial skill. The explicit bounded-discovery decision is recorded in [`docs/adr/0002-cross-project-discovery-is-explicit-and-bounded.md`](docs/adr/0002-cross-project-discovery-is-explicit-and-bounded.md).
 
 For the complete behavior, see [`skills/set-theory-for-projects/SKILL.md`](skills/set-theory-for-projects/SKILL.md).
 
@@ -178,7 +178,7 @@ The skill covers code and developer tools, data and infrastructure, cloud and de
 
 Repository Tool Audit is deliberately two-stage: it reports at most five evidence-backed Material Tool Opportunities and stops for the user to select one before candidate research begins. This keeps a broad audit from becoming several unrequested migrations.
 
-The method independently applies Anthony Fu's cost-balance and progressive-path lens to repository tool selection. The source review lives in [`docs/research/antfu-progressive-path.md`](docs/research/antfu-progressive-path.md); repository analysis, candidate discovery, category gates, dispositions, and the report contract are this skill's independent extensions.
+The method independently applies Anthony Fu's [“The Progressive Path”](https://antfu.me/posts/roads-to-oss-progressive-vueams-2024) cost-balance and progressive-path lens to repository tool selection; repository analysis, candidate discovery, category gates, dispositions, and the report contract are this skill's independent extensions.
 
 For the complete behavior, see [`skills/tool-fit-for-projects/SKILL.md`](skills/tool-fit-for-projects/SKILL.md).
 

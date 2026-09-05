@@ -367,3 +367,11 @@ _Avoid_: Dependency-by-dependency review, batch tool selection, automatic deep d
 **Tool Evidence Hierarchy**:
 The ordered evidence basis for Tool Fit: repository facts and existing validation first, authoritative project or vendor sources second, and reproducible independent evidence for material claims those sources cannot establish.
 _Avoid_: Popularity ranking, uncited consensus, vendor claims alone
+
+**Frame Expansion**:
+The deliberate introduction of project-relevant perspectives the user has not raised, with enough explanation to make informed judgments and trace the implications of their answers. It considers risks, opportunities, and simplification together; newly surfaced directions are explained before the user chooses whether to deepen, defer, or end exploration.
+_Avoid_: Question volume, risk-only checklist, automatic scope expansion
+
+**Expand the Frame**:
+The standalone Explicit-only Skill that uses Frame Expansion for an existing project or an unrealized idea, improving both project decisions and the user's ability to recognize relevant questions, including questions about the project's goals. Its discussion outcome connects newly introduced perspectives to the decisions they changed or supported and preserves unresolved directions, without treating the agent's broader knowledge as authority over user-owned trade-offs or permission to implement decisions.
+_Avoid_: Knowledge quiz, generic brainstorming, decision outsourcing

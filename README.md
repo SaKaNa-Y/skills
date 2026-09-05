@@ -1,8 +1,8 @@
 # Skills for Deliberate Engineering
 
-Seven explicit, opt-in agent skills for engineering work that benefits from clearer decisions, bounded exploration, guided learning, and user control.
+Eight explicit, opt-in agent skills for engineering work that benefits from clearer decisions, bounded exploration, guided learning, and user control.
 
-Use them to make a conversation actionable, reduce low-value interruptions, protect the current task from scope drift, experience a developer tool before judging its implementation, discover evidence-backed ways to reuse a project's value, decide whether an external tool fits a repository, or get familiar with a tool through guided demonstrations.
+Use them to make a conversation actionable, reduce low-value interruptions, protect the current task from scope drift, experience a developer tool before judging its implementation, discover evidence-backed ways to reuse a project's value, decide whether an external tool fits a repository, get familiar with a tool through guided demonstrations, or explore project perspectives you have not considered.
 
 Each skill has a narrow responsibility. Invoking one does not silently expand the task, transfer a user-owned decision, or bypass an existing safety, authorization, or external-effect checkpoint.
 
@@ -51,6 +51,7 @@ This repository does not publish its own npm package. `npx` runs the general-pur
 | Find where an existing project's value could serve more real contexts | [`set-theory-for-projects`](skills/set-theory-for-projects/SKILL.md) | Evidence-backed candidates, rejection reasons, and experiment ladders |
 | Decide whether a tool fits a repository need | [`tool-fit-for-projects`](skills/tool-fit-for-projects/SKILL.md) | A comparison against the current baseline and a progressive adoption path |
 | Learn the common capabilities of a library, framework, or developer tool | [`get-up-to-speed`](skills/get-up-to-speed/SKILL.md) | Demonstrations grounded in documentation and relevant source, with a retained teaching workspace |
+| Discover project questions you did not know to ask | [`expand-the-frame`](skills/expand-the-frame/SKILL.md) | Explained perspectives, informed trade-offs, and follow-up questions derived from your answers |
 
 ## Invoke Skills Explicitly
 
@@ -144,6 +145,20 @@ $tool-fit-for-projects Compare this repository's current test setup with suitabl
 
 ```text
 $tool-fit-for-projects Audit this repository for material tool opportunities, then let me choose one before you research products.
+```
+
+## Expand Your Project Perspective
+
+### Expand the Frame
+
+**Use it when:** You want to think beyond your initial framing of a project or idea and understand the questions you have not considered, including questions about the project's goals.
+
+**You get:** Targeted investigation of relevant project facts, explanations of unfamiliar concepts, and rounds of questions with recommendations and viable alternatives. The agent considers risks, opportunities, and simplification, traces your answers into further questions, and connects new perspectives to the decisions they change or support.
+
+**Boundary:** The agent explains why a new direction matters before you choose whether to deepen, defer, or end exploration. Deferred directions return only at your request or when new information materially changes their relevance. The skill is standalone and explicitly invoked; it keeps a conversational record by default, follows project conventions for requested persistence, and leaves implementation to a separate instruction.
+
+```text
+$expand-the-frame Help me think through sharing in this notes project. Surface perspectives I have not considered, explain the concepts before asking me to judge, and present each round with recommendations and alternatives. Let me choose which new directions to explore.
 ```
 
 ## Learn Through Demonstrations

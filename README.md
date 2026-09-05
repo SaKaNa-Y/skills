@@ -162,7 +162,7 @@ $tool-fit-for-projects Audit this repository for material tool opportunities, th
 $get-up-to-speed Introduce me to Rolldown's common bundling capabilities. Explain in English, demonstrate each topic yourself, and keep the examples and notes in a new teaching folder. Pause between topics so I can ask questions.
 ```
 
-The teaching structure draws on sampled sections of [HDAlex_John's Shadcn quickstart](https://www.bilibili.com/video/BV1ye411v7Q2/), connecting official documentation, code, and visible results, and on the short, purposeful lessons in [Matt Pocock's teach skill](https://github.com/mattpocock/skills/blob/main/skills/productivity/teach/SKILL.md). These are design references; the installed skill is self-contained and does not fetch those courses during teaching.
+The teaching structure connects official documentation, code, and visible results, and draws on the short, purposeful lessons in [Matt Pocock's teach skill](https://github.com/mattpocock/skills/blob/main/skills/productivity/teach/SKILL.md). This is a design reference; the installed skill is self-contained and does not fetch the reference during teaching.
 
 ## Combine Skills
 

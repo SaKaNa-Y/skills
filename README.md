@@ -150,7 +150,9 @@ $tool-fit-for-projects Audit this repository for material tool opportunities, th
 
 ### Get Up to Speed
 
-**Use it when:** You want a practical introduction to a library, framework, or developer tool, with the agent demonstrating and explaining its common capabilities.
+**Use it when:** You have the relevant language foundations and want a focused, practical introduction to a library, framework, or developer tool, with the agent demonstrating and explaining its common capabilities.
+
+**Not for:** Learning a programming language from scratch, systematic foundational courses, or long-term study planning. The skill identifies this mismatch before preparing lessons or creating a teaching workspace.
 
 **You get:** Preparation that starts with official documentation, then checks the relevant repository structure, public entrypoints, examples, and implementation for the version being demonstrated. Source reading follows the key behaviors and usage limits of each topic. The agent explains in a language you select, connects purpose and effects to necessary concepts, code, and observable results, then waits for your questions or direction to continue. An independent teaching folder retains the examples, explanations, run instructions, and evidence links.
 

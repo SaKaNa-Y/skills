@@ -1,6 +1,6 @@
 ---
 name: get-up-to-speed
-description: Get familiar with a library, framework, or developer tool through documentation-first preparation, targeted source reading, and topic-by-topic demonstrations in a retained teaching workspace.
+description: Teach bounded quickstarts for libraries, frameworks, and developer tools, grounded in documentation and relevant source. Excludes language courses and long-term study plans.
 disable-model-invocation: true
 ---
 
@@ -12,11 +12,13 @@ One invocation supports a conversation with multiple **Teaching Segments**, each
 
 ## 1. Establish the Learning Context
 
+Check that the request fits a bounded quickstart built on the learner's existing language foundations. Teaching a programming language from scratch, building those foundations through a systematic course, and planning long-term study are outside this skill's scope. For such a request, explain the mismatch and suggest a general teaching or study-planning workflow before preparing lessons or creating a workspace. Let the learner choose that direction or explicitly narrow the request; do not silently compress it into a short demonstration or activate another skill.
+
 Identify the target and the learner's intended use from the request and available context. Use a brief official overview to distinguish materially different paths when the target is a suite or offers several roles. If the intended path remains ambiguous, explain the relevant choices and let the learner select one before preparing detailed lessons. Use any stated experience to calibrate explanations; avoid an intake questionnaire or prerequisite quiz.
 
 Establish the **Teaching Language** before teaching. Honor a language explicitly selected for this quickstart; otherwise ask the learner to choose. Use that choice for conversational explanations and saved teaching material, keeping code identifiers, commands, and API names in their conventional form. The conversation's language alone is not a selection.
 
-**Complete when:** the target, intended usage path, and learner-selected Teaching Language are known.
+**Complete when:** the request fits a bounded quickstart and the target, intended usage path, and learner-selected Teaching Language are known. An out-of-scope request stops here until the learner chooses a different direction.
 
 ## 2. Prepare from Documentation and Source
 

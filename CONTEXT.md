@@ -333,8 +333,8 @@ Evidence gathering that may inspect repository state and run existing checks or 
 _Avoid_: Trial execution, dependency installation, migration rehearsal
 
 **Library Quickstart**:
-A learning experience in which the agent uses official documentation and Source Preparation to explain a library, framework, or developer tool's purpose, core concepts, and common usage paths around the learner's understanding. Guided Demonstrations connect these explanations to concrete usage.
-_Avoid_: Usage-First Audit, exhaustive library course, task-only walkthrough
+A bounded learning experience that builds on the learner's existing language foundations, using official documentation and Source Preparation to explain a library, framework, or developer tool's purpose, core concepts, and common usage paths. Guided Demonstrations connect these explanations to concrete usage.
+_Avoid_: Usage-First Audit, exhaustive library course, task-only walkthrough, programming language course, long-term study plan
 
 **Source Preparation**:
 The default, bounded study of a target's relevant repository structure, public entrypoints, examples, and implementation after its official documentation, grounding the key behaviors and usage limits of a Teaching Segment in source matching the demonstrated version. Its depth serves the explanation and does not require exhaustive architectural understanding or imply that implementation details are supported public contracts.

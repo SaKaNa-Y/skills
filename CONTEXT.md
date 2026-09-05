@@ -332,6 +332,30 @@ _Avoid_: Numeric rank, pass/fail score, recommendation confidence
 Evidence gathering that may inspect repository state and run existing checks or benchmarks without installing a candidate, changing source or configuration, or creating a prototype implementation.
 _Avoid_: Trial execution, dependency installation, migration rehearsal
 
+**Library Quickstart**:
+A learning experience in which the agent reads a library, framework, or developer tool's official documentation and reorganizes it around the learner's understanding, explaining its purpose, core concepts, and common usage paths with links to the relevant sources. Guided Demonstrations connect these explanations to concrete usage.
+_Avoid_: Usage-First Audit, exhaustive library course, task-only walkthrough
+
+**Guided Demonstration**:
+A Library Quickstart interaction in which the agent demonstrates documentation-grounded usage and explains the relevant code, behavior, and result while the learner follows the explanation and may ask questions. Progress does not require learner code changes, predictions, exercises, or assessments.
+_Avoid_: Guided Experiment, learner exercise, assessment gate
+
+**Quickstart Workspace**:
+An independent directory retaining the demonstration code and explanations for one Library Quickstart so the learner can run examples and revisit the material. Retaining the workspace does not imply a recurring course or require repeated skill invocation.
+_Avoid_: Disposable audit workspace, long-term learning record, production integration
+
+**Teaching Segment**:
+A coherent Library Quickstart topic presented through explanation and Guided Demonstrations, followed by space for the learner's questions or direction to continue. Progression follows the learner's direction rather than exercise completion.
+_Avoid_: Assessment gate, entire course dump, repeated skill invocation
+
+**Teaching Language**:
+The learner-selected language for conversational explanations and saved teaching material in a Library Quickstart, with code identifiers and API names retaining their conventional form. An explicit choice in the current request establishes it; otherwise it remains a learner decision before teaching begins.
+_Avoid_: Hard-coded tutorial language, inferred language preference, translated API identifiers
+
+**Get Up to Speed**:
+The explicit-only skill for a Library Quickstart, using official-documentation preparation, Teaching Segments, Guided Demonstrations, and a retained Quickstart Workspace to explain common capabilities of a library, framework, or developer tool.
+_Avoid_: Usage-First Audit, exercise-driven course, recurring curriculum
+
 **Repository Tool Audit**:
 The first stage of Tool Fit for Projects that scans the current repository for Material Tool Opportunities and returns at most five prioritized opportunities for the user to choose from before any full Tool Decision begins.
 _Avoid_: Dependency-by-dependency review, batch tool selection, automatic deep dive

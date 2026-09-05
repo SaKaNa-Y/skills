@@ -1,8 +1,8 @@
 # Skills for Deliberate Engineering
 
-Six explicit, opt-in agent skills for engineering work that benefits from clearer decisions, bounded exploration, and user control.
+Seven explicit, opt-in agent skills for engineering work that benefits from clearer decisions, bounded exploration, guided learning, and user control.
 
-Use them to make a conversation actionable, reduce low-value interruptions, protect the current task from scope drift, experience a developer tool before judging its implementation, discover evidence-backed ways to reuse a project's value, or decide whether an external tool fits a repository.
+Use them to make a conversation actionable, reduce low-value interruptions, protect the current task from scope drift, experience a developer tool before judging its implementation, discover evidence-backed ways to reuse a project's value, decide whether an external tool fits a repository, or get familiar with a tool through guided demonstrations.
 
 Each skill has a narrow responsibility. Invoking one does not silently expand the task, transfer a user-owned decision, or bypass an existing safety, authorization, or external-effect checkpoint.
 
@@ -50,6 +50,7 @@ This repository does not publish its own npm package. `npx` runs the general-pur
 | Evaluate a source-accessible library, framework, CLI, or developer tool as a user | [`just-use-it`](skills/just-use-it/SKILL.md) | Hands-on coverage evidence and reproducible Finding Packets |
 | Find where an existing project's value could serve more real contexts | [`set-theory-for-projects`](skills/set-theory-for-projects/SKILL.md) | Evidence-backed candidates, rejection reasons, and experiment ladders |
 | Decide whether a tool fits a repository need | [`tool-fit-for-projects`](skills/tool-fit-for-projects/SKILL.md) | A comparison against the current baseline and a progressive adoption path |
+| Learn the common capabilities of a library, framework, or developer tool | [`get-up-to-speed`](skills/get-up-to-speed/SKILL.md) | Documentation-grounded demonstrations and a retained teaching workspace |
 
 ## Invoke Skills Explicitly
 
@@ -144,6 +145,22 @@ $tool-fit-for-projects Compare this repository's current test setup with suitabl
 ```text
 $tool-fit-for-projects Audit this repository for material tool opportunities, then let me choose one before you research products.
 ```
+
+## Learn Through Demonstrations
+
+### Get Up to Speed
+
+**Use it when:** You want a practical introduction to a library, framework, or developer tool, with the agent demonstrating and explaining its common capabilities.
+
+**You get:** Official-documentation preparation, explanations in a language you select, and one coherent topic at a time. The agent connects purpose and effects to necessary concepts, code, and observable results, then waits for your questions or direction to continue. An independent teaching folder retains the examples, explanations, run instructions, and source links.
+
+**Boundary:** Progress does not depend on you changing code or completing exercises. One invocation supports the full conversation; retained material does not imply a recurring course. Examples belong to the teaching workspace, and execution limits are stated explicitly.
+
+```text
+$get-up-to-speed Introduce me to Rolldown's common bundling capabilities. Explain in English, demonstrate each topic yourself, and keep the examples and notes in a new teaching folder. Pause between topics so I can ask questions.
+```
+
+The teaching structure draws on sampled sections of [HDAlex_John's Shadcn quickstart](https://www.bilibili.com/video/BV1ye411v7Q2/), connecting official documentation, code, and visible results, and on the short, purposeful lessons in [Matt Pocock's teach skill](https://github.com/mattpocock/skills/blob/main/skills/productivity/teach/SKILL.md). These are design references; the installed skill is self-contained and does not fetch those courses during teaching.
 
 ## Combine Skills
 

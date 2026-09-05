@@ -50,7 +50,7 @@ This repository does not publish its own npm package. `npx` runs the general-pur
 | Evaluate a source-accessible library, framework, CLI, or developer tool as a user | [`just-use-it`](skills/just-use-it/SKILL.md) | Hands-on coverage evidence and reproducible Finding Packets |
 | Find where an existing project's value could serve more real contexts | [`set-theory-for-projects`](skills/set-theory-for-projects/SKILL.md) | Evidence-backed candidates, rejection reasons, and experiment ladders |
 | Decide whether a tool fits a repository need | [`tool-fit-for-projects`](skills/tool-fit-for-projects/SKILL.md) | A comparison against the current baseline and a progressive adoption path |
-| Learn the common capabilities of a library, framework, or developer tool | [`get-up-to-speed`](skills/get-up-to-speed/SKILL.md) | Documentation-grounded demonstrations and a retained teaching workspace |
+| Learn the common capabilities of a library, framework, or developer tool | [`get-up-to-speed`](skills/get-up-to-speed/SKILL.md) | Demonstrations grounded in documentation and relevant source, with a retained teaching workspace |
 
 ## Invoke Skills Explicitly
 
@@ -152,9 +152,9 @@ $tool-fit-for-projects Audit this repository for material tool opportunities, th
 
 **Use it when:** You want a practical introduction to a library, framework, or developer tool, with the agent demonstrating and explaining its common capabilities.
 
-**You get:** Official-documentation preparation, explanations in a language you select, and one coherent topic at a time. The agent connects purpose and effects to necessary concepts, code, and observable results, then waits for your questions or direction to continue. An independent teaching folder retains the examples, explanations, run instructions, and source links.
+**You get:** Preparation that starts with official documentation, then checks the relevant repository structure, public entrypoints, examples, and implementation for the version being demonstrated. Source reading follows the key behaviors and usage limits of each topic. The agent explains in a language you select, connects purpose and effects to necessary concepts, code, and observable results, then waits for your questions or direction to continue. An independent teaching folder retains the examples, explanations, run instructions, and evidence links.
 
-**Boundary:** Progress does not depend on you changing code or completing exercises. One invocation supports the full conversation; retained material does not imply a recurring course. Examples belong to the teaching workspace, and execution limits are stated explicitly.
+**Boundary:** Preparation goes deeper than the lesson only where it helps explain usage; it does not require understanding every internal subsystem. Unavailable matching source and execution limits are stated explicitly. Progress does not depend on you changing code or completing exercises. One invocation supports the full conversation; retained material does not imply a recurring course. Examples belong to the teaching workspace.
 
 ```text
 $get-up-to-speed Introduce me to Rolldown's common bundling capabilities. Explain in English, demonstrate each topic yourself, and keep the examples and notes in a new teaching folder. Pause between topics so I can ask questions.

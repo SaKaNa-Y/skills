@@ -333,8 +333,12 @@ Evidence gathering that may inspect repository state and run existing checks or 
 _Avoid_: Trial execution, dependency installation, migration rehearsal
 
 **Library Quickstart**:
-A learning experience in which the agent reads a library, framework, or developer tool's official documentation and reorganizes it around the learner's understanding, explaining its purpose, core concepts, and common usage paths with links to the relevant sources. Guided Demonstrations connect these explanations to concrete usage.
+A learning experience in which the agent uses official documentation and Source Preparation to explain a library, framework, or developer tool's purpose, core concepts, and common usage paths around the learner's understanding. Guided Demonstrations connect these explanations to concrete usage.
 _Avoid_: Usage-First Audit, exhaustive library course, task-only walkthrough
+
+**Source Preparation**:
+The default, bounded study of a target's relevant repository structure, public entrypoints, examples, and implementation after its official documentation, grounding the key behaviors and usage limits of a Teaching Segment in source matching the demonstrated version. Its depth serves the explanation and does not require exhaustive architectural understanding or imply that implementation details are supported public contracts.
+_Avoid_: Whole-repository audit, optional-only source lookup, source-code curriculum
 
 **Guided Demonstration**:
 A Library Quickstart interaction in which the agent demonstrates documentation-grounded usage and explains the relevant code, behavior, and result while the learner follows the explanation and may ask questions. Progress does not require learner code changes, predictions, exercises, or assessments.
@@ -353,7 +357,7 @@ The learner-selected language for conversational explanations and saved teaching
 _Avoid_: Hard-coded tutorial language, inferred language preference, translated API identifiers
 
 **Get Up to Speed**:
-The explicit-only skill for a Library Quickstart, using official-documentation preparation, Teaching Segments, Guided Demonstrations, and a retained Quickstart Workspace to explain common capabilities of a library, framework, or developer tool.
+The explicit-only skill for a Library Quickstart, using official documentation, Source Preparation, Teaching Segments, Guided Demonstrations, and a retained Quickstart Workspace to explain common capabilities of a library, framework, or developer tool.
 _Avoid_: Usage-First Audit, exercise-driven course, recurring curriculum
 
 **Repository Tool Audit**:

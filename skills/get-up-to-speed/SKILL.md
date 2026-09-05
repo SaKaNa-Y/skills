@@ -1,12 +1,12 @@
 ---
 name: get-up-to-speed
-description: Get familiar with a library, framework, or developer tool through official-documentation preparation, topic-by-topic demonstrations, and a retained teaching workspace.
+description: Get familiar with a library, framework, or developer tool through documentation-first preparation, targeted source reading, and topic-by-topic demonstrations in a retained teaching workspace.
 disable-model-invocation: true
 ---
 
 # Get Up to Speed
 
-Teach the purpose, core concepts, and common capabilities of one library, framework, or developer tool. Prepare from official documentation, then connect explanations to examples the agent demonstrates. The learner follows along and may ask questions; learner code changes, predictions, exercises, and assessments are never prerequisites for progress.
+Teach the purpose, core concepts, and common capabilities of one library, framework, or developer tool. Prepare from official documentation and relevant source, then connect explanations to examples the agent demonstrates. The learner follows along and may ask questions; learner code changes, predictions, exercises, and assessments are never prerequisites for progress.
 
 One invocation supports a conversation with multiple **Teaching Segments**, each covering a coherent topic. Retain the examples and explanations in an independent **Quickstart Workspace** for later use. Keep the scope to a practical introduction rather than exhaustive API coverage or a recurring curriculum.
 
@@ -18,15 +18,24 @@ Establish the **Teaching Language** before teaching. Honor a language explicitly
 
 **Complete when:** the target, intended usage path, and learner-selected Teaching Language are known.
 
-## 2. Prepare from Official Documentation
+## 2. Prepare from Documentation and Source
 
-Read the official overview, getting-started guide, and guides for the selected path before composing the teaching outline. Consult API references for the examples being prepared. Align the documentation with the requested or installed version; for a fresh workspace, identify a current documented release and record the version actually used.
+Read the official overview, getting-started guide, and guides for the selected path before composing the teaching outline. Consult API references for the examples being prepared. Select the version to teach from the request or relevant installation; for a fresh workspace, choose a current documented release. Match the documentation to that version and verify the actual installation in step 3.
 
-Build a compact outline around useful outcomes and the concepts needed to understand them. Give a brief map of the target's purpose and main capabilities, then select common usage for demonstration. Explain where the chosen path fits and which advanced or alternate paths sit outside this introduction. Read enough to support this outline, then deepen the relevant documentation as each segment is prepared; do not turn preparation into a whole-project audit.
+Build a compact outline around useful outcomes and the concepts needed to understand them. Give a brief map of the target's purpose and main capabilities, then select common usage for demonstration. Explain where the chosen path fits and which advanced or alternate paths sit outside this introduction.
 
-Organize for understanding rather than copying the documentation's table of contents. Introduce concepts beside the example that needs them. Keep version-sensitive claims traceable to the corresponding official pages. If required documentation is unavailable or contradictory, state the specific gap and narrow the claims; a remembered API is not verified documentation.
+Follow the documentation with **Source Preparation** in every quickstart, even when the docs appear sufficient:
 
-**Complete when:** a bounded topic outline, its official sources, and the version basis are ready, and the first segment has enough documentation to support its explanation and example.
+- Locate source matching the selected release through a tag, commit, or corresponding published source, and record the version relationship. Unmatched source can guide investigation but cannot substantiate claims about the selected version.
+- Orient within the relevant repository packages, public entrypoints, type definitions, official examples, and tests. Select the parts serving the teaching outline rather than surveying every package or file.
+- Identify the concrete behaviors each segment needs to explain. Trace the relevant implementation to answer questions about configuration defaults and precedence, key calls, or restrictions affecting the example. Keep the supporting documentation and versioned code locations with the answers for use in the lesson.
+- Distinguish supported public usage from implementation behavior at the inspected revision. Use tests to clarify cases the project covers and actual runs to check observable results; neither makes an internal interface a supported API.
+
+Orient in the repository and prepare the first segment before teaching begins; prepare later segments as the conversation reaches them. Stop reading once the behaviors needed for the segment have supported explanations and material usage limits are accounted for. Leave unrelated subsystems outside this scope.
+
+If evidence is missing or contradictory, withhold the affected claim and explain the limit. Missing matching source permits a clearly labeled documentation-only preparation for claims the official documentation supports. If a gap prevents the topic's stated outcome, pause that topic and let the learner choose a supported alternative or defer it. Merely recording an unresolved question does not make its answer ready to teach.
+
+**Complete when:** the outline and version basis are known, repository orientation and the first segment's targeted reading are complete or have explicit source-access limits, and every planned behavioral explanation has supporting evidence. Later segments remain planned rather than implicitly prepared.
 
 ## 3. Create the Quickstart Workspace
 
@@ -34,34 +43,38 @@ Use the learner's requested destination, or create a fresh, clearly named direct
 
 Use a small structure that suits the target:
 
-- `README.md`: target and version basis, usage path, topic outline, links to delivered segments, and commands for running the examples.
-- `lessons/`: explanations for delivered Teaching Segments in the selected language, with corresponding source links and example paths.
+- `README.md`: target and version basis, including the inspected source revision or its availability limit, usage path, topic outline, links to delivered segments, and commands for running the examples.
+- `lessons/`: explanations for delivered Teaching Segments in the selected language, with official documentation links, relevant code references for implementation-derived explanations, and example paths.
 - `examples/`: demonstration code and any local fixtures; place package manifests and configuration where the target's tooling expects them.
 
-Prepare the outline up front and add segment material as it is taught. Preserve earlier examples in a runnable form or record a reproducible command for each stage, so later edits do not invalidate earlier explanations. Record the resolved dependencies using the ecosystem's normal manifest and lockfile conventions.
+Add segment material as it is taught. Preserve the code and dependencies needed to reproduce earlier examples, using separate examples or reproducible snapshots when later changes would invalidate them; retaining only an old command is insufficient. Record resolved dependencies using the ecosystem's normal manifest and lockfile conventions. Verify that the installed version matches the preparation; if it differs, align the installation or revisit the affected documentation and source before teaching.
 
-**Complete when:** the independent directory and first example's prerequisites are ready, and its README identifies what is being taught and how the material is organized.
+When the environment cannot run an example, record the missing prerequisite and prepare an unexecuted walkthrough with expected output. Keep this execution limit separate from source access: an unexecuted example may still have been checked against matching source. If the walkthrough cannot serve the topic's outcome, use the topic pause described in step 2.
+
+**Complete when:** the directory and README are ready, and the first example either has a version-matched runnable environment or an explicitly limited walkthrough that can support the topic.
 
 ## 4. Demonstrate One Segment at a Time
+
+Repeat this section for the next planned topic after the learner directs continuation. Complete that topic's Source Preparation using step 2. When a run disagrees with the preparation, check the version and relevant behavior, then correct the explanation or use the topic pause; preserve the target project itself.
 
 Use this rhythm for each Teaching Segment:
 
 1. **Purpose and effect.** Introduce the practical use and show or describe the result the example will produce. Connect it to the previous topic when useful.
-2. **Necessary concept.** Explain the idea needed to understand this example and point to the relevant official documentation. Avoid front-loading concepts the learner has no use for yet.
-3. **Demonstration.** Write and run the example yourself, explaining each material command, configuration choice, or code change. Adapt setup details to the selected usage path instead of presenting unexplained boilerplate.
-4. **Result and reason.** Show the observable output, generated artifact, or rendered UI, and connect it back to the code. When a small agent-performed variation clarifies behavior, demonstrate it and explain what changed. Distinguish observed results from expected behavior; if execution is unavailable, label the example as a documentation-based walkthrough and explain the limitation.
-5. **Takeaway and pause.** Summarize what this capability is useful for and one material caveat when relevant. Save the explanation and example references, preview the next topic, and wait for the learner's questions or direction to continue.
+2. **Necessary concept.** Explain the idea needed to understand this example and point to the relevant official documentation. Introduce implementation detail only when it helps the learner understand or use this capability.
+3. **Demonstration.** Demonstrate the code and run it yourself when execution is available, explaining each material command, configuration choice, or code change. Connect setup details to the selected usage path.
+4. **Result and reason.** Show the observable output, generated artifact, or rendered UI, and connect it back to the code. When a small agent-performed variation clarifies behavior, demonstrate it and explain what changed. Label results from an unexecuted walkthrough as expected rather than observed.
+5. **Takeaway.** Summarize what this capability is useful for and one material caveat when relevant. Save and link the explanation and example. If topics remain, preview the next one and wait for the learner's direction; otherwise proceed to the wrap-up.
 
 Use the actual rendered interface for UI demonstrations when available, and command output or generated artifacts for programmatic tools. Keep operational work within the teaching workspace; service provisioning or changes to the learner's existing projects require their own authorization.
 
-Answer follow-up questions in the current segment, revisiting its example when helpful. A request for clarification does not advance the topic. Continue after the learner directs it; do not deliver the remaining course merely because the examples are already prepared.
+Answer clarification questions within the current segment, revisiting its example as needed. Advance only when the learner directs continuation; prepared material alone is not a reason to move on.
 
-**Complete when:** the current topic's explanation and example are saved, its actual or expected result is honestly identified, and the learner has directed the next step. After the final topic, proceed to the wrap-up without requiring a ceremonial extra confirmation.
+**Complete when:** every scoped topic has been delivered with saved explanations and examples or explicitly skipped by the learner, or the learner ends the quickstart early. Between topics, remain in this section; a completed segment alone does not start the wrap-up.
 
 ## 5. Wrap Up and Retain
 
-Once the scoped topics have been delivered or explicitly skipped by the learner, add a compact recap and common-command or API quick reference to the README. Include the official pages to consult next, example run instructions, and any skipped topics or unexecuted examples. Describe what was covered without claiming the learner has demonstrated mastery.
+On completion or a learner-requested early finish, add a compact recap and common-command or API quick reference for the delivered material to the README. Include the official pages to consult next, example run instructions, and any remaining or skipped topics and unexecuted examples. Describe what was covered without claiming the learner has demonstrated mastery.
 
-Return links to the workspace and its entry document. Retain the teaching files and stop only temporary processes created for this quickstart, noting any process intentionally left running for the learner. If the learner ends early, preserve the delivered material and identify the next topic without generating a long-term learning record or scheduling another session.
+Return links to the workspace and its entry document. Retain the teaching files and stop only temporary processes created for this quickstart, noting any process intentionally left running for the learner. For an early finish, identify the next topic; the retained material is sufficient without a long-term learning record or scheduled session.
 
 **Complete when:** the learner can revisit the delivered explanations and examples, the coverage and execution limits are clear, and temporary process ownership is accounted for.

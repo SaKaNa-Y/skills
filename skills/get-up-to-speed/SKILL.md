@@ -1,82 +1,75 @@
 ---
 name: get-up-to-speed
-description: Teach bounded quickstarts for libraries, frameworks, and developer tools, grounded in documentation and relevant source. Excludes language courses and long-term study plans.
+description: Deliver a complete, self-contained quickstart guide with runnable examples for a library, framework, or developer tool, with implementation depth matched to the learner's goal.
 disable-model-invocation: true
 ---
 
 # Get Up to Speed
 
-Teach the purpose, core concepts, and common capabilities of one library, framework, or developer tool. Prepare from official documentation and relevant source, then connect explanations to examples the agent demonstrates. The learner follows along and may ask questions; learner code changes, predictions, exercises, and assessments are never prerequisites for progress.
+Deliver one **Quickstart Guide** with accompanying runnable examples in an independent **Quickstart Workspace**. Make getting started faster by doing the research, selecting a useful path, and explaining it thoroughly. Cover the target's core capabilities and their relationships, using a representative scenario for depth and small supporting examples where needed.
 
-One invocation supports a conversation with multiple **Teaching Segments**, each covering a coherent topic. Retain the examples and explanations in an independent **Quickstart Workspace** for later use. Keep the scope to a practical introduction rather than exhaustive API coverage or a recurring curriculum.
+Complete the agreed scope in one delivery. Document sections organize the reading; they are not separate teaching sessions awaiting permission to continue. Follow-up conversation clarifies or extends the guide. Learner exercises, assessments, and learning records are not part of this workflow.
 
 ## 1. Establish the Learning Context
 
-Check that the request fits a bounded quickstart built on the learner's existing language foundations. Teaching a programming language from scratch, building those foundations through a systematic course, and planning long-term study are outside this skill's scope. For such a request, explain the mismatch and suggest a general teaching or study-planning workflow before preparing lessons or creating a workspace. Let the learner choose that direction or explicitly narrow the request; do not silently compress it into a short demonstration or activate another skill.
+Build on the learner's existing language foundations. Programming languages taught from scratch, systematic foundational courses, and long-term study plans fall outside a Library Quickstart. Explain that mismatch before preparing material or creating a workspace, and let the learner choose another direction or narrow the request.
 
-Identify the target and the learner's intended use from the request and available context. Use a brief official overview to distinguish materially different paths when the target is a suite or offers several roles. If the intended path remains ambiguous, explain the relevant choices and let the learner select one before preparing detailed lessons. Use any stated experience to calibrate explanations; avoid an intake questionnaire or prerequisite quiz.
+Identify the target, existing experience, and intended use from the request and available context. For a suite, consult its official overview to understand the available paths. Ask only about missing information that materially changes the guide; a stated contribution goal already establishes the need for contribution preparation.
 
-Establish the **Teaching Language** before teaching. Honor a language explicitly selected for this quickstart; otherwise ask the learner to choose. Use that choice for conversational explanations and saved teaching material, keeping code identifiers, commands, and API names in their conventional form. The conversation's language alone is not a selection.
+Establish the **Teaching Language**: honor an explicit choice for this quickstart, otherwise ask the learner to select it. Use it for the guide and conversational explanations, keeping code identifiers, commands, and API names in their conventional form. The conversation's language alone is not a selection.
 
-**Complete when:** the request fits a bounded quickstart and the target, intended usage path, and learner-selected Teaching Language are known. An out-of-scope request stops here until the learner chooses a different direction.
+Define what the guide will enable the reader to do and which advanced or alternate paths are outside its scope. Use this outcome to select detail rather than imposing a word count, lesson count, or full-project curriculum.
 
-## 2. Prepare from Documentation and Source
+**Complete when:** the target, intended outcome, relevant prior knowledge, scope, and Teaching Language are clear enough to select a representative scenario.
 
-Read the official overview, getting-started guide, and guides for the selected path before composing the teaching outline. Consult API references for the examples being prepared. Select the version to teach from the request or relevant installation; for a fresh workspace, choose a current documented release. Match the documentation to that version and verify the actual installation in step 3.
+## 2. Research and Demonstrate the Path
 
-Build a compact outline around useful outcomes and the concepts needed to understand them. Give a brief map of the target's purpose and main capabilities, then select common usage for demonstration. Explain where the chosen path fits and which advanced or alternate paths sit outside this introduction.
+Read the official overview, getting-started material, and guides for the intended use. Select the version from the request or relevant installation; use a current documented release for a fresh setup unless the contribution target calls for a particular source revision. Record the relationship between the demonstrated installation, documentation, and source.
 
-Follow the documentation with **Source Preparation** in every quickstart, even when the docs appear sufficient:
+Choose a scenario that exposes the target's characteristic decisions and behavior. Explain the other core capabilities and how they relate to this path; supplement the scenario where it cannot explain a necessary concept. Prepare the entire agreed scope before delivery.
 
-- Locate source matching the selected release through a tag, commit, or corresponding published source, and record the version relationship. Unmatched source can guide investigation but cannot substantiate claims about the selected version.
-- Orient within the relevant repository packages, public entrypoints, type definitions, official examples, and tests. Select the parts serving the teaching outline rather than surveying every package or file.
-- Identify the concrete behaviors each segment needs to explain. Trace the relevant implementation to answer questions about configuration defaults and precedence, key calls, or restrictions affecting the example. Keep the supporting documentation and versioned code locations with the answers for use in the lesson.
-- Distinguish supported public usage from implementation behavior at the inspected revision. Use tests to clarify cases the project covers and actual runs to check observable results; neither makes an internal interface a supported API.
+Perform **Source Preparation** even when the documentation appears sufficient. Locate matching source, orient within relevant packages and public entrypoints, and follow the implementation and tests needed to explain key behavior, defaults, precedence, and limits. Stop when the guide's explanations are supported. Distinguish public contracts from behavior at the inspected revision, and tests that were read from tests that were run.
 
-Orient in the repository and prepare the first segment before teaching begins; prepare later segments as the conversation reaches them. Stop reading once the behaviors needed for the segment have supported explanations and material usage limits are accounted for. Leave unrelated subsystems outside this scope.
+For ordinary onboarding, bring the key mechanisms into the explanation at the depth needed to use the tool and reason about variations. For a contribution goal, also prepare one continuous path from observable behavior through the relevant implementation to a minimal change and regression test:
 
-If evidence is missing or contradictory, withhold the affected claim and explain the limit. Missing matching source permits a clearly labeled documentation-only preparation for claims the official documentation supports. If a gap prevents the topic's stated outcome, pause that topic and let the learner choose a supported alternative or defer it. Merely recording an unresolved question does not make its answer ready to teach.
+- Explain how to locate the entrypoint, follow the important calls or data transformations, and identify the branch responsible for the behavior.
+- Use a suitable existing problem, historical fix, or explicitly labeled teaching change. Explain the relevant test's setup, trigger, and assertion, why the change belongs at that location, and what the before/after test results establish. A teaching change is not evidence of an upstream bug.
+- Rehearse the relevant contribution setup, change, and focused test in an isolated checkout inside the teaching workspace. Retain the base revision, reproducible patch or changed source, and commands needed to repeat it. Connect the contribution example to the guide's main scenario.
 
-**Complete when:** the outline and version basis are known, repository orientation and the first segment's targeted reading are complete or have explicit source-access limits, and every planned behavioral explanation has supporting evidence. Later segments remain planned rather than implicitly prepared.
+Create the workspace at the requested destination, or in a fresh `get-up-to-speed-<target>` directory under the current workspace. Preserve existing contents. Use `README.md` as the complete guide and `examples/` for code and fixtures; place manifests and configuration where the tooling expects them. Keep supporting source checkouts or evidence as needed, with their explanations in the guide. Operational work stays inside this workspace; changing existing projects, provisioning services, or publishing a contribution requires its own authorization.
 
-## 3. Create the Quickstart Workspace
+Run the examples yourself. Inspect actual rendered interfaces for UI examples and command output or generated artifacts for programmatic examples. Preserve runnable before/after states when an example changes, record dependencies with normal manifests and lockfiles, and verify the installed version against the preparation. Resolve disagreements between observed behavior and the planned explanation before writing the affected claim.
 
-Use the learner's requested destination, or create a fresh, clearly named directory such as `get-up-to-speed-<target>` under the current workspace. Preserve existing contents by choosing an unused directory when needed. Keep demonstrations and dependencies inside this teaching project rather than modifying the library checkout or integrating into an existing application.
+If matching source or execution is unavailable, identify the specific limit and distinguish documentation-supported claims, source-derived explanations, observed results, and expected results. An unexecuted walkthrough may support a limited guide, but cannot establish a verified contribution path. If the missing evidence prevents the intended outcome, explain the blocker and let the learner choose a supported narrower outcome or defer; do not silently substitute an incomplete guide.
 
-Use a small structure that suits the target:
+**Complete when:** every part of the agreed scope has supported explanations and reproducible examples, with execution results or explicit limits that still support the agreed outcome.
 
-- `README.md`: target and version basis, including the inspected source revision or its availability limit, usage path, topic outline, links to delivered segments, and commands for running the examples.
-- `lessons/`: explanations for delivered Teaching Segments in the selected language, with official documentation links, relevant code references for implementation-derived explanations, and example paths.
-- `examples/`: demonstration code and any local fixtures; place package manifests and configuration where the target's tooling expects them.
+## 3. Write the Complete Guide
 
-Add segment material as it is taught. Preserve the code and dependencies needed to reproduce earlier examples, using separate examples or reproducible snapshots when later changes would invalidate them; retaining only an old command is insufficient. Record resolved dependencies using the ecosystem's normal manifest and lockfile conventions. Verify that the installed version matches the preparation; if it differs, align the installation or revisit the affected documentation and source before teaching.
+Write for a reader who has none of the originating conversation. Open with the target's purpose, the reader's intended outcome, assumed background, and a compact map of its core concepts and capabilities. Explain their relationships and where the representative scenario fits. Keep version details and setup instructions easy to find without letting the execution history dominate the introduction.
 
-When the environment cannot run an example, record the missing prerequisite and prepare an unexecuted walkthrough with expected output. Keep this execution limit separate from source access: an unexecuted example may still have been checked against matching source. If the walkthrough cannot serve the topic's outcome, use the topic pause described in step 2.
+Organize the body around the scenario's decisions and behavior. For each important concept or step:
 
-**Complete when:** the directory and README are ready, and the first example either has a version-matched runnable environment or an explicitly limited walkthrough that can support the topic.
+- Establish the problem that makes it necessary and connect it to what the reader already knows.
+- Show the relevant code in the document, link the runnable file, and explain material commands, configuration choices, and how inputs become results.
+- Explain why the result follows. Where a changed condition exposes an important distinction, show a small variation and explain its effect and limits.
 
-## 4. Demonstrate One Segment at a Time
+For contribution preparation, carry the same explanatory approach through the source path, minimal change, and regression test prepared in step 2. Include the code excerpts and reasoning needed to follow the path in the body; source links provide evidence and further reading rather than replacing the explanation.
 
-Repeat this section for the next planned topic after the learner directs continuation. Complete that topic's Source Preparation using step 2. When a run disagrees with the preparation, check the version and relevant behavior, then correct the explanation or use the topic pause; preserve the target project itself.
+Choose sections and diagrams to serve this particular target, without requiring a repeated lesson template. Keep all essential teaching in the primary document. Close with actionable run instructions, a compact command or API reference where useful, scope boundaries, and focused next references. Describe the capabilities covered without claiming the reader has demonstrated mastery.
 
-Use this rhythm for each Teaching Segment:
+**Complete when:** the guide covers the agreed outcome from orientation through the worked path, and a reader can follow the reasoning and reproduce the examples without asking for the next installment or searching linked material for essential explanations.
 
-1. **Purpose and effect.** Introduce the practical use and show or describe the result the example will produce. Connect it to the previous topic when useful.
-2. **Necessary concept.** Explain the idea needed to understand this example and point to the relevant official documentation. Introduce implementation detail only when it helps the learner understand or use this capability.
-3. **Demonstration.** Demonstrate the code and run it yourself when execution is available, explaining each material command, configuration choice, or code change. Connect setup details to the selected usage path.
-4. **Result and reason.** Show the observable output, generated artifact, or rendered UI, and connect it back to the code. When a small agent-performed variation clarifies behavior, demonstrate it and explain what changed. Label results from an unexecuted walkthrough as expected rather than observed.
-5. **Takeaway.** Summarize what this capability is useful for and one material caveat when relevant. Save and link the explanation and example. If topics remain, preview the next one and wait for the learner's direction; otherwise proceed to the wrap-up.
+## 4. Check and Deliver
 
-Use the actual rendered interface for UI demonstrations when available, and command output or generated artifacts for programmatic tools. Keep operational work within the teaching workspace; service provisioning or changes to the learner's existing projects require their own authorization.
+Read the guide from the learner's stated starting point and correct these gaps before delivery:
 
-Answer clarification questions within the current segment, revisiting its example as needed. Advance only when the learner directs continuation; prepared material alone is not a reason to move on.
+- **Understanding:** core concepts have explanations of their relationships and consequences; named features, command tables, and source links alone do not meet this requirement.
+- **Reasoning:** important choices and results have a causal explanation, and relevant variations show how to reason beyond the exact example.
+- **Outcome:** the worked path reaches the agreed endpoint. A contribution guide includes the source reasoning, minimal change, and regression test rather than postponing them to future lessons.
+- **Reproduction:** document snippets agree with retained files, commands identify prerequisites and working directories, and reported outcomes match the evidence. Recheck affected examples after corrections.
+- **Completeness:** the primary document contains the necessary explanation for the whole scope, with functioning local links and clearly identified evidence limits.
 
-**Complete when:** every scoped topic has been delivered with saved explanations and examples or explicitly skipped by the learner, or the learner ends the quickstart early. Between topics, remain in this section; a completed segment alone does not start the wrap-up.
+Return the guide and example links with a brief statement of coverage and material execution limits. Retain the workspace and stop temporary processes created for it, noting any intentionally left running for the learner. If the learner ends the work early, identify the partial material and missing scope explicitly.
 
-## 5. Wrap Up and Retain
-
-On completion or a learner-requested early finish, add a compact recap and common-command or API quick reference for the delivered material to the README. Include the official pages to consult next, example run instructions, and any remaining or skipped topics and unexecuted examples. Describe what was covered without claiming the learner has demonstrated mastery.
-
-Return links to the workspace and its entry document. Retain the teaching files and stop only temporary processes created for this quickstart, noting any process intentionally left running for the learner. For an early finish, identify the next topic; the retained material is sufficient without a long-term learning record or scheduled session.
-
-**Complete when:** the learner can revisit the delivered explanations and examples, the coverage and execution limits are clear, and temporary process ownership is accounted for.
+**Complete when:** the complete guide and examples are accessible, the checks above are satisfied for the agreed scope, and temporary process ownership is accounted for.

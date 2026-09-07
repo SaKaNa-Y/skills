@@ -333,31 +333,31 @@ Evidence gathering that may inspect repository state and run existing checks or 
 _Avoid_: Trial execution, dependency installation, migration rehearsal
 
 **Library Quickstart**:
-A bounded learning experience that builds on the learner's existing language foundations, using official documentation and Source Preparation to explain a library, framework, or developer tool's purpose, core concepts, and common usage paths. Guided Demonstrations connect these explanations to concrete usage.
+A bounded learning experience that reduces the learner's time spent finding a path into a library, framework, or developer tool, building on existing language foundations and explaining the concepts and behavior needed for the learner's intended use in depth. Its scope serves that immediate purpose, with documentation-grounded explanations and Guided Demonstrations, rather than expanding into an ongoing curriculum as detail increases.
 _Avoid_: Usage-First Audit, exhaustive library course, task-only walkthrough, programming language course, long-term study plan
 
 **Source Preparation**:
-The default, bounded study of a target's relevant repository structure, public entrypoints, examples, and implementation after its official documentation, grounding the key behaviors and usage limits of a Teaching Segment in source matching the demonstrated version. Its depth serves the explanation and does not require exhaustive architectural understanding or imply that implementation details are supported public contracts.
+The default, bounded study of a target's relevant repository structure, public entrypoints, examples, tests, and implementation after its official documentation, grounding the guide's explanations in source matching the demonstrated version. The learner's intended use determines how much implementation enters the guide: ordinary onboarding explains key mechanisms, while contribution preparation also follows a relevant source path through a minimal change and regression testing, without treating internal interfaces as supported public contracts.
 _Avoid_: Whole-repository audit, optional-only source lookup, source-code curriculum
 
 **Guided Demonstration**:
-A Library Quickstart interaction in which the agent demonstrates documentation-grounded usage and explains the relevant code, behavior, and result while the learner follows the explanation and may ask questions. Progress does not require learner code changes, predictions, exercises, or assessments.
+A documentation-grounded example demonstrated by the agent and explained in a Quickstart Guide through the relevant code, choices, behavior, and result. Delivery does not require learner code changes, predictions, exercises, or assessments.
 _Avoid_: Guided Experiment, learner exercise, assessment gate
 
-**Quickstart Workspace**:
-An independent directory retaining the demonstration code and explanations for one Library Quickstart so the learner can run examples and revisit the material. Retaining the workspace does not imply a recurring course or require repeated skill invocation.
-_Avoid_: Disposable audit workspace, long-term learning record, production integration
+**Quickstart Guide**:
+The single primary document delivered as a complete Library Quickstart, explaining the target's core capabilities and their relationships through a representative scenario, with the context, reasoning, code explanations, and supporting variations needed to follow the intended learning path without the originating conversation. Runnable examples accompany the guide, advanced topics have explicit boundaries, and later conversation clarifies or extends the delivered material.
+_Avoid_: Execution report, link collection, incremental lesson series
 
-**Teaching Segment**:
-A coherent Library Quickstart topic presented through explanation and Guided Demonstrations, followed by space for the learner's questions or direction to continue. Progression follows the learner's direction rather than exercise completion.
-_Avoid_: Assessment gate, entire course dump, repeated skill invocation
+**Quickstart Workspace**:
+An independent directory retaining one Quickstart Guide and its accompanying runnable examples. Retaining it does not imply a recurring course or require repeated skill invocation.
+_Avoid_: Disposable audit workspace, long-term learning record, production integration
 
 **Teaching Language**:
 The learner-selected language for conversational explanations and saved teaching material in a Library Quickstart, with code identifiers and API names retaining their conventional form. An explicit choice in the current request establishes it; otherwise it remains a learner decision before teaching begins.
 _Avoid_: Hard-coded tutorial language, inferred language preference, translated API identifiers
 
 **Get Up to Speed**:
-The explicit-only skill for a Library Quickstart, using official documentation, Source Preparation, Teaching Segments, Guided Demonstrations, and a retained Quickstart Workspace to explain common capabilities of a library, framework, or developer tool.
+The explicit-only skill that delivers a Library Quickstart as one complete Quickstart Guide with accompanying runnable examples in a retained Quickstart Workspace, grounded in official documentation and Source Preparation.
 _Avoid_: Usage-First Audit, exercise-driven course, recurring curriculum
 
 **Repository Tool Audit**:

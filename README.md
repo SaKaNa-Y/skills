@@ -2,7 +2,7 @@
 
 Eight explicit, opt-in agent skills for engineering work that benefits from clearer decisions, bounded exploration, guided learning, and user control.
 
-Use them to make a conversation actionable, reduce low-value interruptions, protect the current task from scope drift, experience a developer tool before judging its implementation, discover evidence-backed ways to reuse a project's value, decide whether an external tool fits a repository, get familiar with a tool through guided demonstrations, or explore project perspectives you have not considered.
+Use them to make a conversation actionable, reduce low-value interruptions, protect the current task from scope drift, experience a developer tool before judging its implementation, discover evidence-backed ways to reuse a project's value, decide whether an external tool fits a repository, get started with a tool through a complete guide and runnable examples, or explore project perspectives you have not considered.
 
 Each skill has a narrow responsibility. Invoking one does not silently expand the task, transfer a user-owned decision, or bypass an existing safety, authorization, or external-effect checkpoint.
 
@@ -50,7 +50,7 @@ This repository does not publish its own npm package. `npx` runs the general-pur
 | Evaluate a source-accessible library, framework, CLI, or developer tool as a user | [`just-use-it`](skills/just-use-it/SKILL.md) | Hands-on coverage evidence and reproducible Finding Packets |
 | Find where an existing project's value could serve more real contexts | [`set-theory-for-projects`](skills/set-theory-for-projects/SKILL.md) | Evidence-backed candidates, rejection reasons, and experiment ladders |
 | Decide whether a tool fits a repository need | [`tool-fit-for-projects`](skills/tool-fit-for-projects/SKILL.md) | A comparison against the current baseline and a progressive adoption path |
-| Learn the common capabilities of a library, framework, or developer tool | [`get-up-to-speed`](skills/get-up-to-speed/SKILL.md) | Demonstrations grounded in documentation and relevant source, with a retained teaching workspace |
+| Get started with a library, framework, or developer tool | [`get-up-to-speed`](skills/get-up-to-speed/SKILL.md) | One complete guide with runnable examples and depth matched to your goal |
 | Discover project questions you did not know to ask | [`expand-the-frame`](skills/expand-the-frame/SKILL.md) | Explained perspectives, informed trade-offs, and follow-up questions derived from your answers |
 
 ## Invoke Skills Explicitly
@@ -161,23 +161,23 @@ $tool-fit-for-projects Audit this repository for material tool opportunities, th
 $expand-the-frame Help me think through sharing in this notes project. Surface perspectives I have not considered, explain the concepts before asking me to judge, and present each round with recommendations and alternatives. Let me choose which new directions to explore.
 ```
 
-## Learn Through Demonstrations
+## Get Started with a Complete Guide
 
 ### Get Up to Speed
 
-**Use it when:** You have the relevant language foundations and want a focused, practical introduction to a library, framework, or developer tool, with the agent demonstrating and explaining its common capabilities.
+**Use it when:** You have the relevant language foundations and want to understand a library, framework, or developer tool well enough to use it or begin contributing, without finding and assembling the learning path yourself.
 
-**Not for:** Learning a programming language from scratch, systematic foundational courses, or long-term study planning. The skill identifies this mismatch before preparing lessons or creating a teaching workspace.
+**Not for:** Learning a programming language from scratch, systematic foundational courses, or long-term study planning. The skill identifies this mismatch before preparing material or creating a teaching workspace.
 
-**You get:** Preparation that starts with official documentation, then checks the relevant repository structure, public entrypoints, examples, and implementation for the version being demonstrated. Source reading follows the key behaviors and usage limits of each topic. The agent explains in a language you select, connects purpose and effects to necessary concepts, code, and observable results, then waits for your questions or direction to continue. An independent teaching folder retains the examples, explanations, run instructions, and evidence links.
+**You get:** One complete, self-contained guide in a language you select, with runnable examples in an independent workspace. The guide explains core capabilities and their relationships, then uses a representative scenario to connect concepts, code choices, mechanisms, results, and useful variations. Official documentation and matching source ground the explanations. A contribution goal adds a related source walkthrough, minimal change, and regression test to the same path.
 
-**Boundary:** Preparation goes deeper than the lesson only where it helps explain usage; it does not require understanding every internal subsystem. Unavailable matching source and execution limits are stated explicitly. Progress does not depend on you changing code or completing exercises. One invocation supports the full conversation; retained material does not imply a recurring course. Examples belong to the teaching workspace.
+**Boundary:** The agent delivers the agreed scope in one pass; later conversation clarifies or extends it. Detail serves the intended outcome, with advanced topics explicitly bounded. You do not need to complete exercises or maintain a learning record. Examples and any contribution rehearsal stay in the teaching workspace. Source-access and execution limits are stated explicitly; a gap that prevents the intended outcome requires a decision about scope before the guide can be called complete.
 
 ```text
-$get-up-to-speed Introduce me to Rolldown's common bundling capabilities. Explain in English, demonstrate each topic yourself, and keep the examples and notes in a new teaching folder. Pause between topics so I can ask questions.
+$get-up-to-speed Help me get started with Rolldown so I can contribute. Write one complete guide in English explaining the core capabilities through a representative example, including a related source walkthrough, minimal change, and regression test. Keep runnable examples alongside the guide in a new workspace.
 ```
 
-The teaching structure connects official documentation, code, and visible results, and draws on the short, purposeful lessons in [Matt Pocock's teach skill](https://github.com/mattpocock/skills/blob/main/skills/productivity/teach/SKILL.md). This is a design reference; the installed skill is self-contained and does not fetch the reference during teaching.
+The original design drew on the purposeful lessons in [Matt Pocock's teach skill](https://github.com/mattpocock/skills/blob/main/skills/productivity/teach/SKILL.md). Get Up to Speed delivers a bounded guide and examples as one artifact; it does not manage an ongoing teaching program. The reference is attribution only and is not fetched during use.
 
 ## Combine Skills
 

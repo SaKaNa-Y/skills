@@ -1,8 +1,8 @@
 # Skills for Deliberate Engineering
 
-Eight explicit, opt-in agent skills for engineering work that benefits from clearer decisions, bounded exploration, guided learning, and user control.
+Nine explicit, opt-in agent skills for engineering work that benefits from clearer decisions, bounded exploration, guided learning, and user control.
 
-Use them to make a conversation actionable, reduce low-value interruptions, protect the current task from scope drift, experience a developer tool before judging its implementation, discover evidence-backed ways to reuse a project's value, decide whether an external tool fits a repository, get started with a tool through a complete guide and runnable examples, or explore project perspectives you have not considered.
+Use them to make a conversation actionable, reduce low-value interruptions, protect the current task from scope drift, experience a developer tool before judging its implementation, discover evidence-backed ways to reuse a project's value, decide whether an external tool fits a repository, get started with a tool through a complete guide and runnable examples, explore project perspectives you have not considered, or improve skills from their actual use.
 
 Each skill has a narrow responsibility. Invoking one does not silently expand the task, transfer a user-owned decision, or bypass an existing safety, authorization, or external-effect checkpoint.
 
@@ -52,6 +52,7 @@ This repository does not publish its own npm package. `npx` runs the general-pur
 | Decide whether a tool fits a repository need | [`tool-fit-for-projects`](skills/tool-fit-for-projects/SKILL.md) | A comparison against the current baseline and a progressive adoption path |
 | Get started with a library, framework, or developer tool | [`get-up-to-speed`](skills/get-up-to-speed/SKILL.md) | One complete guide with runnable examples and depth matched to your goal |
 | Discover project questions you did not know to ask | [`expand-the-frame`](skills/expand-the-frame/SKILL.md) | Explained perspectives, informed trade-offs, and follow-up questions derived from your answers |
+| Improve skills based on how they were used | [`evolve-skills`](skills/evolve-skills/SKILL.md) | Purpose-led, user-selected improvements with behavioral evidence and per-skill recovery history |
 
 ## Invoke Skills Explicitly
 
@@ -179,6 +180,20 @@ $get-up-to-speed Help me get started with Rolldown so I can contribute. Write on
 
 The original design drew on the purposeful lessons in [Matt Pocock's teach skill](https://github.com/mattpocock/skills/blob/main/skills/productivity/teach/SKILL.md). Get Up to Speed delivers a bounded guide and examples as one artifact; it does not manage an ongoing teaching program. The reference is attribution only and is not fetched during use.
 
+## Evolve Skills from Experience
+
+**Use it when:** You have used one or more skills in a conversation and want to improve their future use. The skill reads each target's description and instructions before analyzing the full available conversation, including successful adaptations and opportunities for better methods.
+
+**You get:** Concrete hypotheses discussed before modification, before/after behavioral comparisons with relevant transfer probes, and detailed per-skill history explaining the evidence, choices, exact changes, validation, and recovery method. History follows the target's source repository under `docs/skill-evolution/<skill-name>/`; standalone installations use an agreed persistent location.
+
+**Boundary:** Actual skill use is required. A catalog entry or mention alone is insufficient. Evolution stays within each target's purpose unless a responsibility change is separately discussed. Candidates remain separate from active versions until required behavioral validation supports adoption; unavailable validation leaves a retained candidate and a Pending Validation record.
+
+```text
+$evolve-skills Review the skills used in this conversation against their purposes. Discuss concrete improvements with me, then validate and record the changes I select, preserving what is needed to reverse them.
+```
+
+It works independently and pairs well with Matt Pocock's grilling series for deeper discussion of the proposed changes. Those skills are optional and installed separately.
+
 ## Combine Skills
 
 Use combinations when two independent responsibilities are both useful:
@@ -201,6 +216,10 @@ $prune-the-tree $grill-with-docs Stress-test this product idea without offloadin
 
 ```text
 $yak-shaving-triage $grilling Stress-test this design, preserve unrelated confirmed problems, and keep the interview focused on the design.
+```
+
+```text
+$evolve-skills $grill-with-docs Find opportunities to improve the skills used here. Stress-test the hypotheses and trade-offs before applying the changes I select, and preserve detailed evolution history.
 ```
 
 ## Design Principles

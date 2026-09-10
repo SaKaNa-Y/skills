@@ -1,0 +1,6 @@
+interface:
+  display_name: "Evolve Skills"
+  short_description: "Improve skills from use with traceable, reversible changes"
+  default_prompt: "Use $evolve-skills to review the skills used in this conversation against their purposes, discuss improvements with me, then validate and record the changes I select."
+policy:
+  allow_implicit_invocation: false

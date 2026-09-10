@@ -375,3 +375,23 @@ _Avoid_: Question volume, risk-only checklist, automatic scope expansion
 **Expand the Frame**:
 The standalone Explicit-only Skill that uses Frame Expansion for an existing project or an unrealized idea, improving both project decisions and the user's ability to recognize relevant questions, including questions about the project's goals. Its discussion outcome connects newly introduced perspectives to the decisions they changed or supported and preserves unresolved directions, without treating the agent's broader knowledge as authority over user-owned trade-offs or permission to implement decisions.
 _Avoid_: Knowledge quiz, generic brainstorming, decision outsourcing
+
+**Skill Evolution**:
+The iterative improvement of a skill through opportunities discovered in how it was used in conversation, assessed against that skill's stated purpose as introduced by its description and clarified by its instructions. It includes successful approaches worth carrying forward and changes that could improve future use, with a detailed history kept separately for each skill.
+_Avoid_: Execution compliance audit, failure-only review, change for its own sake
+
+**Skill Evolution Opportunity**:
+An evidence-grounded possibility for improving future use of a skill in relation to its particular purpose, discovered in an actual usage conversation. It may concern the method, sequence of work, instruction structure, references, templates, or validation scenarios, including effective approaches worth carrying forward.
+_Avoid_: Compliance violation, mandatory new rule, confirmed improvement
+
+**Skill Evolution Hypothesis**:
+A concrete proposed change that connects a Skill Evolution Opportunity to an expected benefit and a way to compare behavior before and after the change. A single clear observation can support a hypothesis; evidence from validation determines whether the expected benefit is supported.
+_Avoid_: Proven improvement, repeated-failure prerequisite, untested success claim
+
+**Skill Evolution Record**:
+A detailed, skill-specific history that lets a later reader understand what changed, why it changed, and what evidence supports it, with enough information to reverse the recorded changes. It preserves the distinction between proposed changes, applied changes, and observed validation results.
+_Avoid_: Summary-only changelog, conversation dump, implied rollback support
+
+**Evolve Skills**:
+The Explicit-only Skill that performs Skill Evolution from prior skill use, taking user-selected hypotheses through modification, validation, and a Skill Evolution Record. It can operate independently, while co-active grilling skills deepen discussion of the hypotheses and trade-offs.
+_Avoid_: Compliance checker, generic skill generator, mandatory grilling dependency

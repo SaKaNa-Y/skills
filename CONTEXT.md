@@ -384,6 +384,10 @@ _Avoid_: Execution compliance audit, failure-only review, change for its own sak
 An evidence-grounded possibility for improving future use of a skill in relation to its particular purpose, discovered in an actual usage conversation. It may concern the method, sequence of work, instruction structure, references, templates, or validation scenarios, including effective approaches worth carrying forward.
 _Avoid_: Compliance violation, mandatory new rule, confirmed improvement
 
+**Skill Evolution Target**:
+A skill within the scope selected for Skill Evolution. Explicitly named targets delimit that scope; other co-used skills may supply relevant context without becoming targets for proposals or evolution records.
+_Avoid_: Every co-used skill, catalog entry, contextual dependency
+
 **Skill Evolution Hypothesis**:
 A concrete proposed change that connects a Skill Evolution Opportunity to an expected benefit and a way to compare behavior before and after the change. A single clear observation can support a hypothesis; evidence from validation determines whether the expected benefit is supported.
 _Avoid_: Proven improvement, repeated-failure prerequisite, untested success claim
@@ -391,6 +395,10 @@ _Avoid_: Proven improvement, repeated-failure prerequisite, untested success cla
 **Skill Evolution Record**:
 A detailed, skill-specific history that lets a later reader understand what changed, why it changed, and what evidence supports it, with enough information to reverse the recorded changes. It preserves the distinction between proposed changes, applied changes, and observed validation results.
 _Avoid_: Summary-only changelog, conversation dump, implied rollback support
+
+**External Skill Change**:
+A change to a target skill outside its recorded evolution workflow, identified from available version evidence or a difference between the last recorded applied state and the current state. Recoverable file differences do not by themselves establish the intervening sequence, motivation, or validation results.
+_Avoid_: Validated evolution, reconstructed intent, complete version history
 
 **Evolve Skills**:
 The Explicit-only Skill that performs Skill Evolution from prior skill use, taking user-selected hypotheses through modification, validation, and a Skill Evolution Record. It can operate independently, while co-active grilling skills deepen discussion of the hypotheses and trade-offs.

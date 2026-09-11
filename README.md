@@ -182,11 +182,11 @@ The original design drew on the purposeful lessons in [Matt Pocock's teach skill
 
 ## Evolve Skills from Experience
 
-**Use it when:** You have used one or more skills in a conversation and want to improve their future use. The skill reads each target's description and instructions before analyzing the full available conversation, including successful adaptations and opportunities for better methods.
+**Use it when:** You have used one or more skills in a conversation and want to improve their future use. Named targets limit the review to those skills; otherwise it identifies the skills actually used. It reads each target's description and instructions before analyzing the available conversation, including successful adaptations and opportunities for better methods.
 
-**You get:** Concrete hypotheses discussed before modification, before/after behavioral comparisons with relevant transfer probes, and detailed per-skill history explaining the evidence, choices, exact changes, validation, and recovery method. History follows the target's source repository under `docs/skill-evolution/<skill-name>/`; standalone installations use an agreed persistent location.
+**You get:** Concrete hypotheses discussed before modification, before/after behavioral comparisons with relevant transfer probes, and detailed private per-skill history explaining the evidence, choices, exact changes, validation, and recovery method. Each run reconciles external edits with the last recorded active state and preserves known history gaps. History follows the source repository under the Git-ignored `docs/skill-evolution/<skill-name>/`; standalone installations use an agreed persistent location. Private records require separate backup or handoff.
 
-**Boundary:** Actual skill use is required. A catalog entry or mention alone is insufficient. Evolution stays within each target's purpose unless a responsibility change is separately discussed. Candidates remain separate from active versions until required behavioral validation supports adoption; unavailable validation leaves a retained candidate and a Pending Validation record.
+**Boundary:** Actual skill use is required. A catalog entry or mention alone is insufficient. Personal preferences remain usage context; shared changes must serve the target's domain, and each iteration examines the whole method for cumulative drift. Candidates remain separate during validation, then supported selected changes are applied in the same run using existing approval. A concrete validation blocker leaves a retained candidate and Pending Validation record; merely unperformed checks remain work to complete.
 
 ```text
 $evolve-skills Review the skills used in this conversation against their purposes. Discuss concrete improvements with me, then validate and record the changes I select, preserving what is needed to reverse them.

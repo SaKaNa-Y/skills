@@ -6,6 +6,10 @@ Use this reference when consulting earlier evolution, preparing a candidate, rec
 
 Prefer `docs/skill-evolution/<skill-name>/` in the verified source repository of the target skill. For a standalone installation without a source repository, establish a persistent history location with the user before candidate preparation. Use an existing agreed location on subsequent runs.
 
+Generated history is private by default. Before writing records or payloads in a Git repository, ensure the agreed history root is excluded by a narrow `.gitignore` rule, normally `/docs/skill-evolution/`, preserving existing rules. Check both ignore behavior and whether any history files are already tracked. An ignore rule does not untrack files or erase published history; keep new private material out of an already tracked location until its handling is resolved. Index removal or history rewriting is a separate action, not part of adding an ignore rule. For a standalone location, keep the same private-storage intent without requiring Git.
+
+Indexes, evidence, candidates, and recovery payloads share that private boundary. Source instructions and reusable templates can remain public. Ignored records require separate backup or private handoff to another maintainer; ordinary pushes do not preserve them. Report their location without copying private contents into a public commit, issue, or validation report.
+
 Keep an identity in the index: declared name, source repository and relative skill path, and known separate installation paths. Disambiguate same-named skills from different origins with a stable source-qualified directory name. A rename retains or explicitly links its previous history. If the record directory is shared, identities still distinguish the targets.
 
 Read the index first, then iterations relevant to the current opportunity, changed method, or pending validation. Extend an existing pending iteration when continuing its same hypothesis; create a new linked iteration when a changed hypothesis, later adoption, or new evidence represents a distinct evolution. Preserve old outcomes when appending follow-up evidence or marking an iteration superseded or rolled back.
@@ -24,6 +28,18 @@ docs/skill-evolution/<skill-name>/
 
 Create only the material needed for the chosen recovery method. Preserve relative file paths in snapshots. Record additions, deletions, file types, permissions, and any symlink targets relevant to restoring the change. History files themselves stay outside the target's recovery payload. Files outside the skill directory need an explicit path mapping rather than ambiguous flattened filenames.
 
+## Reconcile changes since the last run
+
+Identify the most recent recorded active state, including applied trials and completed rollbacks. A later candidate, rejection, or no-change review does not replace that state. Compare it with the actual target files and relevant supporting resources before proposing a new change. Use the recorded versions, snapshots, or manifests to distinguish known differences from paths whose older state is unavailable.
+
+When differences exist, preserve an External Change entry connecting the recorded state to the current baseline. Capture the known before/current states, affected paths, recoverable diffs or commits, and evidence limits. Git history can recover committed states; snapshots may recover endpoints. Neither proves an unrecorded edit sequence, its motivation, or successful validation. Describe only the net change when intermediate states are missing. External Change entries describe changes already present, not edits performed or endorsed by this run.
+
+If no earlier state is available, establish an initial baseline and mark the earlier history unavailable. Persist the reconciled baseline and gaps in the selected target's private history even when the review pauses before a change is selected; target edits still wait for selection. For older partial records, identify comparison coverage and unknown paths rather than claiming the whole skill is unchanged. Do not infer unseen changes merely because a version record is absent. Reconcile only the selected targets.
+
+Preserve a current-state manifest with the baseline and after each actual state transition: target-relative paths, file types and relevant modes, content identities, and references to recoverable content where available. Include the target's instructions and supporting resources, recording the scope for external dependencies; exclude generated history. A manifest detects later changes but cannot recreate missing contents. Reuse unchanged payloads or reliable Git references; snapshot recovery remains scoped to the files actually changed by the iteration.
+
+Continue from the reconciled current baseline. Pending patches based on an earlier state need reconciliation and affected validation before adoption. Record gaps honestly; continuous capture while this skill is inactive is outside this workflow.
+
 ## Index template
 
 ```markdown
@@ -31,13 +47,16 @@ Create only the material needed for the chosen recovery method. Preserve relativ
 
 Source: <repository and relative skill path, or standalone origin>
 Installations: <known separate copies, or none identified>
+Current state: <latest known active state and manifest; comparison coverage and gaps>
 
-| Iteration | Date | Purpose of change | Adoption | Validation | Record |
-| --- | --- | --- | --- | --- | --- |
-| <id> | <date> | <short outcome> | <state> | <state> | [Details](<id>/record.md) |
+| Entry | Kind | Date | Purpose or observed change | Adoption | Validation | Record |
+| --- | --- | --- | --- | --- | --- | --- |
+| <id> | <Evolution / External Change / Baseline> | <date> | <short outcome> | <state or not applicable> | <state or unknown> | [Details](<id>/record.md) |
 ```
 
 Track adoption and validation separately. Useful adoption states are Proposed, Candidate, Applied, Rejected, No Change, Superseded, and Rolled Back. Validation can be Not Run, Pending Validation, Supported, Unsupported, or Inconclusive. Record the scope and basis of a Supported result; it is not a claim that all future uses improve. An explicitly selected unverified trial is Applied / Pending Validation.
+
+Baseline and External Change entries record observed states; adoption by this workflow is not applicable and historical validation is unknown unless evidence establishes it. Update the current-state pointer when accepting a reconciled baseline, applying a change, or completing a rollback. Preserve earlier entries and their outcomes.
 
 ## Iteration record template
 
@@ -48,6 +67,7 @@ Use the following as a substantive record, replacing placeholders with observed 
 
 ## Identity and state
 Date; skill identity; actual edit target; source and installation relationship.
+Entry kind; previous active-state reference; external-change reconciliation and gaps.
 Adoption and validation states; related prior or subsequent iterations.
 Historical skill version if known; actual pre-change baseline and candidate identity.
 
@@ -60,6 +80,7 @@ Separate facts, inference, and unknowns; identify contributions from co-used ski
 
 ## Hypothesis and decision
 The opportunity, proposed change, and why it may improve the target's purpose.
+Applicability conditions, personal preferences left in usage context, and whole-method findings.
 Expected behavior, preserved behavior, alternatives, and trade-offs.
 The user's selection and scope; deferred or rejected alternatives and reasons.
 Links to earlier attempts and the new evidence supporting any revisit.
@@ -74,10 +95,12 @@ Criteria and scenarios; baseline and candidate versions; actual runs and outputs
 Original-scenario comparison and relevant transfer probes.
 Structural checks separately; regressions, limitations, and checks not run.
 Supported benefit or uncertainty within the tested scope.
+For blocked validation: attempted checks, missing prerequisite, and resumption condition.
 
 ## Recovery
 Recovery method; baseline identifier; payload locations; path and file-state mapping.
 Post-change identity needed to detect later edits.
+Current-state manifest and the scope of states recoverable from retained content.
 Specific procedure to reverse only this iteration and verify the restored state.
 Whether recovery was exercised, what was checked, and any remaining limitation.
 

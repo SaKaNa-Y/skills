@@ -10,6 +10,12 @@ A single append-only document per skill was considered simpler initially but har
 
 History follows the target skill's source repository, under `docs/skill-evolution/<skill-name>/`. When only a standalone installation is available, establish a persistent history location before proceeding. This avoids spreading one skill's history across the projects where it happened to be used or routinely distributing accumulated history inside its installed runtime.
 
+Generated evolution history is private by default: ignore the complete `docs/skill-evolution/` directory, including indexes, evidence, candidates, and recovery payloads. Source instructions and reusable record templates remain shareable. Ignored records need separate backup or private handoff when another maintainer needs their rationale or recovery material; Git references alone do not preserve these records. An ignore rule does not remove already tracked content or erase previously published history.
+
 The explicitly invoked `evolve-skills` workflow will discuss concrete hypotheses with the user before implementing the selected changes, validating them, and recording the results. It can run independently; co-active grilling skills deepen the discussion without becoming a required dependency.
 
 When behavioral validation cannot be completed, retain the candidate patch or version with a pending-validation record and leave the active version unchanged. This preserves useful work without treating an unverified candidate as an adopted improvement. A user can explicitly choose to trial it.
+
+A candidate is an intermediate state, not the normal delivery endpoint. Continue feasible validation and apply a supported selected candidate during the same run, reusing the user's existing selection when the change and target remain the same. Distinguish validation not yet attempted from a concrete blocker or an unsupported result. A blocked iteration records the feasible checks attempted, missing prerequisite, and resumption condition; ordinary unperformed work is not a reason to stop.
+
+At each invocation, reconcile the target's current state with its last recorded applied state. Preserve recoverable external changes and explicitly identify unavailable intermediate versions, reasons, or validation evidence before continuing from the actual current baseline. This provides an honest connection across runs without claiming to capture changes while the skill is inactive. Continuous tracking through hooks, enforced editing entry points, or other tooling remains a separate design decision.

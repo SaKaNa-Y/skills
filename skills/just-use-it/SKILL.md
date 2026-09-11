@@ -18,6 +18,8 @@ Work **slice-first**. Complete one user-outcome **Capability Journey**, its Disc
 
 Identify the target, its intended user, its user-facing documentation, and the environment needed to exercise it. Infer these from the request and workspace; ask only when more than one materially different target remains.
 
+Establish which revision, release, or running instance the request concerns. When the current checkout is the audit target and no other version is specified, prefer its documented build over an unrelated installed release. An explicit release or instance request takes precedence. Before crediting behavior, confirm the effective executable, imported package, or deployment through available launch or identity metadata. Scope observations to what actually ran; unknown source correspondence limits source attribution, not direct observation.
+
 Keep behavioral implementation source and the target project's issue tracker closed during the first two passes. Follow repository instructions and read public documentation plus entrypoint metadata needed to launch the tool. If the documented launch path fails, preserve that result before using operational metadata to make the target runnable; implementation remains closed until the source pass.
 
 Source-closed means behaviorally blind, not safety-blind. Inspect the minimum install hooks, launch scripts, permissions, and external effects needed to decide whether execution is safe, without using them to infer product behavior. If safe execution requires broader source inspection, disclose that the blind sequence cannot be preserved rather than claiming a Usage-First Audit followed it.
@@ -31,7 +33,7 @@ Prefer disposable state:
 - Record every temporary path, process, server, and browser context created by the audit so the exact resources can be cleaned on completion, failure, or interruption.
 - Keep external effects inside disposable projects, test data, or sandboxes. Preserve every existing authorization checkpoint; mark a capability Blocked when it cannot be exercised safely.
 
-**Complete when:** the target, public starting material, browser choice, isolation boundary, cleanup targets, and every known prerequisite decision are explicit.
+**Complete when:** the target and its runtime correspondence or uncertainty, public starting material, browser choice, isolation boundary, cleanup targets, and every known prerequisite decision are explicit.
 
 ## 2. Map the Documented Surface
 
@@ -66,7 +68,7 @@ A documentation error is a Finding even when the implementation works through an
 
 ## 4. Reconcile with Source
 
-Open the implementation source only now. Inspect public exports, routes, commands, flags, feature registration, examples, and tests to find shipped public capabilities missing from the current surface. Treat a capability reachable through a shipped package export, executable, route, or browser global as public unless the project marks it internal, test-only, or unreleased. A hidden help entry is a discoverability signal, not by itself proof that the capability is private. Report unresolved public intent explicitly.
+Open the implementation source only now, using the revision corresponding to the experienced artifact where available. Keep leads from other revisions qualified until exercised on their own artifacts. Inspect public exports, routes, commands, flags, feature registration, examples, and tests to find shipped public capabilities missing from the current surface. Treat a capability reachable through a shipped package export, executable, route, or browser global as public unless the project marks it internal, test-only, or unreleased. A hidden help entry is a discoverability signal, not by itself proof that the capability is private. Report unresolved public intent explicitly.
 
 Map every source-confirmed public entrypoint to an existing capability, an explicit exclusion, or a newly added capability. Exercise every newly added capability through the interface available to a user. Treat source evidence as a lead: observable use confirms a Finding; source-only suspicion remains an unverified lead in the report.
 
@@ -82,7 +84,7 @@ After the source surface is accounted for, the target project's public issue his
 
 Return a conversational audit report containing:
 
-- the target and environment;
+- the intended target, the artifact or instance actually exercised, and the environment;
 - the Coverage Ledger and Capability Surface with each state;
 - a compact Verification Trace for every `Verified` capability;
 - functional, documentation, visual, interaction, operational, Capability Gap, and Intermittent Findings with their evidence;

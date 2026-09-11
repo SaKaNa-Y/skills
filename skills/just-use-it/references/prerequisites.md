@@ -11,7 +11,7 @@ Before proposing an installation:
 - check the public documentation for a supported prebuilt binary, package, browser experience, container, devcontainer, or other path that avoids changing the user's machine; and
 - inspect only the installation or entrypoint metadata allowed by the source-closed safety check. Do not read behavioral implementation source early to infer how the product works.
 
-Do not treat an optional toolchain as mandatory merely because maintainers use it for development. Prefer supported user-facing paths over contributor setup.
+Evaluate alternatives against the target established during framing. Build prerequisites matter for a selected checkout, while contributor tooling can be unnecessary for an explicit release or running instance. An available prebuilt artifact completes target coverage only when its correspondence is established; otherwise keep any comparison separately scoped and the requested target's missing coverage explicit.
 
 ## Request Approval Before Installation
 
@@ -24,7 +24,7 @@ If installation is still required, pause that capability and present one prerequ
 - the expected download, time, disk use, permissions, and persistent machine changes; and
 - the cleanup plan, including anything that would remain installed.
 
-Offer supported choices in this order when available:
+Among supported options that match the selected audit target, offer available choices in this order:
 
 1. use an already installed compatible environment;
 2. use an official prebuilt or browser-based path;

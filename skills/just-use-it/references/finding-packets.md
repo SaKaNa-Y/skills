@@ -22,13 +22,17 @@ Keep one session-scoped Finding Packet for each independently understandable beh
 
 - affected capability and user impact;
 - environment, version, prerequisites, and initial state;
-- exact public action path;
+- exact public action path and the material input or state needed to replay it;
 - expected and observed behavior;
 - reproduction attempts and whether the result is stable or intermittent;
 - available screenshot, output, log, viewport, or documentation location; and
 - material unknowns, stated without guessing.
 
 For documentation Findings, identify the exact public instruction or claim. For visual Findings, include the rendered state and viewport. For Capability Gaps, identify the independently useful behaviors that cannot coexist and the smallest missing control or composition boundary, without designing the solution. Keep secrets and unrelated personal data out of the packet.
+
+Preserve the failing specimen or an exact creation command when retyping a sample could change the observation. Keep material whitespace, encoding, argument boundaries, and pre-existing state explicit when relevant; a displayed code block or a path to soon-deleted temporary data may not preserve them. Retain the necessary input with the packet before cleanup. Ordinary findings need only the representation sufficient to replay their behavior.
+
+Describe the condition actually observed, distinguishing it from an inferred trigger. Record which dimensions changed in a comparison and leave untested conditions unknown.
 
 Describe concrete user impact. Assign severity or priority only when the project supplies the applicable scale and enough evidence supports the classification.
 

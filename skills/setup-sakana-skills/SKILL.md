@@ -16,11 +16,11 @@ Read existing `AGENTS.md`, `CLAUDE.md`, their configuration pointers, and `docs/
 
 Treat existing issue-tracker and domain conventions as the starting point. Identify duplicate pointers, conflicting choices, and symlinked or shared entrypoint files before editing. An unavailable skill needs no speculative configuration. If an inherited pointer already provides the needed convention, reuse it instead of copying its contents into another file.
 
-**Complete when:** the existing conventions, supported consumers, missing requirements, and conflicting settings are known from the project rather than guessed.
+**Complete when:** each installed consumer's configuration requirements are matched to existing guidance, a missing setting, or a conflict. If no installed consumer needs configuration, report that setup is unnecessary and stop.
 
 ## 2. Resolve Missing Choices
 
-Carry forward choices the user has already made. Ask only unresolved decisions:
+Carry forward choices the user has already made. Ask only unresolved decisions required by the identified consumers; skip tracker choices when none needs issue tracking:
 
 - **Agent entrypoints:** Claude Code (`CLAUDE.md`), Codex (`AGENTS.md`), or both. Existing files suggest usage but do not override the user's selected clients.
 - **Canonical issue tracker:** GitHub Issues or local Markdown. Recommend an established tracker first; when none exists and a GitHub repository is verified, propose GitHub. Otherwise offer local Markdown. Preserve an existing other tracker and its usable guidance; ask for its conventions only when incomplete.

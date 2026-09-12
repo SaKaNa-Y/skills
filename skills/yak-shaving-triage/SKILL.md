@@ -15,7 +15,7 @@ The User Problem is the outcome and boundaries the user currently authorizes. Th
 
 When an observable problem appears or the next action would switch work, compare it with the User Problem. Necessary investigation and repair stay with the active workflow, at whatever depth it needs. For a potentially independent problem, read [issue capture](references/issue-capture.md) to qualify it and preserve evidence already encountered or cheaply reconfirmed. A suspicion or stylistic preference alone returns directly to the main task.
 
-**Complete when:** the branch either belongs to the main task or has enough evidence to be retained as a distinct candidate without pursuing its diagnosis or repair.
+**Complete when:** the branch belongs to the main task, qualifies for retention with bounded evidence, or is dismissed as unsupported or non-actionable. Resume the main task after dismissal.
 
 ## 2. Reconcile in the Background
 

@@ -8,11 +8,14 @@ Use this seed when the user chooses GitHub Issues and usable guidance is missing
 Canonical destination: <owner/repository> GitHub Issues.
 Tool: <project-selected GitHub CLI or connector>.
 
-Read existing open and closed issues before proposing a new or updated record. Search related pull requests and compare their current state and coverage with the observed problem; a shared title or component does not establish identity or a completed fix. Use the selected repository explicitly when multiple remotes could resolve differently.
+Use the selected repository explicitly when multiple remotes could resolve differently.
 
-Follow existing issue templates and documented label conventions. A skill that requires approval of exact issue mutations retains that requirement; this configuration grants no publication authority.
+Issue format: <existing template or convention, or the active skill's draft format>.
+Labels: <existing convention or guidance pointer, or none configured>.
 
-Related PRs are reconciliation evidence. They are not an additional issue destination or a request to review, modify, or merge those PRs.
+Related PRs supply read-only reconciliation evidence; GitHub Issues remains the canonical write destination.
+
+Follow the active skill's qualification, reconciliation, and approval workflow. This guidance supplies project conventions and grants no write authority.
 ```
 
 Keep the project's existing PR-as-request-surface setting unchanged. Supplemental reconciliation searches do not enable PR triage. Add actual issue-template or label pointers only when they exist and affect a supported consumer; setup does not manufacture a label vocabulary.

@@ -275,7 +275,7 @@ skills/
 
 - [`CONTEXT.md`](CONTEXT.md) defines the shared vocabulary used across the skills.
 - [`docs/adr/`](docs/adr/) records the architectural decisions that keep composition, discovery, and finding publication bounded.
-- [`docs/evals/`](docs/evals/) contains maintainer-only Reference Audit Suites that validate general contracts without entering installed skill runtime paths.
+- Private evaluation suites, run evidence, and recovery history live under the ignored `docs/skill-evolution/<skill-name>/` directory. They are separate from consumer issue records and are not distributed with installed skills or ordinary Git pushes.
 - Each linked `SKILL.md` is the authoritative contract for that skill's complete behavior and stopping conditions.
 
 ## License

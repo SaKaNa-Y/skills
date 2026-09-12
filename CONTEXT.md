@@ -5,7 +5,7 @@ This context defines the language used to design skills that keep agent work ali
 ## Language
 
 **Yak Shaving Triage**:
-The continuous, silent discipline of checking newly discovered problems and contemplated task switches against the User Problem, preparing each distinct Discovered Problem for reconciliation and user-approved recording instead of silently ignoring it or switching over to repair it. It stays active from explicit invocation through the current User Problem without judging investigation depth, displaying a separate problem anchor, or managing another skill.
+The continuous, silent discipline of checking newly discovered problems and contemplated task switches against the User Problem, preparing each distinct Discovered Problem for reconciliation and user-approved recording instead of silently ignoring it or switching over to repair it. It can be selected by the model or the user and stays active through the current User Problem without judging investigation depth, displaying a separate problem anchor, or managing another skill.
 _Avoid_: Recurring scope report, task switching, silent dismissal
 
 **User Problem**:
@@ -45,7 +45,7 @@ A bounded act of preserving evidence already encountered or cheaply reconfirmed,
 _Avoid_: Root-cause analysis, issue investigation
 
 **Tracker Guidance**:
-Project-provided instructions that identify where and how Issue-ready Problems are recorded.
+Project-provided instructions that identify the canonical destination and conventions for searching and recording Issue-ready Problems, with any associated sources of implementation evidence.
 _Avoid_: Assumed tracker, default GitHub
 
 **Tracker Write Approval**:
@@ -53,7 +53,7 @@ The user's confirmation of an exact proposed set of persistent tracker mutations
 _Avoid_: Skill invocation, implicit write authorization, blanket future approval
 
 **Capture Checkpoint**:
-A natural boundary between active steps where accumulated Issue-ready Problems can be reconciled, proposed tracker mutations can receive Tracker Write Approval, and approved records can be written without abandoning the current work. Reconciliation begins only when every active independence gate is open; otherwise the problems remain ready for a later checkpoint.
+A natural boundary between active steps where Issue-ready Problems can be handed off for reconciliation without abandoning the User Problem. Search waits for every active independence gate; ordinary publication decisions are collected after the User Problem completes.
 _Avoid_: Immediate context switch, end-only backlog
 
 **Urgent Discovered Problem**:
@@ -67,6 +67,10 @@ _Avoid_: Caller skill, router skill
 **Explicit-only Skill**:
 A skill activated only by direct user selection when the client supports that invocation policy.
 _Avoid_: Always-on skill, implicit skill
+
+**Setup Sakana Skills**:
+The Explicit-only Skill that establishes shared project conventions required by the installed skills in this collection. It reuses existing choices and prepares user-reviewed configuration, independently of the skills' runtime invocation.
+_Avoid_: Yak-only setup, skill router, issue migration
 
 **Usage-First Audit**:
 An evaluation of a source-accessible library or developer tool that exercises its user-facing behavior before inspecting implementation details, then uses the source to find public capabilities the experience may have missed.

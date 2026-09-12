@@ -1,6 +1,6 @@
 # Skills for Deliberate Engineering
 
-Nine explicit, opt-in agent skills for engineering work that benefits from clearer decisions, bounded exploration, guided learning, and user control.
+Ten focused agent skills for engineering work that benefits from clearer decisions, bounded exploration, guided learning, and user control.
 
 Use them to make a conversation actionable, reduce low-value interruptions, protect the current task from scope drift, experience a developer tool before judging its implementation, discover evidence-backed ways to reuse a project's value, decide whether an external tool fits a repository, get started with a tool through a complete guide and runnable examples, explore project perspectives you have not considered, or improve skills from their actual use.
 
@@ -44,6 +44,7 @@ This repository does not publish its own npm package. `npx` runs the general-pur
 
 | When you need to... | Use | What you receive |
 |---|---|---|
+| Configure shared project conventions for this skill collection | [`setup-sakana-skills`](skills/setup-sakana-skills/SKILL.md) | A reviewed tracker configuration and Claude Code/Codex entrypoints |
 | Make an important question or answer understandable and actionable | [`make-it-land`](skills/make-it-land/SKILL.md) | The missing context, terms, evidence, implications, and next action |
 | Stop a workflow from asking you to decide routine details | [`prune-the-tree`](skills/prune-the-tree/SKILL.md) | Fewer low-value interruptions without losing user-owned decisions |
 | Keep a valid side problem from replacing the current task | [`yak-shaving-triage`](skills/yak-shaving-triage/SKILL.md) | A preserved, issue-ready finding and a return to the original problem |
@@ -54,15 +55,25 @@ This repository does not publish its own npm package. `npx` runs the general-pur
 | Discover project questions you did not know to ask | [`expand-the-frame`](skills/expand-the-frame/SKILL.md) | Explained perspectives, informed trade-offs, and follow-up questions derived from your answers |
 | Improve skills based on how they were used | [`evolve-skills`](skills/evolve-skills/SKILL.md) | Purpose-led, user-selected improvements with behavioral evidence and per-skill recovery history |
 
-## Invoke Skills Explicitly
+## Invoke Skills
 
-Every skill in this repository runs only when you select it. The examples use the `$skill-name` convention; use the equivalent explicit-invocation syntax supported by your agent.
+Yak Shaving Triage supports model selection at the start of engineering tasks as well as explicit invocation. The other nine skills run only when you select them. Automatic selection depends on the host and task matching; it is not a guaranteed startup hook. The examples use the `$skill-name` convention; use the equivalent explicit-invocation syntax supported by your agent.
 
 ```text
 $prune-the-tree Help me implement this feature. Resolve routine choices yourself and ask me only about decisions that change the outcome.
 ```
 
 You can invoke compatible skills together. Each remains responsible for its own behavior; one skill does not silently activate or control another.
+
+## Configure a Project
+
+Invoke [`setup-sakana-skills`](skills/setup-sakana-skills/SKILL.md) to establish shared project conventions. It reuses existing guidance or prepares GitHub Issues/local Markdown settings, then points `CLAUDE.md`, `AGENTS.md`, or both at the shared document. You review the exact changes before they are written.
+
+```text
+$setup-sakana-skills Configure this project for Sakana's skills. We use both Claude Code and Codex; propose the issue-tracker guidance we need.
+```
+
+Setup serves the collection and grows with actual consumer requirements. It does not install or route skills, migrate existing issues, or authorize future tracker writes. Existing sufficient guidance works without setup; rerunning it fills gaps instead of resetting choices.
 
 ## Keep the Current Work Clear and Controlled
 
@@ -94,9 +105,9 @@ $prune-the-tree Build this feature. Investigate factual questions, use safe loca
 
 ### Yak Shaving Triage
 
-**Use it when:** Work on one problem is likely to reveal other valid problems, and you want to preserve those findings without abandoning the current task.
+**Use it when:** Starting implementation, debugging, refactoring, or a developer-tool audit where independent findings should be preserved without diverting the task. The model can select it, and you can still invoke it directly.
 
-**You get:** Silent scope checks during the task. A distinct, observable problem is preserved as an issue-ready draft, reconciled against existing open and closed records in the project's canonical tracker at an eligible checkpoint, and recorded only after approval.
+**You get:** Silent scope checks and bounded, read-only issue/PR reconciliation delegated to a subagent while the main task continues. Without workers, reconciliation runs after the main task. Ordinary findings and exact write proposals are collected at completion; only approved issue or local Markdown mutations are recorded. Independent audits open their reconciliation gate before any search worker starts.
 
 **Boundary:** It does not diagnose or repair the side problem, take over the active workflow, invent a tracker, or mutate a tracker without explicit approval. Urgent security or data-loss risks are surfaced immediately but still do not bypass reconciliation or write approval.
 
@@ -224,7 +235,7 @@ $evolve-skills $grill-with-docs Find opportunities to improve the skills used he
 
 ## Design Principles
 
-- **Explicit activation:** A skill runs because you selected it, not because the model silently opted into a broader workflow.
+- **Deliberate activation:** Yak can be selected by the model to protect engineering work; setup and the other workflows remain user-invoked. Activation does not expand authority.
 - **Narrow ownership:** Each skill changes one responsibility and leaves the current task, other skills, and mandatory checkpoints in place.
 - **Evidence before expansion:** Facts come from the repository, real use, current documentation, and traceable sources rather than plausible guesses.
 - **Bounded exploration:** Broad research has an explicit stopping condition and returns control at a named checkpoint.

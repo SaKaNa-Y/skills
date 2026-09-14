@@ -14,7 +14,7 @@ Generated evolution history is private by default: ignore the complete `docs/ski
 
 The explicitly invoked `evolve-skills` workflow will discuss concrete hypotheses with the user before implementing the selected changes, validating them, and recording the results. It can run independently; co-active grilling skills deepen the discussion without becoming a required dependency.
 
-When behavioral validation cannot be completed, retain the candidate patch or version with a pending-validation record and leave the active version unchanged. This preserves useful work without treating an unverified candidate as an adopted improvement. A user can explicitly choose to trial it.
+Validation is proportional to the selected value of each material change: source-grounded codification uses synthesis and instruction review, while claims of behavioral improvement require execution evidence. When required validation cannot be completed, retain the candidate patch or version with a pending-validation record and leave the active version unchanged. This preserves useful work without treating an unverified candidate as an adopted improvement. A user can explicitly choose to trial it.
 
 A candidate is an intermediate state, not the normal delivery endpoint. Continue feasible validation and apply a supported selected candidate during the same run, reusing the user's existing selection when the change and target remain the same. Distinguish validation not yet attempted from a concrete blocker or an unsupported result. A blocked iteration records the feasible checks attempted, missing prerequisite, and resumption condition; ordinary unperformed work is not a reason to stop.
 

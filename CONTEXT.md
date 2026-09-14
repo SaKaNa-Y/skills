@@ -385,11 +385,11 @@ The standalone Explicit-only Skill that uses Frame Expansion for an existing pro
 _Avoid_: Knowledge quiz, generic brainstorming, decision outsourcing
 
 **Skill Evolution**:
-The iterative improvement of a skill through opportunities discovered in how it was used in conversation, assessed against that skill's stated purpose as introduced by its description and clarified by its instructions. It includes successful approaches worth carrying forward and changes that could improve future use, with a detailed history kept separately for each skill.
+The iterative improvement of a skill through opportunities discovered in its conversational use or in external cases explicitly selected by the user, assessed against that skill's stated purpose as introduced by its description and clarified by its instructions. It includes successful approaches worth carrying forward and changes that could improve future use, with a detailed history kept separately for each skill.
 _Avoid_: Execution compliance audit, failure-only review, change for its own sake
 
 **Skill Evolution Opportunity**:
-An evidence-grounded possibility for improving future use of a skill in relation to its particular purpose, discovered in an actual usage conversation. It may concern the method, sequence of work, instruction structure, references, templates, or validation scenarios, including effective approaches worth carrying forward.
+An evidence-grounded possibility for improving future use of a skill in relation to its particular purpose, grounded in actual usage or explicitly requested external cases. It may concern the method, sequence of work, instruction structure, references, templates, or validation scenarios, including effective approaches worth carrying forward.
 _Avoid_: Compliance violation, mandatory new rule, confirmed improvement
 
 **Skill Evolution Target**:
@@ -397,7 +397,7 @@ A skill within the scope selected for Skill Evolution. Explicitly named targets 
 _Avoid_: Every co-used skill, catalog entry, contextual dependency
 
 **Skill Evolution Hypothesis**:
-A concrete proposed change that connects a Skill Evolution Opportunity to an expected benefit and a way to compare behavior before and after the change. A single clear observation can support a hypothesis; evidence from validation determines whether the expected benefit is supported.
+A concrete proposed change that connects a Skill Evolution Opportunity to an intended value and sufficient evidence to assess it. Codification and behavioral improvement are distinct claims; each material change is judged against its agreed evidence. A single clear observation can support a hypothesis; evidence from validation determines whether the expected benefit is supported.
 _Avoid_: Proven improvement, repeated-failure prerequisite, untested success claim
 
 **Skill Evolution Record**:
@@ -409,5 +409,5 @@ A change to a target skill outside its recorded evolution workflow, identified f
 _Avoid_: Validated evolution, reconstructed intent, complete version history
 
 **Evolve Skills**:
-The Explicit-only Skill that performs Skill Evolution from prior skill use, taking user-selected hypotheses through modification, validation, and a Skill Evolution Record. It can operate independently, while co-active grilling skills deepen discussion of the hypotheses and trade-offs.
+The Explicit-only Skill that performs Skill Evolution from prior skill use or explicitly requested external cases, taking user-selected hypotheses through modification, validation, and a Skill Evolution Record. It can operate independently, while co-active grilling skills deepen discussion of the hypotheses and trade-offs.
 _Avoid_: Compliance checker, generic skill generator, mandatory grilling dependency

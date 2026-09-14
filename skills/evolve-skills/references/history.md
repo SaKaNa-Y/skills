@@ -71,17 +71,18 @@ Entry kind; previous active-state reference; external-change reconciliation and 
 Adoption and validation states; related prior or subsequent iterations.
 Historical skill version if known; actual pre-change baseline and candidate identity.
 
-## Purpose and usage evidence
+## Purpose and source evidence
 The target's intended outcome and relevant boundaries.
 Conversation scope and retrieval limits; references to relevant turns, tools, or artifacts.
 The user's task, meaningful actions or adaptations, feedback, and observed result.
+For requested external cases: original source references, resolution evidence, inferred lessons, and the target instruction gaps they address.
 Minimal excerpts or reproducing details needed to understand the opportunity.
 Separate facts, inference, and unknowns; identify contributions from co-used skills.
 
 ## Hypothesis and decision
 The opportunity, proposed change, and why it may improve the target's purpose.
 Applicability conditions, personal preferences left in usage context, and whole-method findings.
-Expected behavior, preserved behavior, alternatives, and trade-offs.
+Intended value and sufficient evidence per material change; preserved behavior, alternatives, and trade-offs.
 The user's selection and scope; deferred or rejected alternatives and reasons.
 Links to earlier attempts and the new evidence supporting any revisit.
 
@@ -92,7 +93,7 @@ Actual target files changed; separate candidate-only work and installed-copy upd
 
 ## Validation
 Criteria and scenarios; baseline and candidate versions; actual runs and outputs.
-Original-scenario comparison and relevant transfer probes.
+Source synthesis and artifact review; behavioral comparisons and transfer probes when required by the claim.
 Structural checks separately; regressions, limitations, and checks not run.
 Supported benefit or uncertainty within the tested scope.
 For blocked validation: attempted checks, missing prerequisite, and resumption condition.

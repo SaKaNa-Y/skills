@@ -1,6 +1,6 @@
 ---
 name: yak-shaving-triage
-description: Guard engineering tasks against yak shaving. Use at the start of implementation, debugging, refactoring, or a developer-tool audit, and when newly discovered problems could divert active work. Preserve independent findings and reconcile them in the background for user-approved recording.
+description: Guard engineering tasks against yak shaving. Use at the start of implementation, debugging, refactoring, or a developer-tool audit, and when newly discovered problems could divert active work. Explore concrete clues or an explicitly requested scope; preserve independent findings and reconcile them in the background for user-approved recording.
 ---
 
 # Yak Shaving Triage
@@ -9,11 +9,13 @@ Notice broadly. Solve the current problem. Preserve the rest.
 
 Start with the engineering task, whether selected by the model or explicitly invoked by the user. A later invocation joins the current task. Stay active until the **User Problem** is complete or the user stops this skill; explicit revisions of the task update that problem. Ordinary work needs silent checks, not recurring scope reports.
 
-The User Problem is the outcome and boundaries the user currently authorizes. The active task workflow owns its investigation, implementation, and verification. Yak handles independently actionable problems that can be deferred without blocking that outcome.
+The User Problem is the outcome and boundaries the user currently authorizes. The active task workflow owns its investigation, implementation, and verification. Yak supplies bounded discovery methods and handles independently actionable problems whose repair can be deferred without blocking that outcome.
 
 ## 1. Guard the Next Branch
 
-When an observable problem appears or the next action would switch work, compare it with the User Problem. Necessary investigation and repair stay with the active workflow, at whatever depth it needs. For a potentially independent problem, read [issue capture](references/issue-capture.md) to qualify it and preserve evidence already encountered or cheaply reconfirmed. A suspicion or stylistic preference alone returns directly to the main task.
+When a clue, observable problem, or contemplated task switch appears, first compare it with the User Problem and assess the evidence already available. Necessary investigation and repair stay with the active workflow, at whatever depth it needs. A potentially independent problem with sufficient observed evidence goes directly to [issue capture](references/issue-capture.md); reuse completed evidence without another discovery probe.
+
+For a concrete but unresolved clue outside the necessary investigation, use [discovery lenses](references/discovery-lenses.md) to choose a bounded probe. Read the same reference when the user explicitly requests exploration within the User Problem. A suspicion or stylistic preference alone returns directly to the main task. After a probe, reassess its evidence and route the result through this same scope decision.
 
 **Complete when:** the branch belongs to the main task, qualifies for retention with bounded evidence, or is dismissed as unsupported or non-actionable. Resume the main task after dismissal.
 

@@ -5,7 +5,7 @@ This context defines the language used to design skills that keep agent work ali
 ## Language
 
 **Yak Shaving Triage**:
-The continuous, silent discipline of checking newly discovered problems and contemplated task switches against the User Problem, preparing each distinct Discovered Problem for reconciliation and user-approved recording instead of silently ignoring it or switching over to repair it. It can be selected by the model or the user and stays active through the current User Problem without judging investigation depth, displaying a separate problem anchor, or managing another skill.
+The discipline of noticing and checking concrete problem clues during engineering work, exploring a bounded scope when explicitly requested, and preparing distinct Discovered Problems for reconciliation and user-approved recording while preserving the User Problem. It can be selected by the model or the user and stays active through the current User Problem without judging investigation depth, displaying a separate problem anchor, or managing another skill.
 _Avoid_: Recurring scope report, task switching, silent dismissal
 
 **User Problem**:
@@ -15,6 +15,10 @@ _Avoid_: User Goal, original prompt, immutable task
 **Discovered Problem**:
 An observable problem encountered while working on the User Problem that falls outside the work required to resolve it and can be deferred without blocking that resolution. Yak Shaving Triage preserves it instead of switching over to repair it.
 _Avoid_: Side quest, tangent, speculation
+
+**Discovery Probe**:
+A bounded observation or controlled comparison that tests a concrete problem clue, or a relevant boundary within explicitly requested exploration, against an observable expectation. Its result is evidence, an unsupported hypothesis, or an execution limitation; it does not itself authorize repair or recording.
+_Avoid_: Exhaustive checklist, speculative finding, repair task
 
 **Issue-ready Problem**:
 A Discovered Problem preserved with enough verified context for an agent without the originating conversation to understand the problem, locate or reproduce the evidence, and verify a future resolution. It requires observable evidence and acceptance criteria, not a known root cause or chosen solution.

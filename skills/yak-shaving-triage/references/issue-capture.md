@@ -13,7 +13,7 @@ Retain a Discovered Problem when all of the following are true:
 
 Necessary investigation or repair continues under the active task workflow rather than being deferred.
 
-When an observational workflow such as Just Use It is active, confirming an Audit Finding belongs to that workflow while repairing the underlying problem remains deferable. Accept its completed Finding Packet as evidence; do not repeat the experience or take over diagnosis.
+During an explicitly requested exploration or an observational workflow such as Just Use It, confirming a finding belongs to the User Problem while repairing the underlying problem can remain deferable. Accept evidence completed by the active workflow; do not repeat its experience or take over its diagnosis.
 
 Qualification depends on the observed problem, not on whether the current change introduced it. Preserve confirmed pre-existing problems under the same standard.
 

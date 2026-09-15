@@ -24,6 +24,8 @@ Keep behavioral implementation source and the target project's issue tracker clo
 
 Source-closed means behaviorally blind, not safety-blind. Inspect the minimum install hooks, launch scripts, permissions, and external effects needed to decide whether execution is safe, without using them to infer product behavior. If safe execution requires broader source inspection, disclose that the blind sequence cannot be preserved rather than claiming a Usage-First Audit followed it.
 
+For CLI, public API, or package use, read [references/programmatic-experience.md](references/programmatic-experience.md) before consumer setup, installation, or first invocation, including help and version probes.
+
 When a required runtime, compiler toolchain, SDK, system package, container runtime, or similar prerequisite is absent, read [references/prerequisites.md](references/prerequisites.md) before installing anything or abandoning the affected capability.
 
 Prefer disposable state:
@@ -50,8 +52,6 @@ Keep implementation source and the target issue tracker closed. Source-closed me
 Keep implementation source and the target issue tracker closed while completing the hands-on slices. For each Capability Group, in priority order:
 
 When the group uses an interactive UI, read [references/ui-experience.md](references/ui-experience.md) before controlling it. Do not terminalize an interactive slice until its **UI Journey Gate** closes: relevant nested controls and scroll boundaries, material rendered interaction states, browser- or operating-system-native overlays, and applicable sibling visual modes all need observable evidence or an explicit exclusion or `Blocked` reason. When document-level browser capture omits a material native overlay, use an available authorized full-window or screen-level observation; if it remains unavailable, mark that visual evidence `Blocked` instead of inferring its appearance.
-
-When the target has no UI, or its UI leaves part of the surface accessible only through a CLI or public API, read [references/programmatic-experience.md](references/programmatic-experience.md) before creating a consumer workspace.
 
 1. Follow its documented Capability Journey exactly through the public interface until it produces an observable user result.
 2. Exercise one Discriminating Variation that changes a single input, state, mode, or recovery condition and should produce an observably different result. Record an explicit exclusion when the capability has no material variation.

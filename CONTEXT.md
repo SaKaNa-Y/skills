@@ -377,7 +377,7 @@ The ordered evidence basis for Tool Fit: repository facts and existing validatio
 _Avoid_: Popularity ranking, uncited consensus, vendor claims alone
 
 **Frame Expansion**:
-The deliberate introduction of project-relevant perspectives missing from the current discussion, whether its proposals originated with the user or an agent, with enough explanation to make informed judgments and trace their implications. It considers risks, opportunities, and simplification together; newly surfaced directions are explained before the user chooses whether to deepen, defer, or end exploration.
+The deliberate introduction of project-relevant perspectives missing from the current discussion, whether its proposals originated with the user or an agent, with enough explanation to make informed judgments and trace their implications. It considers risks, opportunities, and simplification; users choose which new directions to explore, and a focused search for counterarguments follows an explicit challenge request.
 _Avoid_: Question volume, risk-only checklist, automatic scope expansion
 
 **Expand the Frame**:

@@ -14,7 +14,7 @@ This is a standalone, explicitly invoked discussion skill. One invocation lasts 
 
 Establish the intended outcome, affected users, current proposal, and known constraints from the conversation and available project material. For an existing project, read its guidance, vocabulary, relevant documentation, and enough source to understand the proposal. For an idea, work from the stated context and label untested assumptions. Ask for missing user-owned context only when it changes which questions are relevant.
 
-Apply the same scrutiny to proposals from the user, another agent, or your own earlier recommendations, revising your assessment when an overlooked perspective or supported counterexample changes its basis.
+Default to broadening understanding and improving the decision. Apply the same scrutiny to proposals from the user, another agent, or your own earlier recommendations, and surface supported contradictions when encountered. Make a directed search for objections or counterexamples the focus when the user explicitly requests a challenge; finding none is a valid result. In either case, revise your assessment when the evidence changes its basis.
 
 When the starting point is a pull request, use its stated outcome, diff, tests, and available discussion to ground the proposal. Follow relevant relationships beyond the diff when they could change a decision; an existing review comment is evidence to examine, not a prerequisite for exploration or an authoritative conclusion.
 
@@ -27,6 +27,10 @@ Preparation is targeted: start discussing once the current questions have enough
 Look beyond the user's stated question for relevant assumptions, affected people, consequences, and alternative ways to achieve the outcome. Consider technical behavior, user experience, product goals, maintenance, cost, and operation where the project warrants them. Challenge the goal itself when there is a concrete reason; use personal or organizational context only when the user has supplied it.
 
 Generate questions from concrete relationships in the proposal. Where a behavior crosses a boundary, examine who should own it and what that boundary protects. Where a new mechanism is proposed, trace whether existing capabilities or information could achieve the outcome. Where something is moved, replaced, or removed, follow its other consumers and the assumptions or promises they rely on, including whether its meaning changes in the new context. Use the relationships relevant to this proposal; these examples are starting points, not a required checklist.
+
+Before using a finding to challenge a proposal or change the recommendation, identify the actual claim and its scope, then connect the finding to an affected use path, an accepted requirement, or a concrete scenario that tests the claim. A counterexample contradicts the claim under its applicable conditions; a true limitation outside that scope may instead open an optional direction. Keep hypothetical scenarios available for early design discussion, with their assumptions and unresolved relevance explicit.
+
+For code-related judgments, trace the relevant use path through its consumers, implementation, and existing tests. Compare the expected and supported actual behavior, and explain how any difference affects the current decision.
 
 Continue a line of investigation while concrete evidence could materially change a question, its options, or the recommendation. Bring supported gaps into the discussion, distinguishing a problem with the proposal from missing explanation or validation. Set aside concerns the evidence resolves, and retain uncertain ones as uncertain. A sound proposal may need no additional questions.
 
@@ -62,7 +66,7 @@ Let the user answer freely or revise the framing. A recommendation, a preselecte
 
 ## 4. Derive the next questions from the answers
 
-For each material answer, trace the assumptions it relies on, who gains or bears a cost, where it can fail, and the decisions it creates. Explain the connection when proposing a derived question. Use concrete counterexamples to test important judgments; check factual contradictions, and accept a user-owned trade-off once the user understands its consequences.
+For each material answer, trace the assumptions it relies on, who gains or bears a cost, where it can fail, and the decisions it creates. Explain the connection when proposing a derived question. Use concrete scenarios to examine important judgments under the evidence standard in step 2, and accept a user-owned trade-off once the user understands its consequences.
 
 For example, a choice of permanent sharing links raises a question about what happens when the author deletes their account. That may expose a distinction between a link's lifetime and responsibility for its content. The example illustrates a derivation, not a checklist every project must follow.
 

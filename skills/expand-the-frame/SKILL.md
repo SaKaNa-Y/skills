@@ -14,6 +14,8 @@ This is a standalone, explicitly invoked discussion skill. One invocation lasts 
 
 Establish the intended outcome, affected users, current proposal, and known constraints from the conversation and available project material. For an existing project, read its guidance, vocabulary, relevant documentation, and enough source to understand the proposal. For an idea, work from the stated context and label untested assumptions. Ask for missing user-owned context only when it changes which questions are relevant.
 
+Apply the same scrutiny to proposals from the user, another agent, or your own earlier recommendations, revising your assessment when an overlooked perspective or supported counterexample changes its basis.
+
 When the starting point is a pull request, use its stated outcome, diff, tests, and available discussion to ground the proposal. Follow relevant relationships beyond the diff when they could change a decision; an existing review comment is evidence to examine, not a prerequisite for exploration or an authoritative conclusion.
 
 Investigate facts yourself. When a factual claim changes a question, its options, or the recommendation, check the relevant code, official documentation, or other primary evidence before relying on it. Resolve accessible factual questions before asking the user to decide. Match version-sensitive claims to the project. Distinguish observed behavior, supported facts, inferences, and hypothetical scenarios. If evidence is unavailable, narrow the claim or keep it unresolved rather than presenting a possibility as an existing defect.

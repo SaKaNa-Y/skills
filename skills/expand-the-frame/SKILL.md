@@ -14,13 +14,19 @@ This is a standalone, explicitly invoked discussion skill. One invocation lasts 
 
 Establish the intended outcome, affected users, current proposal, and known constraints from the conversation and available project material. For an existing project, read its guidance, vocabulary, relevant documentation, and enough source to understand the proposal. For an idea, work from the stated context and label untested assumptions. Ask for missing user-owned context only when it changes which questions are relevant.
 
-Investigate facts yourself. When a factual claim changes a question, its options, or the recommendation, check the relevant code, official documentation, or other primary evidence before relying on it. Match version-sensitive claims to the project. Distinguish observed behavior, supported facts, inferences, and hypothetical scenarios. If evidence is unavailable, narrow the claim or keep it unresolved rather than presenting a possibility as an existing defect.
+When the starting point is a pull request, use its stated outcome, diff, tests, and available discussion to ground the proposal. Follow relevant relationships beyond the diff when they could change a decision; an existing review comment is evidence to examine, not a prerequisite for exploration or an authoritative conclusion.
+
+Investigate facts yourself. When a factual claim changes a question, its options, or the recommendation, check the relevant code, official documentation, or other primary evidence before relying on it. Resolve accessible factual questions before asking the user to decide. Match version-sensitive claims to the project. Distinguish observed behavior, supported facts, inferences, and hypothetical scenarios. If evidence is unavailable, narrow the claim or keep it unresolved rather than presenting a possibility as an existing defect.
 
 Preparation is targeted: start discussing once the current questions have enough grounding. Later branches can require later investigation; a whole-project audit is not a prerequisite.
 
 ## 2. Surface perspectives beyond the initial framing
 
 Look beyond the user's stated question for relevant assumptions, affected people, consequences, and alternative ways to achieve the outcome. Consider technical behavior, user experience, product goals, maintenance, cost, and operation where the project warrants them. Challenge the goal itself when there is a concrete reason; use personal or organizational context only when the user has supplied it.
+
+Generate questions from concrete relationships in the proposal. Where a behavior crosses a boundary, examine who should own it and what that boundary protects. Where a new mechanism is proposed, trace whether existing capabilities or information could achieve the outcome. Where something is moved, replaced, or removed, follow its other consumers and the assumptions or promises they rely on, including whether its meaning changes in the new context. Use the relationships relevant to this proposal; these examples are starting points, not a required checklist.
+
+Continue a line of investigation while concrete evidence could materially change a question, its options, or the recommendation. Bring supported gaps into the discussion, distinguishing a problem with the proposal from missing explanation or validation. Set aside concerns the evidence resolves, and retain uncertain ones as uncertain. A sound proposal may need no additional questions.
 
 Seek risks, opportunities, and simplification together. Removing a feature or retaining the current approach can be a useful discovery. Select perspectives for their connection to the project and their potential to change understanding or a decision, not to fill a domain checklist.
 

@@ -11,7 +11,7 @@ Act as an Explicit-only Modifier Skill for the current User Problem: the outcome
 
 A Substantive Message is a user-visible question or answer that materially affects the user's understanding, judgment, authorization, or next action. Context Sufficiency means it contains the relevant information the user needs to understand, judge, or act without first asking what the message means, why it matters, or what will happen.
 
-When invoked after an assistant message that did not land, re-pitch the last Substantive Message with the applicable protocol below; that repair-only invocation then ends unless the user asks to keep it active. When invoked alongside a task, stay active across turns until the User Problem is resolved or the user asks to return to normal communication. Apply both protocols when one response contains an answer and a question.
+When invoked after an assistant message that did not land, identify the missing background, causal link, evidence, or consequence and re-pitch the last Substantive Message with that gap filled. Reassess any recommendation affected by the clarification; that repair-only invocation then ends unless the user asks to keep it active. When invoked alongside a task, stay active across turns until the User Problem is resolved or the user asks to return to normal communication. Apply both protocols when one response contains an answer and a question.
 
 ## Questions
 
@@ -32,9 +32,9 @@ A question lands when the user can answer it without first asking what it means,
 
 For every substantive answer:
 
-1. **Answer first.** Lead with the result, conclusion, or current status. Cover every material part of the user's request and identify anything still unanswered.
+1. **Answer first.** Lead with the result, conclusion, or current status. When that result covers only part of the User Problem, include any remaining dependency that changes whether the user can rely on the overall outcome in the opening conclusion. Distinguish completion of a component or workflow step from resolution of the User Problem. Cover every material part of the request and identify anything still unanswered.
 2. **Re-anchor it.** Supply the smallest relevant context that connects the answer to the User Problem and passes the return-later test.
-3. **Substantiate it.** Explain the key mechanism, evidence, or trade-off at a level the user can check. Report reasoning outcomes and evidence rather than hidden internal reasoning.
+3. **Substantiate it.** When the user needs to understand a cause, compare remedies, or authorize a change, explain the causal chain that determines the judgment: expected behavior, the condition that changes it, how that produces the observed result, and where the proposed remedy acts. Include affected existing behavior when it changes the trade-off. Ground the links in evidence and label uncertain links. For other answers, give the mechanism, evidence, or trade-off needed for the claim. Report reasoning outcomes rather than hidden internal reasoning.
 4. **Make it concrete.** Define terms whose misunderstanding could change the meaning. Use a scenario for an abstract concept, compare viable alternatives when choice remains, and distinguish facts, inferences, assumptions, and unknowns.
 5. **State the implications.** Explain what the answer changes for the user, including material limitations, risks, reversibility, and downstream effects.
 6. **Close the loop.** Give the next action, verification path, or a clear statement that no user action is required.
@@ -45,7 +45,7 @@ Match depth to the claim. Ordinary answers must be actionable. Material recommen
 
 Use the user's language and the useful principles of Simplified Technical English: short direct sentences, one main idea per sentence, and one stable term per concept. Expand abbreviations and explain specialized or locally ambiguous terms at first use. Claim formal ASD-STE100 compliance only when it has actually been verified.
 
-Keep the Context Sufficiency requirements fixed and adapt the presentation. A simple result may need a few sentences; a risky authorization request may need headings and a comparison. Honor requests for brevity while retaining information necessary for correct understanding, safety, authorization, or external effects.
+Keep the Context Sufficiency requirements fixed and adapt the presentation. Organize causal explanations around the links needed for the current judgment; their elements are coverage requirements, not a fixed output template. A simple result may need a few sentences; a risky authorization request may need headings and a comparison. Honor requests for brevity while retaining information necessary for correct understanding, safety, authorization, or external effects.
 
 Keep explanations in the conversational wrapper by default. Preserve the requested style and constraints of code, articles, messages, configuration, and other deliverables unless the user explicitly asks to apply this skill inside the deliverable.
 

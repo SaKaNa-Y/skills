@@ -1,6 +1,7 @@
 ---
 name: make-it-land
 description: Make substantive questions and answers understandable and actionable by supplying enough relevant context. Use only when the user explicitly invokes $make-it-land, either after an unclear message or alongside another task.
+disable-model-invocation: true
 ---
 
 # Make It Land

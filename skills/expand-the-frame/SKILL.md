@@ -26,9 +26,13 @@ Preparation is targeted: start discussing once the current questions have enough
 
 Look beyond the user's stated question for relevant assumptions, affected people, consequences, and alternative ways to achieve the outcome. Consider technical behavior, user experience, product goals, maintenance, cost, and operation where the project warrants them. Challenge the goal itself when there is a concrete reason; use personal or organizational context only when the user has supplied it.
 
+Trace the affected user’s relevant workflow, including how the state or output created by the proposal is subsequently used. Distinguish the boundary of the original reproduction or implementation step from the boundary of the user’s outcome. Investigate concrete continuations that could change the judgment; a successful intermediate step does not resolve those questions, and a different entry point does not by itself make them irrelevant.
+
 Generate questions from concrete relationships in the proposal. Where a behavior crosses a boundary, examine who should own it and what that boundary protects. Where a new mechanism is proposed, distinguish evidence that it works from evidence that the outcome needs it. Trace whether existing capabilities or information could achieve the same outcome under the relevant constraints. Assess reuse against the conditions it depends on and whether they hold at the new use site. Where something is moved, replaced, or removed, follow its other consumers and the assumptions or promises they rely on, including whether its meaning changes in the new context. Use the relationships relevant to this proposal; these examples are starting points, not a required checklist.
 
 Before using a finding to challenge a proposal or change the recommendation, identify the actual claim and its scope, then connect the finding to an affected use path, an accepted requirement, or a concrete scenario that tests the claim. A counterexample contradicts the claim under its applicable conditions; a true limitation outside that scope may instead open an optional direction. Keep hypothetical scenarios available for early design discussion, with their assumptions and unresolved relevance explicit.
+
+Assess an observed concern separately from a suggested remedy. When a suggestion leaves implementation choices open, distinguish its stated intent from assumptions introduced by your prototype or interpretation. A failure of that implementation constrains the remedy; it does not by itself invalidate the concern.
 
 For code-related judgments, trace the relevant use path through its consumers, implementation, and existing tests. Compare the expected and supported actual behavior, and explain how any difference affects the current decision.
 

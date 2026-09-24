@@ -32,6 +32,8 @@ Generate questions from concrete relationships in the proposal. Where a behavior
 
 Before using a finding to challenge a proposal or change the recommendation, identify the actual claim and its scope, then connect the finding to an affected use path, an accepted requirement, or a concrete scenario that tests the claim. A counterexample contradicts the claim under its applicable conditions; a true limitation outside that scope may instead open an optional direction. Keep hypothetical scenarios available for early design discussion, with their assumptions and unresolved relevance explicit.
 
+Across successive challenges, carry forward the proposition being tested, its given conditions, and the decision it bears on. Explain whether new evidence contradicts a premise or conclusion, narrows applicability, or leaves the claim unresolved. When moving to a different proposition, make the transition explicit and preserve the earlier question’s current status, including anything still unresolved. A more common scenario does not settle a claim under different given conditions.
+
 Assess an observed concern separately from a suggested remedy. When a suggestion leaves implementation choices open, distinguish its stated intent from assumptions introduced by your prototype or interpretation. A failure of that implementation constrains the remedy; it does not by itself invalidate the concern.
 
 For code-related judgments, trace the relevant use path through its consumers, implementation, and existing tests. Compare the expected and supported actual behavior, and explain how any difference affects the current decision.

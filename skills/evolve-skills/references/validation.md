@@ -10,6 +10,8 @@ For codifying a reusable method, trace the method to observed cases, compare it 
 
 For claimed behavioral improvement or efficiency, run the smallest realistic exercise that can test that claim. Compare relevant baseline and candidate outcomes, reusing trustworthy historical evidence when its conditions suffice. Add transfer or inactive-boundary probes where they resolve a material applicability or regression question. Required behavioral evidence that cannot safely be obtained remains pending; a prose prediction cannot replace it.
 
+Before running an exercise, identify the decision or state transition the candidate is meant to improve and check whether the input leaves it for the agent to perform. To test independent diagnosis or action selection, preserve the relevant information gap without supplying the diagnosis or selecting the repair in the request. Explicit directions remain useful for instruction-following and boundary checks; report those separately. To test continuity across turns, deliver later input after the earlier response; supplying the whole exchange at once tests a static replay instead. Keep enough context to make the task solvable, and choose the smallest exercise that preserves the difficulty relevant to the selected value.
+
 ## Review the instructions before execution
 
 Read the whole candidate against its purpose and agreed responsibility boundaries, consulting earlier decisions. Check decision order, context-pointer triggers, duplication, conflicting rules, and branches whose cost exceeds their value. Keep each rule in its authoritative location. This review precedes expensive runs so a readily visible instruction defect can be corrected first.

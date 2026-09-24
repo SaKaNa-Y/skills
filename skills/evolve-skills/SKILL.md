@@ -45,7 +45,9 @@ For each supported opportunity, connect:
 - The specific method or material to change, its intended value, and evidence sufficient to judge that value.
 - Alternative explanations, likely trade-offs, and a way to distinguish improvement from coincidence.
 
-Inspect the existing instructions before proposing additions. An outcome such as a missed capability is an entry point for investigation, not proof that another checklist is needed. Consider clearer context pointers, moving a decision earlier, changing the unit of work, merging or removing steps, and carrying forward effective adaptations when the evidence supports them. Preserve useful constraints; fewer words or steps alone do not establish improvement.
+Inspect the existing instructions before proposing additions. For each target, use a relevant usage episode or selected external case to identify the decision that affected the outcome. Compare the guidance available at that decision with what was needed: a principle mentioning the concern may or may not provide a sufficient method. Distinguish an adequate method that was not followed from a missing or poorly placed decision step, keeping uncertain attribution explicit.
+
+An outcome such as a missed capability is an entry point for investigation, not proof that another checklist is needed. Consider clearer context pointers, moving a decision earlier, changing the unit of work, merging or removing steps, and carrying forward effective adaptations when the evidence supports them. Preserve useful constraints; fewer words or steps alone do not establish improvement.
 
 A single clear observation can support a hypothesis; keep weaker possibilities as observations awaiting evidence. Promote methods that serve the target's intended domain beyond the originating user's identity. Personal preferences remain usage context, not shared defaults or automatically generated modes or personal forks. Discuss a variation separately if evidence supports it as a recurring domain need. Keep the original purpose by default; responsibility changes and new scripts or tool dependencies also require their own concrete discussion.
 
@@ -53,7 +55,7 @@ Use [purpose-led validation](references/validation.md) to choose sufficient evid
 
 Account for every target reviewed, including a supported no-change result. Prioritize hypotheses by expected task benefit, evidence strength, and change cost without manufacturing a universal score or a mandatory number of changes.
 
-When no hypothesis merits a change, record the supported observations and no-change conclusion, then close the iteration without candidate preparation.
+When no hypothesis merits a change, connect the no-change conclusion to that target’s evidence and existing method, explaining why an alteration is unwarranted or not supported by the available evidence. Keep an unselected or deferred hypothesis distinct from a no-change assessment. Close a supported no-change iteration without candidate preparation.
 
 ## 4. Select a concrete change
 

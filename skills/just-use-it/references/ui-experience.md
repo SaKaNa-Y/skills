@@ -55,4 +55,4 @@ When the UI exposes only part of the Capability Surface, finish that part throug
 
 Treat an unavailable required control surface, an unlaunchable UI, or missing safe test state as Blocked coverage. A documented UI launch that fails may also be a documentation or product Finding. Continue through every unaffected capability.
 
-**Complete when:** every UI-exposed capability in the active slice has a terminal state, every meaningful rendered state has been visually inspected at proportionate scope, every applicable sibling mode has a Mode Parity Probe or explicit exclusion, and no entry point or non-UI path has been counted as UI verification.
+**Complete when:** every UI-exposed capability in the active slice has a terminal state, every meaningful rendered state has proportionate visual evidence or an explicit exclusion or `Blocked` reason, every applicable sibling mode has a Mode Parity Probe or an explicit exclusion or `Blocked` reason, and no entry point or non-UI path has been counted as UI verification.

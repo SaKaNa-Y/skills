@@ -12,7 +12,7 @@ Run a **Usage-First Audit** of one source-accessible library, framework, CLI, or
 
 The audit owns experience, coverage evidence, and session-scoped Finding Packets. It does not diagnose or repair findings, create or update tracker entries, or claim source inspection as usage. A user may separately invoke a recording workflow such as `$yak-shaving-triage`; co-use keeps both skills independent.
 
-Work **slice-first**. Complete one user-outcome **Capability Journey**, its Discriminating Variation, and the applicable exploration before moving to another Capability Group. Opening an entry point or container verifies only that entry point; it does not verify the capabilities inside it.
+Work **slice-first**. Each execution agent completes one user-outcome **Capability Journey**, its Discriminating Variation, and the applicable exploration within its assigned Capability Group. Independent slices may run concurrently through the delegated workflow below. Opening an entry point or container verifies only that entry point; it does not verify the capabilities inside it.
 
 ## 1. Frame and Isolate
 
@@ -49,16 +49,18 @@ Keep implementation source and the target issue tracker closed. Source-closed me
 
 ## 3. Complete Vertical Slices
 
-Keep implementation source and the target issue tracker closed while completing the hands-on slices. For each Capability Group, in priority order:
+Before assigning or executing slices, read [references/delegated-usage.md](references/delegated-usage.md). By default, the main agent delegates actual product use to fresh subagents, with at most two Just Use It subagents running concurrently unless the user explicitly requests more. This limit belongs to Just Use It; it does not include workers of separately active skills. Assign existing Vertical Capability Slices in priority order, parallelizing only independent work. When delegation is unavailable, retain the same method on the main agent and state that limitation.
 
-When the group uses an interactive UI, read [references/ui-experience.md](references/ui-experience.md) before controlling it. Do not terminalize an interactive slice until its **UI Journey Gate** closes: relevant nested controls and scroll boundaries, material rendered interaction states, browser- or operating-system-native overlays, and applicable sibling visual modes all need observable evidence or an explicit exclusion or `Blocked` reason. When document-level browser capture omits a material native overlay, use an available authorized full-window or screen-level observation; if it remains unavailable, mark that visual evidence `Blocked` instead of inferring its appearance.
+An assigned worker follows this skill within its slice; it does not restart the whole audit or delegate again. During the initial source-blind pass, keep implementation source and the target issue tracker closed across all agents. Later assignments retain the audit's established source/tracker phase and provenance rather than restarting the blind sequence. For each assigned Capability Group:
+
+When the group uses an interactive UI, read [references/ui-experience.md](references/ui-experience.md) before controlling it. Complete its **UI Journey Gate** before assigning terminal states to the slice; that reference defines the required observations and the exclusion and `Blocked` paths.
 
 1. Follow its documented Capability Journey exactly through the public interface until it produces an observable user result.
 2. Exercise one Discriminating Variation that changes a single input, state, mode, or recovery condition and should produce an observably different result. Record an explicit exclusion when the capability has no material variation.
 3. Read [references/exploration-lenses.md](references/exploration-lenses.md), then explore freely inside the active Capability Group. Build a small capability-shaped matrix and continue until further public actions repeat known states instead of revealing another capability, transition, or interaction.
 4. Add newly discoverable public capabilities to the Capability Surface. Keep capabilities serving the active outcome in the current slice; add independently useful outcomes to the Coverage Ledger as new `Not Exercised` groups.
 5. Before assigning the first `Verified` state, read [references/verification-traces.md](references/verification-traces.md). A capability becomes `Verified` only with a complete Verification Trace. As soon as behavior may be an Audit Finding, read [references/finding-packets.md](references/finding-packets.md) before expanding the investigation.
-6. Give every capability in the slice a terminal state, update the Coverage Ledger, and only then move to the next group. `Verified`, `Finding`, and `Blocked` are terminal; `Not Exercised` remains pending.
+6. Give every capability in the slice a terminal state and return its evidence to the main agent. The main agent checks the handoff, updates the Coverage Ledger, and retires the worker before assigning a new slice to a fresh subagent. `Verified`, `Finding`, and `Blocked` are terminal; `Not Exercised` remains pending.
 
 Continue across completed slices under the existing authorization while known in-scope capabilities remain feasible. Use slice boundaries for progress updates; a Partial Audit describes incomplete coverage rather than a reason to end the task. End an incomplete audit when the user asks to stop or narrow the scope, or when no meaningful in-scope progress remains possible without unavailable prerequisites, access, or user input. Continue other feasible work when one capability is Blocked. Preserve remaining coverage and resumption conditions when ending. A temporary pause that will resume before tracker reconciliation keeps the target tracker closed. When interruption instead concludes the run with known capabilities `Not Exercised`, preserve the current slice and next action, freeze completed Finding Packets, and report a Partial Audit. A separately active recording workflow may reconcile those frozen packets; audit work after it reads tracker history, including any later resume, is tracker-informed rather than behaviorally blind.
 
@@ -68,11 +70,11 @@ A documentation error is a Finding even when the implementation works through an
 
 ## 4. Reconcile with Source
 
-Open the implementation source only now, using the revision corresponding to the experienced artifact where available. Keep leads from other revisions qualified until exercised on their own artifacts. Inspect public exports, routes, commands, flags, feature registration, examples, and tests to find shipped public capabilities missing from the current surface. Treat a capability reachable through a shipped package export, executable, route, or browser global as public unless the project marks it internal, test-only, or unreleased. A hidden help entry is a discoverability signal, not by itself proof that the capability is private. Report unresolved public intent explicitly.
+The main agent opens the implementation source only after all hands-on workers have handed back their slices and the preceding completion criterion holds, using the revision corresponding to the experienced artifact where available. Keep leads from other revisions qualified until exercised on their own artifacts. Inspect public exports, routes, commands, flags, feature registration, examples, and tests to find shipped public capabilities missing from the current surface. Treat a capability reachable through a shipped package export, executable, route, or browser global as public unless the project marks it internal, test-only, or unreleased. A hidden help entry is a discoverability signal, not by itself proof that the capability is private. Report unresolved public intent explicitly.
 
 Map every source-confirmed public entrypoint to an existing capability, an explicit exclusion, or a newly added capability. Exercise every newly added capability through the interface available to a user. Treat source evidence as a lead: observable use confirms a Finding; source-only suspicion remains an unverified lead in the report.
 
-Group newly added capabilities by user outcome and complete them slice-first. Label their Verification Traces as source-discovered so they do not masquerade as blind discovery.
+Group newly added capabilities by user outcome and complete them through the same delegated, slice-first workflow. Label their Verification Traces as source-discovered so they do not masquerade as blind discovery.
 
 After every source-confirmed public entrypoint is accounted for, freeze the independently observed Finding Packets. This opens the Audit Reconciliation Gate for a separately active recording workflow, which owns batch reconciliation and tracker writes; matching an existing record does not change the finding's independent provenance.
 
@@ -96,6 +98,6 @@ When any known capability remains `Not Exercised`, call the result a **Partial A
 
 Keep the report conversational unless the user explicitly requests a repository artifact. When asked to save it, use the exact requested destination and repository conventions. Persistent finding publication remains outside this skill.
 
-Before deleting disposable state, move required evidence into the conversation, the requested report, or an independently authorized recording workflow. Then remove only the exact temporary paths and stop only the processes, servers, tabs, or browser contexts created for this audit. Preserve user-owned browser state. Report every cleanup failure with the residual path or running resource.
+Before ending the audit, stop or retire all audit workers and collect their resource states. Before deleting disposable state, move required evidence into the conversation, the requested report, or an independently authorized recording workflow. Then remove only the exact temporary paths and stop only the processes, servers, tabs, or browser contexts created for this audit. Preserve user-owned browser state. Report every cleanup failure with the residual path or running resource.
 
 **Complete when:** the report's coverage claims match the ledger, every Finding Packet is available to the user or the selected recording workflow, and every disposable path and running resource is removed or reported as residual state.

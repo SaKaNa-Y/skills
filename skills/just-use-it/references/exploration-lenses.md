@@ -50,4 +50,4 @@ When an observation has practical impact but no explicit promise supplies the ex
 
 When the tool claims compatibility with or replacement of another tool, run a representative existing workload incrementally through both. Preserve divergences from the real workload before minimizing them; the smaller reproduction supplements rather than replaces the original evidence.
 
-**Complete when:** every selected lens in the active Vertical Capability Slice has an observable result or explicit exclusion or Blocked reason, every applicable sibling mode has a Mode Parity Probe, the matrix remains proportional to the user outcome, and its footprint entries are present in the cleanup ledger.
+**Complete when:** every selected lens in the active Vertical Capability Slice has an observable result or explicit exclusion or Blocked reason, every applicable sibling mode has a Mode Parity Probe or an explicit exclusion or Blocked reason, the matrix remains proportional to the user outcome, and its footprint entries are present in the cleanup ledger.

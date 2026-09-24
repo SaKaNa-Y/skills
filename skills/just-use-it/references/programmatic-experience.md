@@ -44,4 +44,4 @@ Exercise the documented path first. Then vary inputs, repeat operations, combine
 
 During the main workflow's cleanup step, preserve required evidence and compare the recorded destinations before deleting resources they may reference. Remove audit-created registrations or restore the recorded state within the authorized scope, preserving unrelated later edits. Report unrecovered state and residual references rather than treating deletion of the consumer directory as complete cleanup.
 
-**Complete when:** every non-UI public capability in the current surface has a terminal state, the target integrity baseline is preserved, and every recorded launch destination is cleaned, restored, or reported as residual state.
+**Complete when:** every non-UI public capability in the active slice has a terminal state, the target integrity baseline is preserved, and every recorded launch destination is cleaned, restored, or reported as residual state.

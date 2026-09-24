@@ -5,3 +5,7 @@ Yak Shaving Triage may be selected by the model at the start of engineering work
 Qualified independent findings receive bounded read-only subagent reconciliation while the main task continues, with main-agent fallback after completion when workers are unavailable. Ordinary publication proposals are collected after the main task and require exact user approval for both GitHub and local Markdown records; audit independence gates still precede all worker searches. This trades worker resources and completion-time collection for fewer main-task context switches, without delegating diagnosis, repair, or publication authority.
 
 One issue destination is canonical per project. Associated issue and PR histories can supplement local Markdown reconciliation without introducing a second write destination. Existing configuration is reused, both Claude Code and Codex may point to the same shared guidance, and later supported skill requirements can be added through an explicit setup rerun.
+
+## Resumption amendment
+
+Waiting findings retain their evidence, search state, and resumption condition across pauses and task transitions. A resumed or completed main task revisits eligible work and uses a subagent when available; main-agent fallback remains for unavailable delegation. A stop request interrupts searches rather than forcing reconciliation to finish. This makes the existing background responsibility resumable without opening audit gates early or introducing another approval step.

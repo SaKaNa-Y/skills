@@ -8,7 +8,7 @@ Give the worker the User Problem and why this finding is independent, the observ
 
 Assign read-only reconciliation: search existing records and related implementation work, compare problem identity and coverage, and return the disposition with supporting evidence. The worker may read relevant PR contents to establish coverage; diagnosis, new reproduction campaigns, repairs, tracker mutations, and further delegation are outside this assignment. It returns any proposed issue text to the main agent rather than publishing it.
 
-Continue the User Problem after dispatch. Receiving a result does not start a new repair task or interrupt the user for ordinary publication approval. Track each packet's assigned worker or deferred state so no finding is lost or searched twice.
+Continue the User Problem after dispatch. Receiving a result does not start a new repair task or interrupt the user for ordinary publication approval. Carry each packet's worker or waiting state with its evidence so no finding is lost or searched twice. Use the main workflow's resumption checkpoints to dispatch waiting work; do not let a transcript summary turn an unsearched packet into a completed disposition.
 
 ## Return Enough to Decide
 

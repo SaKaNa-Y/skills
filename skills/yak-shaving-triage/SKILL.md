@@ -21,19 +21,19 @@ For a concrete but unresolved clue outside the necessary investigation, use [dis
 
 ## 2. Reconcile in the Background
 
-At a boundary after a coherent step, hand an Issue-ready Problem to an available subagent using [background reconciliation](references/background-reconciliation.md). Continue the User Problem while the worker searches. Reuse a worker or batch related packets where practical; keep independently resolvable problems distinct. If workers are unsupported or no slot is available, queue the evidence for main-agent reconciliation after the main task completes.
+At a boundary after a coherent step, check [search eligibility](references/issue-capture.md#wait-for-search-eligibility) before dispatching an Issue-ready Problem to an available subagent using [background reconciliation](references/background-reconciliation.md). Retain packets whose gate or prerequisites remain closed; delegation preserves those boundaries. Continue the User Problem while the worker searches. Reuse a worker or batch related packets where practical; keep independently resolvable problems distinct. If workers are unsupported or no slot is available, retain the evidence with that reason. Recheck availability at the next Capture Checkpoint; use main-agent reconciliation after the main task only if delegation remains unavailable.
 
 Keep co-active skills independent: each owns its own work. A search worker performs this skill's bounded reconciliation; it does not activate or manage other skills.
 
-When an active audit keeps tracker history closed, retain its Finding Packets and dispatch only after its independence gate opens. For Just Use It, this means accounting for the source-confirmed public surface and freezing independent findings, or explicitly freezing a Partial Audit. Once target tracker history is read, further audit work and resumes are tracker-informed. A subagent does not bypass this gate.
-
 If Tracker Guidance is missing, keep the evidence and defer the destination question to completion. Setup is optional: use existing project guidance directly and let the user initiate configuration separately.
 
-**Complete when:** each qualified problem is assigned once to a worker or a retained queue, and the active task continues without waiting for ordinary reconciliation.
+Keep each packet's evidence and search state together: waiting for a gate or prerequisite, assigned to a named worker, or returned with a disposition. For waiting work, retain the reason and resumption condition. At task resumption, a gate opening, or main-task completion, revisit outstanding packets before starting duplicate searches or issuing the final findings report. When search is eligible and a worker is available, dispatch it; a pause does not silently replace delegation with main-agent searching.
+
+**Complete when:** each qualified problem is assigned once to a worker or a retained queue with a reason and next action, and the active task continues without waiting for ordinary reconciliation.
 
 ## 3. Close the Main Task and Collect Findings
 
-Report the main task's actual completion, then collect dispatched workers and reconcile any queued problems. Workers must return bounded results or explicit search limitations; end an unproductive search as Reconciliation Blocked rather than waiting indefinitely. If the user stops work early, preserve completed and pending findings honestly and honor the stop.
+Report the main task's actual completion, then collect dispatched workers and revisit queued problems under the same eligibility and delegation rules. Workers must return bounded results or explicit search limitations; end an unproductive search as Reconciliation Blocked rather than waiting indefinitely. If the user pauses or stops this skill or the current task, stop dispatching and interrupt this skill’s active searches promptly. Stopping this skill alone leaves the main workflow under its existing authorization. Preserve returned results and unfinished packets with their resumption conditions; do not continue reconciliation merely to finish the queue. A later resume rechecks those conditions without repeating completed searches unless their evidence needs refreshing.
 
 After all eligible searches settle, present the batch and follow [issue capture](references/issue-capture.md) for exact drafts and Tracker Write Approval. Reused records need only a title and link or identifier. Creating or updating an issue or local Markdown record requires the user's approval of the concrete mutation. Keep unapproved drafts in the conversation.
 

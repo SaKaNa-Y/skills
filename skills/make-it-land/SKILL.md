@@ -14,7 +14,13 @@ A Substantive Message is a user-visible question or answer that materially affec
 
 When invoked after an assistant message that did not land, identify the missing background, causal link, evidence, or consequence and re-pitch the last Substantive Message with that gap filled.
 
-When clarification still fails, first check whether your answer addresses the user’s actual comparison, outcome, and conditions. Use their questions and corrections to detect a shifted scenario, proposition, or assumed goal. Then fill missing context, reorganize the explanation around the decisive distinction, or correct the conclusion as needed. Resolve accessible facts yourself rather than making the user diagnose the mismatch. Explain the implications of the corrected understanding at the depth the user needs. Reassess any affected recommendation; that repair-only invocation then ends unless the user asks to keep it active.
+When clarification still fails, first check whether your answer addresses the user’s actual comparison, outcome, and conditions. Use their questions and corrections to detect a shifted scenario, proposition, or assumed goal. Identify what still prevents the user from understanding or judging the answer, then choose the repair:
+
+- **Understanding:** explain the existing support.
+- **Evidence:** obtain missing facts through available, authorized checks.
+- **Judgment:** make the differing premises or trade-offs explicit.
+
+These gaps can coexist. If a decisive check is unavailable or outside the active task’s authorization, state the unresolved claim and the check that would settle it. Match the conclusion’s strength to the support actually obtained. Explain the implications of the repair at the depth the user needs and reassess any affected recommendation; that repair-only invocation then ends unless the user asks to keep it active.
 
 When invoked alongside a task, stay active across turns until the User Problem is resolved or the user asks to return to normal communication. Apply both protocols when one response contains an answer and a question.
 

@@ -16,7 +16,7 @@ Ask for a compact result containing:
 
 - The problem identity and Reconciliation Disposition.
 - Canonical matching records: title, identifier or link, state, and why they match.
-- Related issue/PR coverage: what is addressed, what remains different, and what is uncertain.
+- Problem status and next action, using the [outcome reporting contract](issue-capture.md#report-the-outcome): implementation coverage, tested-version evidence, remaining uncertainty, and the supported follow-up.
 - Queries and candidates inspected, search limitations, and any missing evidence needed for a proposed update or new record.
 
 Follow the bounded search completion rule in issue capture. A failed or unavailable canonical search returns Reconciliation Blocked with the retained evidence. An unavailable supplemental PR search is reported as a limitation rather than proof that no implementation exists.

@@ -108,10 +108,18 @@ When Tracker Guidance is absent and the user has not established a destination, 
 
 ## Report the Outcome
 
-For ordinary problems, report the batch's actual dispositions after the main task completes. Use a concise result such as:
+For ordinary problems, report the batch's actual dispositions after the main task completes. For each result, keep these facts distinct:
+
+- the matching record and its current issue or PR state;
+- the observed problem status, including the tested version, implementation coverage and any unresolved verification; and
+- the next action supported by that evidence and the user's authorized scope.
+
+A Reconciliation Disposition determines how to reuse or update records; resolution of the observed problem requires evidence covering its acceptance boundary. Retain a still-reproducing problem when its matching PR is closed or unmerged, and carry forward any alternative-resolution or declined-decision evidence established during reconciliation. When the user requests only new findings, state that existing-record matches were filtered from that view rather than treating them as resolved.
+
+Use a concise result such as:
 
 ```text
-Main task complete. Reused <title> as <link or identifier>; recorded <title> as <link or identifier>.
+Main task complete. Reused <title> (<link>): PR closed without merge; still reproduced in <version>; next step is <supported action>.
 ```
 
 Use `Recorded` only after the mutation succeeds and `Reused` only with the canonical record's title and link or identifier. Name Reconciliation Blocked drafts and their search limitation. For an approved target-checkout patch that must wait for the active workflow, say `Approved <title>; recording is deferred until <named completion boundary>`. When the user does not approve a proposed write, say that the named draft was retained. After a deferred write succeeds, report its final destination. Keep the main task status separate from reconciliation and publication status.

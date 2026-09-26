@@ -1,8 +1,8 @@
 # Skills for Deliberate Engineering
 
-Ten focused agent skills for engineering work that benefits from clearer decisions, bounded exploration, guided learning, and user control.
+Twelve focused agent skills for engineering work that benefits from clearer decisions, bounded exploration, guided learning, and user control.
 
-Use them to make a conversation actionable, reduce low-value interruptions, protect the current task from scope drift, experience a developer tool before judging its implementation, discover evidence-backed ways to reuse a project's value, decide whether an external tool fits a repository, get started with a tool through a complete guide and runnable examples, explore project perspectives you have not considered, or improve skills from their use or explicitly requested case research.
+Use them to make a conversation actionable, reduce low-value interruptions, protect the current task from scope drift, experience a developer tool before judging its implementation, discover evidence-backed ways to reuse a project's value, decide whether an external tool fits a repository, get started with a tool through a complete guide and runnable examples, explore project perspectives you have not considered, test a specific claim, resolve a factual uncertainty, or improve skills from their use or explicitly requested case research.
 
 Each skill has a narrow responsibility. Invoking one does not silently expand the task, transfer a user-owned decision, or bypass an existing safety, authorization, or external-effect checkpoint.
 
@@ -16,7 +16,7 @@ Install from this GitHub repository:
 npx skills@latest add SaKaNa-Y/skills
 ```
 
-The interactive installer discovers the available skills and lets you choose which ones and which detected agents to use. Installation is project-scoped by default.
+The interactive installer discovers the available skills and lets you choose which ones and which detected agents to use. Installation is project-scoped by default. Select `investigate-with-evidence` alongside `expand-the-frame` or `challenge-the-claim`: both entry points use it for factual investigation. Select all three to use both workflows; their instructions do not automatically install the dependency.
 
 Preview the available skills without installing anything:
 
@@ -53,17 +53,19 @@ This repository does not publish its own npm package. `npx` runs the general-pur
 | Decide whether a tool fits a repository need | [`tool-fit-for-projects`](skills/tool-fit-for-projects/SKILL.md) | A comparison against the current baseline and a progressive adoption path |
 | Get started with a library, framework, or developer tool | [`get-up-to-speed`](skills/get-up-to-speed/SKILL.md) | One complete guide with runnable examples and depth matched to your goal |
 | Discover project questions you did not know to ask | [`expand-the-frame`](skills/expand-the-frame/SKILL.md) | Explained perspectives, informed trade-offs, and follow-up questions derived from your answers |
+| Test whether a specific claim withstands counterevidence | [`challenge-the-claim`](skills/challenge-the-claim/SKILL.md) | A focused judgment that separates rebuttals, unresolved facts, and value disagreements |
+| Resolve a bounded factual uncertainty | [`investigate-with-evidence`](skills/investigate-with-evidence/SKILL.md) | Traceable findings from sources or controlled execution, with applicability limits |
 | Improve skills from use or requested case research | [`evolve-skills`](skills/evolve-skills/SKILL.md) | User-selected improvements with purpose-led evidence and per-skill recovery history |
 
 ## Invoke Skills
 
-Yak Shaving Triage supports model selection at the start of engineering tasks as well as explicit invocation. The other nine skills run only when you select them. Automatic selection depends on the host and task matching; it is not a guaranteed startup hook. The examples use the `$skill-name` convention; use the equivalent explicit-invocation syntax supported by your agent.
+Yak Shaving Triage supports model selection at the start of engineering tasks. Investigate with Evidence supports model selection for bounded factual questions and is loaded as a declared dependency by the two discussion entry points. Both also accept direct invocation. The other ten skills run only when you select them. Automatic selection depends on the host and task matching; it is not a guaranteed startup hook. The examples use the `$skill-name` convention; use the equivalent explicit-invocation syntax supported by your agent.
 
 ```text
 $prune-the-tree Help me implement this feature. Resolve routine choices yourself and ask me only about decisions that change the outcome.
 ```
 
-You can invoke compatible skills together. Each remains responsible for its own behavior; one skill does not silently activate or control another.
+You can invoke compatible skills together. Each remains responsible for its own behavior. The declared evidence dependency below supplies a method to its consuming task; it does not select that task’s goal or broaden its authority.
 
 ## Configure a Project
 
@@ -159,19 +161,41 @@ $tool-fit-for-projects Compare this repository's current test setup with suitabl
 $tool-fit-for-projects Audit this repository for material tool opportunities, then let me choose one before you research products.
 ```
 
-## Expand Your Project Perspective
+## Explore Perspectives or Challenge a Claim
 
 ### Expand the Frame
 
-**Use it when:** You want to think beyond your initial framing of a project or idea and understand the questions you have not considered, including questions about the project's goals.
+**Use it when:** You want to think beyond your initial framing of a project, PR, or idea and discover overlooked perspectives, constraints, opportunities, or defects.
 
 **You get:** Targeted investigation of relevant project facts, explanations of unfamiliar concepts, and rounds of questions with recommendations and viable alternatives. The agent considers risks, opportunities, and simplification, traces your answers into further questions, and connects new perspectives to the decisions they change or support.
 
-**Boundary:** The agent explains why a new direction matters before you choose whether to deepen, defer, or end exploration. Deferred directions return only at your request or when new information materially changes their relevance. The skill is standalone and explicitly invoked; it keeps a conversational record by default, follows project conventions for requested persistence, and leaves implementation to a separate instruction.
+**Boundary:** The agent explains why a new direction matters before you choose whether to deepen, defer, or end exploration. Deferred directions return only at your request or when new information materially changes their relevance. The skill is explicitly invoked and uses `investigate-with-evidence` for factual checks, including controlled local execution when needed. It keeps a conversational record by default, follows project conventions for requested persistence, and leaves product implementation to a separate instruction. Finding a defect does not turn exploration into sustained opposition or establish a complete code review.
 
 ```text
 $expand-the-frame Help me think through sharing in this notes project. Surface perspectives I have not considered, explain the concepts before asking me to judge, and present each round with recommendations and alternatives. Let me choose which new directions to explore.
 ```
+
+### Challenge the Claim
+
+**Use it when:** You want a directed search for evidence that could overturn or limit a specific claim, including your own argument or an author's position.
+
+**You get:** The strongest supported challenge tied to the actual premises, conditions, and conclusion. The result may instead be a scope restriction, an unresolved fact, a design trade-off, or no supported rebuttal. A valid adjacent criticism is kept separate from the original claim.
+
+**Boundary:** The user selects the proposition; `investigate-with-evidence` supplies factual checks. Force comes from relevant evidence and a clear consequence, not objection volume. The workflow ends when the claim has a supported disposition and no concrete outcome-changing lead remains. It does not publish replies or implement fixes.
+
+```text
+$challenge-the-claim Test the claim that initializing this module once prevents duplicate requests across repeated activations. Check the actual lifecycle and distinguish counterevidence from unrelated design preferences.
+```
+
+### Investigate with Evidence
+
+**Use it when:** Either entry point needs to resolve a factual uncertainty, or you directly want a bounded factual investigation. For everyday discussion, choose Expand the Frame or Challenge the Claim; they load this shared method as needed.
+
+**You get:** Evidence matched to the question and version, using primary sources or the smallest discriminating execution check. Results distinguish observed behavior, source-supported conclusions, inference, and missing evidence.
+
+**Boundary:** It answers the consuming task's question and returns control. Controlled local tests and reproductions preserve the working tree and shared environments; they do not authorize product edits or external actions. A missing decisive fact remains unresolved.
+
+Install this skill with either discussion entry point. If it is missing, the entry point reports that dependency and leaves affected investigation pending rather than claiming complete verification.
 
 ## Get Started with a Complete Guide
 
@@ -235,7 +259,7 @@ $evolve-skills $grill-with-docs Find opportunities to improve the skills used he
 
 ## Design Principles
 
-- **Deliberate activation:** Yak can be selected by the model to protect engineering work; setup and the other workflows remain user-invoked. Activation does not expand authority.
+- **Deliberate activation:** Yak can be selected by the model to protect engineering work, and Investigate with Evidence for bounded factual checks. The discussion entry points and other workflows remain user-invoked. Activation does not expand authority.
 - **Narrow ownership:** Each skill changes one responsibility and leaves the current task, other skills, and mandatory checkpoints in place.
 - **Evidence before expansion:** Facts come from the repository, real use, current documentation, and traceable sources rather than plausible guesses.
 - **Bounded exploration:** Broad research has an explicit stopping condition and returns control at a named checkpoint.

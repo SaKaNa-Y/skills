@@ -65,7 +65,7 @@ A Discovered Problem with credible security, data-loss, or destructive risk that
 _Avoid_: Silent deferral, unauthorized repair
 
 **Co-active Skill**:
-A skill used alongside one or more other skills in the same conversation. Co-active skills remain independent; co-use does not mean one skill invokes, routes, orders, limits, monitors, or manages another. Each skill keeps its own responsibility, and genuine instruction conflicts require user direction.
+An independently selected workflow used alongside other skills in the same conversation. Co-use leaves each workflow responsible for its own work; it does not create an invocation or management relationship. A declared shared-method dependency is a separate relationship that preserves the consuming task’s ownership; genuine instruction conflicts require user direction.
 _Avoid_: Caller skill, router skill
 
 **Explicit-only Skill**:
@@ -377,12 +377,28 @@ The ordered evidence basis for Tool Fit: repository facts and existing validatio
 _Avoid_: Popularity ranking, uncited consensus, vendor claims alone
 
 **Frame Expansion**:
-The deliberate introduction of project-relevant perspectives missing from the current discussion, whether its proposals originated with the user or an agent, with enough explanation to make informed judgments and trace their implications. It considers risks, opportunities, and simplification; users choose which new directions to explore, and a focused search for counterarguments follows an explicit challenge request.
+The deliberate introduction of project-relevant perspectives missing from the current discussion, whether its proposals originated with the user or an agent, with enough explanation to make informed judgments and trace their implications. It considers risks, opportunities, and simplification; users choose which new directions to explore, while a focused test of a specified proposition belongs to Claim Challenge. Relevant factual conflicts discovered during exploration inform the affected direction.
 _Avoid_: Question volume, risk-only checklist, automatic scope expansion
 
 **Expand the Frame**:
-The standalone Explicit-only Skill that uses Frame Expansion for an existing project or an unrealized idea, improving both project decisions and the user's ability to recognize relevant questions, including questions about the project's goals. Its discussion outcome connects newly introduced perspectives to the decisions they changed or supported and preserves unresolved directions, without treating the agent's broader knowledge as authority over user-owned trade-offs or permission to implement decisions.
+The Explicit-only entry point that uses Frame Expansion for an existing project or an unrealized idea, improving both project decisions and the user's ability to recognize relevant questions, including questions about the project's goals and defects in a proposed change. It uses Evidence Investigation for material factual uncertainty. Its discussion outcome connects newly introduced perspectives to the decisions they changed or supported and preserves unresolved directions, without treating the agent's broader knowledge as authority over user-owned trade-offs or permission to implement decisions.
 _Avoid_: Knowledge quiz, generic brainstorming, decision outsourcing
+
+**Claim Challenge**:
+A focused examination of a specified proposition and its conditions against the strongest relevant evidence. Its outcome distinguishes a supported rebuttal, a scope restriction, an unresolved factual question, a value disagreement, and no supported rebuttal without replacing the proposition with an adjacent issue.
+_Avoid_: Winning an argument, objection collection, automatic PR rejection
+
+**Challenge the Claim**:
+The Explicit-only Skill that performs Claim Challenge, using Evidence Investigation when facts need checking and preserving the user's authority over goals and permissible trade-offs.
+_Avoid_: Frame Expansion, external reply publisher
+
+**Evidence Investigation**:
+A bounded inquiry that resolves a factual uncertainty through matching sources or controlled execution and states what the evidence establishes under the examined conditions. The consuming task retains ownership of the question and decision.
+_Avoid_: Mandatory execution, assumed reproduction, product repair
+
+**Investigate with Evidence**:
+The shared skill that performs Evidence Investigation for Expand the Frame and Challenge the Claim, or for a direct factual investigation request. Its declared use supplies an investigation method without transferring task ownership.
+_Avoid_: Debate judge, workflow router, implementation authorization
 
 **Skill Evolution**:
 The iterative improvement of a skill through opportunities discovered in its conversational use or in external cases explicitly selected by the user, assessed against that skill's stated purpose as introduced by its description and clarified by its instructions. It includes successful approaches worth carrying forward and changes that could improve future use, with a detailed history kept separately for each skill.

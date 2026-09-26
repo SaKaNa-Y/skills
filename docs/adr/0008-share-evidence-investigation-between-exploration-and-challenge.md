@@ -1,0 +1,9 @@
+# Separate Perspective Exploration from Claim Challenge
+
+Perspective exploration and a directed challenge can investigate the same code but answer different questions. Exploration searches for overlooked considerations that may change a decision; a challenge determines whether a specified proposition withstands relevant counterevidence. Combining both purposes made it too easy to replace a resolved claim with adjacent criticisms.
+
+Keep `expand-the-frame` and `challenge-the-claim` as explicit user entry points. Expansion can discover PR defects and correct facts relevant to a direction. Claim Challenge preserves the actual proposition and conditions, distinguishes value priorities from factual commitments, and closes when no supported rebuttal remains. The strength of a challenge comes from decisive evidence and its consequence rather than the number of objections.
+
+Both entry points use the model-reachable `investigate-with-evidence` skill for factual inquiry and controlled local execution. It can also serve a direct factual question. The consuming task retains ownership of scope and decisions; the shared method returns evidence and its limits. Investigation may run a disposable check when it can resolve a material uncertainty, without authorizing product changes or external publication.
+
+A single skill with two modes would avoid another entry point but retain the competing exploration and closure goals. Duplicating investigation instructions would allow drift between the workflows. A shared skill preserves one authoritative method and independent reach, at the cost of an installation dependency. Installation guidance makes that dependency explicit; an entry point with a missing dependency reports it and leaves affected investigation pending. Installed copies remain separate from source changes.

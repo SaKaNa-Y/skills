@@ -1,6 +1,6 @@
 # Skills for Deliberate Engineering
 
-Twelve focused agent skills for engineering work that benefits from clearer decisions, bounded exploration, guided learning, and user control.
+Thirteen focused agent skills for engineering work that benefits from clearer decisions, bounded exploration, guided learning, and user control.
 
 Use them to make a conversation actionable, reduce low-value interruptions, protect the current task from scope drift, experience a developer tool before judging its implementation, discover evidence-backed ways to reuse a project's value, decide whether an external tool fits a repository, get started with a tool through a complete guide and runnable examples, explore project perspectives you have not considered, test a specific claim, resolve a factual uncertainty, or improve skills from their use or explicitly requested case research.
 
@@ -50,6 +50,7 @@ This repository does not publish its own npm package. `npx` runs the general-pur
 | Keep a valid side problem from replacing the current task | [`yak-shaving-triage`](skills/yak-shaving-triage/SKILL.md) | A preserved, issue-ready finding and a return to the original problem |
 | Evaluate a source-accessible library, framework, CLI, or developer tool as a user | [`just-use-it`](skills/just-use-it/SKILL.md) | Hands-on coverage evidence and reproducible Finding Packets |
 | Find where an existing project's value could serve more real contexts | [`set-theory-for-projects`](skills/set-theory-for-projects/SKILL.md) | Evidence-backed candidates, rejection reasons, and experiment ladders |
+| Find and discuss new capabilities for a project | [`explore-new-capabilities`](skills/explore-new-capabilities/SKILL.md) | One grounded idea at a time, with feasibility evidence and persistent exploration history |
 | Decide whether a tool fits a repository need | [`tool-fit-for-projects`](skills/tool-fit-for-projects/SKILL.md) | A comparison against the current baseline and a progressive adoption path |
 | Get started with a library, framework, or developer tool | [`get-up-to-speed`](skills/get-up-to-speed/SKILL.md) | One complete guide with runnable examples and depth matched to your goal |
 | Discover project questions you did not know to ask | [`expand-the-frame`](skills/expand-the-frame/SKILL.md) | Explained perspectives, informed trade-offs, and follow-up questions derived from your answers |
@@ -59,7 +60,7 @@ This repository does not publish its own npm package. `npx` runs the general-pur
 
 ## Invoke Skills
 
-Yak Shaving Triage supports model selection at the start of engineering tasks. Investigate with Evidence supports model selection for bounded factual questions and is loaded as a declared dependency by the two discussion entry points. Both also accept direct invocation. The other ten skills run only when you select them. Automatic selection depends on the host and task matching; it is not a guaranteed startup hook. The examples use the `$skill-name` convention; use the equivalent explicit-invocation syntax supported by your agent.
+Yak Shaving Triage supports model selection at the start of engineering tasks. Investigate with Evidence supports model selection for bounded factual questions and is loaded as a declared dependency by Expand the Frame and Challenge the Claim. Both also accept direct invocation. The other eleven skills run only when you select them. Automatic selection depends on the host and task matching; it is not a guaranteed startup hook. The examples use the `$skill-name` convention; use the equivalent explicit-invocation syntax supported by your agent.
 
 ```text
 $prune-the-tree Help me implement this feature. Resolve routine choices yourself and ask me only about decisions that change the outcome.
@@ -132,6 +133,22 @@ These skills create evidence and decision checkpoints. They stop before implemen
 ```text
 $just-use-it Exercise this CLI through every documented public capability, explore it as a new user, then inspect source for public behavior the hands-on passes missed.
 ```
+
+### Explore New Capabilities
+
+**Use it when:** You want ideas for what a project could enable next, from a small feature to a broader direction, with or without a starting idea.
+
+**You get:** Agent-led research into the project and relevant outside inspiration, followed by discussion of one selected opportunity. Each idea has a concrete user scenario, initial feasibility evidence, and a record of its evolving assumptions and outcome. Prior exploration and community work inform duplicate checks.
+
+**Before starting:** Create a local records directory and provide its path. The skill reads and updates project-specific history there, including deferred and dismissed ideas.
+
+**Boundary:** It stops at discussion, disposable evidence checks, and local records. You decide whether to explore another idea; implementation and publication require further instructions.
+
+```text
+$explore-new-capabilities Explore what this project could enable next. I created /path/to/exploration-records for the history. Bring me one grounded idea to discuss at a time.
+```
+
+It works independently and pairs with separately installed grilling skills, including `grill-with-docs`, for deeper discussion of the current idea.
 
 ### Set Theory for Projects
 

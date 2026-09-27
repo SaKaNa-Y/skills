@@ -380,6 +380,22 @@ _Avoid_: Popularity ranking, uncited consensus, vendor claims alone
 The deliberate introduction of project-relevant perspectives missing from the current discussion, whether its proposals originated with the user or an agent, with enough explanation to make informed judgments and trace their implications. It considers risks, opportunities, and simplification; users choose which new directions to explore, while a focused test of a specified proposition belongs to Claim Challenge. Relevant factual conflicts discovered during exploration inform the affected direction.
 _Avoid_: Question volume, risk-only checklist, automatic scope expansion
 
+**Feature Opportunity**:
+A hypothesis about a new capability, from a small feature to a substantial project direction, grounded in a concrete usage scenario and evidence supporting a plausible implementation path in the target project. It may draw inspiration from other contexts and remain worth discussing while demand or feasibility is unresolved; it is not a commitment to implement.
+_Avoid_: Confirmed demand, implementation commitment, Expansion Candidate
+
+**Feature Exploration**:
+The agent-led discovery and collaborative refinement of Feature Opportunities, starting from a project with or without a user-supplied direction and discussing one opportunity at a time. It combines project understanding with relevant outside inspiration and further investigation to support a decision to pursue, defer, or dismiss the current opportunity.
+_Avoid_: Feature backlog generation, implementation plan, simultaneous candidate discussion
+
+**Feature Exploration Record**:
+A project-specific history of presented Feature Opportunities and their evolving evidence, uncertainties, discussion outcomes, and reasons for reconsideration, kept in a directory the user creates and supplies. It supports continuity and recognition of previously explored ideas without implying that the project's wider community has never proposed them.
+_Avoid_: Accepted feature specification, published issue, conversation transcript
+
+**Explore New Capabilities**:
+The Explicit-only Skill that performs Feature Exploration, selecting and explaining one opportunity at a time for user discussion. The user decides whether to explore another opportunity after the current discussion reaches a stopping point.
+_Avoid_: Automatic feature discovery during repairs, implementation authorization
+
 **Expand the Frame**:
 The Explicit-only entry point that uses Frame Expansion for an existing project or an unrealized idea, improving both project decisions and the user's ability to recognize relevant questions, including questions about the project's goals and defects in a proposed change. It uses Evidence Investigation for material factual uncertainty. Its discussion outcome connects newly introduced perspectives to the decisions they changed or supported and preserves unresolved directions, without treating the agent's broader knowledge as authority over user-owned trade-offs or permission to implement decisions.
 _Avoid_: Knowledge quiz, generic brainstorming, decision outsourcing

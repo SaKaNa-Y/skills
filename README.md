@@ -1,8 +1,8 @@
 # Skills for Deliberate Engineering
 
-Thirteen focused agent skills for engineering work that benefits from clearer decisions, bounded exploration, guided learning, and user control.
+Fourteen focused agent skills for engineering work that benefits from clearer decisions, bounded exploration, guided learning, and user control.
 
-Use them to make a conversation actionable, reduce low-value interruptions, protect the current task from scope drift, experience a developer tool before judging its implementation, discover evidence-backed ways to reuse a project's value, decide whether an external tool fits a repository, get started with a tool through a complete guide and runnable examples, explore project perspectives you have not considered, test a specific claim, resolve a factual uncertainty, or improve skills from their use or explicitly requested case research.
+Use them to make a conversation actionable, reduce low-value interruptions, protect the current task from scope drift, experience a developer tool before judging its implementation, discover evidence-backed ways to reuse a project's value, decide whether an external tool fits a repository, get started with a tool through a complete guide and runnable examples, explore project perspectives you have not considered, test a specific claim, assess findings and their next actions, resolve a factual uncertainty, or improve skills from their use or explicitly requested case research.
 
 Each skill has a narrow responsibility. Invoking one does not silently expand the task, transfer a user-owned decision, or bypass an existing safety, authorization, or external-effect checkpoint.
 
@@ -16,7 +16,7 @@ Install from this GitHub repository:
 npx skills@latest add SaKaNa-Y/skills
 ```
 
-The interactive installer discovers the available skills and lets you choose which ones and which detected agents to use. Installation is project-scoped by default. Select `investigate-with-evidence` alongside `expand-the-frame` or `challenge-the-claim`: both entry points use it for factual investigation. Select all three to use both workflows; their instructions do not automatically install the dependency.
+The interactive installer discovers the available skills and lets you choose which ones and which detected agents to use. Installation is project-scoped by default. Select `investigate-with-evidence` alongside `expand-the-frame` or `challenge-the-claim`: both entry points use it for factual investigation. Select `assess-findings` and `investigate-with-evidence` alongside `just-use-it` or `yak-shaving-triage` for their automatic finding assessment. These declared dependencies must be installed separately; the workflows do not install them at runtime.
 
 Preview the available skills without installing anything:
 
@@ -49,6 +49,7 @@ This repository does not publish its own npm package. `npx` runs the general-pur
 | Stop a workflow from asking you to decide routine details | [`prune-the-tree`](skills/prune-the-tree/SKILL.md) | Fewer low-value interruptions without losing user-owned decisions |
 | Keep a valid side problem from replacing the current task | [`yak-shaving-triage`](skills/yak-shaving-triage/SKILL.md) | A preserved, issue-ready finding and a return to the original problem |
 | Evaluate a source-accessible library, framework, CLI, or developer tool as a user | [`just-use-it`](skills/just-use-it/SKILL.md) | Hands-on coverage evidence and reproducible Finding Packets |
+| Decide whether an observed finding warrants a fix, improvement, or PR | [`assess-findings`](skills/assess-findings/SKILL.md) | A supported classification and scoped action recommendation |
 | Find where an existing project's value could serve more real contexts | [`set-theory-for-projects`](skills/set-theory-for-projects/SKILL.md) | Evidence-backed candidates, rejection reasons, and experiment ladders |
 | Find and discuss new capabilities for a project | [`explore-new-capabilities`](skills/explore-new-capabilities/SKILL.md) | One grounded idea at a time, with feasibility evidence and persistent exploration history |
 | Decide whether a tool fits a repository need | [`tool-fit-for-projects`](skills/tool-fit-for-projects/SKILL.md) | A comparison against the current baseline and a progressive adoption path |
@@ -60,13 +61,13 @@ This repository does not publish its own npm package. `npx` runs the general-pur
 
 ## Invoke Skills
 
-Yak Shaving Triage supports model selection at the start of engineering tasks. Investigate with Evidence supports model selection for bounded factual questions and is loaded as a declared dependency by Expand the Frame and Challenge the Claim. Both also accept direct invocation. The other eleven skills run only when you select them. Automatic selection depends on the host and task matching; it is not a guaranteed startup hook. The examples use the `$skill-name` convention; use the equivalent explicit-invocation syntax supported by your agent.
+Yak Shaving Triage supports model selection at the start of engineering tasks. Assess Findings supports model selection for finding assessment and is reached automatically by Just Use It and Yak Shaving Triage. Investigate with Evidence supports bounded factual questions and is their assessment method as well as a dependency of Expand the Frame and Challenge the Claim. These three skills also accept direct invocation. The other eleven skills run only when you select them. Automatic selection depends on the host and task matching; it is not a guaranteed startup hook. The examples use the `$skill-name` convention; use the equivalent explicit-invocation syntax supported by your agent.
 
 ```text
 $prune-the-tree Help me implement this feature. Resolve routine choices yourself and ask me only about decisions that change the outcome.
 ```
 
-You can invoke compatible skills together. Each remains responsible for its own behavior. The declared evidence dependency below supplies a method to its consuming task; it does not select that task’s goal or broaden its authority.
+You can invoke compatible skills together. Each remains responsible for its own behavior. Declared assessment and evidence dependencies supply methods to their consuming task; they do not select that task’s goal or broaden its authority.
 
 ## Configure a Project
 
@@ -110,9 +111,9 @@ $prune-the-tree Build this feature. Investigate factual questions, use safe loca
 
 **Use it when:** Starting implementation, debugging, refactoring, or a developer-tool audit where independent findings should be preserved without diverting the task. The model can select it, and you can still invoke it directly.
 
-**You get:** Silent scope checks and bounded, read-only issue/PR reconciliation delegated to a subagent while the main task continues. Without workers, reconciliation runs after the main task. Ordinary findings and exact write proposals are collected at completion; only approved issue or local Markdown mutations are recorded. Independent audits open their reconciliation gate before any search worker starts.
+**You get:** Silent scope checks, reused or automatically assigned finding assessments, and bounded read-only issue/PR reconciliation while the main task continues. Assess and search workers share evidence through the coordinator. Without workers, the main agent performs the methods at safe boundaries. Final reports separate the finding judgment, tracker disposition and supported next action; only approved issue or local Markdown mutations are recorded.
 
-**Boundary:** It does not diagnose or repair the side problem, take over the active workflow, invent a tracker, or mutate a tracker without explicit approval. Urgent security or data-loss risks are surfaced immediately but still do not bypass reconciliation or write approval.
+**Boundary:** It delegates only decision-relevant investigation to Assess, preserves the active workflow and its source/tracker gates, and leaves repair and tracker writes to their authorization checkpoints. Urgent security or data-loss risks are surfaced immediately but still do not bypass reconciliation or write approval.
 
 ```text
 $yak-shaving-triage Fix the checkout failure. Preserve any independently actionable problems we encounter, but keep this task focused on checkout.
@@ -126,12 +127,24 @@ These skills create evidence and decision checkpoints. They stop before implemen
 
 **Use it when:** You need to evaluate a source-accessible library, framework, CLI, or developer tool through the experience its users actually receive.
 
-**You get:** A slice-first Usage-First Audit that completes one user outcome and its discriminating variation before moving to another, then reads source to find shipped public capabilities the hands-on work missed. The result includes honest partial-coverage boundaries, Verification Traces, and reproducible Finding Packets.
+**You get:** A slice-first Usage-First Audit that completes real user journeys, then reads source for missed public capabilities and runnable environments that expose meaningful component states or integrations. Usage workers hand evidence to Assess early; source investigation and tracker checks wait for the audit gates. The report includes coverage, replayable observations, assessed defects, improvement opportunities, unresolved observations, and excluded claims.
 
-**Boundary:** It does not diagnose or repair findings, publish issues, or count source inspection as successful usage. Disposable audit resources are cleaned up or reported if cleanup fails.
+**Boundary:** Usage and assessment remain separate assignments. An isolated example does not establish untested integration behavior. Assessment can investigate missing facts needed for a recommendation; repair and publication require separate authorization. Disposable resources are cleaned up or reported if cleanup fails.
 
 ```text
 $just-use-it Exercise this CLI through every documented public capability, explore it as a new user, then inspect source for public behavior the hands-on passes missed.
+```
+
+### Assess Findings
+
+**Use it when:** Actual use has revealed a behavior that may warrant a fix, improvement, or PR. Just Use It and Yak Shaving Triage reach it automatically; you can also invoke it directly.
+
+**You get:** A traceable judgment of the finding's basis and a separate recommendation about the value and scope of a response. A coordinated assessment worker reuses observations, requests decisive checks, consumes eligible tracker evidence, and preserves its reasons across follow-ups. Worthwhile optional improvements can qualify without being called mandatory defects.
+
+**Boundary:** Early assessment follows the consuming task's source/tracker permissions. It does not rerun every observation, require a written spec for every expectation, or use worker agreement as proof. Missing decisive evidence remains explicit; implementation and publication are separate actions. Install its `investigate-with-evidence` dependency.
+
+```text
+$assess-findings Evaluate these audit observations and recommend which changes are justified, where they belong, and what evidence still limits the recommendation.
 ```
 
 ### Explore New Capabilities
@@ -251,7 +264,7 @@ It works independently and pairs well with Matt Pocock's grilling series for dee
 Use combinations when two independent responsibilities are both useful:
 
 - `make-it-land` + `prune-the-tree`: ask fewer questions, and make every remaining question easy to understand and answer.
-- `just-use-it` + `yak-shaving-triage`: exercise a tool independently, freeze confirmed findings, reconcile each against existing tracker records, and request approval before writing.
+- `just-use-it` + `yak-shaving-triage`: usage workers send observations to the shared `assess-findings` workflow; source and tracker gates govern further inquiry, Yak returns reconciliation evidence, and the final report separates classification from action. Tracker writes require approval.
 - `make-it-land` + another task skill: keep explanations actionable while the task skill owns the work.
 
 For example:

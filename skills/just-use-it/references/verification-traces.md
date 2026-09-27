@@ -14,7 +14,7 @@ Keep one compact trace per independently verifiable capability. Identify:
 - the Discriminating Variation and its contrasting result, or why no material variation applies; and
 - the modes covered by the completed journey and any Mode Parity Probes.
 
-Use `Finding` when actual use confirms a product or documentation problem. Use `Blocked` when a missing safe prerequisite or control surface prevents the journey. Keep the capability `Not Exercised` when the journey or its required evidence remains incomplete.
+Use `Finding` when actual use confirms a product or documentation problem. Use `Blocked` when a missing safe prerequisite or control surface prevents the journey. Use `Observed` when the journey and its evidence are complete but assessment of a possible problem or improvement is pending. Keep the capability `Not Exercised` when the journey or its required usage evidence remains incomplete.
 
 ## Keep the Evidence Compact
 

@@ -5,7 +5,7 @@ This context defines the language used to design skills that keep agent work ali
 ## Language
 
 **Yak Shaving Triage**:
-The discipline of noticing and checking concrete problem clues during engineering work, exploring a bounded scope when explicitly requested, and preparing distinct Discovered Problems for reconciliation and user-approved recording while preserving the User Problem. It can be selected by the model or the user and stays active through the current User Problem without judging investigation depth, displaying a separate problem anchor, or managing another skill.
+The discipline of noticing and checking concrete problem clues during engineering work, exploring a bounded scope when explicitly requested, and preparing distinct Discovered Problems for reconciliation and user-approved recording while preserving the User Problem. It can be selected by the model or the user and stays active through the current User Problem while using Assess Findings for qualification and recommendations without taking over the active task.
 _Avoid_: Recurring scope report, task switching, silent dismissal
 
 **User Problem**:
@@ -21,7 +21,7 @@ A bounded observation or controlled comparison that tests a concrete problem clu
 _Avoid_: Exhaustive checklist, speculative finding, repair task
 
 **Issue-ready Problem**:
-A Discovered Problem preserved with enough verified context for an agent without the originating conversation to understand the problem, locate or reproduce the evidence, and verify a future resolution. It requires observable evidence and acceptance criteria, not a known root cause or chosen solution.
+A Discovered Problem preserved with enough verified context for an agent without the originating conversation to understand the problem, locate or reproduce the evidence, and verify a future resolution. It requires an assessed concern or improvement rationale, observable evidence and acceptance criteria, not a known root cause or chosen solution.
 _Avoid_: Issue exploration, speculative issue
 
 **Issue Reconciliation**:
@@ -33,7 +33,7 @@ The reconciliation boundary between one problem expressed through multiple obser
 _Avoid_: Title match, shared-component bucket, suspected-root-cause merge
 
 **Audit Reconciliation Gate**:
-The boundary after a Usage-First Audit has reconciled its source-confirmed public surface or explicitly ended as a Partial Audit, and frozen its independently observed findings, at which co-active Yak Shaving Triage may begin tracker-informed Issue Reconciliation. Finding Packets may be handed off before this gate, but target tracker history remains closed until it is reached; once that history is read, the remaining current audit work and any later resume are tracker-informed.
+The boundary after a Usage-First Audit has reconciled its source-confirmed public surface or explicitly ended as a Partial Audit, and frozen its independently observed findings, at which co-active Yak Shaving Triage may begin tracker-informed Issue Reconciliation. Finding Packets may be handed to Assess before this gate for phase-eligible assessment, but target tracker history remains closed until it is reached; once that history is read, the remaining current audit work and any later resume are tracker-informed.
 _Avoid_: Per-slice issue lookup, early duplicate search, silent blind resume
 
 **Reconciliation Disposition**:
@@ -77,16 +77,20 @@ The Explicit-only Skill that establishes shared project conventions required by 
 _Avoid_: Yak-only setup, skill router, issue migration
 
 **Usage-First Audit**:
-An evaluation of a source-accessible library or developer tool that exercises its user-facing behavior before inspecting implementation details, then uses the source to find public capabilities the experience may have missed.
+An evaluation of a source-accessible library or developer tool that exercises its user-facing behavior before inspecting implementation details, then uses the source to find public capabilities and relevant runnable environments the experience may have missed.
 _Avoid_: Source-first review, static bug scan, implementation audit
 
 **Just Use It**:
-The Explicit-only Skill that performs a Usage-First Audit, using a user-requested existing browser session first when the target exposes a UI. It produces coverage evidence and Finding Packets but does not repair findings or write tracker items.
+The Explicit-only Skill that performs a Usage-First Audit, using a user-requested existing browser session first when the target exposes a UI. It produces coverage evidence and Finding Packets, reaches Assess Findings for qualification and action recommendations, and leaves repair and tracker writes separately authorized.
 _Avoid_: Source reviewer, bug fixer, issue publisher
 
 **Capability Surface**:
-The set of shipped public behaviors identified from user documentation, exposed UI, CLI, or API entry points, and source-confirmed public interfaces. Internal helpers, test-only interfaces, dead code, and unreleased feature flags are not part of the surface.
+The set of shipped public behaviors identified from user documentation, exposed UI, CLI, or API entry points, and source-confirmed public interfaces. Runnable repository environments can extend experience of these behaviors or their component and integration states without making internal helpers, test-only interfaces, dead code, or unreleased flags public.
 _Avoid_: Every code path, source inventory, feature count
+
+**Repository Environment**:
+A runnable repository-provided environment that exposes meaningful capability journeys, component states, or integrations for actual use. Its evidence is scoped to the exercised setup and supports consumer-wide claims only where that relationship is verified.
+_Avoid_: Every package script, assumed production parity, source inspection as usage
 
 **Capability Journey**:
 An outcome-oriented path through a Capability Surface that reaches an observable user result through the relevant entry points, interactions, and states. Reaching or opening an entry point alone does not complete the journey.
@@ -109,7 +113,7 @@ A Usage-First Audit traversal that preserves complete documented journeys and fr
 _Avoid_: Global entrance sweep, source-interleaved audit, phase-wide button tour
 
 **Coverage Ledger**:
-A compact, resumable account of each Vertical Capability Slice's coverage state and next action, preserving honest boundaries between completed, active, blocked, and unexercised work.
+A compact, resumable account of each Vertical Capability Slice's coverage state and next action, preserving honest boundaries between completed, active, blocked, and unexercised work. Observed coverage means the journey was exercised while a possible finding still awaits assessment; it does not imply Verified behavior.
 _Avoid_: Raw browser transcript, screenshot archive, implied coverage
 
 **Verification Trace**:
@@ -149,7 +153,7 @@ An Audit Finding where actual use shows that shipped behaviors cannot be combine
 _Avoid_: Feature wish, automatic bug label, solution design
 
 **Finding Packet**:
-The session-scoped evidence for an Audit Finding, including the affected capability, prerequisites, reproduction path, expected behavior, observed behavior, reproduction attempts, and available evidence. It supports handoff and final reporting without itself publishing or updating a tracker item.
+The session-scoped evidence for a candidate or assessed Audit Finding, including the user outcome, expectation basis, observed impact, prerequisites, reproduction path and attempts, available evidence, and assessment state. It supports handoff and reporting while keeping unresolved observations distinct from qualified findings and tracker records.
 _Avoid_: Tracker issue, diagnosis, implementation plan
 
 **Intermittent Finding**:
@@ -415,6 +419,14 @@ _Avoid_: Mandatory execution, assumed reproduction, product repair
 **Investigate with Evidence**:
 The shared skill that performs Evidence Investigation for Expand the Frame and Challenge the Claim, or for a direct factual investigation request. Its declared use supplies an investigation method without transferring task ownership.
 _Avoid_: Debate judge, workflow router, implementation authorization
+
+**Finding Assessment**:
+A bounded evaluation of an observed finding that separates established behavior, the basis for an expected outcome, demonstrated impact, and the value and scope of a proposed response. It returns a traceable next-action recommendation and preserves unresolved facts without treating reproducibility as proof of a defect or lack of necessity as proof against an improvement.
+_Avoid_: Bug confirmation by repetition, adversarial voting, automatic PR creation
+
+**Assess Findings**:
+The shared workflow for Finding Assessment, selected for automatic use by Just Use It and Yak Shaving Triage with coordinated assessment workers. Early handoff preserves the active source and tracker boundaries; later evidence updates the affected judgments rather than restarting the whole assessment.
+_Avoid_: Issue publisher, root-cause requirement, duplicate assessment by each caller
 
 **Skill Evolution**:
 The iterative improvement of a skill through opportunities discovered in its conversational use or in external cases explicitly selected by the user, assessed against that skill's stated purpose as introduced by its description and clarified by its instructions. It includes successful approaches worth carrying forward and changes that could improve future use, with a detailed history kept separately for each skill.

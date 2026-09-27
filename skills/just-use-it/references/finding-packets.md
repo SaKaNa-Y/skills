@@ -4,7 +4,7 @@ Read this reference as soon as actual use may have revealed a functional, docume
 
 ## Confirm the Observation
 
-Compare observable behavior with a public promise, a usable-path expectation, or a consistent visible state. Preserve a Finding when the result has practical impact and actual use supplies evidence. Keep subjective taste and source-only suspicion as notes rather than Findings.
+Compare observable behavior with a public promise, a usable-path expectation, or a consistent visible state. Preserve the observation when actual use supplies evidence and a concrete user outcome is at stake. Identify whether the expectation comes from a public promise, consistent behavior, an exercised task requirement, or a proposed improvement. An expectation without an established basis remains provisional. Reproduction establishes occurrence; qualification and action recommendations come from Assess Findings. Keep taste alone and source-only suspicion as notes.
 
 Re-run the same path once when doing so is safe and cheap. A repeat observation is reproducible. An observation that does not recur consistently is an **Intermittent Finding**, not a discarded flake; record every attempt result and the state that may distinguish them.
 
@@ -14,16 +14,16 @@ A source-confirmed public capability missing from user documentation is a docume
 
 A **Capability Gap** is a reproducible limitation found through a concrete user path where shipped capabilities cannot be combined, scoped, or controlled finely enough to reach a practical outcome. Record the blocked outcome and operational impact, and describe it as a gap or limitation. Call it a bug only when it contradicts a public promise or consistent product contract. A preference without an exercised path and concrete impact remains a note rather than a Finding.
 
-Stop after a cheap confirmation. Root cause, repair design, and implementation belong to a later User Problem.
+Usage workers stop after the cheap confirmation and return to their slice. The coordinator routes decision-relevant gaps to assessment; product repair remains separate.
 
 ## Build the Packet
 
-Keep one session-scoped Finding Packet for each independently understandable behavior:
+Keep one session-scoped packet for each independently understandable candidate or assessed finding, with a stable identity and its current assessment or pending state:
 
-- affected capability and user impact;
+- affected capability, the user outcome, and observed impact distinguished from possible consequences;
 - environment, version, prerequisites, and initial state;
 - exact public action path and the material input or state needed to replay it;
-- expected and observed behavior;
+- expected and observed behavior, the basis for the expectation, and any concrete counterevidence already encountered;
 - reproduction attempts and whether the result is stable or intermittent;
 - available screenshot, output, log, viewport, or documentation location; and
 - material unknowns, stated without guessing.
@@ -34,14 +34,18 @@ Preserve the failing specimen or an exact creation command when retyping a sampl
 
 Describe the condition actually observed, distinguishing it from an inferred trigger. Record which dimensions changed in a comparison and leave untested conditions unknown.
 
-Describe concrete user impact. Assign severity or priority only when the project supplies the applicable scale and enough evidence supports the classification.
+Describe concrete user impact. Preserve isolated-environment scope and any known relation to the real consumer. Assign severity or priority only when the project supplies the applicable scale and enough evidence supports the classification.
 
-## Hand Off Without Publishing
+## Hand Off for Assessment and Reconciliation
 
-At the next coherent feature-group boundary, make completed packets available to the user. When `$yak-shaving-triage` is separately active, hand them off as pending while the hands-on and source-reconciliation work keeps target tracker history closed. Receiving a packet does not open the Audit Reconciliation Gate.
+At a coherent usage boundary, send the packet to the main coordinator for [Assess Findings](../../assess-findings/SKILL.md). The coordinator dispatches an assessment worker for a bounded finding or related set while usage continues. Supply the current source/tracker phase and available evidence without presenting the discoverer's label or proposed fix as an established conclusion. Keep one accountable assessment per identity and reuse it across Just and Yak; additional evidence updates that assessment.
 
-After the source-confirmed public surface is accounted for and the independently observed packets are frozen, declare the gate open so Yak Shaving Triage can reconcile the batch. An explicitly concluded Partial Audit also freezes its completed packets and opens the gate. Opening the gate without reading the tracker preserves behavioral blindness; once tracker history is read, label the remaining current audit work and any later resume tracker-informed. When Yak Shaving Triage is not active, retain the packets in the final audit report.
+During source-blind use, the assessor checks supplied evidence and may request a specific public-interface contrast from a usage worker. Source and tracker access follow the audit's global gates. Keep early judgments provisional where the required check is not yet eligible. Source-dependent investigation can start when the source phase opens; reconciliation waits for the Audit Reconciliation Gate.
 
-Just Use It performs no Issue Reconciliation or tracker mutation. It immediately returns to the remaining Capability Surface after an ordinary packet handoff and may include Reused record links or identifiers returned by the recording workflow in its final report.
+Coordinate independent work within available slots and shared-resource constraints. Retain queued assessment with its reason and next checkpoint when no slot is available. If delegation remains unavailable, the main agent performs the same method at a safe boundary and states that limitation. A missing dependency leaves an explicit pending assessment rather than a fabricated result. On pause, stop dispatch and interrupt active assessment work, preserve returned evidence, and account for resources; resume under the recorded phase.
 
-**Complete when:** another agent can reproduce or responsibly retry the observation from the packet, the uncertainty is explicit, and the packet is retained in the audit or handed off with an explicit pending or gate-open state.
+Once the audit or an explicitly ended Partial Audit freezes its observations, a co-active Yak may reconcile assessable packets. An early assessment need not wait for tracker results to state supported facts or classification; a new-PR recommendation waits for relevant reconciliation. Yak returns material coverage or resolution evidence to the assessor instead of starting a second assessment. Without Yak, the assessor handles the eligible read-only check; Just does not publish records.
+
+Before the final report, collect each assessment and preserve its separate classification, supported action, and remaining dependency. Early handoff is not final qualification. Report unresolved observations even when they are not ready for tracker recording, and preserve the reason an earlier claim was excluded.
+
+**Complete when:** another agent can replay the observation and inspect its expectation basis and impact; the assessment and search state are explicit; and evidence survives handoff and cleanup.

@@ -4,36 +4,29 @@ Use this reference when a newly observed problem may be distinct from the User P
 
 ## Qualify the Problem
 
-Retain a Discovered Problem when all of the following are true:
+Necessary investigation or repair stays with the active User Problem. For a potentially independent finding, retain concrete observation, its user outcome and expectation basis, actual impact, and existing assessment. A confirmed pre-existing problem qualifies under the same standard as a regression.
 
-- an observable behavior, failure, or violated expectation confirms it;
-- it has a practical impact beyond a stylistic preference;
-- it can be verified independently from the User Problem; and
-- it falls outside the work required to resolve the User Problem and can be deferred without blocking that resolution.
+During Just Use It or another observational workflow, that workflow supplies usage evidence and owns its assessment handoff. Reuse the result from [Assess Findings](../../assess-findings/SKILL.md); qualification is not established by a reproducible symptom or a discoverer's label alone. Keep supported defects, improvement opportunities, unresolved observations and excluded claims distinct. Recording eligibility and the recommendation to repair are separate decisions.
 
-Necessary investigation or repair continues under the active task workflow rather than being deferred.
+When no assessment exists and a concrete observation has a user outcome at stake, the coordinator dispatches an Assess worker with the evidence and current phase. Continue the main task; use its existing assessment if one is already assigned. Queue a bounded assignment if capacity is unavailable and revisit it at the next checkpoint, using main-agent assessment if delegation remains unavailable. A suspicion or taste alone does not start an assessment campaign. Stop and preserve assessment work under the same pause/cleanup rules as reconciliation.
 
-During an explicitly requested exploration or an observational workflow such as Just Use It, confirming a finding belongs to the User Problem while repairing the underlying problem can remain deferable. Accept evidence completed by the active workflow; do not repeat its experience or take over its diagnosis.
-
-Qualification depends on the observed problem, not on whether the current change introduced it. Preserve confirmed pre-existing problems under the same standard.
-
-An unsupported suspicion remains untracked. Resume the User Problem without investigating the suspicion merely to produce an issue.
+An Issue-ready Problem needs an evidenced concern or improvement rationale and an observable acceptance boundary. Preserve unresolved observations in the report without promoting them into issue drafts. If the tracker accepts investigation requests and the user asks for one, label the uncertainty rather than inventing a defect. An unavailable assessment dependency leaves the packet pending; continue unrelated work.
 
 ## Capture Enough Evidence
 
 Use evidence already encountered or a cheap reconfirmation such as one focused test rerun, an existing log, a reproduction step, or an exact code location. Stop when an agent without the originating conversation can understand the problem, locate or reproduce the evidence, and verify a future resolution.
 
-A root cause, implementation plan, or chosen solution is optional. Finding those belongs to the future issue unless the current User Problem independently requires the same investigation.
+A root cause or implementation plan is optional. Assess investigates only missing facts that could change qualification or the action recommendation, within the current authorization and phase. Preserve completed evidence instead of rerunning usage to fill a template.
 
 ## Wait for Search Eligibility
 
-Prepare qualified Issue-ready Problems at a natural Capture Checkpoint for background reconciliation. When another active workflow has an independence gate, preserve the evidence without reading Tracker Guidance or target tracker history until that gate opens. Ordinary results and write proposals are collected after the main task completes.
+Prepare packets with enough scenario, evidence and expectation basis to compare problem identity at a natural Capture Checkpoint for background reconciliation. Assessment can remain provisional pending tracker evidence; search itself does not qualify a problem or create a circular wait for a final recommendation. When another active workflow has an independence gate, preserve the evidence without reading Tracker Guidance or target tracker history until that gate opens. Ordinary results and write proposals are collected after the main task completes.
 
 For Just Use It, the Audit Reconciliation Gate opens after the source-confirmed public surface is accounted for and the independently observed findings are frozen. An explicitly concluded Partial Audit also freezes its completed Finding Packets and opens the gate. Receiving a Finding Packet before the gate does not open it; opening the gate alone preserves behavioral blindness, while reading tracker history marks the remaining current audit work and any later resume tracker-informed. Keep the gate open for new packets from tracker-informed work and batch them at later Capture Checkpoints.
 
 ## Reconcile Before Proposing a Write
 
-Reconcile every Issue-ready Problem against the canonical tracker before drafting a tracker creation or update:
+Reconcile each eligible packet against the canonical tracker before finalizing a new-work recommendation or drafting a tracker creation or update:
 
 1. Read project-provided Tracker Guidance to identify the canonical destination, tool, record type, template, and metadata rules. Follow agent-document pointers to shared guidance, commonly `docs/agents/issue-tracker.md`. Skill activation and repository hosting do not select a tracker. For local Markdown, search the configured issue directory including closed or archived records and follow its file and status conventions.
 2. Confirm that the destination can be searched well enough to rule out an existing record. If guidance is missing, access is unavailable, or search is insufficient, assign `Reconciliation Blocked`, retain the Issue-ready draft, and propose no tracker mutation.
@@ -53,6 +46,8 @@ Reconcile every Issue-ready Problem against the canonical tracker before draftin
 **Complete when:** every qualified problem has one disposition, every Reused result identifies its canonical record, and no Proposed Update or Proposed New exists without a completed search.
 
 ## Draft Only the Necessary Mutation
+
+Return material tracker evidence to the existing assessor before drafting. Keep unsupported and excluded claims out of mutation proposals. An improvement can qualify on its own stated value without being relabeled a defect.
 
 For `Proposed Update`, prepare only the missing evidence and any exact status action allowed by Tracker Guidance. For `Proposed New`, adapt this template to the destination. A `Reconciliation Blocked` problem may retain the same information as an internal Issue-ready draft, but it is not a creation proposal.
 
@@ -74,7 +69,7 @@ For `Proposed Update`, prepare only the missing evidence and any exact status ac
 
 ## Expected behavior
 
-[The behavior that should replace the observed problem.]
+[The desired outcome and its basis: established requirement or proposed improvement.]
 
 ## Scope and known unknowns
 

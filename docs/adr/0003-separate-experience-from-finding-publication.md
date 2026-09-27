@@ -1,3 +1,5 @@
 # Separate Experience from Finding Publication
 
+[Phased finding assessment](0009-assess-findings-through-phased-evidence-handoffs.md) extends this boundary with an automatically shared assessment method while preserving experience and publication ownership.
+
 Usage-first auditing must stay behaviorally independent while confirmed problems still need durable, non-duplicative follow-up. Just Use It owns hands-on coverage and Finding Packets; after it accounts for the source-confirmed public surface or explicitly freezes a Partial Audit, Yak Shaving Triage owns mandatory reconciliation against the Tracker Guidance-selected canonical tracker, including open and closed records, and publishes only separately approved mutations. This gate keeps issue history from shaping independent findings, makes subsequent audit work tracker-informed only after tracker history is read, blocks write proposals when search is insufficient, and still defers target-checkout writes until the audit integrity check and cleanup finish.

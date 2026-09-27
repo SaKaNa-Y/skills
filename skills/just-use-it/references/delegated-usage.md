@@ -19,17 +19,17 @@ Source and tracker boundaries apply to the whole audit, not separately to each w
 Return a compact result using the existing Verification Traces and Finding Packets:
 
 - Assigned slice and coverage states, including exclusions and unfinished work.
-- Observed outcomes, discriminating contrasts, findings, and material unknowns.
+- Observed outcomes, discriminating contrasts, expectation basis, demonstrated impact, and material unknowns; distinguish proposed classification from established evidence.
 - Replayable inputs and key evidence, with paths or references for longer artifacts already retained.
 - Artifact identity and any source or tracker exposure that changed the evidence scope.
 - Resources created, cleanup completed, and anything explicitly transferred to the main agent.
 
-Reference existing artifacts instead of copying full logs or the conversation. Remove secrets and unrelated personal information. The main agent reads additional evidence only when needed to evaluate a claim; a concise conclusion alone cannot establish Verified coverage. No separate handoff skill is required.
+Reference existing artifacts instead of copying full logs or the conversation. Remove secrets and unrelated personal information. The main agent reads additional evidence when needed to evaluate a claim; a concise conclusion alone cannot establish Verified coverage. It routes candidate findings to the assigned Assess worker under [finding handoff](finding-packets.md#hand-off-for-assessment-and-reconciliation). Usage workers continue their assigned slices and return requested contrasts through the coordinator rather than creating further workers.
 
 For an interrupted slice, add its last completed action, current state, and next action. Preserve enough evidence to resume without relying on a temporary path scheduled for deletion. Keep the unfinished work pending rather than marking it Verified to free a worker slot.
 
 ## Retire and Replace
 
-Before retiring a worker, the main agent checks that its handoff supports the claimed coverage and that retained evidence and resource ownership are usable. Fill a newly available slot with a fresh worker for the next eligible slice; do not wait for the other worker solely to form a batch. Close the completed worker when the host supports it; otherwise finish and retire it without sending it new assignments. Do not claim that an unavailable close operation ran or that retiring an agent stops its processes.
+Before retiring a worker, the main agent checks that its handoff supports the claimed coverage and that retained evidence and resource ownership are usable. The coordinator allocates freed capacity across pending usage, assessment and eligible reconciliation, keeping ready assessment work from being indefinitely displaced by new slices. Within the capacity allocated to usage, assign a fresh worker to the next eligible slice without waiting for another worker solely to form a batch. Close the completed worker when the host supports it; otherwise finish and retire it without sending it new assignments. Do not claim that an unavailable close operation ran or that retiring an agent stops its processes.
 
 On a user pause or stop, stop dispatching new work and promptly stop active workers. Collect available evidence and account for their resources, then follow the audit's cleanup and Partial Audit rules. Missing worker output limits coverage; it does not justify continuing product use after the stop.

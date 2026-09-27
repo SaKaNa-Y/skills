@@ -75,7 +75,7 @@ Historical skill version if known; actual pre-change baseline and candidate iden
 The target's intended outcome and relevant boundaries.
 Conversation scope and retrieval limits; references to relevant turns, tools, or artifacts.
 The user's task, meaningful actions or adaptations, feedback, and observed result.
-For requested external cases: original source references, resolution evidence, inferred lessons, and the target instruction gaps they address.
+For external learning: original source links and access limits, the specific borrowed idea or case evidence, the proposed adaptation and its connection to the target. Distinguish source claims, inference, and demonstrated results.
 Minimal excerpts or reproducing details needed to understand the opportunity.
 Separate facts, inference, and unknowns; identify contributions from co-used skills.
 

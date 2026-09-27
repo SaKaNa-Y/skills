@@ -1,12 +1,12 @@
 ---
 name: evolve-skills
-description: Evolve skills from use or explicitly requested case research through user-selected improvements, purpose-led validation, and recoverable history.
+description: Evolve skills through experience, external learning, user-selected improvements, purpose-led validation, and recoverable history.
 disable-model-invocation: true
 ---
 
 # Evolve Skills
 
-Learn from how skills were used in conversation, or from external cases the user explicitly asks to study, and improve their future use. Start with each target's purpose: opportunities include successful methods worth retaining, missed outcomes, unnecessary effort, and better ways to organize the work. Judge an opportunity by its contribution to that purpose, not by whether the agent obeyed every instruction or whether the skill could acquire more features.
+Learn from skill use and relevant external ideas to improve future use. Explicit external-learning requests can also start from a named target without prior usage. Start with each target's purpose: opportunities include successful methods worth retaining, missed outcomes, unnecessary effort, and better ways to organize the work. Judge an opportunity by its contribution to that purpose, not by whether the agent obeyed every instruction or whether the skill could acquire more features.
 
 This is an explicitly invoked, standalone skill. It works well alongside Matt Pocock's grilling series for deeper discussion of hypotheses and trade-offs. When separately active, let those skills own their discussion process; they are optional, not dependencies to activate or install. Use the user's requested presentation for decisions and carry forward choices already made.
 
@@ -16,7 +16,7 @@ For a requested rollback of a recorded evolution, start from that iteration and 
 
 Use only the user's named skills as evolution targets when specified; otherwise identify the skills actually used before this invocation in the selected conversation. Other co-used skills can supply necessary context, but receive no proposals or evolution records, including no-change records, outside that target set.
 
-By default, require actual usage evidence: an interrupted use can qualify when its method was observably applied. When the user explicitly requests learning from external cases, use those cases as the evidence source for the named target even without prior usage. A catalog entry, passing mention, or invocation alone supplies neither. Explain missing evidence rather than substituting another target or inventing an opportunity.
+By default, require actual usage evidence: an interrupted use can qualify when its method was observably applied. When the user explicitly requests external learning, use inspected ideas or cases as the evidence source for the named target even without prior usage; the user need not supply a source or concept name. A catalog entry, passing mention, or invocation alone supplies neither. Explain missing evidence rather than substituting another target or inventing an opportunity.
 
 For each target, read its description first, then its instructions and the supporting resources relevant to that use. Establish its intended outcome, applicable situations, boundaries, and what better use would mean. Keep separate identities for different skills, including same-named skills from different sources.
 
@@ -30,7 +30,7 @@ Review the full available history of the current conversation by default: user r
 
 For usage evidence, trace what the user wanted, the approach taken, material adaptations or feedback, and the observed result. Include successful episodes as well as friction. Distinguish what the instructions required from the agent's interpretation; leave uncertain attribution unresolved.
 
-For requested external research, inspect the original cases and their resolution evidence within the requested scope. Separate reported observations, demonstrated causes, fixes, and inferred discovery methods; a closed issue or merged patch alone does not prove a cause or a fresh reproduction. Map transferable lessons to the target's existing instructions and actual gaps. Retain case-specific details as evidence rather than shared defaults.
+For external material already supplied or previously consulted, preserve its original context, access limits and relevance to the target. Use [external learning](references/external-learning.md) to interpret sources and distinguish inspiration from demonstrated outcomes.
 
 Read [history and recovery](references/history.md) to establish private storage, reconcile the current target with its last recorded active state, and consult relevant prior iterations. Preserve identifiable external changes and honest history gaps before developing a new change. Before presenting proposals, briefly connect the relevant history to this review: what was previously tried or decided, why, and what new evidence or changed conditions justify revisiting it. Carry forward applicable decisions when that basis is unchanged; extend an existing pending iteration when continuing the same hypothesis.
 
@@ -38,14 +38,16 @@ Proceed when each target has a traceable account of the selected evidence, priva
 
 ## 3. Develop purpose-led hypotheses
 
+For substantive method reviews, use [external learning](references/external-learning.md) to explore opportunities from the target's purpose, including opportunities without a known failure. Reuse relevant recent research and respect the user's research boundaries. Mechanical edits and rollbacks need no exploratory pass. An unavailable research tool limits that branch; continue evidence-supported work and record the gap.
+
 For each supported opportunity, connect:
 
-- The concrete usage episode or external case and its observed result.
+- The concrete usage episode, external case, or sourced idea; separate observed results from proposed benefits.
 - Why a change could help this skill fulfill its purpose.
 - The specific method or material to change, its intended value, and evidence sufficient to judge that value.
 - Alternative explanations, likely trade-offs, and a way to distinguish improvement from coincidence.
 
-Inspect the existing instructions before proposing additions. For each target, use a relevant usage episode or selected external case to identify the decision that affected the outcome. Compare the guidance available at that decision with what was needed: a principle mentioning the concern may or may not provide a sufficient method. Distinguish an adequate method that was not followed from a missing or poorly placed decision step, keeping uncertain attribution explicit.
+Inspect the existing instructions before proposing additions. For each target, locate the decision a usage episode or external insight could improve. Compare the current guidance with the proposed method: a principle mentioning the concern may or may not provide a sufficient method. Distinguish an adequate method that was not followed from a missing or poorly placed decision step, keeping uncertain attribution explicit.
 
 An outcome such as a missed capability is an entry point for investigation, not proof that another checklist is needed. Consider clearer context pointers, moving a decision earlier, changing the unit of work, merging or removing steps, and carrying forward effective adaptations when the evidence supports them. Preserve useful constraints; fewer words or steps alone do not establish improvement.
 
@@ -59,7 +61,7 @@ When no hypothesis merits a change, connect the no-change conclusion to that tar
 
 ## 4. Select a concrete change
 
-Present the proposed changes by skill, with enough before/after detail to review, the evidence, expected benefit, meaningful alternatives, and trade-offs. Agree on the intended value of each material change, sufficient evidence, the evaluation approach, and useful behavior to preserve. Separate retaining a reusable method from claiming improved execution; either can be valuable, with different evidence requirements.
+Present the proposed changes by skill, with enough before/after detail to review, the evidence, expected benefit, meaningful alternatives, and trade-offs. Keep original source links and the specific borrowed idea beside each externally informed proposal; distinguish the source's claim from your adaptation so the user can inspect and correct it. Agree on the intended value of each material change, sufficient evidence, the evaluation approach, and useful behavior to preserve. Separate retaining a reusable method from claiming improved execution; either can be valuable, with different evidence requirements.
 
 Let the user select concrete hypotheses before implementing them. Reuse an explicit selection already present in the conversation; a request to review or a skill invocation by itself is not selection of an unseen patch. Resolve dependent decisions in subsequent rounds. With co-active grilling, bring the evidence and proposals into its rounds rather than running a second interview.
 

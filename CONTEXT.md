@@ -429,11 +429,11 @@ The shared workflow for Finding Assessment, selected for automatic use by Just U
 _Avoid_: Issue publisher, root-cause requirement, duplicate assessment by each caller
 
 **Skill Evolution**:
-The iterative improvement of a skill through opportunities discovered in its conversational use or in external cases explicitly selected by the user, assessed against that skill's stated purpose as introduced by its description and clarified by its instructions. It includes successful approaches worth carrying forward and changes that could improve future use, with a detailed history kept separately for each skill.
+The iterative improvement of a skill through opportunities discovered in its conversational use or through relevant external learning, assessed against that skill's stated purpose as introduced by its description and clarified by its instructions. It includes successful approaches worth carrying forward and changes that could improve future use, with a detailed history kept separately for each skill.
 _Avoid_: Execution compliance audit, failure-only review, change for its own sake
 
 **Skill Evolution Opportunity**:
-An evidence-grounded possibility for improving future use of a skill in relation to its particular purpose, grounded in actual usage or explicitly requested external cases. It may concern the method, sequence of work, instruction structure, references, templates, or validation scenarios, including effective approaches worth carrying forward.
+An evidence-grounded possibility for improving future use of a skill in relation to its particular purpose, grounded in actual usage, inspected external cases, or sourced ideas with a reasoned connection to the target. It may concern the method, sequence of work, instruction structure, references, templates, or validation scenarios, including effective approaches worth carrying forward.
 _Avoid_: Compliance violation, mandatory new rule, confirmed improvement
 
 **Skill Evolution Target**:
@@ -453,5 +453,5 @@ A change to a target skill outside its recorded evolution workflow, identified f
 _Avoid_: Validated evolution, reconstructed intent, complete version history
 
 **Evolve Skills**:
-The Explicit-only Skill that performs Skill Evolution from prior skill use or explicitly requested external cases, taking user-selected hypotheses through modification, validation, and a Skill Evolution Record. It can operate independently, while co-active grilling skills deepen discussion of the hypotheses and trade-offs.
+The Explicit-only Skill that performs Skill Evolution from prior skill use and relevant external learning, including explicit external-learning requests without prior use, taking user-selected hypotheses through modification, validation, and a Skill Evolution Record. It can operate independently, while co-active grilling skills deepen discussion of the hypotheses and trade-offs.
 _Avoid_: Compliance checker, generic skill generator, mandatory grilling dependency

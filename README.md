@@ -57,7 +57,7 @@ This repository does not publish its own npm package. `npx` runs the general-pur
 | Discover project questions you did not know to ask | [`expand-the-frame`](skills/expand-the-frame/SKILL.md) | Explained perspectives, informed trade-offs, and follow-up questions derived from your answers |
 | Test whether a specific claim withstands counterevidence | [`challenge-the-claim`](skills/challenge-the-claim/SKILL.md) | A focused judgment that separates rebuttals, unresolved facts, and value disagreements |
 | Resolve a bounded factual uncertainty | [`investigate-with-evidence`](skills/investigate-with-evidence/SKILL.md) | Traceable findings from sources or controlled execution, with applicability limits |
-| Improve skills from use or requested case research | [`evolve-skills`](skills/evolve-skills/SKILL.md) | User-selected improvements with purpose-led evidence and per-skill recovery history |
+| Improve skills through experience and external learning | [`evolve-skills`](skills/evolve-skills/SKILL.md) | User-selected improvements with purpose-led evidence and per-skill recovery history |
 
 ## Invoke Skills
 
@@ -247,11 +247,11 @@ The original design drew on the purposeful lessons in [Matt Pocock's teach skill
 
 ## Evolve Skills from Experience
 
-**Use it when:** You have used one or more skills in a conversation and want to improve their future use. Named targets limit the review to those skills; otherwise it identifies the skills actually used. It reads each target's description and instructions before analyzing the available conversation, including successful adaptations and opportunities for better methods.
+**Use it when:** You want to improve skills from their use, or explicitly explore external methods for named skills. Named targets limit the review; otherwise it identifies the skills actually used. Substantive reviews include proportionate exploration of relevant tool designs, talks, podcasts and technical writing, even without a known failure or supplied concept.
 
-**You get:** Concrete hypotheses discussed before modification, before/after behavioral comparisons with relevant transfer probes, and detailed private per-skill history explaining the evidence, choices, exact changes, validation, and recovery method. Each run reconciles external edits with the last recorded active state and preserves known history gaps. History follows the source repository under the Git-ignored `docs/skill-evolution/<skill-name>/`; standalone installations use an agreed persistent location. Private records require separate backup or handoff.
+**You get:** User-selected hypotheses with inspectable source links and clear adaptations, purpose-led validation, and private per-skill evidence and recovery history. Validation distinguishes gains from preservation and inconclusive comparisons. An optional Python 3 standard-library helper checks captured file identities and evidence records; the host's existing tools execute trials. These checks do not certify semantic correctness or isolation.
 
-**Boundary:** Actual skill use is required. A catalog entry or mention alone is insufficient. Personal preferences remain usage context; shared changes must serve the target's domain, and each iteration examines the whole method for cumulative drift. Candidates remain separate during validation, then supported selected changes are applied in the same run using existing approval. A concrete validation blocker leaves a retained candidate and Pending Validation record; merely unperformed checks remain work to complete.
+**Boundary:** A catalog entry or mention alone establishes no usage evidence. External ideas can seed hypotheses; adoption needs the agreed evidence. Mechanical edits and rollbacks need no exploration. Candidates stay separate until supported selected changes are applied; concrete blockers retain a Pending Validation candidate. The Git-ignored `docs/skill-evolution/<skill-name>/` history preserves decisions, source provenance, evidence and recovery material and requires separate private backup or handoff. Standalone installations use an agreed persistent history location.
 
 ```text
 $evolve-skills Review the skills used in this conversation against their purposes. Discuss concrete improvements with me, then validate and record the changes I select, preserving what is needed to reverse them.

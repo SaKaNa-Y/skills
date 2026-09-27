@@ -20,11 +20,15 @@ Identify the target, its intended user, its user-facing documentation, and the e
 
 Establish which revision, release, or running instance the request concerns. When the current checkout is the audit target and no other version is specified, prefer its documented build over an unrelated installed release. An explicit release or instance request takes precedence. Before crediting behavior, confirm the effective executable, imported package, or deployment through available launch or identity metadata. Scope observations to what actually ran; unknown source correspondence limits source attribution, not direct observation.
 
-Keep behavioral implementation source and the target project's issue tracker closed during the first two passes. Follow repository instructions and read public documentation plus entrypoint metadata needed to launch the tool. If the documented launch path fails, preserve that result before using operational metadata to make the target runnable; implementation remains closed until the source pass.
+Establish the entry phase before planning the passes. For a continuation or known-issue revalidation, recover the existing coverage, evidence provenance, assessment owner, and source/tracker access state. Carry open gates forward and refresh only evidence material to the requested scope; share that state with usage, Assess, and Yak workers. New workers and temporary projects inherit this provenance. The phase-opening steps below apply while their gates remain closed; already-open source investigation and reconciliation may proceed alongside remaining usage. Actual public use still supplies behavior evidence.
+
+For an initial source-blind audit, keep behavioral implementation source and the target project's issue tracker closed during the first two passes. Follow repository instructions and read public documentation plus entrypoint metadata needed to launch the tool. If the documented launch path fails, preserve that result before using operational metadata to make the target runnable; implementation remains closed until the source pass.
 
 Source-closed means behaviorally blind, not safety-blind. Inspect the minimum install hooks, launch scripts, permissions, and external effects needed to decide whether execution is safe, without using them to infer product behavior. If safe execution requires broader source inspection, disclose that the blind sequence cannot be preserved rather than claiming a Usage-First Audit followed it.
 
 For CLI, public API, or package use, read [references/programmatic-experience.md](references/programmatic-experience.md) before consumer setup, installation, or first invocation, including help and version probes.
+
+For journeys whose judgment depends on workload size or processing scope, read [workload checks](references/exploration-lenses.md#realistic-scale-and-degraded-surroundings) before execution.
 
 When a required runtime, compiler toolchain, SDK, system package, container runtime, or similar prerequisite is absent, read [references/prerequisites.md](references/prerequisites.md) before installing anything or abandoning the affected capability.
 
@@ -35,17 +39,17 @@ Prefer disposable state:
 - Record every temporary path, process, server, and browser context created by the audit so the exact resources can be cleaned on completion, failure, or interruption.
 - Keep external effects inside disposable projects, test data, or sandboxes. Preserve every existing authorization checkpoint; mark a capability Blocked when it cannot be exercised safely.
 
-**Complete when:** the target and its runtime correspondence or uncertainty, public starting material, browser choice, isolation boundary, cleanup targets, and every known prerequisite decision are explicit.
+**Complete when:** the target and its runtime correspondence or uncertainty, public starting material, entry phase and inherited gates, browser choice, isolation boundary, cleanup targets, and every known prerequisite decision are explicit.
 
 ## 2. Map the Documented Surface
 
-Build the initial Capability Surface from public documentation without reading behavioral implementation source. Give every documented capability the initial state `Not Exercised`.
+For an initial audit, build the Capability Surface from public documentation without reading behavioral implementation source and give every documented capability the state `Not Exercised`. For a continuation, update the existing Coverage Ledger for the requested scope and evidence that needs refreshing.
 
 Group Capability Journeys by the user outcome they serve, not by their panel, route, menu, command group, or documentation section. Order the groups by the product's primary user tasks. Start a compact **Coverage Ledger** with each known Capability Group, its intended outcome, interfaces and modes, current state, and next action.
 
-Keep implementation source and the target issue tracker closed. Source-closed means behaviorally blind: public documentation and the entrypoint metadata needed for safe launch remain available.
+While the initial gates remain closed, keep implementation source and the target issue tracker closed. Source-closed means behaviorally blind: public documentation and the entrypoint metadata needed for safe launch remain available.
 
-**Complete when:** every documented capability belongs to a user-outcome group, every group starts as `Not Exercised`, and the first Vertical Capability Slice is explicit.
+**Complete when:** every in-scope capability belongs to a user-outcome group, its retained or pending coverage is explicit, and the next Vertical Capability Slice is identified.
 
 ## 3. Complete Vertical Slices
 
@@ -62,7 +66,7 @@ When the group uses an interactive UI, read [references/ui-experience.md](refere
 5. Before assigning the first `Verified` state, read [references/verification-traces.md](references/verification-traces.md). A capability becomes `Verified` only with a complete Verification Trace. As soon as behavior may be a finding, read [references/finding-packets.md](references/finding-packets.md), preserve its evidence, and hand it to the coordinator for early assessment. Continue usage while the assessor reviews the packet under the current source/tracker phase.
 6. Give every capability in the slice a terminal state and return its evidence to the main agent. The main agent checks the handoff, updates the Coverage Ledger, and retires the worker before assigning a new slice to a fresh subagent. `Verified`, `Finding`, `Observed`, and `Blocked` are terminal for usage; `Observed` means the journey was exercised but its problem or improvement judgment is pending. Assessment status remains separate from usage completion; `Not Exercised` remains pending.
 
-Continue across completed slices under the existing authorization while known in-scope capabilities remain feasible. Use slice boundaries for progress updates; a Partial Audit describes incomplete coverage rather than a reason to end the task. End an incomplete audit when the user asks to stop or narrow the scope, or when no meaningful in-scope progress remains possible without unavailable prerequisites, access, or user input. Continue other feasible work when one capability is Blocked. Preserve remaining coverage and resumption conditions when ending. A temporary pause that will resume before tracker reconciliation keeps the target tracker closed. When interruption instead concludes the run with known capabilities `Not Exercised`, preserve the current slice and next action, freeze completed Finding Packets, and report a Partial Audit. A separately active recording workflow may reconcile those frozen packets; audit work after it reads tracker history, including any later resume, is tracker-informed rather than behaviorally blind.
+Continue across completed slices under the existing authorization while known in-scope capabilities remain feasible. Use slice boundaries for progress updates; a Partial Audit describes incomplete coverage rather than a reason to end the task. End an incomplete audit when the user asks to stop or narrow the scope, or when no meaningful in-scope progress remains possible without unavailable prerequisites, access, or user input. Continue other feasible work when one capability is Blocked. Preserve remaining coverage and resumption conditions when ending. A temporary pause before the initial tracker reconciliation keeps that gate closed; an already-open gate remains open. When interruption instead concludes the run with known capabilities `Not Exercised`, preserve the current slice and next action, freeze completed Finding Packets, and report a Partial Audit. A separately active recording workflow may reconcile those frozen packets; audit work after it reads tracker history, including any later resume, is tracker-informed rather than behaviorally blind.
 
 A documentation error is a Finding even when the implementation works through an undocumented correction. Do not use operational metadata or source knowledge to silently rescue a documented journey.
 
@@ -70,7 +74,7 @@ A documentation error is a Finding even when the implementation works through an
 
 ## 4. Reconcile with Source
 
-The main agent opens implementation source after all hands-on workers have handed back their slices and the preceding usage completion criterion holds. Announce this phase change to assessment workers; tracker history remains closed. Match source to the experienced artifact where possible and qualify leads from other revisions until exercised on their own artifacts.
+When implementation source is still closed, the main agent opens it after all hands-on workers have handed back their slices and the preceding usage completion criterion holds. Announce that transition to assessment workers; tracker history stays closed until its own gate opens. Match source to the experienced artifact where possible and qualify leads from other revisions until exercised on their own artifacts.
 
 Inspect public exports, routes, commands, flags, feature registration, examples, and tests for shipped public capabilities missing from coverage. Treat shipped exports, executables, routes, or browser globals as public unless marked internal, test-only, or unreleased; a hidden help entry alone does not establish privacy. Report unresolved public intent explicitly.
 

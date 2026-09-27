@@ -4,6 +4,10 @@ Usage-first audits complete documented journeys and free exploration within each
 
 ## Delegated execution amendment
 
-Just Use It delegates actual usage slices to fresh subagents, with at most two concurrent Just workers unless the user explicitly requests more. Independent slices may run together; dependent or shared-state work remains sequential. The main agent retains the combined coverage and phase boundaries, accepts compact evidence-backed handoffs, and retires each worker before assigning another slice to a fresh agent. This replaces audit-wide serial traversal while preserving depth within every slice. The cap is a conservative scheduling default, not an empirically optimal concurrency claim, and does not cap separately active skills.
+The original delegated execution amendment chose fresh workers for every usage slice, trading coordination and isolated resources for bounded worker contexts. Its bounded CLI validation supported that path but did not establish that handing off tightly coupled work was beneficial.
 
-This trades coordination and isolated resources for bounded worker contexts. Existing Verification Traces and Finding Packets carry results; an external conversation-handoff skill is not a dependency. Context or speed benefits require separate behavioral evidence rather than following from delegation alone.
+## Task-fit execution amendment
+
+Just Use It now selects direct or delegated execution according to independent progress, controllable state, and worthwhile handoff cost. Concurrency is a separate resource decision. Coverage remains slice-first while related investigation can retain its owner across slice boundaries. Unexpected coupling can lead to serialization or consolidation under an existing executor, with evidence and resource ownership preserved.
+
+This trades a uniform worker lifecycle for a contextual ownership decision. Complete journeys, phase boundaries, accountable assessment and the conservative two-slice concurrency ceiling remain intact. Compact evidence-backed handoffs use existing Verification Traces and Finding Packets; no external handoff skill is required. Context, speed or quality gains require behavioral evidence rather than following from delegation or continuity alone.

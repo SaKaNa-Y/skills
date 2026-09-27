@@ -127,7 +127,7 @@ These skills create evidence and decision checkpoints. They stop before implemen
 
 **Use it when:** You need to evaluate a source-accessible library, framework, CLI, or developer tool through the experience its users actually receive.
 
-**You get:** A slice-first Usage-First Audit that completes real user journeys, then reads source for missed public capabilities and runnable environments that expose meaningful component states or integrations. Usage workers hand evidence to Assess early; source investigation and tracker checks wait for the audit gates. The report includes coverage, replayable observations, assessed defects, improvement opportunities, unresolved observations, and excluded claims.
+**You get:** A slice-first Usage-First Audit that completes real user journeys, then reads source for missed public capabilities and runnable environments that expose meaningful component states or integrations. Usage evidence reaches Assess early; source investigation and tracker checks wait for the audit gates. The report includes coverage, replayable observations, assessed defects, improvement opportunities, unresolved observations, and excluded claims.
 
 **Boundary:** Usage and assessment remain separate assignments. An isolated example does not establish untested integration behavior. Assessment can investigate missing facts needed for a recommendation; repair and publication require separate authorization. Disposable resources are cleaned up or reported if cleanup fails.
 
@@ -264,7 +264,7 @@ It works independently and pairs well with Matt Pocock's grilling series for dee
 Use combinations when two independent responsibilities are both useful:
 
 - `make-it-land` + `prune-the-tree`: ask fewer questions, and make every remaining question easy to understand and answer.
-- `just-use-it` + `yak-shaving-triage`: usage workers send observations to the shared `assess-findings` workflow; source and tracker gates govern further inquiry, Yak returns reconciliation evidence, and the final report separates classification from action. Tracker writes require approval.
+- `just-use-it` + `yak-shaving-triage`: usage observations reach the shared `assess-findings` workflow; source and tracker gates govern further inquiry, Yak returns reconciliation evidence, and the final report separates classification from action. Tracker writes require approval.
 - `make-it-land` + another task skill: keep explanations actionable while the task skill owns the work.
 
 For example:

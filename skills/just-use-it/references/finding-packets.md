@@ -14,7 +14,7 @@ A source-confirmed public capability missing from user documentation is a docume
 
 A **Capability Gap** is a reproducible limitation found through a concrete user path where shipped capabilities cannot be combined, scoped, or controlled finely enough to reach a practical outcome. Record the blocked outcome and operational impact, and describe it as a gap or limitation. Call it a bug only when it contradicts a public promise or consistent product contract. A preference without an exercised path and concrete impact remains a note rather than a Finding.
 
-Usage workers stop after the cheap confirmation and return to their slice. The coordinator routes decision-relevant gaps to assessment; product repair remains separate.
+The usage executor stops after the cheap confirmation and returns to its slice. The coordinator routes decision-relevant gaps to assessment; product repair remains separate.
 
 ## Build the Packet
 
@@ -38,9 +38,9 @@ Describe concrete user impact. Preserve isolated-environment scope and any known
 
 ## Hand Off for Assessment and Reconciliation
 
-At a coherent usage boundary, send the packet to the main coordinator for [Assess Findings](../../assess-findings/SKILL.md). The coordinator dispatches an assessment worker for a bounded finding or related set while usage continues. Supply the current source/tracker phase and available evidence without presenting the discoverer's label or proposed fix as an established conclusion. Keep one accountable assessment per identity and reuse it across Just and Yak; additional evidence updates that assessment.
+At a coherent usage boundary, the main agent retains its directly observed packet or receives the delegated executor’s packet for [Assess Findings](../../assess-findings/SKILL.md). The coordinator dispatches an assessment worker for a bounded finding or related set while usage continues. Supply the current source/tracker phase and available evidence without presenting the discoverer's label or proposed fix as an established conclusion. Keep one accountable assessment per identity and reuse it across Just and Yak; additional evidence updates that assessment.
 
-During source-blind use, the assessor checks supplied evidence and may request a specific public-interface contrast from a usage worker. Source and tracker access follow the audit's global gates. Keep early judgments provisional where the required check is not yet eligible. Source-dependent investigation can start when the source phase opens; reconciliation waits for the Audit Reconciliation Gate.
+During source-blind use, the assessor checks supplied evidence and may request a specific public-interface contrast from the current usage executor, including the main agent during direct use. Source and tracker access follow the audit's global gates. Keep early judgments provisional where the required check is not yet eligible. Source-dependent investigation can start when the source phase opens; reconciliation waits for the Audit Reconciliation Gate.
 
 Coordinate independent work within available slots and shared-resource constraints. Retain queued assessment with its reason and next checkpoint when no slot is available. If delegation remains unavailable, the main agent performs the same method at a safe boundary and states that limitation. A missing dependency leaves an explicit pending assessment rather than a fabricated result. On pause, stop dispatch and interrupt active assessment work, preserve returned evidence, and account for resources; resume under the recorded phase.
 

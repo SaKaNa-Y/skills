@@ -105,7 +105,7 @@ A one-variable change to a Capability Journey whose correct behavior produces an
 _Avoid_: Random second input, ceremonial retry, exhaustive combination
 
 **Vertical Capability Slice**:
-A coherent feature-group audit unit built around a primary Capability Journey and one discriminating variation or recovery path. An assigned execution agent carries it to a terminal coverage state before handing it back; independent slices may progress concurrently within the same audit.
+A coherent feature-group audit unit built around a primary Capability Journey and one discriminating variation or recovery path. Its executor carries it to a terminal coverage state with inspectable evidence; independent slices may progress concurrently within the same audit.
 _Avoid_: Shallow feature sweep, panel tour, exhaustive state matrix
 
 **Slice-First Audit**:

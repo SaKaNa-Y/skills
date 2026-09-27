@@ -1,18 +1,18 @@
-# Delegated Usage
+# Execution Coordination
 
-Use the existing Capability Groups and Vertical Capability Slices as the unit of delegation. Workers perform real user journeys, variations, and exploration; they are not merely source readers or command planners.
+Apply the main workflow’s execution choice to existing Capability Groups and Vertical Capability Slices. Each executor performs real user journeys, variations, and exploration. The main agent retains combined coverage, target identity, phase transitions, and the final report.
 
 ## Assign a Slice
 
-The main agent owns the combined Coverage Ledger, target identity, phase transitions, and final report. Give each worker this skill and its relevant references, its assigned outcome and coverage boundary, public starting material, verified artifact or instance, current source/tracker access state, and authorized disposable resources. Supply only the context needed for that assignment rather than the full conversation. A worker does not remap the whole product, start its own source pass, or spawn more agents.
+For delegated work, give the worker this skill and its relevant references, its assigned outcome and coverage boundary, public starting material, verified artifact or instance, current source/tracker access state, and authorized disposable resources. Supply only the context needed for that assignment rather than the full conversation. A worker does not remap the whole product, start its own source pass, or spawn more agents.
 
-A worker owns one slice through its completion or explicit interruption. Report newly discovered independent outcomes to the main agent instead of expanding into another worker's assignment. The main agent merges those outcomes into pending coverage and prevents duplicate assignments.
+Keep one named executor responsible for each active slice through completion or an explicit transfer. Completing a slice closes its coverage record, not necessarily the executor’s assignment. Report newly discovered independent outcomes to the main agent instead of expanding into another worker's assignment. The main agent merges those outcomes into pending coverage and prevents duplicate assignments.
 
-Use at most two concurrent Just Use It subagents unless the user explicitly requests more; available host capacity may require fewer. The main agent coordinates and handles shared setup rather than running a third parallel usage slice. Independently writable consumers may share a verified immutable artifact. Serialize prerequisite-dependent slices and work that would mutate the same installation, project state, browser session, or service. Do not open an extra browser session merely to create parallelism when the user selected an existing one.
+Use at most two concurrent Just Use It subagents unless the user explicitly requests more; available host capacity may require fewer. Count direct main-agent usage toward the same usage ceiling; separately active assessment and reconciliation keep their own assignments and share the available host capacity. Independently writable consumers may share a verified immutable artifact. Serialize prerequisite-dependent slices and work that would mutate the same installation, project state, browser session, or service. Do not open an extra browser session merely to create parallelism when the user selected an existing one.
 
 ## Preserve Audit Phases
 
-Source and tracker boundaries apply to the whole audit, not separately to each worker. Finishing one slice does not open either boundary. The main agent advances the source pass only after collecting all hands-on slices required by the main workflow. Newly source-discovered slices use fresh workers with their provenance stated. If any agent reads implementation or tracker history early, report the departure and its affected scope; a fresh worker cannot restore independent provenance by forgetting that history.
+Source and tracker boundaries apply to the whole audit, not separately to each worker. Finishing one slice does not open either boundary. The main agent advances the source pass only after accounting for the required hands-on evidence under the main workflow. Newly source-discovered slices retain their provenance regardless of the selected executor. If any agent reads implementation or tracker history early, report the departure and its affected scope; a fresh worker cannot restore independent provenance by forgetting that history.
 
 ## Hand Back Evidence
 
@@ -28,8 +28,12 @@ Reference existing artifacts instead of copying full logs or the conversation. R
 
 For an interrupted slice, add its last completed action, current state, and next action. Preserve enough evidence to resume without relying on a temporary path scheduled for deletion. Keep the unfinished work pending rather than marking it Verified to free a worker slot.
 
-## Retire and Replace
+## Continue, Transfer, or Retire
 
-Before retiring a worker, the main agent checks that its handoff supports the claimed coverage and that retained evidence and resource ownership are usable. The coordinator allocates freed capacity across pending usage, assessment and eligible reconciliation, keeping ready assessment work from being indefinitely displaced by new slices. Within the capacity allocated to usage, assign a fresh worker to the next eligible slice without waiting for another worker solely to form a batch. Close the completed worker when the host supports it; otherwise finish and retire it without sending it new assignments. Do not claim that an unavailable close operation ran or that retiring an agent stops its processes.
+At a slice boundary, check the coverage evidence and choose the next bounded assignment using the main workflow’s execution criteria. Retain the owner when continuing related state or investigation; return newly discovered independent outcomes to the coordinator for assignment. Keep ready assessment and eligible reconciliation from being indefinitely displaced by usage. Retaining context does not reserve all available capacity; preserve the evidence needed to resume if an owner must be retired.
 
-On a user pause or stop, stop dispatching new work and promptly stop active workers. Collect available evidence and account for their resources, then follow the audit's cleanup and Partial Audit rules. Missing worker output limits coverage; it does not justify continuing product use after the stop.
+If work becomes coupled after dispatch, stop conflicting actions and preserve the last completed action, evidence, live state, pending work, and resource ownership. Serialize work when only resource access conflicts. When progress instead depends on repeated shared interpretation, consolidate the investigation under the existing executor best placed to continue, including the main agent when appropriate. Confirm that the previous executor has stopped affected actions before the new owner uses its resources. Keep completed coverage and findings distinct through the transfer.
+
+Retire a worker when its assignment is finished and continuity no longer serves pending work, or when capacity requires it. Accept its evidence and account for its resources first. Assign ready independent work without waiting solely to form a batch. Close the worker when the host supports it; otherwise mark it retired. Retiring an agent does not stop its processes; transfer or clean those resources explicitly.
+
+On a user pause or stop, stop direct usage, dispatching, and active workers promptly. Collect available evidence and account for resources, then follow the audit’s cleanup and Partial Audit rules. Missing worker output limits coverage; it does not justify continuing product use after the stop.

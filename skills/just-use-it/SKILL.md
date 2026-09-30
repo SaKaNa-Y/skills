@@ -28,7 +28,7 @@ Source-closed means behaviorally blind, not safety-blind. Inspect the minimum in
 
 For CLI, public API, or package use, read [references/programmatic-experience.md](references/programmatic-experience.md) before consumer setup, installation, or first invocation, including help and version probes.
 
-For journeys whose judgment depends on workload size or processing scope, read [workload checks](references/exploration-lenses.md#realistic-scale-and-degraded-surroundings) before execution.
+For journeys whose judgment depends on automatically selected project, workspace, or configuration sources, or on workload size or processing scope, read [context and workload checks](references/exploration-lenses.md#realistic-scale-and-degraded-surroundings) before execution.
 
 When a required runtime, compiler toolchain, SDK, system package, container runtime, or similar prerequisite is absent, read [references/prerequisites.md](references/prerequisites.md) before installing anything or abandoning the affected capability.
 

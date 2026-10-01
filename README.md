@@ -153,7 +153,7 @@ $assess-findings Evaluate these audit observations and recommend which changes a
 
 **You get:** Agent-led research into the project and relevant outside inspiration, followed by discussion of one selected opportunity. Each idea has a concrete user scenario, initial feasibility evidence, and a record of its evolving assumptions and outcome. Prior exploration and community work inform duplicate checks.
 
-**Before starting:** Create a local records directory and provide its path. The skill reads and updates project-specific history there, including deferred and dismissed ideas.
+**Before starting:** Supply an existing local records directory once, or configure it in your user-level agent instructions for reuse across conversations. The skill reads project history before developing an idea, resumes unfinished matches, and preserves the reasons for reopening concluded ideas. When you authorize local commits, each new idea and each substantive update receives its own commit in the records repository; ordinary wording changes stay with that update.
 
 **Boundary:** It stops at discussion, disposable evidence checks, and local records. You decide whether to explore another idea; implementation and publication require further instructions.
 

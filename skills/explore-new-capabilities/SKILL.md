@@ -14,11 +14,18 @@ This explicitly invoked workflow serves contributors, maintainers, and product d
 
 Read the project's guidance, purpose, public capabilities, and relevant source. Use the user's direction, role, and available effort when supplied; ask only for missing context that would change the exploration. Establish enough grounding to identify concrete user outcomes without requiring a whole-project audit.
 
-Use a records directory the user has already created and supplied. Reuse an established path; if it is missing, inaccessible, or not a directory, ask for a valid existing directory. Leave its creation to the user. Project reading can continue while the path is pending, but presenting a new opportunity waits until its history can be read and its record saved. Keep records at this location without changing repository ignore rules or publishing them.
+Resolve the records directory from the current user instruction, then an established path in the conversation or applicable user-level agent instructions. Reuse a configured path without asking the user to supply it again. Keep personal paths in those user instructions, outside the shared skill. If no path is known, request an existing directory; if a known path is unavailable or invalid, report the specific problem before resolving a replacement. Leave creation of a missing records root to the user. Project reading can continue while the path is pending, but presenting a new opportunity waits until its history can be read and its record saved. Keep records there without changing repository ignore rules or publishing them.
 
-Identify the project in the history using its repository identity or another unambiguous identifier. Reuse its existing record layout. For a new history, use a project-specific index linking one Markdown file per presented opportunity, with short summaries and current outcomes. Create these files inside the supplied directory. Read the index and relevant earlier records before discovery, including deferred and dismissed ideas.
+Identify the project by its repository identity or another unambiguous identifier. Reuse its existing record layout; for a new history, use a subdirectory named after the project directory, checking identity before reusing a matching folder name. Keep an index linking one Markdown file per presented opportunity, with short summaries and current outcomes. Read the index and relevant earlier records before discovery, including unfinished, deferred, and dismissed ideas. Match ideas by the user problem and intended capability, not their titles:
 
-**Ready when:** the project, relevant constraints, and existing exploration history are understood, and the record location is usable.
+- **Unfinished match:** continue the original record and its open questions.
+- **Concluded match with material new evidence or an explicit request to reopen:** continue the original record, preserving its earlier conclusion and explaining what changed.
+- **Concluded match with neither:** explain the recorded outcome and skip that lead.
+- **No match:** develop a new opportunity and create its record when first presented.
+
+Apply the match again before presenting a lead found during research. When local commits are authorized by the user or applicable instructions, read [record commits](references/record-commits.md) before the first record change. Saving a record alone does not authorize committing it.
+
+**Ready when:** the project identity and relevant constraints are established, the record location is usable, relevant earlier records have been read, and any supplied idea has been matched to the history branches above.
 
 ## 2. Find and ground an opportunity
 
@@ -60,6 +67,8 @@ Update the opportunity record at meaningful discussion boundaries and before clo
 - Open assumptions, feasibility limits, and results of any disposable checks.
 - The discussion's current state, decisions and reasons, and conditions for reconsideration.
 
-Keep the index consistent with the record. An unfinished discussion remains unfinished; silence does not select a disposition. If saving fails, retain the update in the conversation, report the failure, and resolve persistence before presenting another idea. These records preserve exploration, not formal feature specifications or tracker items; follow the project's conventions when the user later requests those artifacts.
+Keep the index consistent with the record. Complete authorized local commits at these same boundaries using [record commits](references/record-commits.md). An unfinished discussion remains unfinished; silence does not select a disposition. If saving fails, retain the update in the conversation, report the failure, and resolve persistence before presenting another idea. These records preserve exploration, not formal feature specifications or tracker items; follow the project's conventions when the user later requests those artifacts.
 
-Close with the current conclusion, unresolved evidence, and record location. Let the user decide whether to continue this idea, explore another, or stop. Choosing to pursue an idea does not itself start implementation.
+Close with the current conclusion, unresolved evidence, record location, and the commit result when committing was authorized. Let the user decide whether to continue this idea, explore another, or stop. Choosing to pursue an idea does not itself start implementation.
+
+**Complete when:** the record and index are saved and consistent, each authorized commit is verified or reported as pending with its cause, and the user has the current conclusion, unresolved questions, and record location.

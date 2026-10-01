@@ -393,7 +393,7 @@ The agent-led discovery and collaborative refinement of Feature Opportunities, s
 _Avoid_: Feature backlog generation, implementation plan, simultaneous candidate discussion
 
 **Feature Exploration Record**:
-A project-specific history of presented Feature Opportunities and their evolving evidence, uncertainties, discussion outcomes, and reasons for reconsideration, kept in a directory the user creates and supplies. It supports continuity and recognition of previously explored ideas without implying that the project's wider community has never proposed them.
+A project-specific history of presented Feature Opportunities and their evolving evidence, uncertainties, discussion outcomes, and reasons for reconsideration, kept in a user-designated directory that can be reused across conversations. Its identity follows the user problem and intended capability through continued discussion and reconsideration, without implying that the project's wider community has never proposed the idea.
 _Avoid_: Accepted feature specification, published issue, conversation transcript
 
 **Explore New Capabilities**:

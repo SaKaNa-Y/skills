@@ -29,9 +29,13 @@ Apply the match again before presenting a lead found during research. When local
 
 ## 2. Find and ground an opportunity
 
-Look for outcomes users cannot yet achieve conveniently, useful combinations of existing capabilities, and ideas from other tools or domains. Follow relevant clues into comparable projects, complementary tools, and user-assembled workflows. Explain which part of an outside idea transfers and what must change for this project. Another product having a feature is inspiration, not evidence that this project's users need it.
+Look for outcomes users cannot yet achieve conveniently. When exploring combinations of existing capabilities, follow the user's next task after an operation succeeds. Identify repeated transfer, conversion, or setup needed to carry its result forward. Locate the information and behavior the connection needs and who already owns them. Follow relevant clues into comparable projects, complementary tools, and user-assembled workflows. Explain which part of an outside idea transfers and what must change for this project. Another product having a feature is inspiration, not evidence that this project's users need it.
+
+When an existing capability affects content from several sources, trace one user outcome through who supplies the content and where it is used. Compare product-owned content, extension-provided content, and materially different consumers where they exist. Follow a concrete gap into the existing data and integration interfaces to assess an incremental extension. Preserve compatibility requirements that current consumers rely on. Use this as a discovery route when the project has such boundaries, not a requirement to invent extensions or cover every consumer.
 
 Favor opportunities that fit the project's purpose, while allowing a compelling broader direction if its changed assumptions and maintenance burden are explicit. Consider small and large ideas on their merits rather than favoring novelty or size. The agent may compare several leads internally; choose one for discussion instead of presenting a candidate list.
+
+Start from the user question or task. Exercise the closest existing public route, including relevant companion tools or a practical manual workflow, when it can settle whether the outcome is already available. Describe the result it supplies and the result still missing; keep the capability need separate from a proposed command or UI. Prefer an ordinary working scenario when known defects would confound the comparison. If a supporting example fails, revise that example and investigate any concrete surviving lead before judging the whole idea.
 
 Before presenting that opportunity, establish:
 
@@ -39,7 +43,7 @@ Before presenting that opportunity, establish:
 - **Feasibility:** traceable evidence in the target project's interfaces, data, architecture, or demonstrated behavior supporting a plausible implementation path. Check the assumptions required to transfer an outside example.
 - **Prior work:** whether existing capabilities already satisfy the scenario, and whether exploration records or relevant project issues, PRs, and discussions already cover it. Include closed or rejected work when relevant, and retain its reasoning.
 
-Judge repeated ideas by the user problem and intended capability, not their titles. A scenario already satisfied by shipped capabilities, or an unchanged idea already covered by prior work, sends discovery to another lead. Reopen an earlier idea when the user asks or material evidence or conditions have changed; link the earlier work and explain the change. If a source cannot be checked, state the resulting uncertainty and avoid claims of novelty.
+Use the history branches above for local matches. For related community work, retain its status, scope, and reasoning; an unchanged idea already covered there or a scenario satisfied by shipped capabilities sends discovery to another lead. Revisit it when the user asks or material evidence or conditions change, linking the earlier work. If a source cannot be checked, state the uncertainty and avoid claims of novelty.
 
 Investigate facts that could change the opportunity's viability. Start with documentation, source, and actual usage; use a small disposable check when it can resolve a consequential uncertainty. Keep checks isolated from product changes and clean up resources created for them. Distinguish source inference from observed execution, and record failed checks as well as successful ones. Costly prototypes can remain proposed next steps.
 

@@ -36,9 +36,9 @@ Read [history and recovery](references/history.md) to establish private storage,
 
 Proceed when each target has a traceable account of the selected evidence, privately recorded baseline reconciliation and gaps, and prior decisions that affect the analysis. A full-history review does not require reproducing the transcript in the record.
 
-## 3. Develop purpose-led hypotheses
+## 3. Explore methods and develop hypotheses
 
-For substantive method reviews, use [external learning](references/external-learning.md) to explore opportunities from the target's purpose, including opportunities without a known failure. Reuse relevant recent research and respect the user's research boundaries. Mechanical edits and rollbacks need no exploratory pass. An unavailable research tool limits that branch; continue evidence-supported work and record the gap.
+For substantive method reviews, use [external learning](references/external-learning.md) before choosing which improvements to propose. Start from the target's purpose and decisions, including opportunities without a known failure or a user-supplied research request, source, or concept. Reuse relevant recent research when it answers the current review's questions, identifying that evidence and its limits. Mechanical edits and rollbacks need no exploratory pass. Respect the user's research boundaries; if access is unavailable, record the limit and continue evidence-supported work.
 
 For each supported opportunity, connect:
 
@@ -56,6 +56,8 @@ A single clear observation can support a hypothesis; keep weaker possibilities a
 Use [purpose-led validation](references/validation.md) to choose sufficient evidence for each material change, define applicability, and review the whole resulting method before execution tests. Include those findings in the proposal, not just an account of the latest diff.
 
 Account for every target reviewed, including a supported no-change result. Prioritize hypotheses by expected task benefit, evidence strength, and change cost without manufacturing a universal score or a mandatory number of changes.
+
+Before presenting proposals or closing a no-change review, briefly account for each target's external learning: the question explored, sources inspected or reused, and how the evidence changed or supported the conclusion. When an exemption or access limit applies, state it. Keep the supporting detail in the existing evolution record.
 
 When no hypothesis merits a change, connect the no-change conclusion to that target’s evidence and existing method, explaining why an alteration is unwarranted or not supported by the available evidence. Keep an unselected or deferred hypothesis distinct from a no-change assessment. Close a supported no-change iteration without candidate preparation.
 

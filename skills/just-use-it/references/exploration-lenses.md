@@ -18,6 +18,8 @@ Before and after a material operation, compare the applicable operational footpr
 
 Use conflicting sentinel values to establish precedence across applicable scopes such as defaults, shared and local configuration, workspace and package configuration, environment, and command-line options. When a feature manages multiple members, exercise one member, multiple members, and selective enablement or disablement when the user path makes that distinction meaningful.
 
+When a setting affects content supplied by multiple parties, follow one externally supplied item through the materially different public consumers involved in the user outcome. When the public contract allows an optional value, include an item without it to check the documented default or fallback. Establish each consumer's actual configuration source before judging differences; consumers may intentionally use different settings. Choose these paths from public documentation and usage while the source gate is closed.
+
 ### Lifecycle and Time
 
 Exercise applicable transitions such as first use, immediate repeat, warm repeat, mutation, removal, completion, settled idle, reload, restart, recovery, and cleanup. When caching or deferred work is visible, compare cold and warm behavior and inspect the state intended to persist or amortize the work.

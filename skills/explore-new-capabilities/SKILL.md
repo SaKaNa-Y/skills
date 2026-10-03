@@ -41,7 +41,7 @@ Before presenting that opportunity, establish:
 
 - **Value:** a concrete user situation and the additional outcome the capability could enable. Separate observed needs from hypothesized benefits.
 - **Feasibility:** traceable evidence in the target project's interfaces, data, architecture, or demonstrated behavior supporting a plausible implementation path. Check the assumptions required to transfer an outside example.
-- **Prior work:** whether existing capabilities already satisfy the scenario, and whether exploration records or relevant project issues, PRs, and discussions already cover it. Include closed or rejected work when relevant, and retain its reasoning.
+- **Prior work:** whether existing capabilities already satisfy the scenario, and whether exploration records or relevant project issues, PRs, and discussions already cover it. Before checking community work or using it to refine an idea, read [prior work and discussion](references/prior-work.md).
 
 Use the history branches above for local matches. For related community work, retain its status, scope, and reasoning; an unchanged idea already covered there or a scenario satisfied by shipped capabilities sends discovery to another lead. Revisit it when the user asks or material evidence or conditions change, linking the earlier work. If a source cannot be checked, state the uncertainty and avoid claims of novelty.
 

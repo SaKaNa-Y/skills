@@ -16,6 +16,14 @@ A **Capability Gap** is a reproducible limitation found through a concrete user 
 
 The usage executor stops after the cheap confirmation and returns to its slice. The coordinator routes decision-relevant gaps to assessment; product repair remains separate.
 
+## Revisit Related Coverage
+
+When a finding or source evidence makes an existing coverage claim uncertain through a shared input, transformation, or output, the main agent revisits that claim in the Coverage Ledger, including previously `Verified` paths. Narrow the claim to what its evidence supports and preserve that evidence. A root result or intermediate step may leave independent outputs or later states unresolved.
+
+Use the existing exploration lenses to identify the public checks still required and record their [coverage states](verification-traces.md#prove-the-journey). Give runnable `Not Exercised` checks an executor and next action under the existing execution criteria and source/tracker gates. Carry confirmed and unresolved scope, with justified exclusions, into assessment while usage continues.
+
+**Complete when:** affected claims match their evidence or stated limitations, and every runnable pending check has an executor and next action.
+
 ## Build the Packet
 
 Keep one session-scoped packet for each independently understandable candidate or assessed finding, with a stable identity and its current assessment or pending state:

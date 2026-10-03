@@ -27,8 +27,8 @@ Prefer one-variable controls. Record confounding differences when a clean compar
 
 ## Stop and Classify
 
-End a probe when the expectation is met, an observable discrepancy is established, or a concrete limitation prevents a useful comparison. Expand only when the active User Problem requires it; a finding does not authorize chasing its root cause or testing every sibling case.
+End the individual probe when the expectation is met, an observable discrepancy is established, or a concrete limitation prevents a useful comparison.
 
 Preserve the triggering evidence, expectation, material conditions, action, observed result, and control or retry when used. Distinguish observed behavior from an inferred mechanism and historical reports from fresh execution. An intermittent observation retains its attempt results and uncertainty. A blocked probe is a coverage limitation, not a confirmed product problem.
 
-Return confirmed observations to Guard the Next Branch for scope classification and the existing issue-capture process. Unsupported hypotheses return to the main task without becoming findings. Exploration can finish with no findings; finding count is not a completion criterion.
+Then [return the evidence to Guard the Next Branch](../SKILL.md#1-guard-the-next-branch). Necessary investigation and verification continue under the active workflow to the depth the User Problem requires. Independently deferrable problems follow the existing [issue-capture process](issue-capture.md); unsupported hypotheses return to the main task. Exploration can finish with no findings; finding count is not a completion criterion.

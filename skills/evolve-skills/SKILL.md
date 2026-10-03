@@ -63,7 +63,9 @@ When no hypothesis merits a change, connect the no-change conclusion to that tar
 
 ## 4. Select a concrete change
 
-Present the proposed changes by skill, with enough before/after detail to review, the evidence, expected benefit, meaningful alternatives, and trade-offs. Keep original source links and the specific borrowed idea beside each externally informed proposal; distinguish the source's claim from your adaptation so the user can inspect and correct it. Agree on the intended value of each material change, sufficient evidence, the evaluation approach, and useful behavior to preserve. Separate retaining a reusable method from claiming improved execution; either can be valuable, with different evidence requirements.
+Present the proposed changes by skill, with enough before/after detail to review, the evidence, expected benefit, meaningful alternatives, and trade-offs. Keep original source links and the specific borrowed idea beside each externally informed proposal; distinguish the source's claim from your adaptation so the user can inspect and correct it.
+
+For each material change, agree on its intended value and useful behavior to preserve. State what evidence can justify adoption, which claims need a behavioral comparison, and what an inconclusive result would leave unresolved. Use separate criteria for reusable-method value and improved execution when both are proposed.
 
 Let the user select concrete hypotheses before implementing them. Reuse an explicit selection already present in the conversation; a request to review or a skill invocation by itself is not selection of an unseen patch. Resolve dependent decisions in subsequent rounds. With co-active grilling, bring the evidence and proposals into its rounds rather than running a second interview.
 
@@ -73,7 +75,7 @@ Proceed when the selected changes, targets, preserved behavior, and validation a
 
 Before changing target files, follow [history and recovery](references/history.md) to create or resume the iteration record and preserve its actual baseline. Scope recovery material to the affected files, including resources outside the target folder when selected. Preserve existing unrelated edits.
 
-Build the candidate separately from the active version, review its instructions, then perform the agreed checks using [purpose-led validation](references/validation.md). Assess each material change against its selected value and required evidence; one change's success does not support another.
+Build the candidate separately from the active version, review its instructions, then perform the agreed checks using [purpose-led validation](references/validation.md). Assess each material change against its selected adoption rule and required evidence; one change's success does not support another.
 
 When that evidence supports adoption, recheck the active baseline. Reconcile later edits and rerun affected checks before applying the selected candidate in the same run. An unchanged approved change and target need no repeat approval. Treat source editing and updating separate installed copies as distinct targets; update only the selected locations.
 

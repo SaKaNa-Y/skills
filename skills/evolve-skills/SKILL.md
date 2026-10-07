@@ -77,9 +77,16 @@ Before changing target files, follow [history and recovery](references/history.m
 
 Build the candidate separately from the active version, review its instructions, then perform the agreed checks using [purpose-led validation](references/validation.md). Assess each material change against its selected adoption rule and required evidence; one change's success does not support another.
 
-When that evidence supports adoption, recheck the active baseline. Reconcile later edits and rerun affected checks before applying the selected candidate in the same run. An unchanged approved change and target need no repeat approval. Treat source editing and updating separate installed copies as distinct targets; update only the selected locations.
+After each evaluation, decide separately whether this candidate meets its adoption rule and whether the selected improvement work is complete. Use the findings to choose the next action:
 
-Distinguish work not yet attempted, concrete validation blockers, and results that do not support adoption. Continue feasible work; producing a candidate and a validation plan is not completion. For a concrete blocker, retain the candidate as Pending Validation, record checks attempted, the missing prerequisite, and the resumption condition, and leave the active version unchanged. An explicit user choice can authorize an unverified trial with separate adoption and validation states. Preserve regressions, unsupported claims, and inconclusive comparisons distinctly. Revise or reject a change whose required benefit lacks support; an inconclusive comparison limits only the claim it tested. A materially different proposal or acceptance basis returns to the user's selection.
+- **Revise:** When an observed deficiency supports a concrete repair within the selected hypothesis, target, boundaries, and acceptance basis, prepare that revision and run the affected checks. Carry the finding into the change; a known repair is work to do, not merely a future direction to report.
+- **Repair the evaluation:** When the exercise cannot answer the intended question, correct its setup or criteria within the selected acceptance basis. Additional runs must resolve a named uncertainty; stop repeating a trial when it offers no useful new evidence, then assess the other next actions here.
+- **Return a decision:** When the next step materially changes the proposal, scope, or acceptance basis, present that specific choice to the user. Preserve settled decisions and previous results.
+- **Record a limit:** When a prerequisite blocks progress, retain the candidate as Pending Validation and record the missing prerequisite and resumption condition. When no evidence-supported repair or informative check remains, explain that limit and the unresolved objective. Either can end current work without claiming successful improvement.
+
+A failed or inconclusive candidate does not by itself complete the selected improvement work. Preserve regressions and unsupported claims; an inconclusive comparison limits only the claim tested. User instructions to stop take precedence. An explicit user choice can authorize an unverified trial with separate adoption and validation states.
+
+When that evidence supports adoption, recheck the active baseline. Reconcile later edits and rerun affected checks before applying the selected candidate in the same run. An unchanged approved change and target need no repeat approval. Treat source editing and updating separate installed copies as distinct targets; update only the selected locations.
 
 ## 6. Close the iteration
 

@@ -27,7 +27,7 @@ Complete the documented journey first, then make one bounded Surface Discovery P
 - open menus, selectors, tabs, and alternate views to identify the choices they expose; and
 - inspect controls and states revealed beyond the initial viewport.
 
-Discovery adds capabilities to the Coverage Ledger; it does not verify them. Exercise controls needed for the active outcome and its Discriminating Variation through an observable result. Keep an independently useful outcome as a separate `Not Exercised` Capability Group rather than expanding the current slice around its UI container.
+Discovery adds capabilities to the Coverage Ledger; it does not verify them. Exercise controls needed for the active outcome and its Discriminating Variation through an observable result. Apply the [outcome scope](../SKILL.md#establish-the-outcome-scope) before adding an independent outcome as a separate Capability Group. Its UI container does not determine scope.
 
 ### Inspect Meaningful States
 
@@ -51,7 +51,7 @@ For sibling visual modes such as light and dark themes, perform the Mode Parity 
 
 ### Preserve Coverage Boundaries
 
-When the UI exposes only part of the Capability Surface, finish that part through its real user-control surface and use the programmatic branch for the remainder. An API result cannot verify its corresponding UI behavior.
+When the UI exposes only part of the Capability Surface, finish that part through its real user-control surface and use the programmatic branch for the in-scope remainder. An API result cannot verify its corresponding UI behavior.
 
 Treat an unavailable required control surface, an unlaunchable UI, or missing safe test state as Blocked coverage. A documented UI launch that fails may also be a documentation or product Finding. Continue through every unaffected capability.
 

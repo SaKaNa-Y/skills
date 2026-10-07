@@ -18,6 +18,16 @@ Work **slice-first**. Each execution agent completes one user-outcome **Capabili
 
 Identify the target, its intended user, its user-facing documentation, and the environment needed to exercise it. Infer these from the request and workspace; ask only when more than one materially different target remains.
 
+### Establish the outcome scope
+
+Use the user's explicit scope. For a continuation, recover the established outcome scope before selecting further work; infer a new scope only for a fresh audit. Without a narrower request, a standalone audit covers the product's Capability Surface. When the user also selects Explore New Capabilities to discover an opportunity, infer a finite user outcome from the goal and public starting material. Announce that outcome, its necessary dependencies, and the independent outcomes left outside it before initial usage; proceed unless materially different interpretations would change the work. An explicit request for broad coverage still governs co-use.
+
+Keep capabilities, states, integrations, and sibling modes needed to establish the selected outcome in scope, including dependencies discovered later. Record independent outcomes outside the scope as exclusions with a reason, not pending or verified work. Apply this boundary to documentation, UI discovery, delegated work, and source-discovered environments. If no concrete outcome is yet supported, continue public orientation rather than selecting an arbitrary easy slice or opening source.
+
+Preserve this prospective scope across phase transitions. Finding an attractive idea or encountering difficult work does not shrink it. A user-directed change records the previous coverage, the new boundary, and existing source/tracker exposure; it does not make earlier access compliant. Completion is a claim about the declared scope, never implied coverage of excluded outcomes.
+
+### Establish the artifact and entry phase
+
 Establish which revision, release, or running instance the request concerns. When the current checkout is the audit target and no other version is specified, prefer its documented build over an unrelated installed release. An explicit release or instance request takes precedence. Before crediting behavior, confirm the effective executable, imported package, or deployment through available launch or identity metadata. Scope observations to what actually ran; unknown source correspondence limits source attribution, not direct observation.
 
 Establish the entry phase before planning the passes. For a continuation or known-issue revalidation, recover the existing coverage, evidence provenance, assessment owner, and source/tracker access state. Carry open gates forward and refresh only evidence material to the requested scope; share that state with usage, Assess, and Yak workers. New workers and temporary projects inherit this provenance. The phase-opening steps below apply while their gates remain closed; already-open source investigation and reconciliation may proceed alongside remaining usage. Actual public use still supplies behavior evidence.
@@ -39,11 +49,11 @@ Prefer disposable state:
 - Record every temporary path, process, server, and browser context created by the audit so the exact resources can be cleaned on completion, failure, or interruption.
 - Keep external effects inside disposable projects, test data, or sandboxes. Preserve every existing authorization checkpoint; mark a capability Blocked when it cannot be exercised safely.
 
-**Complete when:** the target and its runtime correspondence or uncertainty, public starting material, entry phase and inherited gates, browser choice, isolation boundary, cleanup targets, and every known prerequisite decision are explicit.
+**Complete when:** the outcome scope and exclusions, the target and its runtime correspondence or uncertainty, public starting material, entry phase and inherited gates, browser choice, isolation boundary, cleanup targets, and every known prerequisite decision are explicit.
 
 ## 2. Map the Documented Surface
 
-For an initial audit, build the Capability Surface from public documentation without reading behavioral implementation source and give every documented capability the state `Not Exercised`. For a continuation, update the existing Coverage Ledger for the requested scope and evidence that needs refreshing.
+For an initial audit, build the Capability Surface from public documentation without reading behavioral implementation source and give every in-scope documented capability the state `Not Exercised`; retain known out-of-scope capabilities as exclusions under the outcome scope. For a continuation, update the existing Coverage Ledger for the requested scope and evidence that needs refreshing.
 
 Group Capability Journeys by the user outcome they serve, not by their panel, route, menu, command group, or documentation section. Order the groups by the product's primary user tasks. Start a compact **Coverage Ledger** with each known Capability Group, its intended outcome, interfaces and modes, current state, and next action.
 
@@ -62,27 +72,27 @@ When the group uses an interactive UI, read [references/ui-experience.md](refere
 1. Follow its documented Capability Journey exactly through the public interface until it produces an observable user result.
 2. Exercise one Discriminating Variation that changes a single input, state, mode, or recovery condition and should produce an observably different result. Record an explicit exclusion when the capability has no material variation.
 3. Read [references/exploration-lenses.md](references/exploration-lenses.md), then explore freely inside the active Capability Group. Build a small capability-shaped matrix and continue until further public actions repeat known states instead of revealing another capability, transition, or interaction.
-4. Add newly discoverable public capabilities to the Capability Surface. Keep capabilities serving the active outcome in the current slice; add independently useful outcomes to the Coverage Ledger as new `Not Exercised` groups.
+4. Add newly discoverable public capabilities to the Capability Surface. Keep capabilities serving the active outcome in the current slice; classify independently useful outcomes under the [outcome scope](#establish-the-outcome-scope), adding in-scope ones as new `Not Exercised` groups and recording the rest as exclusions.
 5. Before assigning the first `Verified` state, read [references/verification-traces.md](references/verification-traces.md). A capability becomes `Verified` only with a complete Verification Trace. As soon as behavior may be a finding, read [references/finding-packets.md](references/finding-packets.md), preserve its evidence, and route it through the coordinator for early assessment. Continue usage while the assessor reviews the packet under the current source/tracker phase.
 6. Give every capability in the slice a terminal state and record its evidence; a delegated executor returns it to the main agent. The main agent checks the evidence and updates the Coverage Ledger before choosing the next assignment under the same execution criteria. `Verified`, `Finding`, `Observed`, and `Blocked` are terminal for usage; `Observed` means the journey was exercised but its problem or improvement judgment is pending. Assessment status remains separate from usage completion; `Not Exercised` remains pending.
 
-Continue across completed slices under the existing authorization while known in-scope capabilities remain feasible. Use slice boundaries for progress updates; a Partial Audit describes incomplete coverage rather than a reason to end the task. End an incomplete audit when the user asks to stop or narrow the scope, or when no meaningful in-scope progress remains possible without unavailable prerequisites, access, or user input. Continue other feasible work when one capability is Blocked. Preserve remaining coverage and resumption conditions when ending. A temporary pause before the initial tracker reconciliation keeps that gate closed; an already-open gate remains open. When interruption instead concludes the run with known capabilities `Not Exercised`, preserve the current slice and next action, freeze completed Finding Packets, and report a Partial Audit. A separately active recording workflow may reconcile those frozen packets; audit work after it reads tracker history, including any later resume, is tracker-informed rather than behaviorally blind.
+Continue across completed slices under the existing authorization while known in-scope capabilities remain feasible. Use slice boundaries for progress updates; a Partial Audit describes incomplete coverage rather than a reason to end the task. End an incomplete audit when the user asks to stop or narrow the scope, or when no meaningful in-scope progress remains possible without unavailable prerequisites, access, or user input. Continue other feasible work when one capability is Blocked. Preserve remaining coverage and resumption conditions when ending. A temporary pause before the initial tracker reconciliation keeps that gate closed; an already-open gate remains open. When interruption instead concludes the run with known in-scope capabilities `Not Exercised`, preserve the current slice and next action, freeze completed Finding Packets, and report a Partial Audit. A separately active recording workflow may reconcile those frozen packets; audit work after it reads tracker history, including any later resume, is tracker-informed rather than behaviorally blind.
 
 A documentation error is a Finding even when the implementation works through an undocumented correction. Do not use operational metadata or source knowledge to silently rescue a documented journey.
 
-**Complete when:** every capability discoverable without source has a terminal state, every materially applicable exploration lens has an exercised path or explicit exclusion, every `Verified` capability has a Verification Trace, and further hands-on exploration is behaviorally redundant.
+**Complete when:** every in-scope capability discoverable without source has a terminal state, every materially applicable exploration lens has an exercised path or explicit exclusion, every `Verified` capability has a Verification Trace, and further hands-on exploration is behaviorally redundant.
 
 ## 4. Reconcile with Source
 
 When implementation source is still closed, the main agent opens it after the required hands-on slices have completed with their evidence accounted for and the preceding usage completion criterion holds. Announce that transition to assessment workers; tracker history stays closed until its own gate opens. Match source to the experienced artifact where possible and qualify leads from other revisions until exercised on their own artifacts.
 
-Inspect public exports, routes, commands, flags, feature registration, examples, and tests for shipped public capabilities missing from coverage. Treat shipped exports, executables, routes, or browser globals as public unless marked internal, test-only, or unreleased; a hidden help entry alone does not establish privacy. Report unresolved public intent explicitly.
+Inspect public exports, routes, commands, flags, feature registration, examples, and tests relevant to the outcome scope and its necessary dependencies for shipped public capabilities missing from coverage. Classify newly found independent outcomes under the same scope boundary. Treat shipped exports, executables, routes, or browser globals as public unless marked internal, test-only, or unreleased; a hidden help entry alone does not establish privacy. Report unresolved public intent explicitly.
 
 Read [references/repository-environments.md](references/repository-environments.md) to discover runnable repository environments that expose additional capability journeys, component states, or integrations. These environments can provide useful experience without themselves being end-user releases. Keep their evidence scope distinct from the product paths they represent.
 
 Map source-discovered capabilities and relevant environments to existing coverage, a justified exclusion, or newly assigned usage. Choose executors for new slices under the same execution criteria and record their source-discovered provenance. Source inspection supplies leads; actual execution supplies usage evidence. When findings or source evidence expose a limit in earlier coverage, [revisit related coverage](references/finding-packets.md#revisit-related-coverage). Assessment workers may now investigate source-dependent questions within their assigned recommendation scope while independent usage continues.
 
-After every source-confirmed public entrypoint and relevant environment is accounted for through usage or explicit exclusion, freeze the independently observed packets and open the Audit Reconciliation Gate. A co-active recording workflow can reconcile the batch and return evidence to the assigned assessor. Without Yak, the assessor may perform the bounded read-only tracker check allowed by its method. Reading tracker history marks subsequent work tracker-informed; a new worker does not restore blind provenance.
+After every in-scope source-confirmed public entrypoint and relevant environment is accounted for through usage or explicit exclusion, freeze the independently observed packets and open the Audit Reconciliation Gate. A co-active recording workflow can reconcile the batch and return evidence to the assigned assessor. Without Yak, the assessor may perform the bounded read-only tracker check allowed by its method. Reading tracker history marks subsequent work tracker-informed; a new worker does not restore blind provenance.
 
 Public issue history may also be sampled after the gate as a final coverage calibration. Re-exercise relevant public paths; behavior first encountered there is a known-issue reproduction rather than independent discovery.
 
@@ -93,14 +103,14 @@ Public issue history may also be sampled after the gate as a final coverage cali
 Collect assessment results before the final report using [finding handoff](references/finding-packets.md#hand-off-for-assessment-and-reconciliation). Return a conversational audit report containing:
 
 - the intended target, the artifact or instance actually exercised, and the environment;
-- the Coverage Ledger and Capability Surface with each state;
+- the declared outcome scope, its exclusions, and the Coverage Ledger with each in-scope capability state;
 - a compact Verification Trace for every `Verified` capability;
 - assessed findings, improvement opportunities, unresolved observations, and excluded claims with their evidence and distinct action recommendations;
 - Blocked and, for a partial run, Not Exercised capabilities;
 - tracker links or identifiers returned by a separately active recording workflow for Reused records or successfully published mutations; and
 - cleanup results.
 
-When any known capability remains `Not Exercised`, call the result a **Partial Audit**. Name the completed Vertical Capability Slices, but do not describe the whole Capability Surface as complete.
+When any known in-scope capability remains `Not Exercised`, call the result a **Partial Audit**. Name the completed Vertical Capability Slices and remaining work. Otherwise report completion of the declared scope, with its exclusions visible; only a full-surface audit can claim the whole Capability Surface is complete.
 
 Keep the report conversational unless the user explicitly requests a repository artifact. When asked to save it, use the exact requested destination and repository conventions. Persistent finding publication remains outside this skill.
 

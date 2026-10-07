@@ -12,7 +12,9 @@ This explicitly invoked workflow serves contributors, maintainers, and product d
 
 ## 1. Establish the project and history
 
-Read the project's guidance, purpose, public capabilities, and relevant source. Use the user's direction, role, and available effort when supplied; ask only for missing context that would change the exploration. Establish enough grounding to identify concrete user outcomes without requiring a whole-project audit.
+Read the project's guidance, purpose, and public capabilities. Use the user's direction, role, and available effort when supplied; ask only for missing context that would change the exploration. Establish enough grounding to identify concrete user outcomes without requiring a whole-project audit.
+
+When the user also selects Just Use It, follow its [outcome scope](../just-use-it/SKILL.md#establish-the-outcome-scope) before usage and preserve its source and tracker gates. Otherwise, read relevant source as part of project grounding.
 
 Resolve the records directory from the current user instruction, then an established path in the conversation or applicable user-level agent instructions. Reuse a configured path without asking the user to supply it again. Keep personal paths in those user instructions, outside the shared skill. If no path is known, request an existing directory; if a known path is unavailable or invalid, report the specific problem before resolving a replacement. Leave creation of a missing records root to the user. Project reading can continue while the path is pending, but presenting a new opportunity waits until its history can be read and its record saved. Keep records there without changing repository ignore rules or publishing them.
 

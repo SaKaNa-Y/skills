@@ -33,7 +33,7 @@ The reconciliation boundary between one problem expressed through multiple obser
 _Avoid_: Title match, shared-component bucket, suspected-root-cause merge
 
 **Audit Reconciliation Gate**:
-The boundary after a Usage-First Audit has reconciled its source-confirmed public surface or explicitly ended as a Partial Audit, and frozen its independently observed findings, at which co-active Yak Shaving Triage may begin tracker-informed Issue Reconciliation. Finding Packets may be handed to Assess before this gate for phase-eligible assessment, but target tracker history remains closed until it is reached; once that history is read, the remaining current audit work and any later resume are tracker-informed.
+The boundary after a Usage-First Audit has reconciled the source-confirmed public surface within its declared outcome scope or explicitly ended as a Partial Audit, and frozen its independently observed findings, at which co-active Yak Shaving Triage may begin tracker-informed Issue Reconciliation. Finding Packets may be handed to Assess before this gate for phase-eligible assessment, but target tracker history remains closed until it is reached; once that history is read, the remaining current audit work and any later resume are tracker-informed.
 _Avoid_: Per-slice issue lookup, early duplicate search, silent blind resume
 
 **Reconciliation Disposition**:
@@ -77,7 +77,7 @@ The Explicit-only Skill that establishes shared project conventions required by 
 _Avoid_: Yak-only setup, skill router, issue migration
 
 **Usage-First Audit**:
-An evaluation of a source-accessible library or developer tool that exercises its user-facing behavior before inspecting implementation details, then uses the source to find public capabilities and relevant runnable environments the experience may have missed.
+An evaluation of a source-accessible library or developer tool that exercises user-facing behavior within a declared outcome scope before inspecting implementation details, then uses source to find relevant capabilities and runnable environments the experience missed. Its scope may cover the full Capability Surface or a bounded user outcome and its necessary dependencies.
 _Avoid_: Source-first review, static bug scan, implementation audit
 
 **Just Use It**:
@@ -121,7 +121,7 @@ Compact positive evidence for a verified Capability Journey: its initial conditi
 _Avoid_: Status-only claim, full interaction transcript, success screenshot archive
 
 **Partial Audit**:
-An audit report with one or more known capabilities still Not Exercised. It may claim completion for named Vertical Capability Slices but not for the full Capability Surface.
+An audit report with one or more known in-scope capabilities still Not Exercised. It may claim completion for named Vertical Capability Slices; explicitly excluded outcomes are outside its completion claim.
 _Avoid_: Complete audit, representative completion, implied full coverage
 
 **Surface Discovery Pass**:

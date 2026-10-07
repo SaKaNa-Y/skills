@@ -37,6 +37,10 @@ When an existing capability affects content from several sources, trace one user
 
 Favor opportunities that fit the project's purpose, while allowing a compelling broader direction if its changed assumptions and maintenance burden are explicit. Consider small and large ideas on their merits rather than favoring novelty or size. The agent may compare several leads internally; choose one for discussion instead of presenting a candidate list.
 
+Before adding an investigation, name the current decision and the unknown most likely to change it. This may concern value, an existing alternative, or feasibility; choose the smallest phase-eligible check that can distinguish the relevant answers. When value is unsettled, compare the closest working alternative before deepening implementation evidence if that comparison can decide whether to continue. When feasibility is the blocker, test that assumption instead. A user-requested technical comparison remains the decision to answer, and a useful optional improvement need not prove necessity.
+
+Use documentation, source, actual usage, or a small disposable check as appropriate. State what the result resolves and which uncertainties remain before choosing further work. Keep checks isolated from product changes and clean up resources created for them. Distinguish source inference from observed execution, and record failed checks as well as successful ones. Costly prototypes can remain proposed next steps.
+
 Start from the user question or task. Exercise the closest existing public route, including relevant companion tools or a practical manual workflow, when it can settle whether the outcome is already available. Describe the result it supplies and the result still missing; keep the capability need separate from a proposed command or UI. Prefer an ordinary working scenario when known defects would confound the comparison. If a supporting example fails, revise that example and investigate any concrete surviving lead before judging the whole idea.
 
 Before presenting that opportunity, establish:
@@ -46,8 +50,6 @@ Before presenting that opportunity, establish:
 - **Prior work:** whether existing capabilities already satisfy the scenario, and whether exploration records or relevant project issues, PRs, and discussions already cover it. Before checking community work or using it to refine an idea, read [prior work and discussion](references/prior-work.md).
 
 Use the history branches above for local matches. For related community work, retain its status, scope, and reasoning; an unchanged idea already covered there or a scenario satisfied by shipped capabilities sends discovery to another lead. Revisit it when the user asks or material evidence or conditions change, linking the earlier work. If a source cannot be checked, state the uncertainty and avoid claims of novelty.
-
-Investigate facts that could change the opportunity's viability. Start with documentation, source, and actual usage; use a small disposable check when it can resolve a consequential uncertainty. Keep checks isolated from product changes and clean up resources created for them. Distinguish source inference from observed execution, and record failed checks as well as successful ones. Costly prototypes can remain proposed next steps.
 
 **Ready when:** one opportunity has a concrete scenario, a supported plausible path, and an account of prior work and remaining uncertainty. If relevant leads yield no such opportunity, report the examined scope and evidence limits instead of filling the gap with an unsupported idea. Do not keep widening the search merely to produce a result.
 

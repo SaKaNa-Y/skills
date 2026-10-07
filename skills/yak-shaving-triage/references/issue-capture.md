@@ -103,7 +103,11 @@ When Tracker Guidance is absent and the user has not established a destination, 
 
 ## Report the Outcome
 
-For ordinary problems, report the batch's actual dispositions after the main task completes. For each result, keep these facts distinct:
+For ordinary problems, report the batch's actual dispositions after the main task completes. Order confirmed findings by the assessor's suggested priority, highest first, unless the user requests another presentation. Use the [Assess priority method](../../assess-findings/SKILL.md#assess-suggested-priority) rather than creating a second scale here. If a priority is missing, return that question to the existing assessor; unavailable assessment stays **Priority undetermined** with its blocker and next action.
+
+For each ranked finding, show its level, the problem, a short reason for the level, and the supported next action. Identify the scale once; retain evidence limits and distinguish a suggested level from any existing tracker priority. Keep undetermined findings visible in a separate group without treating them as low priority. Keep optional improvements and unresolved observations distinct from confirmed defects. Preserve separate problem identities even when recommending one combined fix.
+
+Suggested report levels do not create or change tracker labels, priority fields, deadlines, or authorization to repair or publish. Those remain governed by Tracker Guidance and the user's approval. For each result, keep these facts distinct:
 
 - the matching record and its current issue or PR state;
 - the observed problem status, including the tested version, implementation coverage and any unresolved verification; and
@@ -111,10 +115,10 @@ For ordinary problems, report the batch's actual dispositions after the main tas
 
 A Reconciliation Disposition determines how to reuse or update records; resolution of the observed problem requires evidence covering its acceptance boundary. Retain a still-reproducing problem when its matching PR is closed or unmerged, and carry forward any alternative-resolution or declined-decision evidence established during reconciliation. When the user requests only new findings, state that existing-record matches were filtered from that view rather than treating them as resolved.
 
-Use a concise result such as:
+For a ranked finding using the fallback scale, use a concise result such as:
 
 ```text
-Main task complete. Reused <title> (<link>): PR closed without merge; still reproduced in <version>; next step is <supported action>.
+Suggested P2 — <problem>: <bounded impact or acceptable workaround>. Reused <title> (<link>): PR closed without merge; still reproduced in <version>; next step is <supported action>.
 ```
 
 Use `Recorded` only after the mutation succeeds and `Reused` only with the canonical record's title and link or identifier. Name Reconciliation Blocked drafts and their search limitation. For an approved target-checkout patch that must wait for the active workflow, say `Approved <title>; recording is deferred until <named completion boundary>`. When the user does not approve a proposed write, say that the named draft was retained. After a deferred write succeeds, report its final destination. Keep the main task status separate from reconciliation and publication status.

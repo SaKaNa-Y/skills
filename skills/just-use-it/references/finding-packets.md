@@ -42,7 +42,7 @@ Preserve the failing specimen or an exact creation command when retyping a sampl
 
 Describe the condition actually observed, distinguishing it from an inferred trigger. Record which dimensions changed in a comparison and leave untested conditions unknown.
 
-Describe concrete user impact. Preserve isolated-environment scope and any known relation to the real consumer. Assign severity or priority only when the project supplies the applicable scale and enough evidence supports the classification.
+Describe concrete user impact. Preserve isolated-environment scope and any known relation to the real consumer. Leave priority judgment to [Assess Findings](../../assess-findings/SKILL.md#assess-suggested-priority), carrying forward the evidence, any project scale, and the caller's request. Preserve its suggested level and limits in the packet. Keep severity separate and use the project's severity scale only when sufficient evidence supports it.
 
 ## Hand Off for Assessment and Reconciliation
 
@@ -54,6 +54,6 @@ Coordinate independent work within available slots and shared-resource constrain
 
 Once the audit or an explicitly ended Partial Audit freezes its observations, a co-active Yak may reconcile assessable packets. An early assessment need not wait for tracker results to state supported facts or classification; a new-PR recommendation waits for relevant reconciliation. Yak returns material coverage or resolution evidence to the assessor instead of starting a second assessment. Without Yak, the assessor handles the eligible read-only check; Just does not publish records.
 
-Before the final report, collect each assessment and preserve its separate classification, supported action, and remaining dependency. Early handoff is not final qualification. Report unresolved observations even when they are not ready for tracker recording, and preserve the reason an earlier claim was excluded.
+Before the final report, collect each assessment and preserve its separate classification, supported action, any assessed priority and its basis, and remaining dependency. When Yak is co-active, use its [outcome reporting contract](../../yak-shaving-triage/references/issue-capture.md#report-the-outcome) for the findings section while retaining this audit's coverage and cleanup report. Early handoff is not final qualification. Report unresolved observations even when they are not ready for tracker recording, and preserve the reason an earlier claim was excluded.
 
 **Complete when:** another agent can replay the observation and inspect its expectation basis and impact; the assessment and search state are explicit; and evidence survives handoff and cleanup.

@@ -56,15 +56,30 @@ Proceed when the classification has a traceable basis or an exact unresolved dep
 
 Fix the response goal before evaluating a remedy. Connect a proposed change to that goal, its evidence-backed benefit, the responsible consumer or repository, and meaningful costs or existing alternatives. Separate independent goals and remedies: explaining an empty view and correcting a library calculation may each have value without either requiring the other.
 
-A positive PR recommendation needs a concrete scenario and goal, a supported defect or reasoned practical improvement value, a plausible change that achieves that goal in the appropriate owner, relevant tracker reconciliation, and no outstanding factual uncertainty that could overturn the recommendation. State reasoned benefits as reasoning when they have not been directly observed. Necessity is a stronger claim than worthwhile improvement; assess it only when the decision requires it. Discuss priority when the requested decision or established constraints make it relevant, using the project's scale when available. Otherwise describe the demonstrated impact and leave an unrequested urgency ranking out of the recommendation.
+A positive PR recommendation needs a concrete scenario and goal, a supported defect or reasoned practical improvement value, a plausible change that achieves that goal in the appropriate owner, relevant tracker reconciliation, and no outstanding factual uncertainty that could overturn the recommendation. State reasoned benefits as reasoning when they have not been directly observed. Necessity is a stronger claim than worthwhile improvement; assess it only when the decision requires it. When a finding summary or the requested decision calls for priority, assess it using the method below. Yak requests this assessment by default for confirmed findings; other callers retain their reporting scope.
 
 Recommend the useful next action: a scoped independent PR, contribution to existing work, a specific further check, deferral with its reason, or no change under the assessed conditions. Distinguish recommending an approach from validating a patch: inspect an actual proposal before claiming its implementation correct. Missing evidence should narrow the recommendation to what is supported, not erase established facts or imply the opposite conclusion.
 
-Proceed when the recommendation follows from the assessed goal and evidence, with ownership and decision-relevant limits explicit.
+### Assess suggested priority
+
+Priority recommends how urgently to address a finding; severity describes its impact. Use the project's applicable priority scale when available and identify it. Otherwise use this fallback, label the result **Suggested priority**, and briefly state the scale once per report:
+
+| Priority | Meaning |
+| --- | --- |
+| P0 | Respond immediately: major harm is occurring or imminent and requires immediate containment or action. |
+| P1 | Fix ahead of routine work: a critical user path is severely blocked with no acceptable alternative. |
+| P2 | Schedule a fix: demonstrated impact is bounded or an acceptable workaround exists. |
+| P3 | Defer if needed: the impact is minor and does not materially obstruct task completion. |
+
+Judge actual impact, trigger conditions, affected scope, urgency, and available alternatives together. A workaround does not make ongoing major harm routine. Do not infer a low priority from a documentation label or missing evidence, and do not infer P0 from an unverified security suspicion. These levels imply no fixed repair deadline.
+
+Return the level, its scale, a short evidence-based reason, and material limits with the existing assessment. If a missing fact prevents a defensible level, return **Priority undetermined**, name that fact and the next check; retain the observation's classification. When the classification itself is unresolved, a follow-up's urgency is not a confirmed bug priority. Preserve immediate warnings for credible harm while further assessment is pending.
+
+Proceed when the recommendation follows from the assessed goal and evidence, with ownership and decision-relevant limits explicit, and any requested priority has a supported level or an explicit unresolved dependency.
 
 ## 5. Preserve the judgment across follow-ups
 
-Return the finding's disposition, its decisive evidence and expectation basis, the response recommendation and rationale, and any remaining dependency. Scale the report to the finding rather than requiring a fixed template. The coordinator reconciles the results into the consuming task's final report; it checks the evidence and unresolved conditions rather than treating worker agreement as proof.
+Return the finding's disposition, its decisive evidence and expectation basis, the response recommendation and rationale, any assessed priority and its basis, and any remaining dependency. Scale the report to the finding rather than requiring a fixed template. The coordinator reconciles the results into the consuming task's final report; it checks the evidence and unresolved conditions rather than treating worker agreement as proof.
 
 On follow-up, retain the version, scenario, response goal, and previous reasons. Keep unresolved, evidence-backed reasons for questioning a judgment with that judgment. When updating it, explain which reasons the new evidence, corrected inference, or changed requirement addresses; revise only the judgments it affects. Retain limits that still apply and drop reasons that no longer apply. A renewed request for objections invites examination of the same proposition, not an automatic verdict reset. If an objection concerns a different goal, distinguish that question and preserve the earlier result. When accepted facts leave a value trade-off, explain the choice and who bears its cost.
 

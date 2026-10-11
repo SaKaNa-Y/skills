@@ -28,6 +28,22 @@ docs/skill-evolution/<skill-name>/
 
 Create only the material needed for the chosen recovery method. Preserve relative file paths in snapshots. Record additions, deletions, file types, permissions, and any symlink targets relevant to restoring the change. History files themselves stay outside the target's recovery payload. Files outside the skill directory need an explicit path mapping rather than ambiguous flattened filenames.
 
+## Current scope for longer discussions
+
+For evolution spanning multiple discussion rounds or targets, keep one compact current scope index in the existing iteration record. It points to evidence and decisions rather than copying the conversation. A small single-edit review needs no separate index. For a shared discussion, link each target's history to this same index; co-active discussion methods use it as their shared decision frontier.
+
+Keep the following current as user decisions or work state change:
+
+- Each target and candidate, distinguishing selected, open, explicitly deferred and rejected items.
+- The user's decisions and source pointers, including preserved behavior and agreed validation.
+- Remaining questions, dependencies, and the next action or condition for pending work.
+- Co-active methods and the instruction or artifact pointers needed to resume them.
+- Adoption and validation status, with links to implemented changes and supporting results.
+
+On resumption after an interruption or context loss, and before candidate preparation, read this index and recover the relevant original decisions and method instructions. Reconcile newer user input and artifacts against those decisions; update only the affected branches. Carry settled choices forward. An omission from a summary does not cancel an item, and an open question stays open until a decision changes it. Historical drafts remain evidence of earlier states, not authority over a later decision. If evidence is unavailable, retain the uncertainty and seek only the decision needed to continue affected work.
+
+The index is ready when every candidate has an evidence-backed disposition, selected work has an identified target and validation basis, and pending work has a next action or condition. During implementation and closure, link each selected item to its actual change or explicit pending outcome. Keep one current index while retaining earlier evidence through pointers; per-target records remain the authority for their exact changes and recovery payloads.
+
 ## Reconcile changes since the last run
 
 Identify the most recent recorded active state, including applied trials and completed rollbacks. A later candidate, rejection, or no-change review does not replace that state. Compare it with the actual target files and relevant supporting resources before proposing a new change. Use the recorded versions, snapshots, or manifests to distinguish known differences from paths whose older state is unavailable.

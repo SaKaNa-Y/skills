@@ -8,7 +8,7 @@ disable-model-invocation: true
 
 Learn from skill use and relevant external ideas to improve future use. Explicit external-learning requests can also start from a named target without prior usage. Start with each target's purpose: opportunities include successful methods worth retaining, missed outcomes, unnecessary effort, and better ways to organize the work. Judge an opportunity by its contribution to that purpose, not by whether the agent obeyed every instruction or whether the skill could acquire more features.
 
-This is an explicitly invoked, standalone skill. It works well alongside Matt Pocock's grilling series for deeper discussion of hypotheses and trade-offs. When separately active, let those skills own their discussion process; they are optional, not dependencies to activate or install. Use the user's requested presentation for decisions and carry forward choices already made.
+This is an explicitly invoked, standalone skill. It works well alongside a separately selected grilling method for deeper discussion of hypotheses and trade-offs. When separately active, let those skills own their discussion process; they are optional, not dependencies to activate or install. Use the user's requested presentation for decisions and carry forward choices already made.
 
 For a requested rollback of a recorded evolution, start from that iteration and follow [history and recovery](references/history.md). Its existing evidence supports the reversal; a new improvement proposal is unnecessary.
 
@@ -33,6 +33,8 @@ For usage evidence, trace what the user wanted, the approach taken, material ada
 For external material already supplied or previously consulted, preserve its original context, access limits and relevance to the target. Use [external learning](references/external-learning.md) to interpret sources and distinguish inspiration from demonstrated outcomes.
 
 Read [history and recovery](references/history.md) to establish private storage, reconcile the current target with its last recorded active state, and consult relevant prior iterations. Preserve identifiable external changes and honest history gaps before developing a new change. Before presenting proposals, briefly connect the relevant history to this review: what was previously tried or decided, why, and what new evidence or changed conditions justify revisiting it. Carry forward applicable decisions when that basis is unchanged; extend an existing pending iteration when continuing the same hypothesis.
+
+For multi-round or multi-target work, maintain and recover the [current scope index](references/history.md#current-scope-for-longer-discussions) in the existing private iteration record. Reconcile it when resuming before continuing the discussion.
 
 Proceed when each target has a traceable account of the selected evidence, privately recorded baseline reconciliation and gaps, and prior decisions that affect the analysis. A full-history review does not require reproducing the transcript in the record.
 
@@ -72,6 +74,8 @@ Let the user select concrete hypotheses before implementing them. Reuse an expli
 Proceed when the selected changes, targets, preserved behavior, and validation approach are concrete. Deferred and rejected proposals remain distinguishable in the history.
 
 ## 5. Prepare, validate, and apply
+
+When a current scope index is in use, reconcile it before preparing the candidate so every selected item has a target and every open decision keeps its actual status.
 
 Before changing target files, follow [history and recovery](references/history.md) to create or resume the iteration record and preserve its actual baseline. Scope recovery material to the affected files, including resources outside the target folder when selected. Preserve existing unrelated edits.
 

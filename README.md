@@ -266,6 +266,25 @@ It works independently and pairs well with separately installed grilling skills 
 
 These are recommended workflows. Their contracts and structural checks do not establish a measured productivity gain; real use can refine the combinations. The linked skills own runtime rules. This section explains how to start, who does what, and where work stops.
 
+### Workflow overview
+
+```mermaid
+flowchart TD
+    J["Just: use the product"] --> R["Shared working records"]
+    Y["Yak: preserve side findings"] --> R
+    E["Explore: discover and discuss opportunities"] --> R
+    R --> A["Assess: evidence, value and relationships"]
+    A --> R
+    A --> U["User selects the work"]
+    U --> I["Implement Change: implement and integrate"]
+    D["An agreed direct request"] --> I
+    I --> V["Review and runtime verification"]
+    V --> P["Draft PR and result writeback"]
+    P --> R
+```
+
+Setup supplies the records configuration and agent entrypoints used across this flow. Each stage describes a responsibility. The number of agents depends on the task. The scenarios below explain the starting commands, required evidence and stopping points. An agreed direct request can enter implementation without discovery first.
+
 ### Find a problem through actual use
 
 ```text

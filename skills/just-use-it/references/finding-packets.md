@@ -26,7 +26,7 @@ Use the existing exploration lenses to identify the public checks still required
 
 ## Build the Packet
 
-Keep one session-scoped packet for each independently understandable candidate or assessed finding, with a stable identity and its current assessment or pending state:
+Keep one packet for each independently understandable candidate or assessed finding, with a stable identity and its current assessment or pending state:
 
 - affected capability, the user outcome, and observed impact distinguished from possible consequences;
 - environment, version, prerequisites, and initial state;
@@ -44,15 +44,21 @@ Describe the condition actually observed, distinguishing it from an inferred tri
 
 Describe concrete user impact. Preserve isolated-environment scope and any known relation to the real consumer. Leave priority judgment to [Assess Findings](../../assess-findings/SKILL.md#assess-suggested-priority), carrying forward the evidence, any project scale, and the caller's request. Preserve its suggested level and limits in the packet. Keep severity separate and use the project's severity scale only when sufficient evidence supports it.
 
+## Preserve and refresh shared evidence
+
+When a record destination and save authority are configured, the coordinator saves the packet under the [working-record contract](../../assess-findings/references/working-records.md), reusing the same identity as Yak and Assess. Historical matching waits for the active gate: retain an unmatched observation until matching is eligible rather than reading old findings early or claiming uniqueness. Copy essential evidence before temporary resources are removed.
+
+If Assess returns a causal, blocking or masking relationship, retain its confidence and supporting evidence, revisit affected coverage above, and update the relevant executor through the coordinator. A relation alone does not merge findings or expand the authorized repair scope.
+
 ## Hand Off for Assessment and Reconciliation
 
-At a coherent usage boundary, the main agent retains its directly observed packet or receives the delegated executor’s packet for [Assess Findings](../../assess-findings/SKILL.md). The coordinator dispatches an assessment worker for a bounded finding or related set while usage continues. Supply the current source/tracker phase and available evidence without presenting the discoverer's label or proposed fix as an established conclusion. Keep one accountable assessment per identity and reuse it across Just and Yak; additional evidence updates that assessment.
+At a coherent usage boundary, the main agent retains its directly observed packet or receives the delegated executor’s packet for [Assess Findings](../../assess-findings/SKILL.md). The coordinator assigns one assessment owner for a bounded finding or related set, directly or through a task-fit worker while independent usage continues. Supply the current source/tracker phase and available evidence without presenting the discoverer's label or proposed fix as an established conclusion. Keep one accountable assessment per identity and reuse it across Just and Yak; additional evidence updates that assessment.
 
 During source-blind use, the assessor checks supplied evidence and may request a specific public-interface contrast from the current usage executor, including the main agent during direct use. Source and tracker access follow the audit's global gates. Keep early judgments provisional where the required check is not yet eligible. Source-dependent investigation can start when the source phase opens; reconciliation waits for the Audit Reconciliation Gate.
 
-Coordinate independent work within available slots and shared-resource constraints. Retain queued assessment with its reason and next checkpoint when no slot is available. If delegation remains unavailable, the main agent performs the same method at a safe boundary and states that limitation. A missing dependency leaves an explicit pending assessment rather than a fabricated result. On pause, stop dispatch and interrupt active assessment work, preserve returned evidence, and account for resources; resume under the recorded phase.
+Coordinate independent work within available slots and shared-resource constraints. Use direct assessment at a safe boundary when it fits the work; retain genuinely queued work with its reason and next checkpoint. If delegation is unavailable, report the actual inline work or pending limitation. A missing dependency leaves an explicit pending assessment rather than a fabricated result. On pause, stop dispatch and interrupt active assessment work, preserve returned evidence, and account for resources; resume under the recorded phase.
 
-Once the audit or an explicitly ended Partial Audit freezes its observations, a co-active Yak may reconcile assessable packets. An early assessment need not wait for tracker results to state supported facts or classification; a new-PR recommendation waits for relevant reconciliation. Yak returns material coverage or resolution evidence to the assessor instead of starting a second assessment. Without Yak, the assessor handles the eligible read-only check; Just does not publish records.
+Once the audit or an explicitly ended Partial Audit freezes its observations, a co-active Yak may reconcile assessable packets. An early assessment need not wait for tracker results to state supported facts or classification; a new-PR recommendation waits for relevant reconciliation. Yak returns material coverage or resolution evidence to the assessor instead of starting a second assessment. Without Yak, the assessor handles the eligible read-only check; Just does not publish formal tracker records.
 
 Before the final report, collect each assessment and preserve its separate classification, supported action, any assessed priority and its basis, and remaining dependency. When Yak is co-active, use its [outcome reporting contract](../../yak-shaving-triage/references/issue-capture.md#report-the-outcome) for the findings section while retaining this audit's coverage and cleanup report. Early handoff is not final qualification. Report unresolved observations even when they are not ready for tracker recording, and preserve the reason an earlier claim was excluded.
 

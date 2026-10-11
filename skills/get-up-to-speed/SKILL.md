@@ -62,6 +62,8 @@ Choose sections and diagrams to serve this particular target, without requiring 
 
 ## 4. Check and Deliver
 
+For a guide with multi-step setup, cross-tool operations, contribution rehearsal or environment-sensitive results, use an independent reader replay when available and its value justifies the setup. Read [independent replay](references/independent-replay.md) before assigning it. A small prose correction or concept-only explanation does not automatically need a worker. The author's own execution remains required; independent replay checks whether the delivered material supplies the reader's necessary context.
+
 Read the guide from the learner's stated starting point and correct these gaps before delivery:
 
 - **Understanding:** core concepts have explanations of their relationships and consequences; named features, command tables, and source links alone do not meet this requirement.

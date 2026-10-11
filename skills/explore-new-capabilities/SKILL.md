@@ -16,16 +16,9 @@ Read the project's guidance, purpose, and public capabilities. Use the user's di
 
 When the user also selects Just Use It, follow its [outcome scope](../just-use-it/SKILL.md#establish-the-outcome-scope) before usage and preserve its source and tracker gates. Otherwise, read relevant source as part of project grounding.
 
-Resolve the records directory from the current user instruction, then an established path in the conversation or applicable user-level agent instructions. Reuse a configured path without asking the user to supply it again. Keep personal paths in those user instructions, outside the shared skill. If no path is known, request an existing directory; if a known path is unavailable or invalid, report the specific problem before resolving a replacement. Leave creation of a missing records root to the user. Project reading can continue while the path is pending, but presenting a new opportunity waits until its history can be read and its record saved. Keep records there without changing repository ignore rules or publishing them.
+Use [Assess Findings](../assess-findings/SKILL.md), installed with `investigate-with-evidence`, for common evidence, relationship and action judgment. Read its [working-record contract](../assess-findings/references/working-records.md) to resolve configured history, match the project and prior opportunities, save records, check delivery and handle their lifecycle. Reuse configured paths without another question; when unavailable, continue project grounding but defer presenting a new opportunity until its history can be checked and saved. Missing assessment support leaves the judgment pending rather than claimed complete.
 
-Identify the project by its repository identity or another unambiguous identifier. Reuse its existing record layout; for a new history, use a subdirectory named after the project directory, checking identity before reusing a matching folder name. Keep an index linking one Markdown file per presented opportunity, with short summaries and current outcomes. Read the index and relevant earlier records before discovery, including unfinished, deferred, and dismissed ideas. Match ideas by the user problem and intended capability, not their titles:
-
-- **Unfinished match:** continue the original record and its open questions.
-- **Concluded match with material new evidence or an explicit request to reopen:** continue the original record, preserving its earlier conclusion and explaining what changed.
-- **Concluded match with neither:** explain the recorded outcome and skip that lead.
-- **No match:** develop a new opportunity and create its record when first presented.
-
-Apply the match again before presenting a lead found during research. When local commits are authorized by the user or applicable instructions, read [record commits](references/record-commits.md) before the first record change. Saving a record alone does not authorize committing it.
+Match ideas by user problem and intended capability. Continue an unfinished match in its existing record. Reopen a concluded match only for material new evidence or an explicit request, retaining its previous outcome; otherwise skip that lead. Repeat this identity check before first presentation. Preserve the existing layout and previously authorized commit scope.
 
 **Ready when:** the project identity and relevant constraints are established, the record location is usable, relevant earlier records have been read, and any supplied idea has been matched to the history branches above.
 
@@ -47,7 +40,7 @@ Use documentation, source, actual usage, or a small disposable check as appropri
 
 Start from the user question or task. Exercise the closest existing public route, including relevant companion tools or a practical manual workflow, when it can settle whether the outcome is already available. Describe the result it supplies and the result still missing; keep the capability need separate from a proposed command or UI. Prefer an ordinary working scenario when known defects would confound the comparison. If a supporting example fails, revise that example and investigate any concrete surviving lead before judging the whole idea.
 
-Before presenting that opportunity, establish:
+Supply the existing Assess owner with the following evidence before presenting the opportunity; use its judgment and investigate only the gaps it identifies:
 
 - **Value:** a concrete user situation and the additional outcome the capability could enable. Separate observed needs from hypothesized benefits.
 - **Feasibility:** traceable evidence in the target project's interfaces, data, architecture, or demonstrated behavior supporting a plausible implementation path. Check the assumptions required to transfer an outside example.
@@ -57,9 +50,13 @@ Use the history branches above for local matches. For related community work, re
 
 **Ready when:** one opportunity has a concrete scenario, a supported plausible path, and an account of prior work and remaining uncertainty. If relevant leads yield no such opportunity, report the examined scope and evidence limits instead of filling the gap with an unsupported idea. Do not keep widening the search merely to produce a result.
 
+### Delegate a factual question when useful
+
+Use the shared [coordination method](../assess-findings/references/coordination.md) when an independent question about the user scenario, alternatives, prior work or feasibility merits a research worker. Give it the current opportunity, the decision-changing question, relevant records and phase permissions, allowed checks and a stopping condition. It returns evidence, limits and record-update suggestions; it does not choose a different opportunity, implement the product or write shared records. Keep the user discussion with the main agent and send material results to the same Assess owner. Small or tightly coupled research stays inline.
+
 ## 3. Present one idea and discuss it
 
-Save the initial record when first presenting the idea. Explain what users could do, why it is worth discussing now, why it appears feasible, and what remains uncertain. Cite the supporting sources and explain why this opportunity was selected. Keep the initial proposal understandable without treating it as a settled specification.
+Save the initial record with its assessment or explicit pending state when first presenting the idea. Explain what users could do, why it is worth discussing now, why it appears feasible, and what remains uncertain. Cite the supporting sources and explain why this opportunity was selected. Keep the initial proposal understandable without treating it as a settled specification.
 
 Invite the user's reaction, then follow the questions it opens. Investigate factual uncertainties yourself; ask the user about goals and trade-offs with concrete alternatives and a recommendation when warranted. Use answers to revise the current idea, narrow or broaden its scope, or discard it. Ask dependent questions after their prerequisites are answered. Respect settled choices unless new evidence changes their basis.
 
@@ -79,7 +76,7 @@ Update the opportunity record at meaningful discussion boundaries and before clo
 - Open assumptions, feasibility limits, and results of any disposable checks.
 - The discussion's current state, decisions and reasons, and conditions for reconsideration.
 
-Keep the index consistent with the record. Complete authorized local commits at these same boundaries using [record commits](references/record-commits.md). An unfinished discussion remains unfinished; silence does not select a disposition. If saving fails, retain the update in the conversation, report the failure, and resolve persistence before presenting another idea. These records preserve exploration, not formal feature specifications or tracker items; follow the project's conventions when the user later requests those artifacts.
+Keep the index consistent with the record. Complete authorized local commits at these same boundaries using the [working-record checkpoint procedure](../assess-findings/references/working-records.md#save-and-commit-a-checkpoint). An unfinished discussion remains unfinished; silence does not select a disposition. If saving fails, retain the update in the conversation, report the failure, and resolve persistence before presenting another idea. These records preserve exploration, not formal feature specifications or tracker items; follow the project's conventions when the user later requests those artifacts.
 
 Close with the current conclusion, unresolved evidence, record location, and the commit result when committing was authorized. Let the user decide whether to continue this idea, explore another, or stop. Choosing to pursue an idea does not itself start implementation.
 

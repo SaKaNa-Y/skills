@@ -2,6 +2,8 @@
 
 Apply the main workflow’s execution choice to existing Capability Groups and Vertical Capability Slices. Each executor performs real user journeys, variations, and exploration. The main agent retains combined coverage, target identity, phase transitions, and the final report.
 
+Read the shared [coordination contract](../../assess-findings/references/coordination.md) for assignment context, evidence updates and ownership transfer. The usage-specific rules below also apply.
+
 ## Assign a Slice
 
 For delegated work, give the worker this skill and its relevant references, its assigned outcome and coverage boundary, public starting material, verified artifact or instance, current source/tracker access state, and authorized disposable resources. Supply only the context needed for that assignment rather than the full conversation. A worker does not remap the whole product, start its own source pass, or spawn more agents.
@@ -24,7 +26,7 @@ Return a compact result using the existing Verification Traces and Finding Packe
 - Artifact identity and any source or tracker exposure that changed the evidence scope.
 - Resources created, cleanup completed, and anything explicitly transferred to the main agent.
 
-Reference existing artifacts instead of copying full logs or the conversation. Remove secrets and unrelated personal information. The main agent reads additional evidence when needed to evaluate a claim; a concise conclusion alone cannot establish Verified coverage. It routes candidate findings to the assigned Assess worker under [finding handoff](finding-packets.md#hand-off-for-assessment-and-reconciliation). Usage workers continue their assigned slices and return requested contrasts through the coordinator rather than creating further workers.
+Reference existing artifacts instead of copying full logs or the conversation. Remove secrets and unrelated personal information. The main agent reads additional evidence when needed to evaluate a claim; a concise conclusion alone cannot establish Verified coverage. It routes candidate findings to the responsible Assess owner under [finding handoff](finding-packets.md#hand-off-for-assessment-and-reconciliation). Usage workers continue their assigned slices and return requested contrasts through the coordinator rather than creating further workers.
 
 For an interrupted slice, add its last completed action, current state, and next action. Preserve enough evidence to resume without relying on a temporary path scheduled for deletion. Keep the unfinished work pending rather than marking it Verified to free a worker slot.
 

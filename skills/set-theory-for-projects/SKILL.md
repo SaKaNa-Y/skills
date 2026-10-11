@@ -33,6 +33,8 @@ Resolve factual classifications from evidence. Put only ambiguous value trade-of
 
 ## 2. Run Bounded Discovery
 
+After the Expansion Aim and necessary boundaries are clear, use [research assignments](references/research-assignments.md) when two or more search paths can make independent progress. The main owner keeps candidate identity, final judgment and one global budget. Do not parallelize an unresolved aim or multiply this skill's limits per worker.
+
 Search proactively through the most relevant available primary sources: project files, official documentation, source repositories, issue trackers, release notes, and maintainer statements. Keep each material claim traceable to a file, URL, or user-provided fact.
 
 Investigate these four paths in the order most likely to produce evidence for this Anchor:

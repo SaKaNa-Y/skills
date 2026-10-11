@@ -1,6 +1,6 @@
 # Issue Capture
 
-Use this reference when a newly observed problem may be distinct from the User Problem, before expanding or switching work because of it.
+Use this reference to qualify and reconcile formal tracker records for problems distinct from the User Problem. Unassessed observations may already be saved under the separate [working-record contract](../../assess-findings/references/working-records.md); this reference does not impose tracker publication approval on those authorized working notes.
 
 ## Qualify the Problem
 
@@ -8,7 +8,7 @@ Necessary investigation or repair stays with the active User Problem. For a pote
 
 During Just Use It or another observational workflow, that workflow supplies usage evidence and owns its assessment handoff. Reuse the result from [Assess Findings](../../assess-findings/SKILL.md); qualification is not established by a reproducible symptom or a discoverer's label alone. Keep supported defects, improvement opportunities, unresolved observations and excluded claims distinct. Recording eligibility and the recommendation to repair are separate decisions.
 
-When no assessment exists and a concrete observation has a user outcome at stake, the coordinator dispatches an Assess worker with the evidence and current phase. Continue the main task; use its existing assessment if one is already assigned. Queue a bounded assignment if capacity is unavailable and revisit it at the next checkpoint, using main-agent assessment if delegation remains unavailable. A suspicion or taste alone does not start an assessment campaign. Stop and preserve assessment work under the same pause/cleanup rules as reconciliation.
+When no assessment exists and a concrete observation has a user outcome at stake, the coordinator assigns an Assess owner directly or through a bounded worker under the shared coordination method. Reuse the existing owner and evidence; retain unavailable checks with a resumption condition. A suspicion or taste alone does not start an assessment campaign. Stop and preserve assessment work under the same pause/cleanup rules as reconciliation.
 
 An Issue-ready Problem needs an evidenced concern or improvement rationale and an observable acceptance boundary. Preserve unresolved observations in the report without promoting them into issue drafts. If the tracker accepts investigation requests and the user asks for one, label the uncertainty rather than inventing a defect. An unavailable assessment dependency leaves the packet pending; continue unrelated work.
 
@@ -93,7 +93,7 @@ The main agent performs this step after the User Problem completes and eligible 
 
 Present the batch as `Reused`, `Proposed Update`, `Proposed New`, or `Reconciliation Blocked`. Reused results need no approval; include their title, identifier, and link. For every Proposed Update or Proposed New, show the exact destination, action, title, body or patch, and tracker metadata, then request Tracker Write Approval so the user can approve any subset. Apply labels only when Tracker Guidance defines their use.
 
-Perform only approved mutations. Skill invocation, urgency, a writable tool, and prior approval for a different batch are not Tracker Write Approval. Read-only search and reuse need no write approval; creating an issue, adding a comment, reactivating or closing a record, editing tracker metadata or state, and changing a repository Markdown record all do.
+Perform only approved mutations. Skill invocation, urgency, a writable tool, and prior approval for a different batch are not Tracker Write Approval. Read-only search and reuse need no write approval; creating an issue, adding a comment, reactivating or closing a record, editing tracker metadata or state, and changing a canonical repository Markdown issue all do. Ordinary authorized Working Records follow their separate save contract.
 
 If an approved repository-file mutation would change the checkout that an active workflow is still auditing or validating, retain the exact approved patch and apply it only after that workflow finishes its integrity check and cleanup. Request approval again if the proposed patch changes before it is applied.
 

@@ -1,6 +1,6 @@
 ---
 name: assess-findings
-description: Assess observed findings and recommend evidence-backed next actions. Use for findings handed off by Just Use It or Yak Shaving Triage, or when deciding whether an observed behavior warrants a fix, improvement, or PR.
+description: Assess findings and feature opportunities, preserve related evidence and decisions, and recommend scoped next actions. Use for Just, Yak or Explore handoffs and decisions about a fix, improvement or PR.
 ---
 
 # Assess Findings
@@ -11,15 +11,11 @@ Use [investigate-with-evidence](../investigate-with-evidence/SKILL.md) for factu
 
 ## 1. Establish the assessment and its owner
 
-The coordinating agent dispatches one assessment worker for a bounded set of related findings, passing this skill, the evidence, the current question, and the active source and tracker permissions. Reuse that worker and assessment as evidence arrives. The coordinator schedules usage workers, assessment workers, and any targeted investigation tasks; an assessment worker requests needed work through the coordinator rather than recursively spawning a team.
+Keep one accountable assessment owner for a bounded set of related findings or opportunities. The coordinator may assess directly or delegate under [coordination](references/coordination.md); reuse that owner and existing judgments across Just, Yak and Explore. Investigations return through the coordinator rather than recursively creating teams. Missing investigation support leaves only the dependent judgment pending.
 
-Reuse an existing assessment when Just and Yak hand off the same finding. If worker capacity is occupied, queue the assessment while independent usage continues. If delegation is unavailable, identify the limitation and perform the same assessment inline. If the investigation dependency is unavailable, complete judgments supported by existing evidence and leave dependent investigation explicitly pending. Report actual work and limitations, without implying unavailable workers or checks ran.
+When capturing or resuming persistent evidence, read [working records](references/working-records.md). Reuse the original record, keep observations before final judgment, and preserve its user decisions. If no destination or save authority exists, establish it while continuing permitted analysis; retain unsaved evidence explicitly. Session-only assessment remains available when the consuming task requests it.
 
-Keep a compact, session-scoped assessment beside the finding evidence. It must identify:
-
-- The finding, affected version and environment, actual user path, and inspectable observations.
-- The expected outcome and its basis, demonstrated impact, and material uncertainties.
-- The response goal under consideration, existing assessment if any, and current source/tracker permissions.
+Identify the scenario, affected version and environment, inspectable evidence, expectation basis, demonstrated or proposed value, current response goal, material unknowns and source/history permissions. For an opportunity, a concrete desired outcome takes the place of a claimed behavioral failure.
 
 A packet may initially lack some of these facts. Preserve the gaps instead of filling them with inferred certainty. Related observations share an assessment when the same response and acceptance boundary resolve them; independently valuable responses remain distinguishable.
 
@@ -52,6 +48,14 @@ Express the supported disposition in ordinary language, optionally using these l
 
 Proceed when the classification has a traceable basis or an exact unresolved dependency. Keep evidence about behavior, cause, and impact distinct.
 
+### Evaluate an opportunity and related observations
+
+For an idea, evaluate its concrete user situation, incremental value over the closest working alternative, plausible implementation evidence and meaningful costs. Separate observed demand from hypothesized benefit. Reuse Explore's research and prior-work results; request only decision-changing gaps. Explore owns discovery and user discussion; Assess owns the resulting judgment, not a second discovery campaign. An opportunity need not establish a defect or necessity to be worthwhile.
+
+Compare newly accumulated observations with relevant records before choosing repair units. Distinguish one Problem Identity, independent problems, and distinct problems with possible causal, blocking or masking relationships. Record each relationship's evidence and uncertainty. A common component or suspected cause does not merge acceptance boundaries. An individual finding with sufficient evidence need not wait for a batch.
+
+When a relationship could change scope, ownership or remedy, request the smallest check that separates the competing explanations through Investigate. Return confirmed and rejected relationships to the coordinator, revise only affected judgments, and notify affected usage or implementation owners. If one symptom disappears while another remains, retain the latter's acceptance boundary rather than declaring the whole group resolved.
+
 ## 4. Recommend a response
 
 Fix the response goal before evaluating a remedy. Connect a proposed change to that goal, its evidence-backed benefit, the responsible consumer or repository, and meaningful costs or existing alternatives. Separate independent goals and remedies: explaining an empty view and correcting a library calculation may each have value without either requiring the other.
@@ -78,6 +82,8 @@ Return the level, its scale, a short evidence-based reason, and material limits 
 Proceed when the recommendation follows from the assessed goal and evidence, with ownership and decision-relevant limits explicit, and any requested priority has a supported level or an explicit unresolved dependency.
 
 ## 5. Preserve the judgment across follow-ups
+
+Preserve the assessment in the original authorized Working Record: decisive evidence, relationships, selected goal and scope, preserved behavior, acceptance conditions, unresolved user decisions and supported next action. Reuse agreed discussion or link an existing spec; 'worth doing' alone does not establish readiness to implement. The coordinator owns the save and index update under the working-record contract.
 
 Return the finding's disposition, its decisive evidence and expectation basis, the response recommendation and rationale, any assessed priority and its basis, and any remaining dependency. Scale the report to the finding rather than requiring a fixed template. The coordinator reconciles the results into the consuming task's final report; it checks the evidence and unresolved conditions rather than treating worker agreement as proof.
 

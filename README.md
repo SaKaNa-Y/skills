@@ -1,6 +1,6 @@
 # Skills for Deliberate Engineering
 
-Fourteen focused agent skills for engineering work that benefits from clearer decisions, bounded exploration, guided learning, and user control.
+Focused agent skills for engineering work that benefits from clearer decisions, bounded exploration, guided learning, and user control.
 
 Use them to make a conversation actionable, reduce low-value interruptions, protect the current task from scope drift, experience a developer tool before judging its implementation, discover evidence-backed ways to reuse a project's value, decide whether an external tool fits a repository, get started with a tool through a complete guide and runnable examples, explore project perspectives you have not considered, test a specific claim, assess findings and their next actions, resolve a factual uncertainty, or improve skills from their use or explicitly requested case research.
 
@@ -16,7 +16,7 @@ Install from this GitHub repository:
 npx skills@latest add SaKaNa-Y/skills
 ```
 
-The interactive installer discovers the available skills and lets you choose which ones and which detected agents to use. Installation is project-scoped by default. Select `investigate-with-evidence` alongside `expand-the-frame` or `challenge-the-claim`: both entry points use it for factual investigation. Select `assess-findings` and `investigate-with-evidence` alongside `just-use-it` or `yak-shaving-triage` for their automatic finding assessment. These declared dependencies must be installed separately; the workflows do not install them at runtime.
+The interactive installer discovers the available skills and lets you choose which ones and which detected agents to use. Installation is project-scoped by default. Select `investigate-with-evidence` alongside `expand-the-frame` or `challenge-the-claim`: both entry points use it for factual investigation. Select `assess-findings` and `investigate-with-evidence` alongside `just-use-it`, `yak-shaving-triage`, `explore-new-capabilities` or `implement-change` for shared assessment, investigation and record methods. Setup also needs these installed when configuring working records. These declared dependencies must be installed separately; the workflows do not install them at runtime.
 
 Preview the available skills without installing anything:
 
@@ -44,12 +44,13 @@ This repository does not publish its own npm package. `npx` runs the general-pur
 
 | When you need to... | Use | What you receive |
 |---|---|---|
-| Configure shared project conventions for this skill collection | [`setup-sakana-skills`](skills/setup-sakana-skills/SKILL.md) | A reviewed tracker configuration and Claude Code/Codex entrypoints |
+| Configure global defaults and project conventions for this skill collection | [`setup-sakana-skills`](skills/setup-sakana-skills/SKILL.md) | Reviewed records/tracker guidance and Claude Code/Codex entrypoints |
 | Make an important question or answer understandable and actionable | [`make-it-land`](skills/make-it-land/SKILL.md) | The missing context, terms, evidence, implications, and next action |
 | Stop a workflow from asking you to decide routine details | [`prune-the-tree`](skills/prune-the-tree/SKILL.md) | Fewer low-value interruptions without losing user-owned decisions |
 | Keep a valid side problem from replacing the current task | [`yak-shaving-triage`](skills/yak-shaving-triage/SKILL.md) | A preserved, issue-ready finding and a return to the original problem |
 | Evaluate a source-accessible library, framework, CLI, or developer tool as a user | [`just-use-it`](skills/just-use-it/SKILL.md) | Hands-on coverage evidence and reproducible Finding Packets |
 | Decide whether an observed finding warrants a fix, improvement, or PR | [`assess-findings`](skills/assess-findings/SKILL.md) | A supported classification and scoped action recommendation |
+| Implement an agreed change | [`implement-change`](skills/implement-change/SKILL.md) | Verified work, a Draft PR and source-record updates |
 | Find where an existing project's value could serve more real contexts | [`set-theory-for-projects`](skills/set-theory-for-projects/SKILL.md) | Evidence-backed candidates, rejection reasons, and experiment ladders |
 | Find and discuss new capabilities for a project | [`explore-new-capabilities`](skills/explore-new-capabilities/SKILL.md) | One grounded idea at a time, with feasibility evidence and persistent exploration history |
 | Decide whether a tool fits a repository need | [`tool-fit-for-projects`](skills/tool-fit-for-projects/SKILL.md) | A comparison against the current baseline and a progressive adoption path |
@@ -61,7 +62,7 @@ This repository does not publish its own npm package. `npx` runs the general-pur
 
 ## Invoke Skills
 
-Yak Shaving Triage supports model selection at the start of engineering tasks. Assess Findings supports model selection for finding assessment and is reached automatically by Just Use It and Yak Shaving Triage. Investigate with Evidence supports bounded factual questions and is their assessment method as well as a dependency of Expand the Frame and Challenge the Claim. These three skills also accept direct invocation. The other eleven skills run only when you select them. Automatic selection depends on the host and task matching; it is not a guaranteed startup hook. The examples use the `$skill-name` convention; use the equivalent explicit-invocation syntax supported by your agent.
+Yak Shaving Triage supports model selection at the start of engineering tasks. Assess Findings supports model selection for findings and opportunities and is reached by Just Use It, Yak Shaving Triage and Explore New Capabilities. Implement Change supports model selection for authorized implementation and also accepts direct invocation. Investigate with Evidence supports bounded factual questions and is their assessment method as well as a dependency of Expand the Frame and Challenge the Claim. These shared methods also accept direct invocation. The remaining entrypoints retain their explicit-selection policy. Automatic selection depends on the host and task matching; it is not a guaranteed startup hook. The examples use the `$skill-name` convention; use the equivalent explicit-invocation syntax supported by your agent.
 
 ```text
 $prune-the-tree Help me implement this feature. Resolve routine choices yourself and ask me only about decisions that change the outcome.
@@ -69,15 +70,15 @@ $prune-the-tree Help me implement this feature. Resolve routine choices yourself
 
 You can invoke compatible skills together. Each remains responsible for its own behavior. Declared assessment and evidence dependencies supply methods to their consuming task; they do not select that task’s goal or broaden its authority.
 
-## Configure a Project
+## Configure Defaults and Projects
 
-Invoke [`setup-sakana-skills`](skills/setup-sakana-skills/SKILL.md) to establish shared project conventions. It reuses existing guidance or prepares GitHub Issues/local Markdown settings, then points `CLAUDE.md`, `AGENTS.md`, or both at the shared document. You review the exact changes before they are written.
+Invoke [`setup-sakana-skills`](skills/setup-sakana-skills/SKILL.md) to configure a records destination, save and local-commit authority, project identity, canonical tracker and selected agent entrypoints. Settings resolve as **current explicit instruction > project override > global default**. Setup shows exact paths, text and effective values before applying configuration. Existing sufficient guidance works without setup.
 
 ```text
-$setup-sakana-skills Configure this project for Sakana's skills. We use both Claude Code and Codex; propose the issue-tracker guidance we need.
+$setup-sakana-skills Configure a global default for working records, then show any overrides this project needs. Include ordinary-chat guidance for checking existing work and recording PR results. Show the save and local-commit policy separately from tracker publication.
 ```
 
-Setup serves the collection and grows with actual consumer requirements. It does not install or route skills, migrate existing issues, or authorize future tracker writes. Existing sufficient guidance works without setup; rerunning it fills gaps instead of resetting choices.
+The records repository contains project indexes, individual observations or opportunities, and necessary evidence. It is separate from the project's canonical issue tracker. A configured local-commit policy can cover one commit per new record or substantive assessment, decision or implementation update. Pushes and amendments remain separate instructions. Setup neither migrates existing records nor schedules background synchronization.
 
 ## Keep the Current Work Clear and Controlled
 
@@ -111,7 +112,7 @@ $prune-the-tree Build this feature. Investigate factual questions, use safe loca
 
 **Use it when:** Starting implementation, debugging, refactoring, or a developer-tool audit where independent findings should be preserved without diverting the task. The model can select it, and you can still invoke it directly.
 
-**You get:** Silent scope checks, reused or automatically assigned finding assessments, and bounded read-only issue/PR reconciliation while the main task continues. Assess and search workers share evidence through the coordinator. Without workers, the main agent performs the methods at safe boundaries. Final reports separate the finding judgment, tracker disposition and supported next action; only approved issue or local Markdown mutations are recorded.
+**You get:** Silent scope checks, reused or automatically assigned finding assessments, and bounded read-only issue/PR reconciliation while the main task continues. Assess and search workers share evidence through the coordinator. Without workers, the main agent performs the methods at safe boundaries. Final reports separate the finding judgment, tracker disposition and supported next action; unassessed observations can be saved in authorized Working Records, while formal tracker mutations retain their separate approval.
 
 **Boundary:** It delegates only decision-relevant investigation to Assess, preserves the active workflow and its source/tracker gates, and leaves repair and tracker writes to their authorization checkpoints. Urgent security or data-loss risks are surfaced immediately but still do not bypass reconciliation or write approval.
 
@@ -129,7 +130,9 @@ These skills create evidence and decision checkpoints. They stop before implemen
 
 **You get:** A slice-first Usage-First Audit that completes real user journeys, then reads source for missed public capabilities and runnable environments that expose meaningful component states or integrations. Usage evidence reaches Assess early; source investigation and tracker checks wait for the audit gates. The report includes coverage, replayable observations, assessed defects, improvement opportunities, unresolved observations, and excluded claims.
 
-**Boundary:** Usage and assessment remain separate assignments. An isolated example does not establish untested integration behavior. Assessment can investigate missing facts needed for a recommendation; repair and publication require separate authorization. Disposable resources are cleaned up or reported if cleanup fails.
+Daily continuation uses relevant records to choose routes without replacing actual usage or free exploration. An explicitly independent audit defers historical findings and preserves the original phase gates; prior exposure is reported honestly.
+
+**Boundary:** Usage and assessment remain separate responsibilities, not mandatory separate agents. An isolated example does not establish untested integration behavior. Assessment can investigate missing facts needed for a recommendation; repair and publication require separate authorization. Disposable resources are cleaned up or reported if cleanup fails.
 
 ```text
 $just-use-it Exercise this CLI through every documented public capability, explore it as a new user, then inspect source for public behavior the hands-on passes missed.
@@ -137,9 +140,9 @@ $just-use-it Exercise this CLI through every documented public capability, explo
 
 ### Assess Findings
 
-**Use it when:** Actual use has revealed a behavior that may warrant a fix, improvement, or PR. Just Use It and Yak Shaving Triage reach it automatically; you can also invoke it directly.
+**Use it when:** Actual use has revealed a behavior that may warrant a fix, improvement, or PR. Just Use It, Yak Shaving Triage and Explore New Capabilities reach it automatically; you can also invoke it directly.
 
-**You get:** A traceable judgment of the finding's basis and a separate recommendation about the value and scope of a response. A coordinated assessment worker reuses observations, requests decisive checks, consumes eligible tracker evidence, and preserves its reasons across follow-ups. Worthwhile optional improvements can qualify without being called mandatory defects.
+**You get:** A traceable judgment of the finding's basis and a separate recommendation about the value and scope of a response. One accountable owner, direct or delegated, reuses observations, requests decisive checks, and preserves decisions and relationships in the original record for implementation. Explore also uses this common method for opportunity value, alternatives and feasibility. Worthwhile optional improvements can qualify without being called mandatory defects.
 
 **Boundary:** Early assessment follows the consuming task's source/tracker permissions. It does not rerun every observation, require a written spec for every expectation, or use worker agreement as proof. Missing decisive evidence remains explicit; implementation and publication are separate actions. Install its `investigate-with-evidence` dependency.
 
@@ -153,7 +156,7 @@ $assess-findings Evaluate these audit observations and recommend which changes a
 
 **You get:** Agent-led research into the project and relevant outside inspiration, followed by discussion of one selected opportunity. Each idea has a concrete user scenario, initial feasibility evidence, and a record of its evolving assumptions and outcome. Prior exploration and community work inform duplicate checks.
 
-**Before starting:** Supply an existing local records directory once, or configure it in your user-level agent instructions for reuse across conversations. The skill reads project history before developing an idea, resumes unfinished matches, and preserves the reasons for reopening concluded ideas. When you authorize local commits, each new idea and each substantive update receives its own commit in the records repository; ordinary wording changes stay with that update.
+**Before starting:** Reuse your configured records directory or supply one once; Setup supports both global defaults and project overrides. The skill reads project history before developing an idea, resumes unfinished matches, and preserves the reasons for reopening concluded ideas. When you authorize local commits, each new idea and each substantive update receives its own commit in the records repository; ordinary wording changes stay with that update.
 
 **Boundary:** It stops at discussion, disposable evidence checks, and local records. You decide whether to explore another idea; implementation and publication require further instructions.
 
@@ -243,7 +246,7 @@ Install this skill with either discussion entry point. If it is missing, the ent
 $get-up-to-speed Help me get started with Rolldown so I can contribute. Write one complete guide in English explaining the core capabilities through a representative example, including a related source walkthrough, minimal change, and regression test. Keep runnable examples alongside the guide in a new workspace.
 ```
 
-The original design drew on the purposeful lessons in [Matt Pocock's teach skill](https://github.com/mattpocock/skills/blob/main/skills/productivity/teach/SKILL.md). Get Up to Speed delivers a bounded guide and examples as one artifact; it does not manage an ongoing teaching program. The reference is attribution only and is not fetched during use.
+Get Up to Speed delivers a bounded guide and examples as one artifact; it does not manage an ongoing teaching program.
 
 ## Evolve Skills from Experience
 
@@ -257,39 +260,112 @@ The original design drew on the purposeful lessons in [Matt Pocock's teach skill
 $evolve-skills Review the skills used in this conversation against their purposes. Discuss concrete improvements with me, then validate and record the changes I select, preserving what is needed to reverse them.
 ```
 
-It works independently and pairs well with Matt Pocock's grilling series for deeper discussion of the proposed changes. Those skills are optional and installed separately.
+It works independently and pairs well with separately installed grilling skills for deeper discussion of the proposed changes. Those skills are optional and installed separately.
 
 ## Combine Skills
 
-Use combinations when two independent responsibilities are both useful:
+These are recommended workflows. Their contracts and structural checks do not establish a measured productivity gain; real use can refine the combinations. The linked skills own runtime rules. This section explains how to start, who does what, and where work stops.
 
-- `make-it-land` + `prune-the-tree`: ask fewer questions, and make every remaining question easy to understand and answer.
-- `just-use-it` + `yak-shaving-triage`: usage observations reach the shared `assess-findings` workflow; source and tracker gates govern further inquiry, Yak returns reconciliation evidence, and the final report separates classification from action. Tracker writes require approval.
-- `make-it-land` + another task skill: keep explanations actionable while the task skill owns the work.
-
-For example:
+### Find a problem through actual use
 
 ```text
-$make-it-land $prune-the-tree Help me design this change. Ask only user-owned questions, and give each question enough context for me to make the decision.
+$just-use-it $yak-shaving-triage Exercise this project's user workflows. Use my configured records to preserve findings and assess related problems. Do not implement fixes yet.
 ```
 
-Some useful combinations require skills that are not included in this repository. Install those skills separately before invoking them:
+Just owns the declared coverage, real usage and evidence. Yak protects the audit task and saves independent observations, including unassessed ones. Assess qualifies behavior, compares related findings and recommends next actions. One coordinator reuses their owners and evidence instead of launching a separate team per skill. The result is coverage plus records and recommendations, not automatic repairs or published issues.
 
-```text
-$prune-the-tree $grill-with-docs Stress-test this product idea without offloading routine implementation choices to me.
-```
+For daily continuation, relevant history helps choose useful routes; old verification is not proof about today's version. To request independent experience, say so explicitly. Historical finding summaries and tracker research then wait for the audit gate. Starting a fresh worker does not erase earlier exposure.
 
-```text
-$yak-shaving-triage $grilling Stress-test this design, preserve unrelated confirmed problems, and keep the interview focused on the design.
-```
+### Preserve side findings during another task
 
 ```text
-$evolve-skills $grill-with-docs Find opportunities to improve the skills used here. Stress-test the hypotheses and trade-offs before applying the changes I select, and preserve detailed evolution history.
+$yak-shaving-triage Fix the checkout failure. Save independent findings in my configured records and continue the checkout work.
 ```
+
+Necessary diagnosis remains with the active task. Yak captures a separate observation, Assess supplies its judgment, and eligible reconciliation checks existing work at a suitable checkpoint or in a bounded worker. A saved observation need not already qualify as an issue. Formal publication follows the canonical tracker's rules; saving evidence does not authorize fixing every discovered problem.
+
+### Discover and discuss an opportunity
+
+```text
+$explore-new-capabilities Find one useful new capability for this project. Reuse my configured history and bring me evidence and trade-offs to discuss.
+```
+
+Explore owns discovery and the conversation. It can assign one factual research question while Assess maintains the opportunity's value, feasibility, alternatives and related evidence. The same record retains decisions and an eventual implementation agreement; there is no second full evaluation by each skill. Work stops at the user's decision to pursue, defer or dismiss, not at an automatic implementation.
+
+### Reassess accumulated observations
+
+```text
+$assess-findings Read the relevant active records for this project. Look for duplicate identities, causal or masking relationships, and recommend the next useful work.
+```
+
+Assess can compare buffered observations without requiring a known root cause for each. Related does not mean identical: separate acceptance boundaries stay visible. A targeted investigation answers only a fact that could change the judgment. New evidence updates affected records and assignments; it does not automatically reopen every old finding.
+
+### Implement selected work through a Draft PR
+
+```text
+$implement-change Implement the agreed outcome in record 003. Reuse its decisions, check existing claims and PRs, verify the result and write delivery back to the record.
+```
+
+The entry also accepts an agreed request, issue, spec or tickets without requiring the discovery chain first. It checks readiness, claims the work, and keeps small changes with one executor. Larger work can use outcome slices and dependencies, with research, implementation, integration, review and runtime verification assigned only when useful. Resource conflicts matter even between logically independent tasks.
+
+Review checks agreement and standards; actual execution supplies behavioral evidence. Changed integrated code receives affected checks again. Default delivery is a Draft PR, verification results and record updates. Ask explicitly for a narrower local-only endpoint when desired. The skill does not merge PRs, deploy or release.
+
+### Continue in another chat
+
+```text
+Continue the work recorded for this project. Check its current owner, branch and PR before starting, and preserve the existing acceptance conditions.
+```
+
+Setup's agent-entrypoint pointer makes the relevant guidance available to ordinary chats. Known PRs are checked on access; missing links prompt a bounded identity-and-coverage search. An empty result means only that this search found no match. There is no background synchronization guarantee.
+
+A checkpoint retains the last completed action, evidence, pending work and resources. A new chat reconciles an existing claim before overlapping edits; the Markdown claim is advisory, not a lock. At delivery, record links and coverage are updated. If that save fails, the existing PR remains the deliverable and only the writeback is retried.
+
+### Keep the records useful
+
+| Treatment | Meaning |
+| --- | --- |
+| Active | Work or a decision remains: unassessed, selected, in progress or awaiting PR handling |
+| Archived | No current action is needed; retain the reason, evidence and links, and reopen when warranted |
+| Delete | An explicit removal operation, not the automatic result of merging a PR |
+
+A merged partial fix leaves remaining work active. A declined idea can be archived without being called implemented. PR state, record lifecycle and verified behavior remain separate. Load the active index by default and relevant archived bodies on demand. Reuse existing layouts without automatic migration.
+
+### Use specialist workers without a fixed team
+
+| Skill | Useful delegation | Main owner retains |
+| --- | --- | --- |
+| Get Up to Speed | Independent replay from the delivered guide, examples and declared prerequisites | Teaching scope, corrections and final delivery |
+| Tool Fit for Projects | Comparable evidence research by candidate or shared question | Baseline, gates, final comparison and recommendation |
+| Set Theory for Projects | Independent search paths sharing a candidate index and total stopping budget | Expansion aim, necessary boundaries and final classification |
+
+These assignments are conditional. A concept-only explanation, a simple tool decision or tightly coupled research need not spawn workers. Independent replay tests whether the guide is sufficient for its intended reader, not whether the author can run it again. Set Theory's candidate limits apply to the whole run, not to every worker.
+
+### Add discussion and communication support
+
+`make-it-land` plus `prune-the-tree` can reduce routine questions while making remaining user decisions understandable:
+
+```text
+$make-it-land $prune-the-tree Help me design this change. Resolve routine choices and give me enough context for the decisions I own.
+```
+
+Separately installed grilling skills can deepen discussion without changing ownership or authority:
+
+```text
+$explore-new-capabilities $grill-with-docs Discover one grounded opportunity, then stress-test its scope and trade-offs while preserving the decisions in its record.
+```
+
+```text
+$evolve-skills $grill-with-docs Review the skills used here, discuss supported improvements, then validate selected changes and preserve recovery history.
+```
+
+Other established combinations remain useful: `make-it-land` with a task skill keeps explanations actionable; `prune-the-tree` with a separately installed grilling skill keeps factual legwork with the agent; Yak with grilling preserves independent findings while the interview stays on its chosen design.
+
+
+Add future combinations here with their intended outcome, division of responsibility, entry example, handoff and stopping point. Distinguish suggested combinations from those supported by actual usage evidence.
 
 ## Design Principles
 
-- **Deliberate activation:** Yak can be selected by the model to protect engineering work, and Investigate with Evidence for bounded factual checks. The discussion entry points and other workflows remain user-invoked. Activation does not expand authority.
+- **Deliberate activation:** Yak can be selected by the model to protect engineering work, and Investigate with Evidence for bounded factual checks. Implement Change can be selected for authorized implementation. Discussion entrypoints retain their user-invoked boundaries. Activation does not expand authority.
 - **Narrow ownership:** Each skill changes one responsibility and leaves the current task, other skills, and mandatory checkpoints in place.
 - **Evidence before expansion:** Facts come from the repository, real use, current documentation, and traceable sources rather than plausible guesses.
 - **Bounded exploration:** Broad research has an explicit stopping condition and returns control at a named checkpoint.

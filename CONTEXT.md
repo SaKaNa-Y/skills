@@ -53,7 +53,7 @@ Project-provided instructions that identify the canonical destination and conven
 _Avoid_: Assumed tracker, default GitHub
 
 **Tracker Write Approval**:
-The user's confirmation of an exact proposed set of persistent tracker mutations after reconciliation and draft review. Activating a skill does not grant this approval; it applies whether Tracker Guidance selects an external tracker or an explicitly requested repository Markdown record.
+The user's confirmation of an exact proposed set of persistent tracker mutations after reconciliation and draft review. Activating a skill does not grant this approval; it applies whether Tracker Guidance selects an external tracker or a canonical repository Markdown issue. Ordinary Working Records use their separately configured capture authority.
 _Avoid_: Skill invocation, implicit write authorization, blanket future approval
 
 **Capture Checkpoint**:
@@ -73,7 +73,7 @@ A skill activated only by direct user selection when the client supports that in
 _Avoid_: Always-on skill, implicit skill
 
 **Setup Sakana Skills**:
-The Explicit-only Skill that establishes shared project conventions required by the installed skills in this collection. It reuses existing choices and prepares user-reviewed configuration, independently of the skills' runtime invocation.
+The Explicit-only Skill that establishes global defaults and project conventions required by the installed skills in this collection. It reuses existing choices and prepares user-reviewed configuration, independently of the skills' runtime invocation.
 _Avoid_: Yak-only setup, skill router, issue migration
 
 **Usage-First Audit**:
@@ -153,7 +153,7 @@ An Audit Finding where actual use shows that shipped behaviors cannot be combine
 _Avoid_: Feature wish, automatic bug label, solution design
 
 **Finding Packet**:
-The session-scoped evidence for a candidate or assessed Audit Finding, including the user outcome, expectation basis, observed impact, prerequisites, reproduction path and attempts, available evidence, and assessment state. It supports handoff and reporting while keeping unresolved observations distinct from qualified findings and tracker records.
+The evidence packet for a candidate or assessed Audit Finding, including the user outcome, expectation basis, observed impact, prerequisites, reproduction path and attempts, available evidence, and assessment state. It supports handoff and reporting and can be preserved in a Working Record while keeping unresolved observations distinct from qualified findings and tracker records.
 _Avoid_: Tracker issue, diagnosis, implementation plan
 
 **Intermittent Finding**:
@@ -396,6 +396,26 @@ _Avoid_: Feature backlog generation, implementation plan, simultaneous candidate
 A project-specific history of presented Feature Opportunities and their evolving evidence, uncertainties, discussion outcomes, and reasons for reconsideration, kept in a user-designated directory that can be reused across conversations. Its identity follows the user problem and intended capability through continued discussion and reconsideration, without implying that the project's wider community has never proposed the idea.
 _Avoid_: Accepted feature specification, published issue, conversation transcript
 
+**Working Record**:
+A persistent account of one observed problem or Feature Opportunity, including its evidence, current assessment, user decisions and related implementation work. It may preserve an unassessed observation and is distinct from a published tracker issue or an accepted specification.
+_Avoid_: Confirmed bug, canonical issue, implementation authorization
+
+**Finding Relationship**:
+An evidenced or explicitly provisional connection between findings, such as causation, blocking or masking. A relationship does not erase distinct Problem Identities or acceptance boundaries.
+_Avoid_: Shared-component identity, assumed common cause, automatic duplicate
+
+**Implementation Agreement**:
+The user-selected outcome, scope, preserved behavior and observable acceptance conditions sufficient to guide a change, together with any unresolved decisions. It can be recovered from an existing discussion or record without becoming a separate specification.
+_Avoid_: Worthwhile recommendation, inferred product decision, mandatory long spec
+
+**Work Claim**:
+A visible statement of responsibility for an active implementation, with enough progress context to support continuation or an explicit handoff. It is a coordination agreement rather than a guarantee of exclusive execution.
+_Avoid_: Distributed lock, permanent ownership, permission to overwrite
+
+**Archived Working Record**:
+A Working Record that no longer needs active attention but retains its outcome, reason and relevant evidence for later reference or reopening. Archival can reflect resolution, a decision not to proceed or replacement by other work; it does not itself establish that a defect was fixed.
+_Avoid_: Deleted record, merged PR, confirmed resolution
+
 **Explore New Capabilities**:
 The Explicit-only Skill that performs Feature Exploration, selecting and explaining one opportunity at a time for user discussion. The user decides whether to explore another opportunity after the current discussion reaches a stopping point.
 _Avoid_: Automatic feature discovery during repairs, implementation authorization
@@ -421,11 +441,11 @@ The shared skill that performs Evidence Investigation for Expand the Frame and C
 _Avoid_: Debate judge, workflow router, implementation authorization
 
 **Finding Assessment**:
-A bounded evaluation of an observed finding that separates established behavior, the basis for an expected outcome, demonstrated impact, and the value and scope of a proposed response. It returns a traceable next-action recommendation and preserves unresolved facts without treating reproducibility as proof of a defect or lack of necessity as proof against an improvement.
+A bounded evaluation of an observed finding or Feature Opportunity that separates evidence, expected or proposed outcomes, impact, and the value and scope of a response. It returns a traceable next-action recommendation and preserves unresolved facts without treating reproducibility as proof of a defect or lack of necessity as proof against an improvement.
 _Avoid_: Bug confirmation by repetition, adversarial voting, automatic PR creation
 
 **Assess Findings**:
-The shared workflow for Finding Assessment, selected for automatic use by Just Use It and Yak Shaving Triage with coordinated assessment workers. Early handoff preserves the active source and tracker boundaries; later evidence updates the affected judgments rather than restarting the whole assessment.
+The shared workflow for Finding Assessment, used by Just Use It, Yak Shaving Triage and Explore New Capabilities with one accountable owner per related set, direct or delegated. Early handoff preserves the active source and tracker boundaries; later evidence updates the affected judgments rather than restarting the whole assessment.
 _Avoid_: Issue publisher, root-cause requirement, duplicate assessment by each caller
 
 **Skill Evolution**:

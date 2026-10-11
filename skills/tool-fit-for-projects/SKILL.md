@@ -65,6 +65,8 @@ A candidate may require more than one profile. Do not load a profile merely beca
 
 ### 4. Build the Evidence Base
 
+When several candidate questions can be researched independently, use [candidate evidence assignments](references/candidate-evidence.md). Fix the Current Baseline, gates and comparison questions first. The main owner retains comparison and recommendation; simple or tightly coupled decisions stay inline.
+
 Follow the Tool Evidence Hierarchy:
 
 1. repository code, manifests, configuration, history, issues, and existing Read-only Validation;

@@ -1,55 +1,48 @@
 ---
 name: setup-sakana-skills
-description: Configure a project's shared conventions for Sakana's skills, including its issue tracker and Claude Code or Codex instruction entrypoints.
+description: Configure global defaults and project conventions for working records, issue tracking and agent instruction entrypoints.
 disable-model-invocation: true
 ---
 
 # Setup Sakana Skills
 
-Prepare project conventions that installed skills can read directly. Run only when the user invokes this skill. Reuse existing choices and configure only requirements of installed skills from this collection; the initial configuration surface is issue tracking and agent-document entrypoints. Future requirements belong here when a supported skill actually needs them.
+Prepare conventions that installed consumers can read directly. Run only when the user invokes this skill. Reuse existing guidance; sufficient configuration works without setup. Setup owns configuration, not runtime scheduling, skill installation or record migration.
 
-Setup owns configuration, not runtime skill selection. Each skill retains its invocation policy, task responsibility, and approval boundaries. A skill can use sufficient existing guidance without setup having run.
+## 1. Inspect effective guidance
 
-## 1. Inspect the Project
+Read applicable user-level and project `AGENTS.md`, `CLAUDE.md` and their pointers, including `docs/agents/` when present. Verify the selected clients' actual instruction locations rather than inventing a native configuration key. Inspect repository identity and installed consumers' requirements. Distinguish working records from canonical issues, evaluation fixtures and private evolution history.
 
-Read existing `AGENTS.md`, `CLAUDE.md`, their configuration pointers, and `docs/agents/` when present. Inspect repository identity and the installed skills' actual requirements. Look for established issue directories and conventions; distinguish issue records from evaluation fixtures, evolution history, and planning notes.
+Resolve settings from the current explicit instruction, then project overrides, then global defaults. Record the source of each effective value. Existing user-selected record locations and commit permissions remain valid within their stated scope. Detect conflicting guidance, duplicate pointers and shared or symlinked files before editing.
 
-Treat existing issue-tracker and domain conventions as the starting point. Identify duplicate pointers, conflicting choices, and symlinked or shared entrypoint files before editing. An unavailable skill needs no speculative configuration. If an inherited pointer already provides the needed convention, reuse it instead of copying its contents into another file.
+**Complete when:** every required setting has an effective value, a missing choice or a specific conflict. With no missing or requested change, report that setup is unnecessary.
 
-**Complete when:** each installed consumer's configuration requirements are matched to existing guidance, a missing setting, or a conflict. If no installed consumer needs configuration, report that setup is unnecessary and stop.
+## 2. Resolve only missing choices
 
-## 2. Resolve Missing Choices
+Carry forward decisions already made. Configure only supported consumers and the requested scope:
 
-Carry forward choices the user has already made. Ask only unresolved decisions required by the identified consumers; skip tracker choices when none needs issue tracking:
+- **Scope and clients:** global defaults, project overrides or both; Claude Code, Codex or both. Show how a project inherits or overrides values. Project tracker identity stays project-specific even when general conventions are inherited.
+- **Working records:** exact root, verified project/upstream/fork identity, existing index and individual-record layout, and useful author identities or explicit provenance for locating the user's PRs. Use one common format for observations and opportunities; reuse existing history without moving it.
+- **Record authority:** which kinds permit ordinary saves and substantive updates; separately, whether each new record and substantive update should receive a local commit. This policy may cover observations, opportunities, assessments and implementation progress when the user selects it. Amendments and pushes remain separate instructions. Do not infer broader permission from an Explore-only rule.
+- **Canonical tracker:** reuse established Tracker Guidance. When absent and needed, propose GitHub Issues for a verified GitHub project or a user-selected local Markdown directory. Preserve another established tracker. Confirm its exact destination and tool; supplemental remote evidence does not create a second canonical destination.
 
-- **Agent entrypoints:** Claude Code (`CLAUDE.md`), Codex (`AGENTS.md`), or both. Existing files suggest usage but do not override the user's selected clients.
-- **Canonical issue tracker:** GitHub Issues or local Markdown. Recommend an established tracker first; when none exists and a GitHub repository is verified, propose GitHub. Otherwise offer local Markdown. Preserve an existing other tracker and its usable guidance; ask for its conventions only when incomplete.
-- **Destination details:** confirm the exact GitHub repository or local directory, available tool, and existing record/status conventions. For a new local tracker, propose `.scratch/issues/` with one Markdown file per problem and explicit status, then let the user choose. Record any verified associated GitHub repository as a supplemental read-only issue/PR search source.
+Read the [working-record guidance template](references/working-records.md) when configuring records. Its shared contract comes from Assess; declare that dependency for consumers using it. Read the existing [GitHub](references/issue-tracker-github.md) or [local tracker](references/issue-tracker-local.md) template only when configuring that tracker.
 
-One destination is canonical. Switching it changes future guidance; migrating, copying, or deleting existing issues is separate work. For local records, distinguish whether the chosen directory is shared in Git or private, preserve existing policy, and include any needed narrow ignore rule in the reviewable draft.
+**Complete when:** required choices have exact existing or user-selected values. Missing access is an explicit limit, not a successful connection.
 
-**Complete when:** each required choice has an existing or user-selected value and every proposed destination is exact. Missing access can be recorded without claiming a successful connection.
+## 3. Show the concrete configuration
 
-## 3. Show the Configuration Draft
+Keep one authoritative document per guidance topic. Reuse existing locations; for new project guidance, `docs/agents/working-records.md` and `docs/agents/issue-tracker.md` are suitable. For global defaults, propose an exact user-level document and pointer reachable from the selected client's verified global instructions. Global configuration here is agent-readable guidance, not a new application setting.
 
-Read the selected [GitHub template](references/issue-tracker-github.md) or [local Markdown template](references/issue-tracker-local.md) when creating missing tracker guidance. Adapt it to the project; preserve established guidance at its existing path when it already serves the consumers.
+Show the exact text, paths, scope and resulting effective values before writing. Agent entrypoints carry concise, conditional pointers. The record pointer must cover ordinary chats: before starting implementation or a PR, read relevant records and claims; after delivery, reconcile links and update progress within configured authority. Preserve independent-audit history gates. Do not copy skill bodies or install runtime routers into entrypoints.
 
-Show the exact proposed changes to shared guidance, selected agent entrypoints, and any selected ignore rule. Usually the shared file is `docs/agents/issue-tracker.md`; each selected entrypoint contains only a summary and pointer under its existing `## Agent skills` block:
+Preserve unrelated domain, label and project rules. Both clients may point to the same guidance. Resolve symlinks once. Include a narrow ignore rule only when the user has selected private local storage; do not assume a records repository is private. Creation of a destination or changes to existing records are separate from documenting its location.
 
-```markdown
-### Issue tracker
+**Complete when:** the user has approved the exact configuration changes. Prior approval for that same text and scope remains valid. Approval of the reusable skill's design is not approval to edit a user's global settings.
 
-Issues are tracked in <selected destination>. Read <guidance path> before searching or writing issue records.
-```
+## 4. Apply and verify
 
-Keep unrelated instructions and existing domain/label sections. For both clients, point both entrypoints at the same authoritative guidance. Account for symlinks so one underlying file is edited once. Add only missing sections or update their existing content in place. Do not copy skill bodies or add runtime routing rules.
+Apply only approved configuration. Verify pointers from each selected entrypoint, effective precedence, project identity, the distinction between record and tracker authority, and preservation of unrelated content. Confirm any authorized directory creation and report inaccessible paths separately.
 
-**Complete when:** the user has approved the concrete configuration changes. An explicit approval already covering the same draft remains valid; unchanged configuration needs no write.
+Re-read the result as a second setup pass: unchanged guidance should require no further edits. Report changed files, global versus project effect, consumers and unverified access. Do not create findings, publish issues, migrate history or schedule synchronization as part of setup.
 
-## 4. Apply and Verify
-
-Apply the approved changes and check that pointers resolve from each selected entrypoint, the canonical destination is consistent, and existing unrelated content survives. Creating guidance does not create issue records, publish issues, or migrate a tracker. Create a destination directory only when the approved setup includes it.
-
-Re-read the resulting files as a second setup pass: an unchanged project should require no further edits. If a later installed skill adds a real configuration requirement, a user-requested rerun can propose that addition without resetting prior choices.
-
-**Complete when:** the approved files exist, references resolve, the second pass finds no duplicate or required rewrite, and the user receives the changed-file list, affected consumers, and any unverified access limits.
+**Complete when:** approved guidance is readable, effective choices are unambiguous, and a second pass finds no duplicate or necessary rewrite.

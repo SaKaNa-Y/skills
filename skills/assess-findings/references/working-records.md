@@ -42,6 +42,22 @@ Save concrete observations before final assessment. A provisional record is not 
 
 Preserve essential evidence before disposable cleanup. Prefer a small replayable input, command and result over full logs; retain the version and known limitations. Sanitize secrets and unrelated personal data. A temporary path about to be removed is not durable evidence. Large evidence deletion requires an applicable retention policy or explicit instruction.
 
+## Qualify evidence on entry
+
+At the start or resumption of related work, and before repair, compare the recorded state with the current target and original upstream. Retain the minimal relevant identities: local source commit and material uncommitted changes; actual executable or package resolution, version and necessary content hash; known build provenance; original upstream repository, ref, commit and check time. Artifact hashes identify contents, not their source commit. The same source commit does not establish the same installed artifact.
+
+Check upstream without silently pulling over the user checkout or changing the target. Inspect changes relevant to the selected blocks and conclusions; use an isolated newer target when a decisive comparison needs execution. An upstream update alone does not invalidate all evidence. Reuse unchanged evidence and continue the next meaningful uncovered depth; refresh affected claims when relevant state changes. Unreachable upstream leaves explicit freshness uncertainty. Reuse a fresh check from this task rather than repeating it per record.
+
+Respect source and history gates: permitted identity checks do not open implementation or tracker access. Defer gated comparisons with their resumption condition, or disclose an authorized change of provenance.
+
+## Retain coverage and repair context
+
+Keep a compact project coverage index linked to detailed records: each block's explored depth, version-bound conclusions, unresolved questions and next useful action. Load relevant bodies and evidence on demand. Preserve scenario and acceptance, confirmed or uncertain causal/blocking/masking relationships, rejected explanations, existing implementations and ownership, and verification limits. Similarity alone establishes neither a relationship nor a shared acceptance boundary.
+
+Save at meaningful transitions: reusable coverage, a new observation, changed judgment or relationship, implementation progress, and pause or resource interruption. Retain partial status and recovery conditions. Update related records and the index consistently in one coherent checkpoint; polling and duplicate logs do not constitute substantive progress.
+
+Before cleaning owned temporary files, retain replayable inputs, conditions, decisive outputs and enough material to recover irreplaceable evidence. Hashes and temporary paths cannot replace contents. Rebuildable dependencies, caches and ordinary outputs can be removed after this check. Decide storage for large irreplaceable artifacts explicitly instead of automatically committing them. Apply the existing deletion authority to retained evidence; cleanup covers only task-owned temporary resources.
+
 ## Reconcile delivery on access
 
 When resuming a relevant record, recommending new implementation or updating delivery, check known PR links against current remote state when access is permitted. If links are missing, perform a bounded search using verified project identity, issue references, distinctive behavior and known branches/commits or configured author identity. Inspect plausible matches for actual scope. Reuse fresh evidence from the current task instead of repeating searches.

@@ -28,7 +28,7 @@ Use the existing exploration lenses to identify the public checks still required
 
 Keep one packet for each independently understandable candidate or assessed finding, with a stable identity and its current assessment or pending state:
 
-- affected capability, the user outcome, and observed impact distinguished from possible consequences;
+- affected capability and scenario: what the user is doing, the observed trigger, actual impact and why a response would help; distinguish possible consequences from observations;
 - environment, version, prerequisites, and initial state;
 - exact public action path and the material input or state needed to replay it;
 - expected and observed behavior, the basis for the expectation, and any concrete counterevidence already encountered;

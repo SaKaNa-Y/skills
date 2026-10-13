@@ -17,6 +17,8 @@ When capturing or resuming persistent evidence, read [working records](reference
 
 Identify the scenario, affected version and environment, inspectable evidence, expectation basis, demonstrated or proposed value, current response goal, material unknowns and source/history permissions. For an opportunity, a concrete desired outcome takes the place of a claimed behavioral failure.
 
+Keep a concise scenario account through assessment and handoff: user task, trigger, actual behavior and impact, and the value of a response. A supported realistic scenario suffices without a named affected user; label inferred consequences and preserve uncertainty. Repository maintenance can have a concrete maintainer scenario. When shortening an explanation, retain this causal account and avoid inventing the author's experience.
+
 A packet may initially lack some of these facts. Preserve the gaps instead of filling them with inferred certainty. Related observations share an assessment when the same response and acceptance boundary resolve them; independently valuable responses remain distinguishable.
 
 Proceed when ownership, the question, existing evidence, and permitted checks are explicit.
@@ -85,7 +87,7 @@ Proceed when the recommendation follows from the assessed goal and evidence, wit
 
 Preserve the assessment in the original authorized Working Record: decisive evidence, relationships, selected goal and scope, preserved behavior, acceptance conditions, unresolved user decisions and supported next action. Reuse agreed discussion or link an existing spec; 'worth doing' alone does not establish readiness to implement. The coordinator owns the save and index update under the working-record contract.
 
-Return the finding's disposition, its decisive evidence and expectation basis, the response recommendation and rationale, any assessed priority and its basis, and any remaining dependency. Scale the report to the finding rather than requiring a fixed template. The coordinator reconciles the results into the consuming task's final report; it checks the evidence and unresolved conditions rather than treating worker agreement as proof.
+Return the scenario account, the finding's disposition, its decisive evidence and expectation basis, the response recommendation and rationale, any assessed priority and its basis, and any remaining dependency. Scale the report to the finding rather than requiring a fixed template. The coordinator reconciles the results into the consuming task's final report; it checks the evidence and unresolved conditions rather than treating worker agreement as proof.
 
 On follow-up, retain the version, scenario, response goal, and previous reasons. Keep unresolved, evidence-backed reasons for questioning a judgment with that judgment. When updating it, explain which reasons the new evidence, corrected inference, or changed requirement addresses; revise only the judgments it affects. Retain limits that still apply and drop reasons that no longer apply. A renewed request for objections invites examination of the same proposition, not an automatic verdict reset. If an objection concerns a different goal, distinguish that question and preserve the earlier result. When accepted facts leave a value trade-off, explain the choice and who bears its cost.
 

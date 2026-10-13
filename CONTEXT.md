@@ -77,7 +77,7 @@ The Explicit-only Skill that establishes global defaults and project conventions
 _Avoid_: Yak-only setup, skill router, issue migration
 
 **Usage-First Audit**:
-An evaluation of a source-accessible library or developer tool that exercises user-facing behavior within a declared outcome scope before inspecting implementation details, then uses source to find relevant capabilities and runnable environments the experience missed. Its scope may cover the full Capability Surface or a bounded user outcome and its necessary dependencies.
+An evaluation of a source-accessible library or developer tool that exercises user-facing behavior within a declared outcome scope before inspecting implementation details, then uses source to find relevant capabilities and runnable environments the experience missed. Its scope may cover the full Capability Surface or a declared batch of Capability Groups and their necessary dependencies.
 _Avoid_: Source-first review, static bug scan, implementation audit
 
 **Just Use It**:
@@ -97,7 +97,7 @@ An outcome-oriented path through a Capability Surface that reaches an observable
 _Avoid_: Entry click, control inventory, surface visit
 
 **Capability Group**:
-A set of Capability Journeys that serve the same user outcome. A panel, route, menu, or documentation section is not by itself a Capability Group boundary.
+A coherent set of Capability Journeys organized by project structure or function. Each journey reaches a user outcome across its necessary component boundaries; a container or command name alone does not establish meaningful coverage.
 _Avoid_: UI container, navigation section, control collection
 
 **Discriminating Variation**:

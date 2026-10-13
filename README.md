@@ -422,6 +422,7 @@ skills/
 
 ## Reference
 
+- [Repository reference checks](docs/agents/validation.md) validate local Markdown links across a complete candidate tree, including unchanged callers.
 - [`CONTEXT.md`](CONTEXT.md) defines the shared vocabulary used across the skills.
 - [`docs/adr/`](docs/adr/) records the architectural decisions that keep composition, discovery, and finding publication bounded.
 - Private evaluation suites, run evidence, and recovery history live under the ignored `docs/skill-evolution/<skill-name>/` directory. They are separate from consumer issue records and are not distributed with installed skills or ordinary Git pushes.

@@ -58,7 +58,7 @@ This repository does not publish its own npm package. `npx` runs the general-pur
 | Discover project questions you did not know to ask | [`expand-the-frame`](skills/expand-the-frame/SKILL.md) | Explained perspectives, informed trade-offs, and follow-up questions derived from your answers |
 | Test whether a specific claim withstands counterevidence | [`challenge-the-claim`](skills/challenge-the-claim/SKILL.md) | A focused judgment that separates rebuttals, unresolved facts, and value disagreements |
 | Resolve a bounded factual uncertainty | [`investigate-with-evidence`](skills/investigate-with-evidence/SKILL.md) | Traceable findings from sources or controlled execution, with applicability limits |
-| Improve skills through experience and external learning | [`evolve-skills`](skills/evolve-skills/SKILL.md) | User-selected improvements with purpose-led evidence and per-skill recovery history |
+| Improve or derive skills from conversations and external learning | [`evolve-skills`](skills/evolve-skills/SKILL.md) | User-selected improvements with purpose-led evidence and per-skill recovery history |
 
 ## Invoke Skills
 
@@ -250,11 +250,11 @@ Get Up to Speed delivers a bounded guide and examples as one artifact; it does n
 
 ## Evolve Skills from Experience
 
-**Use it when:** You want to improve skills from their use, or explicitly explore external methods for named skills. Named targets limit the review; otherwise it identifies the skills actually used. Substantive reviews include proportionate exploration of relevant tool designs, talks, podcasts and technical writing, even without a known failure or supplied concept.
+**Use it when:** You want to improve or derive skills from conversations, actual use or external methods. Named skills limit the review; a named repository permits screening for relevant targets, including unused skills. Without a specified scope, it starts with the skills actually used. Substantive reviews include proportionate exploration of relevant tool designs, talks, podcasts and technical writing, even without a known failure or supplied concept.
 
 **You get:** User-selected hypotheses with inspectable source links and clear adaptations, purpose-led validation, and private per-skill evidence and recovery history. Validation distinguishes gains from preservation and inconclusive comparisons. An optional Python 3 standard-library helper checks captured file identities and evidence records; the host's existing tools execute trials. These checks do not certify semantic correctness or isolation.
 
-**Boundary:** A catalog entry or mention alone establishes no usage evidence. External ideas can seed hypotheses; adoption needs the agreed evidence. Mechanical edits and rollbacks need no exploration. Candidates stay separate until supported selected changes are applied; concrete blockers retain a Pending Validation candidate. The Git-ignored `docs/skill-evolution/<skill-name>/` history preserves decisions, source provenance, evidence and recovery material and requires separate private backup or handoff. Standalone installations use an agreed persistent history location.
+**Boundary:** Concrete conversation episodes can support opportunities without establishing historical skill use or responsibility. A catalog entry or mention alone supplies no opportunity evidence. New skills need a distinct reusable responsibility and user selection; adoption needs the agreed evidence. Mechanical edits and rollbacks need no exploration. Candidates stay separate until supported selected changes are applied; concrete blockers retain a Pending Validation candidate. The Git-ignored `docs/skill-evolution/<skill-name>/` history preserves decisions, source provenance, evidence and recovery material and requires separate private backup or handoff. Standalone installations use an agreed persistent history location.
 
 ```text
 $evolve-skills Review the skills used in this conversation against their purposes. Discuss concrete improvements with me, then validate and record the changes I select, preserving what is needed to reverse them.

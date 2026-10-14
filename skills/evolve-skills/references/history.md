@@ -28,9 +28,19 @@ docs/skill-evolution/<skill-name>/
 
 Create only the material needed for the chosen recovery method. Preserve relative file paths in snapshots. Record additions, deletions, file types, permissions, and any symlink targets relevant to restoring the change. History files themselves stay outside the target's recovery payload. Files outside the skill directory need an explicit path mapping rather than ambiguous flattened filenames.
 
+## Screening and proposed skills
+
+For repository screening, use `docs/skill-evolution/_scopes/<iteration-id>/record.md` under the same private-storage rules. Reuse an existing scope record for the discussion. For a collection spanning repositories or a proposal without a source repository, reuse an agreed private history root or establish a recording location independently of the future skill source. Continue permitted analysis while a recording-location decision is pending, retaining the unsaved account explicitly.
+
+Record the evidence, skills screened, candidates and limits. If screening yields no candidates, close this account as screening complete with no relevant opportunity found in the supplied evidence. Per-skill indexes and deep no-change assessments are unnecessary for that result. Existing skills entering deeper assessment receive their own records linked to this account.
+
+Keep a proposed skill with no agreed source location in the scope record under a stable provisional identifier, with its responsibility, evidence, closest alternatives and open decisions. Source identity and baseline remain unresolved; record file absence only after inspecting an agreed destination. This permits proposal discussion and deferral before source selection.
+
+Once the user selects a new skill and its destination, inspect the path, reconcile any existing contents and create its per-skill record linked to the provisional entry. Preserve the actual baseline before candidate preparation, including verified absence where applicable. Include newly created resources and changes to existing references in the recovery mapping. Preserve the provisional identifier and decision links rather than starting an unrelated history.
+
 ## Current scope for longer discussions
 
-For evolution spanning multiple discussion rounds or targets, keep one compact current scope index in the existing iteration record. It points to evidence and decisions rather than copying the conversation. A small single-edit review needs no separate index. For a shared discussion, link each target's history to this same index; co-active discussion methods use it as their shared decision frontier.
+For evolution spanning multiple discussion rounds or targets, keep one compact current scope index in the applicable scope or iteration record. It points to evidence and decisions rather than copying the conversation. A small single-edit review needs no separate index. For a shared discussion, link each target's history to this same index; co-active discussion methods use it as their shared decision frontier.
 
 Keep the following current as user decisions or work state change:
 

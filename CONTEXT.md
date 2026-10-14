@@ -449,15 +449,15 @@ The shared workflow for Finding Assessment, used by Just Use It, Yak Shaving Tri
 _Avoid_: Issue publisher, root-cause requirement, duplicate assessment by each caller
 
 **Skill Evolution**:
-The iterative improvement of a skill through opportunities discovered in its conversational use or through relevant external learning, assessed against that skill's stated purpose as introduced by its description and clarified by its instructions. It includes successful approaches worth carrying forward and changes that could improve future use, with a detailed history kept separately for each skill.
+The improvement or derivation of skills through opportunities found in conversations, actual skill use or relevant external learning, assessed against the existing or proposed skill's purpose. It includes successful approaches worth carrying forward and changes that could improve future use, with a detailed history kept separately for each skill.
 _Avoid_: Execution compliance audit, failure-only review, change for its own sake
 
 **Skill Evolution Opportunity**:
-An evidence-grounded possibility for improving future use of a skill in relation to its particular purpose, grounded in actual usage, inspected external cases, or sourced ideas with a reasoned connection to the target. It may concern the method, sequence of work, instruction structure, references, templates, or validation scenarios, including effective approaches worth carrying forward.
+An evidence-grounded possibility for improving future use of a skill in relation to its particular purpose, grounded in concrete conversation episodes, actual usage, inspected external cases, or sourced ideas with a reasoned connection to the target. It may concern the method, sequence of work, instruction structure, references, templates, or validation scenarios, including effective approaches worth carrying forward.
 _Avoid_: Compliance violation, mandatory new rule, confirmed improvement
 
 **Skill Evolution Target**:
-A skill within the scope selected for Skill Evolution. Explicitly named targets delimit that scope; other co-used skills may supply relevant context without becoming targets for proposals or evolution records.
+An existing or proposed skill selected for deeper assessment within the agreed Skill Evolution scope. A named collection permits screening for relevant targets; contextual skills remain outside that target set.
 _Avoid_: Every co-used skill, catalog entry, contextual dependency
 
 **Skill Evolution Hypothesis**:
@@ -473,5 +473,5 @@ A change to a target skill outside its recorded evolution workflow, identified f
 _Avoid_: Validated evolution, reconstructed intent, complete version history
 
 **Evolve Skills**:
-The Explicit-only Skill that performs Skill Evolution from prior skill use and relevant external learning, including explicit external-learning requests without prior use, taking user-selected hypotheses through modification, validation, and a Skill Evolution Record. It can operate independently, while co-active grilling skills deepen discussion of the hypotheses and trade-offs.
-_Avoid_: Compliance checker, generic skill generator, mandatory grilling dependency
+The Explicit-only Skill that performs Skill Evolution from conversations, skill use and external learning, taking user-selected changes or new skills through candidate preparation, validation and a Skill Evolution Record. It can operate independently, while co-active grilling skills deepen discussion of the hypotheses and trade-offs.
+_Avoid_: Compliance checker, unscoped skill generation, mandatory grilling dependency

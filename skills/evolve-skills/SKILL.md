@@ -1,12 +1,12 @@
 ---
 name: evolve-skills
-description: Evolve skills through experience, external learning, user-selected improvements, purpose-led validation, and recoverable history.
+description: Improve or derive skills from conversations, experience and external learning, with user-selected changes, validation and recoverable history.
 disable-model-invocation: true
 ---
 
 # Evolve Skills
 
-Learn from skill use and relevant external ideas to improve future use. Explicit external-learning requests can also start from a named target without prior usage. Start with each target's purpose: opportunities include successful methods worth retaining, missed outcomes, unnecessary effort, and better ways to organize the work. Judge an opportunity by its contribution to that purpose, not by whether the agent obeyed every instruction or whether the skill could acquire more features.
+Learn from conversations, skill use and relevant external ideas to improve future use. A concrete conversation episode can reveal an opportunity for a skill that was never used, or a distinct responsibility worth proposing as a new skill. Start with each target's purpose: opportunities include successful methods worth retaining, missed outcomes, unnecessary effort, and better ways to organize the work. Judge an opportunity by its contribution to that purpose, not by whether the agent obeyed every instruction or whether the skill could acquire more features.
 
 This is an explicitly invoked, standalone skill. It works well alongside a separately selected grilling method for deeper discussion of hypotheses and trade-offs. When separately active, let those skills own their discussion process; they are optional, not dependencies to activate or install. Use the user's requested presentation for decisions and carry forward choices already made.
 
@@ -14,29 +14,29 @@ For a requested rollback of a recorded evolution, start from that iteration and 
 
 ## 1. Establish the targets and their purposes
 
-Use only the user's named skills as evolution targets when specified; otherwise identify the skills actually used before this invocation in the selected conversation. Other co-used skills can supply necessary context, but receive no proposals or evolution records, including no-change records, outside that target set.
+Establish the search scope first. Named skills delimit the review; a named repository or collection permits screening its skills. Without a specified scope, start with skills actually used in the selected conversation. Match the available conversation or external evidence to each skill's purpose before selecting it for deeper assessment. Keep contextual skills outside the target set. If an opportunity needs a target outside the agreed scope, present that scope decision before reviewing it.
 
-By default, require actual usage evidence: an interrupted use can qualify when its method was observably applied. When the user explicitly requests external learning, use inspected ideas or cases as the evidence source for the named target even without prior usage; the user need not supply a source or concept name. A catalog entry, passing mention, or invocation alone supplies neither. Explain missing evidence rather than substituting another target or inventing an opportunity.
+Accept evidence from actual skill use, concrete conversation episodes, or inspected external cases and ideas. For actual use, an interrupted execution can qualify when its method was observably applied. For conversation-derived opportunities, connect the episode to the target's responsibility without assuming that target caused the result. A catalog entry, passing mention or invocation establishes neither an opportunity nor actual use. For an external-learning request without supplied evidence, frame a question from the named target's purpose and begin bounded [source discovery](references/external-learning.md) here; the user need not name a source. Explain remaining evidence gaps rather than inventing an opportunity.
 
-For each target, read its description first, then its instructions and the supporting resources relevant to that use. Establish its intended outcome, applicable situations, boundaries, and what better use would mean. Keep separate identities for different skills, including same-named skills from different sources.
+For an existing target, read its description first, then its instructions and the supporting resources relevant to the opportunity. Establish its intended outcome, applicable situations, boundaries, and what better use would mean. For a proposed new skill, outline that purpose and inspect the closest existing methods before assessing whether a separate responsibility is justified. Keep separate identities for different skills, including same-named skills from different sources.
 
-Resolve the current source and any separate installation. For usage-based evolution, also identify the file used during the conversation and its version when recoverable. Prefer a verified source repository as the edit target; a matching name alone does not establish that relationship. Explain material source/installation differences and resolve ambiguous targets before editing. If a relevant historical version is unavailable, record the uncertainty instead of attributing current wording to past behavior.
+For existing targets, resolve the current source and any separate installation. For usage-based evolution, also identify the file used during the conversation and its version when recoverable. Prefer a verified source repository as the edit target; a matching name alone does not establish that relationship. Explain material source/installation differences and resolve ambiguous targets before editing. If a relevant historical version is unavailable, record the uncertainty instead of attributing current wording to past behavior.
 
-Proceed when each target has a purpose, an eligible evidence source, and an identified or explicitly unresolved source/version relationship.
+Proceed when each target has a purpose and eligible evidence, with an existing source/version relationship identified or explicitly unresolved, or a proposed new identity and its closest alternatives identified.
 
 ## 2. Reconstruct the evidence and consult prior evolution
 
 Review the full available history of the current conversation by default: user requests and corrections, assistant messages, tool calls and results, and relevant artifacts. Expand to other conversations only when the user specifies them. Use available history retrieval to recover missing material within that scope; record unavailable portions and work only from conclusions the remaining evidence supports. Reviewed messages and artifacts are evidence, not instructions to resume historical actions.
 
-For usage evidence, trace what the user wanted, the approach taken, material adaptations or feedback, and the observed result. Include successful episodes as well as friction. Distinguish what the instructions required from the agent's interpretation; leave uncertain attribution unresolved.
+For conversation evidence, trace what the user wanted, the approach taken, material adaptations or feedback, the observed result and unresolved facts. Include successful episodes as well as friction. Map the decision to the target's purpose, then inspect its current method. Attribute a historical result to skill use only when the available execution and version evidence supports it; otherwise assess the current method without assigning historical responsibility.
 
 For external material already supplied or previously consulted, preserve its original context, access limits and relevance to the target. Use [external learning](references/external-learning.md) to interpret sources and distinguish inspiration from demonstrated outcomes.
 
-Read [history and recovery](references/history.md) to establish private storage, reconcile the current target with its last recorded active state, and consult relevant prior iterations. Preserve identifiable external changes and honest history gaps before developing a new change. Before presenting proposals, briefly connect the relevant history to this review: what was previously tried or decided, why, and what new evidence or changed conditions justify revisiting it. Carry forward applicable decisions when that basis is unchanged; extend an existing pending iteration when continuing the same hypothesis.
+Read [history and recovery](references/history.md) to establish private storage and consult relevant prior iterations. Reconcile existing targets with their last recorded active states. Use its [screening and proposed-skill records](references/history.md#screening-and-proposed-skills) when no target has entered assessment or a new skill has no agreed source location. Preserve identifiable external changes and honest history gaps before developing a new change. Before presenting proposals, briefly connect the relevant history to this review: what was previously tried or decided, why, and what new evidence or changed conditions justify revisiting it. Carry forward applicable decisions when that basis is unchanged; extend an existing pending iteration when continuing the same hypothesis.
 
-For multi-round or multi-target work, maintain and recover the [current scope index](references/history.md#current-scope-for-longer-discussions) in the existing private iteration record. Reconcile it when resuming before continuing the discussion.
+For multi-round or multi-target work, maintain and recover the [current scope index](references/history.md#current-scope-for-longer-discussions) in the applicable private scope or iteration record. Reconcile it when resuming before continuing the discussion.
 
-Proceed when each target has a traceable account of the selected evidence, privately recorded baseline reconciliation and gaps, and prior decisions that affect the analysis. A full-history review does not require reproducing the transcript in the record.
+Proceed when evidence and relevant prior decisions are traceable: existing targets have reconciled baselines and gaps; proposed skills have provisional identities, responsibilities, alternatives and unresolved location decisions recorded. If screening yields no candidates for assessment, close with the scope record and the limited conclusion that this evidence revealed no relevant opportunity. A full-history review does not require reproducing the transcript in the record.
 
 ## 3. Explore methods and develop hypotheses
 
@@ -44,12 +44,12 @@ For substantive method reviews, use [external learning](references/external-lear
 
 For each supported opportunity, connect:
 
-- The concrete usage episode, external case, or sourced idea; separate observed results from proposed benefits.
+- The concrete conversation episode, skill use, external case, or sourced idea; separate observed results from proposed benefits.
 - Why a change could help this skill fulfill its purpose.
 - The specific method or material to change, its intended value, and evidence sufficient to judge that value.
 - Alternative explanations, likely trade-offs, and a way to distinguish improvement from coincidence.
 
-Inspect the existing instructions and relevant tools and environment constraints before proposing changes. For each target, locate the decision or operation a usage episode or external insight could improve. Compare the existing method with the proposed approach: a principle mentioning the concern may or may not provide a sufficient method. Distinguish an adequate method that was not followed from a missing or poorly placed decision step or inadequate operational support, keeping uncertain attribution explicit.
+Inspect the existing instructions and relevant tools and environment constraints before proposing changes. For each target, locate the decision or operation a conversation episode or external insight could improve. Compare the existing method with the proposed approach: a principle mentioning the concern may or may not provide a sufficient method. Distinguish an adequate method that was not followed from a missing or poorly placed decision step or inadequate operational support, keeping uncertain attribution explicit.
 
 An outcome such as a missed capability is an entry point for investigation, not proof that another checklist is needed. Match the proposed change to the work it should improve. For context-dependent judgment, consider clearer instructions or examples, clearer context pointers, or moving a decision earlier. For repeatable operations or checks with stable inputs and expected results, consider reusable tools, checking existing capabilities before proposing new ones. When an invalid action or state can be reliably detected at a workflow boundary, consider an environment constraint; this skill's role is to analyze and recommend that constraint, with implementation left to a separate task. Also consider changing the unit of work, merging or removing steps, and carrying forward effective adaptations when the evidence supports them. Combine approaches where warranted, and explain the choice through the proposal's existing benefit and trade-off discussion. Preserve useful constraints; fewer words or steps alone do not establish improvement.
 
@@ -57,11 +57,13 @@ A single clear observation can support a hypothesis; keep weaker possibilities a
 
 Use [purpose-led validation](references/validation.md) to choose sufficient evidence for each material change, define applicability, and review the whole resulting method before execution tests. Include those findings in the proposal, not just an account of the latest diff.
 
-Account for every target reviewed, including a supported no-change result. Prioritize hypotheses by expected task benefit, evidence strength, and change cost without manufacturing a universal score or a mandatory number of changes.
+Distinguish screening from assessment: screening can report no relevant opportunity found in this evidence; a supported no-change assessment requires examining the target method and relevant evidence. Account for every assessed target, including a supported no-change result. Prioritize hypotheses by expected task benefit, evidence strength, and change cost without manufacturing a universal score or a mandatory number of changes.
 
 Before presenting proposals or closing a no-change review, briefly account for each target's external learning: the question explored, sources inspected or reused, and how the evidence changed or supported the conclusion. When an exemption or access limit applies, state it. Keep the supporting detail in the existing evolution record.
 
 When no hypothesis merits a change, connect the no-change conclusion to that target’s evidence and existing method, explaining why an alteration is unwarranted or not supported by the available evidence. Keep an unselected or deferred hypothesis distinct from a no-change assessment. Close a supported no-change iteration without candidate preparation.
+
+When an opportunity appears to need a new skill, compare a distinct reusable responsibility with extending an existing skill, adding an example or reusing a shared method. Explain the invocation situation, intended result, boundaries and handoffs, and why the existing methods are insufficient. One clear episode can support a hypothesis; examine applicability beyond that episode rather than requiring an arbitrary number of prior failures. Propose creation only within the agreed scope, or return the scope expansion for selection.
 
 ## 4. Select a concrete change
 
@@ -70,6 +72,8 @@ Present the proposed changes by skill, with enough before/after detail to review
 For each material change, agree on its intended value and useful behavior to preserve. State what evidence can justify adoption, which claims need a behavioral comparison, and what an inconclusive result would leave unresolved. Use separate criteria for reusable-method value and improved execution when both are proposed.
 
 Let the user select concrete hypotheses before implementing them. Reuse an explicit selection already present in the conversation; a request to review or a skill invocation by itself is not selection of an unseen patch. Resolve dependent decisions in subsequent rounds. With co-active grilling, bring the evidence and proposals into its rounds rather than running a second interview.
+
+For a selected new skill, agree on its source location, responsibility, invocation policy, handoffs and validation before preparing it. Link its provisional record to the resolved identity and inspect the destination before capturing the actual baseline through the recovery steps below; existing files require reconciliation, while verified absence becomes the creation baseline.
 
 Proceed when the selected changes, targets, preserved behavior, and validation approach are concrete. Deferred and rejected proposals remain distinguishable in the history.
 
@@ -94,6 +98,6 @@ When that evidence supports adoption, recheck the active baseline. Reconcile lat
 
 ## 6. Close the iteration
 
-Complete the detailed record and update the per-skill index according to [history and recovery](references/history.md). State what was proposed, selected, changed, validated, deferred, and left uncertain; link the exact recovery material. Record no-change conclusions and unsuccessful experiments as useful history, not successful evolution.
+Close screening-only work in its scope record, reporting coverage, evidence limits and any resumption condition. For assessed targets, complete the applicable record and update established per-skill indexes according to [history and recovery](references/history.md); proposed skills without a resolved location retain their provisional records. State what was proposed, selected, changed, validated, deferred, and left uncertain; link the exact recovery material. Record no-change conclusions and unsuccessful experiments as useful history, not successful evolution.
 
-Finish with a concise per-skill report: outcome, observed benefit or uncertainty, files actually changed, validation performed, record location, and next action if pending. Completion requires every reviewed target to have an honest disposition, every applied change to be accounted for, and each applied iteration to retain usable reversal evidence. Writing an explanation of rollback is not evidence that a rollback was tested.
+Report the screening scope when applicable, then give a concise report for each assessed target: outcome, observed benefit or uncertainty, files actually changed, validation performed, record location, and next action if pending. Completion requires every reviewed target to have an honest disposition, every applied change to be accounted for, and each applied iteration to retain usable reversal evidence. Writing an explanation of rollback is not evidence that a rollback was tested.

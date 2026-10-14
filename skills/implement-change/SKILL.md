@@ -15,11 +15,13 @@ Read applicable repository instructions, the requested record/issue/spec and rel
 
 Before editing from prior findings, apply [evidence freshness and repair context](../assess-findings/references/working-records.md#qualify-evidence-on-entry). Restore the scenario, impact, acceptance, related evidence and uncertainty, rejected explanations and existing work. State which evidence remains usable, what needs refresh and what this repair will validate. Load related records by demonstrated relevance rather than copying the entire history.
 
+Before editing, use the proposed mechanism to identify affected behavior. When changing a shared transformation, comparator, cache or derived state, trace how relevant inputs are created, transformed, updated and consumed again. Use those paths to identify preservation conditions and discriminating checks in the existing agreement. Stop at the paths needed to establish the change's impact; a local wording edit needs only proportionate inspection.
+
 Investigate factual gaps. Ask the user only about unresolved behavior or scope decisions that block correct implementation. A positive Assess recommendation alone is not authorization to select new product behavior. A direct, sufficiently clear implementation request can supply the agreement without a Working Record or a new spec.
 
 Check relevant claims, branches, commits and PRs before starting duplicate work. If a matching PR already exists, reconcile its coverage and continue the authorized work there when appropriate. Distinguish others' related work from this task's deliverables. Keep unavailable remote evidence explicit.
 
-**Ready when:** the outcome and acceptance are actionable, current work is accounted for, and material unresolved decisions are named rather than silently chosen.
+**Ready when:** the outcome, affected behavior and checks are actionable, current work is accounted for, and material unresolved decisions are named rather than silently chosen.
 
 ## 2. Claim and plan proportionately
 
@@ -38,6 +40,8 @@ Read [roles and handoffs](references/roles.md) when delegating or integrating mu
 Follow the repository's design and validation conventions. Use existing deterministic commands and reusable environments when appropriate. For a reproducible bug, use a discriminating regression check when it meaningfully guards behavior; for a new capability, check the agreed outcome and preservation conditions. Derive expected results from the agreement and observable contract rather than copying the implementation into the assertion. Low-impact wording edits need proportionate checks, not artificial tests.
 
 Workers return changes, inspected code state, actual checks, new evidence and remaining limits. Integrate dependency-ready contributions while preserving unrelated work. Resolve conflicts against the agreement, then validate the integrated state. If new evidence changes a shared assumption, update the record and affected owners before they continue dependent work.
+
+When the repair changes mechanism or intervention layer, revisit the affected paths and preservation checks before relying on the earlier validation plan.
 
 Handle in-scope defects discovered during implementation. Preserve independently actionable side findings through co-active Yak or the authorized working-record method without silently adding their repair to the task. A deeper cause can change the proposed repair unit; keep separate acceptance boundaries and return genuinely new product scope to the user.
 

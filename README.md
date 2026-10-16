@@ -36,7 +36,9 @@ For agents that support a user-level skills directory, add `--global` to make a 
 npx skills@latest add SaKaNa-Y/skills --skill prune-the-tree --global
 ```
 
-Omit `--yes` when you want the installer to prompt for skills and agents.
+Run installation commands from the project where you want to use the skills. Omit `--yes` to retain interactive choices when the installer offers them. The task recipes below select the required skills for you. Choose your agent when prompted. Some environments let the installer detect it automatically. Extra skills offered by the installer are optional for these recipes.
+
+For a complete task-specific combination and first invocation, start with [Just Use It](#just-use-it), [Explore New Capabilities](#explore-new-capabilities), or [Implement Change](#implement-selected-work-through-a-draft-pr). You can also select the whole collection with the interactive command above. Installed files alone do not establish that your agent can discover the skills or complete a workflow.
 
 This repository does not publish its own npm package. `npx` runs the general-purpose `skills` CLI, which installs the skill folders directly from GitHub.
 
@@ -134,9 +136,23 @@ Daily continuation uses relevant records to choose routes without replacing actu
 
 **Boundary:** Usage and assessment remain separate responsibilities, not mandatory separate agents. An isolated example does not establish untested integration behavior. Assessment can investigate missing facts needed for a recommendation; repair and publication require separate authorization. Disposable resources are cleaned up or reported if cleanup fails.
 
-```text
-$just-use-it Exercise this CLI through every documented public capability, explore it as a new user, then inspect source for public behavior the hands-on passes missed.
+Install the complete combination for this task:
+
+```bash
+npx skills@latest add SaKaNa-Y/skills --skill just-use-it assess-findings investigate-with-evidence
 ```
+
+`just-use-it` exercises the tool and records observable results. `assess-findings` judges those results and recommends next actions. `investigate-with-evidence` resolves factual questions that can change the assessment.
+
+Start in the project you want to evaluate. If you want persistent findings, reuse your configured records directory or provide one when asked. [Setup](#configure-defaults-and-projects) is optional for reusable defaults. Directory selection does not grant commit or publication permission.
+
+Invoke the primary skill. Its instructions use the installed shared methods:
+
+```text
+$just-use-it Exercise this project's primary user workflows and report observable findings with their evidence. Reuse my records configuration, or ask for a directory if persistent records need one. Do not repair the product or publish issues.
+```
+
+For additional side-finding capture and tracker reconciliation, optionally install `yak-shaving-triage` and use the [Just and Yak example](#find-a-problem-through-actual-use).
 
 ### Assess Findings
 
@@ -156,15 +172,25 @@ $assess-findings Evaluate these audit observations and recommend which changes a
 
 **You get:** Agent-led research into the project and relevant outside inspiration, followed by discussion of one selected opportunity. Each idea has a concrete user scenario, initial feasibility evidence, and a record of its evolving assumptions and outcome. Prior exploration and community work inform duplicate checks.
 
-**Before starting:** Reuse your configured records directory or supply one once; Setup supports both global defaults and project overrides. The skill reads project history before developing an idea, resumes unfinished matches, and preserves the reasons for reopening concluded ideas. When you authorize local commits, each new idea and each substantive update receives its own commit in the records repository; ordinary wording changes stay with that update.
+**Before starting:** Reuse your configured exploration records directory or provide one when asked on first use. [Setup](#configure-defaults-and-projects) is optional for reusable defaults. The skill reads project history before developing an idea, resumes unfinished matches, and preserves the reasons for reopening concluded ideas. Directory selection does not grant commit or publication permission. If you authorize local commits, each new idea and substantive update receives its own record commit. Ordinary wording changes stay with the next substantive update.
 
 **Boundary:** It stops at discussion, disposable evidence checks, and local records. You decide whether to explore another idea; implementation and publication require further instructions.
 
-```text
-$explore-new-capabilities Explore what this project could enable next. I created /path/to/exploration-records for the history. Bring me one grounded idea to discuss at a time.
+Install the complete combination for this task:
+
+```bash
+npx skills@latest add SaKaNa-Y/skills --skill explore-new-capabilities assess-findings investigate-with-evidence
 ```
 
-It works independently and pairs with separately installed grilling skills, including `grill-with-docs`, for deeper discussion of the current idea.
+`explore-new-capabilities` develops one idea for discussion. `assess-findings` evaluates its value, alternatives and feasibility. `investigate-with-evidence` resolves factual uncertainties that affect that judgment.
+
+Start in the project you want to explore and invoke the primary skill:
+
+```text
+$explore-new-capabilities Explore what this project could enable next. Reuse my exploration records configuration, or ask me for a directory if none is configured. Bring me one grounded idea to discuss at a time.
+```
+
+The primary skill uses the installed shared methods. Optionally install and invoke `just-use-it` alongside Explore for usage-first exploration. Separately installed grilling skills, including `grill-with-docs`, can deepen discussion of the current idea.
 
 ### Set Theory for Projects
 
@@ -321,8 +347,20 @@ Assess can compare buffered observations without requiring a known root cause fo
 
 ### Implement selected work through a Draft PR
 
+Start with an agreed outcome, scope and acceptance conditions in a record, issue or direct request. If you use working records, reuse the configured directory or provide one when asked. [Setup](#configure-defaults-and-projects) is optional for reusable defaults. Directory selection does not grant commit or publication permission.
+
+Install the complete combination for this task:
+
+```bash
+npx skills@latest add SaKaNa-Y/skills --skill implement-change assess-findings investigate-with-evidence
+```
+
+`implement-change` implements and verifies the agreed outcome. `assess-findings` supplies assessment and shared record methods. `investigate-with-evidence` resolves factual gaps that affect the implementation.
+
+Open the target project and invoke the primary skill with your agreed request. Its instructions use the installed shared methods. This first example requests local delivery:
+
 ```text
-$implement-change Implement the agreed outcome in record 003. Reuse its decisions, check existing claims and PRs, verify the result and write delivery back to the record.
+$implement-change Implement the agreed change described below and verify its acceptance conditions. Keep delivery local: do not commit, push or create a PR. [Add the agreed outcome, scope and acceptance conditions, or a reference to them.]
 ```
 
 The entry also accepts an agreed request, issue, spec or tickets without requiring the discovery chain first. It checks readiness, claims the work, and keeps small changes with one executor. Larger work can use outcome slices and dependencies, with research, implementation, integration, review and runtime verification assigned only when useful. Resource conflicts matter even between logically independent tasks.

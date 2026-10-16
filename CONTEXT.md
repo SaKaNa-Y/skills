@@ -72,6 +72,10 @@ _Avoid_: Caller skill, router skill
 A skill activated only by direct user selection when the client supports that invocation policy.
 _Avoid_: Always-on skill, implicit skill
 
+**Skill File Completeness**:
+The presence of all skill files required by a selected workflow within the stated inspection scope. It does not establish host discovery, version compatibility or successful workflow execution.
+_Avoid_: Workflow readiness, host availability, execution guarantee
+
 **Setup Sakana Skills**:
 The Explicit-only Skill that establishes global defaults and project conventions required by the installed skills in this collection. It reuses existing choices and prepares user-reviewed configuration, independently of the skills' runtime invocation.
 _Avoid_: Yak-only setup, skill router, issue migration

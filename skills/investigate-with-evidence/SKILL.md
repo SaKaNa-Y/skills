@@ -7,6 +7,8 @@ description: Resolve a bounded factual question through matching sources and, wh
 
 Resolve the factual uncertainty that could change the current judgment. This is the shared investigation method for `expand-the-frame` and `challenge-the-claim`, and can also answer a direct factual investigation request. The consuming task owns the question, scope, and decision; this skill supplies evidence and its limits. A request to investigate permits bounded, reversible local checks within existing permissions, not product implementation or external publication.
 
+Return evidence to the consuming task. General factual inquiries can finish in the conversation. Before creating a persistent Working Record, apply [record eligibility](../assess-findings/references/working-records.md#establish-record-eligibility); using this investigation method does not itself start a recording workflow.
+
 ## Establish the question
 
 Identify the fact to determine, its relevant conditions and version, and what different answers would change. Reuse evidence already obtained when its source, conditions, and freshness still fit. For inherited Working Records, use their [identity and freshness rules](../assess-findings/references/working-records.md#qualify-evidence-on-entry), carrying unresolved source correspondence and relationships into the answer. An adjacent issue becomes a separate direction for the consuming task rather than silently replacing the question.

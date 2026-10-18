@@ -15,7 +15,7 @@ Keep one accountable assessment owner for a bounded set of related findings or o
 
 Use an independent assessment when the user requests it or a concrete judgment risk warrants it: an evaluator would be checking its own selected remedy, material counterevidence remains unexplained, or competing interpretations would change classification or response scope. Name the judgment to recheck and follow [independent assessment inputs](references/coordination.md#independent-assessment-inputs). Ordinary evidence updates stay with the existing owner. Treat supplied labels, diagnoses and remedies as claims to examine against their evidence, not established premises.
 
-When capturing or resuming persistent evidence, read [working records](references/working-records.md). Reuse the original record, keep observations before final judgment, and preserve its user decisions. If no destination or save authority exists, establish it while continuing permitted analysis; retain unsaved evidence explicitly. Session-only assessment remains available when the consuming task requests it.
+Before persistent capture, apply [record eligibility](references/working-records.md#establish-record-eligibility). An assessment can remain in the conversation when no persistent capture is requested or required. For eligible persistent work, reuse the original record, keep observations before final judgment, and preserve its user decisions. Establish missing destination or save authority while continuing permitted analysis; retain unsaved evidence explicitly.
 
 Identify the scenario, affected version and environment, inspectable evidence, expectation basis, demonstrated or proposed value, current response goal, material unknowns and source/history permissions. For an opportunity, a concrete desired outcome takes the place of a claimed behavioral failure.
 
@@ -89,7 +89,7 @@ Proceed when the recommendation follows from the assessed goal and evidence, wit
 
 ## 5. Preserve the judgment across follow-ups
 
-Preserve the assessment in the original authorized Working Record: decisive evidence, relationships, selected goal and scope, preserved behavior, acceptance conditions, unresolved user decisions and supported next action. Reuse agreed discussion or link an existing spec; 'worth doing' alone does not establish readiness to implement. The coordinator owns the save and index update under the working-record contract.
+When persistent capture applies, preserve the assessment in the original authorized Working Record: decisive evidence, relationships, selected goal and scope, preserved behavior, acceptance conditions, unresolved user decisions and supported next action. Reuse agreed discussion or link an existing spec; 'worth doing' alone does not establish readiness to implement. The coordinator owns the save and index update under the working-record contract.
 
 Return the scenario account, the finding's disposition, its decisive evidence and expectation basis, the response recommendation and rationale, any assessed priority and its basis, and any remaining dependency. Scale the report to the finding rather than requiring a fixed template. The coordinator reconciles the results into the consuming task's final report; it checks the evidence and unresolved conditions rather than treating worker agreement as proof.
 

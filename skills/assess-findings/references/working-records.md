@@ -2,6 +2,14 @@
 
 Read this before capturing, assessing, implementing or reconciling persistent findings and opportunities. These records preserve working evidence and decisions; formal tracker publication follows the project's separate tracker rules.
 
+## Establish record eligibility
+
+Use Working Records for concrete engineering problems or improvements and their investigation, assessment, implementation and verification. Unconfirmed bugs, performance, usability and documentation problems can qualify before their cause or remedy is known. Identify the affected project and the engineering outcome being tracked before selecting a destination.
+
+General fact-checking, correspondence advice and background research return to the consuming task without creating a Working Record. Mentioning a repository or discovering an unrelated product issue does not change that task's purpose. A skill invocation, configured records directory or save/commit authority establishes neither record eligibility nor a requirement to persist an answer. An explicit request to save other material follows that request's document destination instead of this workflow.
+
+For eligible work, preserve existing authorized records and the consuming workflow's capture requirements. Continue session-only work when no persistent capture is requested or required. Feature exploration keeps its separately configured record destination; an assessment handoff updates that record rather than duplicating it in the engineering findings store. Proceed to destination and authority only when the content qualifies and persistent capture applies.
+
 ## Resolve the destination and authority
 
 Read applicable user and project agent instructions and their record-guidance pointers. Resolve each setting from the current explicit instruction, then project guidance, then global defaults. Reuse known values without asking again. Keep personal paths out of reusable skill instructions. Setup can configure these conventions but is not a prerequisite.

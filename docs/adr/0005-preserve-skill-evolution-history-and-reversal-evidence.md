@@ -1,5 +1,7 @@
 # Preserve Skill Evolution History and Reversal Evidence
 
+[ADR 0011](0011-keep-evolution-history-with-owned-skills.md) refines this repository's directory layout into detailed local history and selected public summaries organized by ownership. The generic evolve workflow keeps a private default for projects without an explicit storage policy.
+
 Skill evolution needs a durable history that lets later readers understand and reverse individual changes, including when several skills share a repository. Each skill will have its own history directory, with an index of iterations and a separate detailed record for each iteration. This keeps one skill's progression discoverable without forcing its entire history into a growing document or scattering it across session reports.
 
 An iteration record explains the skill's purpose, the usage evidence behind an evolution opportunity, the proposed improvement and its rationale, the actual changes, and the observed validation results. Proposed, applied, and validated changes remain distinguishable: applying an edit does not establish that it improved use. Records preserve the information needed to reverse the specific changes they describe.

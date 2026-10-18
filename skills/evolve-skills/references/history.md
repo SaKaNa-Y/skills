@@ -4,33 +4,37 @@ Use this reference when consulting earlier evolution, preparing a candidate, rec
 
 ## Find the history
 
-Prefer `docs/skill-evolution/<skill-name>/` in the verified source repository of the target skill. For a standalone installation without a source repository, establish a persistent history location with the user before candidate preparation. Use an existing agreed location on subsequent runs.
+Resolve the target's verified source repository and its established history and publication policy first. Resolve the detailed-record location separately from the public-summary location. Without a project policy, prefer ignored `.local/skill-evolution/skills/<current-skill-name>/`. For a standalone installation without a source repository, establish a persistent location before candidate preparation and reuse it thereafter. Independent histories belong to skills maintained, or formerly maintained, by that repository. External skills can supply context; their own histories belong with their established source, not the repository where they happened to be used.
 
-Generated history is private by default. Before writing records or payloads in a Git repository, ensure the agreed history root is excluded by a narrow `.gitignore` rule, normally `/docs/skill-evolution/`, preserving existing rules. Check both ignore behavior and whether any history files are already tracked. An ignore rule does not untrack files or erase published history; keep new private material out of an already tracked location until its handling is resolved. Index removal or history rewriting is a separate action, not part of adding an ignore rule. For a standalone location, keep the same private-storage intent without requiring Git.
+Generated history is private when no project or user policy says otherwise. In that case, use a narrow ignore rule for the history root, check both ignore behavior and tracked files, and report that ordinary pushes do not preserve ignored records. An ignore rule does not untrack files or erase published history. Where a project publishes summaries, retain the full account locally and select only adopted changes or maintenance decisions with public value. Review the exact summary and necessary evidence before staging; sanitization alone is insufficient. Public summaries must work without private links or inputs. Keep sequence identities across local and public records, allowing gaps in the public index. Resolve sensitive material in already tracked paths without assuming authority to rewrite history. The policy applies to indexes, evidence and recovery payloads alike; source instructions and reusable templates remain shareable.
 
-Indexes, evidence, candidates, and recovery payloads share that private boundary. Source instructions and reusable templates can remain public. Ignored records require separate backup or private handoff to another maintainer; ordinary pushes do not preserve them. Report their location without copying private contents into a public commit, issue, or validation report.
+Keep `README.md` at the history root as the navigation guide. Give each skill an `index.md` identifying its declared name, repository-relative source path, known separate installations, lifecycle status, and rename or successor relationships. Use relative source paths in public navigation; retain machine-specific locations only when necessary and permitted by the storage policy. Update the history directory, index, current source paths and navigation together on rename. Preserve old names in historical prose and original snapshots. An unrelated reuse of a retired name starts a distinct identity.
 
-Keep an identity in the index: declared name, source repository and relative skill path, and known separate installation paths. Disambiguate same-named skills from different origins with a stable source-qualified directory name. A rename retains or explicitly links its previous history. If the record directory is shared, identities still distinguish the targets.
+Retired and transferred skills keep their histories under their last names, with the reason and successor or destination links. Separate their navigation from active skills. For splits and mergers, retain earlier records with their original owners and link the successors; store a shared decision once in `discussions/`. A continuing skill can absorb another without inheriting or duplicating its earlier records.
 
-Read the index first, then iterations relevant to the current opportunity, changed method, or pending validation. Extend an existing pending iteration when continuing its same hypothesis; create a new linked iteration when a changed hypothesis, later adoption, or new evidence represents a distinct evolution. Preserve old outcomes when appending follow-up evidence or marking an iteration superseded or rolled back.
-
-Use one index and one directory per iteration so its record and recovery material travel together:
+Read the index first, then relevant iterations. Continue the same hypothesis in its existing directory across dates; a distinct hypothesis or later adoption gets a new linked iteration. Preserve prior outcomes when appending evidence or recording reversal. Allocate a locally unique sequence number and descriptive topic within each parent, such as `001-record-organization/`; dates belong in the record, and matching numbers do not establish relationships.
 
 ```text
-docs/skill-evolution/<skill-name>/
-  index.md
-  <unique-date-and-slug>/
+<history-root>/
+  README.md
+  skills/<current-or-last-skill-name>/
+    index.md
+    001-topic/
+      record.md
+      evidence/                   # necessary evidence only
+      recovery/                   # affected-file patches or snapshots
+  discussions/001-topic/
     record.md
-    changes.patch                 # when a patch is suitable
-    before/                       # snapshot fallback, affected files only
-    after/                        # snapshot fallback or retained candidate
+    evidence/                     # shared necessary evidence, if any
 ```
 
-Create only the material needed for the chosen recovery method. Preserve relative file paths in snapshots. Record additions, deletions, file types, permissions, and any symlink targets relevant to restoring the change. History files themselves stay outside the target's recovery payload. Files outside the skill directory need an explicit path mapping rather than ambiguous flattened filenames.
+Create optional directories only when needed. Preserve relative paths inside recovery snapshots and integrity-bound evidence packages. Record relevant additions, deletions, file types, modes and symlink targets; give resources outside the skill an explicit path mapping. History itself stays outside the target's recovery payload. Legacy package layouts can remain intact inside `evidence/` or `recovery/`; structural consistency does not justify invalidating their recorded identities.
+
+At a completion, abandonment, no-change or pause checkpoint, use [retention and migration](retention-and-migration.md) to finalize state, check durable dependencies and clean task-owned temporary material. Read that reference also before migrating records, publishing sanitized evidence, or deciding whether to retain an execution environment.
 
 ## Screening and proposed skills
 
-For repository screening, use `docs/skill-evolution/_scopes/<iteration-id>/record.md` under the same private-storage rules. Reuse an existing scope record for the discussion. For a collection spanning repositories or a proposal without a source repository, reuse an agreed private history root or establish a recording location independently of the future skill source. Continue permitted analysis while a recording-location decision is pending, retaining the unsaved account explicitly.
+For repository screening and shared discussions, use `<history-root>/discussions/<NNN-topic>/record.md` under the established storage policy. Reuse an existing scope record for the discussion. For a collection spanning repositories or a proposal without a source repository, reuse an agreed history root or establish a recording location independently of the future skill source. Continue permitted analysis while a recording-location decision is pending, retaining the unsaved account explicitly.
 
 Record the evidence, skills screened, candidates and limits. If screening yields no candidates, close this account as screening complete with no relevant opportunity found in the supplied evidence. Per-skill indexes and deep no-change assessments are unnecessary for that result. Existing skills entering deeper assessment receive their own records linked to this account.
 
@@ -60,7 +64,7 @@ Identify the most recent recorded active state, including applied trials and com
 
 When differences exist, preserve an External Change entry connecting the recorded state to the current baseline. Capture the known before/current states, affected paths, recoverable diffs or commits, and evidence limits. Git history can recover committed states; snapshots may recover endpoints. Neither proves an unrecorded edit sequence, its motivation, or successful validation. Describe only the net change when intermediate states are missing. External Change entries describe changes already present, not edits performed or endorsed by this run.
 
-If no earlier state is available, establish an initial baseline and mark the earlier history unavailable. Persist the reconciled baseline and gaps in the selected target's private history even when the review pauses before a change is selected; target edits still wait for selection. For older partial records, identify comparison coverage and unknown paths rather than claiming the whole skill is unchanged. Do not infer unseen changes merely because a version record is absent. Reconcile only the selected targets.
+If no earlier state is available, establish an initial baseline and mark the earlier history unavailable. Persist the reconciled baseline and gaps in the selected target's history even when the review pauses before a change is selected; target edits still wait for selection. For older partial records, identify comparison coverage and unknown paths rather than claiming the whole skill is unchanged. Do not infer unseen changes merely because a version record is absent. Reconcile only the selected targets.
 
 Preserve a current-state manifest with the baseline and after each actual state transition: target-relative paths, file types and relevant modes, content identities, and references to recoverable content where available. Include the target's instructions and supporting resources, recording the scope for external dependencies; exclude generated history. A manifest detects later changes but cannot recreate missing contents. Reuse unchanged payloads or reliable Git references; snapshot recovery remains scoped to the files actually changed by the iteration.
 
@@ -73,6 +77,8 @@ Continue from the reconciled current baseline. Pending patches based on an earli
 
 Source: <repository and relative skill path, or standalone origin>
 Installations: <known separate copies, or none identified>
+Lifecycle: <active / retired / transferred; reason and successor links where applicable>
+Names: <current name and historical rename relationships>
 Current state: <latest known active state and manifest; comparison coverage and gaps>
 
 | Entry | Kind | Date | Purpose or observed change | Adoption | Validation | Record |
@@ -92,9 +98,9 @@ Use the following as a substantive record, replacing placeholders with observed 
 # <Iteration id>: <Change intent>
 
 ## Identity and state
-Date; skill identity; actual edit target; source and installation relationship.
+Created and updated dates; skill identity; actual edit target; source and installation relationship.
 Entry kind; previous active-state reference; external-change reconciliation and gaps.
-Adoption and validation states; related prior or subsequent iterations.
+Work state (active, paused, blocked, abandoned or completed); adoption and validation states; related prior or subsequent iterations.
 Historical skill version if known; actual pre-change baseline and candidate identity.
 
 ## Purpose and source evidence
@@ -136,7 +142,7 @@ Pending evidence, conditions for revisiting, and next action.
 Append later results and link superseding or rollback iterations without erasing the original.
 ```
 
-Sanitize excerpts and payloads so records do not copy credentials or unrelated personal material. Keep evidence pointers with enough context to understand their meaning if the original conversation is inaccessible. Sensitive recovery material needs an appropriate private location; its absence must not be described as complete recovery support.
+Follow the [sanitization rules](retention-and-migration.md#sanitization) before publishing excerpts or payloads. Keep evidence pointers with enough context to understand their meaning if the original conversation is inaccessible. Sensitive recovery material needs an appropriate private location; its absence must not be described as complete recovery support.
 
 ## Preserve the actual baseline before changing it
 

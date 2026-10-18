@@ -280,7 +280,7 @@ Get Up to Speed delivers a bounded guide and examples as one artifact; it does n
 
 **You get:** User-selected hypotheses with inspectable source links and clear adaptations, purpose-led validation, and private per-skill evidence and recovery history. Validation distinguishes gains from preservation and inconclusive comparisons. An optional Python 3 standard-library helper checks captured file identities and evidence records; the host's existing tools execute trials. These checks do not certify semantic correctness or isolation.
 
-**Boundary:** Concrete conversation episodes can support opportunities without establishing historical skill use or responsibility. A catalog entry or mention alone supplies no opportunity evidence. New skills need a distinct reusable responsibility and user selection; adoption needs the agreed evidence. Mechanical edits and rollbacks need no exploration. Candidates stay separate until supported selected changes are applied; concrete blockers retain a Pending Validation candidate. The Git-ignored `docs/skill-evolution/<skill-name>/` history preserves decisions, source provenance, evidence and recovery material and requires separate private backup or handoff. Standalone installations use an agreed persistent history location.
+**Boundary:** Concrete conversation episodes can support opportunities without establishing historical skill use or responsibility. A catalog entry or mention alone supplies no opportunity evidence. New skills need a distinct reusable responsibility and user selection; adoption needs the agreed evidence. Mechanical edits and rollbacks need no exploration. Candidates stay separate until supported selected changes are applied; concrete blockers retain a Pending Validation candidate. Detailed history follows the source repository policy. Here, ignored `.local/skill-evolution/` preserves decisions, evidence and recovery inputs; `docs/skill-evolution/` contains selected public summaries. Ordinary pushes do not back up the local archive. Standalone installations use an agreed persistent history location.
 
 ```text
 $evolve-skills Review the skills used in this conversation against their purposes. Discuss concrete improvements with me, then validate and record the changes I select, preserving what is needed to reverse them.
@@ -463,7 +463,7 @@ skills/
 - [Repository reference checks](docs/agents/validation.md) validate local Markdown links across a complete candidate tree, including unchanged callers.
 - [`CONTEXT.md`](CONTEXT.md) defines the shared vocabulary used across the skills.
 - [`docs/adr/`](docs/adr/) records the architectural decisions that keep composition, discovery, and finding publication bounded.
-- Private evaluation suites, run evidence, and recovery history live under the ignored `docs/skill-evolution/<skill-name>/` directory. They are separate from consumer issue records and are not distributed with installed skills or ordinary Git pushes.
+- Private evaluation suites, run evidence, and recovery history live under the ignored `.local/skill-evolution/` directory in this repository. They are separate from consumer issue records and are not distributed with installed skills or ordinary Git pushes.
 - Each linked `SKILL.md` is the authoritative contract for that skill's complete behavior and stopping conditions.
 
 ## License

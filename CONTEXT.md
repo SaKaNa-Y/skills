@@ -469,7 +469,7 @@ A concrete proposed change that connects a Skill Evolution Opportunity to an int
 _Avoid_: Proven improvement, repeated-failure prerequisite, untested success claim
 
 **Skill Evolution Record**:
-A detailed, skill-specific history that lets a later reader understand what changed, why it changed, and what evidence supports it, with enough information to reverse the recorded changes. It preserves the distinction between proposed changes, applied changes, and observed validation results.
+A detailed history for a skill maintained or formerly maintained by its source repository, explaining decisions, actual changes, necessary evidence and recovery material. It separates work status, adoption and validation, and links shared discussions without duplicating them. Storage follows the project policy; this repository keeps detailed history locally and tracks selected public summaries.
 _Avoid_: Summary-only changelog, conversation dump, implied rollback support
 
 **External Skill Change**:
@@ -479,3 +479,7 @@ _Avoid_: Validated evolution, reconstructed intent, complete version history
 **Evolve Skills**:
 The Explicit-only Skill that performs Skill Evolution from conversations, skill use and external learning, taking user-selected changes or new skills through candidate preparation, validation and a Skill Evolution Record. It can operate independently, while co-active grilling skills deepen discussion of the hypotheses and trade-offs.
 _Avoid_: Compliance checker, unscoped skill generation, mandatory grilling dependency
+
+**Evolution Quarantine**:
+An ignored staging location outside formal evolution history for external skill records or material whose ownership, publication safety or required inputs remain unresolved. Its manifest preserves provenance and pending disposition; placement there neither backs up a unique input nor authorizes deletion.
+_Avoid_: Permanent history, normal execution cache, completed migration

@@ -10,7 +10,11 @@ import sys
 from urllib.parse import unquote, urlsplit
 
 
-SOURCE_PATTERNS = ('*.md', 'skills/**/*.md', 'docs/agents/**/*.md', 'docs/adr/**/*.md')
+HISTORY_PATTERNS = ('docs/skill-evolution/README.md',
+                    'docs/skill-evolution/skills/*/index.md',
+                    'docs/skill-evolution/skills/*/*/record.md',
+                    'docs/skill-evolution/discussions/*/record.md')
+SOURCE_PATTERNS = ('*.md', 'skills/**/*.md', 'docs/agents/**/*.md', 'docs/adr/**/*.md') + HISTORY_PATTERNS
 EXCLUDED_PARTS = {'node_modules', '.git', '.venv', '__pycache__', 'tests', 'fixtures'}
 
 

@@ -2,5 +2,7 @@
 /docs/research/
 /docs/plans/
 
-# Private skill evolution records, candidates, and recovery material
-/docs/skill-evolution/
+# Disposable evolution execution material and pending migration dispositions
+/.scratch/skill-evolution/
+/.local/skill-evolution-quarantine/
+/.local/skill-evolution/

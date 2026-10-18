@@ -1,7 +1,33 @@
 {
   "version": 1,
-  "skills": [],
-  "records": [],
+  "skills": [
+    {
+      "name": "evolve-skills",
+      "status": "active",
+      "previous_names": [],
+      "successors": []
+    }
+  ],
+  "records": [
+    {
+      "path": "skills/evolve-skills/010-proactive-research-review/record.md",
+      "status": "completed",
+      "adoption": "applied",
+      "validation": "supported",
+      "limitations": [
+        "Public summary only. Source commit and parent preserve the code delta; historical runtime replay is not asserted. Behavioral improvement is not established."
+      ]
+    },
+    {
+      "path": "skills/evolve-skills/018-record-organization/record.md",
+      "status": "completed",
+      "adoption": "applied",
+      "validation": "supported",
+      "limitations": [
+        "Public summary only. Source commit and parent preserve the code delta; historical runtime replay is not asserted. Behavioral improvement is not established."
+      ]
+    }
+  ],
   "files": [],
   "migration": []
 }

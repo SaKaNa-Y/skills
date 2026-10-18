@@ -66,6 +66,48 @@ class HistoryChecks(unittest.TestCase):
         self.data['records'][0]['limitations'] = ['Original recovery input was not recorded.']
         self.assertEqual(self.run_check()['exit_code'], 0)
 
+    def test_navigation_recovery_requires_integrity_entry_in_both_modes(self):
+        import shutil
+        for recovery in ('README.md', 'skills/example/index.md', self.record):
+            self.data['records'][0].update(adoption='applied', recovery=[recovery])
+            self.put('manifest.json', json.dumps(self.data))
+            for local in (False, True):
+                with self.subTest(recovery=recovery, local=local):
+                    archive = self.root / '.local/history'
+                    if local:
+                        if archive.exists():
+                            shutil.rmtree(archive)
+                        shutil.copytree(self.history, archive)
+                    result = HistoryChecker(
+                        self.root, local_history='.local/history' if local else None).run()
+                    self.assertEqual(result['exit_code'], 1)
+                    self.assertTrue(any(
+                        e['path'] == recovery and 'missing integrity entry' in e['reason']
+                        for e in result['errors']))
+
+    def test_registered_navigation_recovery_detects_tampering_in_both_modes(self):
+        import shutil
+        self.data['records'][0].update(adoption='applied', recovery=['README.md'])
+        self.data['files'] = [{'path': 'README.md', 'kind': 'recovery',
+                              'sha256': hashlib.sha256(
+                                  (self.history / 'README.md').read_bytes()).hexdigest()}]
+        self.put('manifest.json', json.dumps(self.data))
+        archive = self.root / '.local/history'
+        shutil.copytree(self.history, archive)
+        for local in (False, True):
+            with self.subTest(local=local):
+                checker = HistoryChecker(
+                    self.root, local_history='.local/history' if local else None)
+                self.assertEqual(checker.run()['exit_code'], 0)
+                target = (archive if local else self.history) / 'README.md'
+                target.write_text('# Changed recovery input\n')
+                result = HistoryChecker(
+                    self.root, local_history='.local/history' if local else None).run()
+                self.assertEqual(result['exit_code'], 1)
+                self.assertTrue(any(e['path'] == 'README.md' and
+                                    e['reason'] == 'SHA-256 mismatch'
+                                    for e in result['errors']))
+
     def test_changed_evidence_and_unlisted_file(self):
         target = self.evidence()
         target.write_text('changed')

@@ -183,6 +183,10 @@ class HistoryChecker:
                 self.issue(value, 'Sanitized derivative needs a provenance/limitation note')
             if hashlib.sha256(path.read_bytes()).hexdigest() != item.get('sha256'):
                 self.issue(value, 'SHA-256 mismatch')
+        for record in data['records']:
+            for recovery in record.get('recovery', []):
+                if recovery not in file_entries:
+                    self.issue(recovery, 'Declared recovery file missing integrity entry')
         migration_sources = set()
         for item in data['migration']:
             source = item.get('source')

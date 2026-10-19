@@ -39,6 +39,8 @@ Read [roles and handoffs](references/roles.md) when delegating or integrating mu
 
 Follow the repository's design and validation conventions. Use existing deterministic commands and reusable environments when appropriate. For a reproducible bug, use a discriminating regression check when it meaningfully guards behavior; for a new capability, check the agreed outcome and preservation conditions. Derive expected results from the agreement and observable contract rather than copying the implementation into the assertion. Low-impact wording edits need proportionate checks, not artificial tests.
 
+Before reusing a build or validation entry point, identify the executable that will run and its startup or persistent write effects. When those effects are uncertain, use the [investigation setup method](../investigate-with-evidence/SKILL.md#choose-a-discriminating-check). Wait for the build that produces a required artifact before running it; independent work can continue. A separate checkout does not isolate shared build outputs or user-level installation state.
+
 Workers return changes, inspected code state, actual checks, new evidence and remaining limits. Integrate dependency-ready contributions while preserving unrelated work. Resolve conflicts against the agreement, then validate the integrated state. If new evidence changes a shared assumption, update the record and affected owners before they continue dependent work.
 
 When the repair changes mechanism or intervention layer, revisit the affected paths and preservation checks before relying on the earlier validation plan.

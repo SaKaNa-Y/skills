@@ -14,7 +14,9 @@ A Substantive Message is a user-visible question or answer that materially affec
 
 When invoked after an assistant message that did not land, identify the missing background, causal link, evidence, or consequence and re-pitch the last Substantive Message with that gap filled.
 
-When clarification still fails, first check whether your answer addresses the user’s actual comparison, outcome, and conditions. Use their questions and corrections to detect a shifted scenario, proposition, or assumed goal. Identify what still prevents the user from understanding or judging the answer, then choose the repair:
+When the user corrects the question, briefly distinguish the question you answered from the one they intended. Carry the corrected subject, version and conditions into the next explanation or evidence check.
+
+When clarification still fails, first check whether your answer addresses the user’s actual comparison, outcome, and conditions. Use other follow-ups to detect a shifted scenario, proposition, or assumed goal. Identify what still prevents the user from understanding or judging the answer, then choose the repair:
 
 - **Understanding:** explain the existing support.
 - **Evidence:** obtain missing facts through available, authorized checks.

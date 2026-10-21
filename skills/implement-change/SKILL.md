@@ -1,9 +1,12 @@
 ---
 name: implement-change
-description: Implement an agreed change from findings, a spec, tickets or a concrete request; verify the result, prepare a draft PR and update authorized working records. Use when implementation is authorized, not for discovery or assessment alone.
+description: Implement an agreed change from findings, a spec, tickets or a concrete request; verify the result, prepare a draft PR and update authorized working records. Use only when the user explicitly selects this skill.
+disable-model-invocation: true
 ---
 
 # Implement Change
+
+Use this skill only when the user explicitly selects it by name. A request to implement, verify or deliver a change does not activate it by itself. Once selected, keep it active for the same implementation task and its direct follow-ups. A separate task requires a new explicit selection.
 
 Deliver the selected outcome through code, evidence and a Draft PR, with progress written back to existing authorized Working Records. Honor a narrower requested endpoint such as local changes or a commit. Merging PRs, deploying and releasing are outside this workflow.
 

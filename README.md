@@ -64,7 +64,7 @@ This repository does not publish its own npm package. `npx` runs the general-pur
 
 ## Invoke Skills
 
-Yak Shaving Triage supports model selection at the start of engineering tasks. Assess Findings supports model selection for findings and opportunities and is reached by Just Use It, Yak Shaving Triage and Explore New Capabilities. Implement Change supports model selection for authorized implementation and also accepts direct invocation. Investigate with Evidence supports bounded factual questions and is their assessment method as well as a dependency of Expand the Frame and Challenge the Claim. These shared methods also accept direct invocation. The remaining entrypoints retain their explicit-selection policy. Automatic selection depends on the host and task matching; it is not a guaranteed startup hook. The examples use the `$skill-name` convention; use the equivalent explicit-invocation syntax supported by your agent.
+Yak Shaving Triage supports model selection at the start of engineering tasks. Assess Findings supports model selection for findings and opportunities and is reached by Just Use It, Yak Shaving Triage and Explore New Capabilities. Implement Change requires explicit user selection; an implementation request alone does not activate it. Investigate with Evidence supports bounded factual questions and is their assessment method as well as a dependency of Expand the Frame and Challenge the Claim. These shared methods also accept direct invocation. The remaining entrypoints retain their explicit-selection policy. Automatic selection depends on the host and task matching; it is not a guaranteed startup hook. The examples use the `$skill-name` convention; use the equivalent explicit-invocation syntax supported by your agent.
 
 ```text
 $prune-the-tree Help me implement this feature. Resolve routine choices yourself and ask me only about decisions that change the outcome.
@@ -302,8 +302,9 @@ flowchart TD
     R --> A["Assess: evidence, value and relationships"]
     A --> R
     A --> U["User selects the work"]
-    U --> I["Implement Change: implement and integrate"]
-    D["An agreed direct request"] --> I
+    U --> X["User explicitly invokes Implement Change"]
+    D["An agreed direct request"] --> X
+    X --> I["Implement Change: implement and integrate"]
     I --> V["Review and runtime verification"]
     V --> P["Draft PR and result writeback"]
     P --> R
@@ -357,7 +358,7 @@ npx skills@latest add SaKaNa-Y/skills --skill implement-change assess-findings i
 
 `implement-change` implements and verifies the agreed outcome. `assess-findings` supplies assessment and shared record methods. `investigate-with-evidence` resolves factual gaps that affect the implementation.
 
-Open the target project and invoke the primary skill with your agreed request. Its instructions use the installed shared methods. This first example requests local delivery:
+Open the target project and explicitly invoke `implement-change` with your agreed request. It stays active for that implementation task and its direct follow-ups. A separate task needs a new explicit selection. Its instructions use the installed shared methods. This first example requests local delivery:
 
 ```text
 $implement-change Implement the agreed change described below and verify its acceptance conditions. Keep delivery local: do not commit, push or create a PR. [Add the agreed outcome, scope and acceptance conditions, or a reference to them.]
@@ -422,7 +423,7 @@ Add future combinations here with their intended outcome, division of responsibi
 
 ## Design Principles
 
-- **Deliberate activation:** Yak can be selected by the model to protect engineering work, and Investigate with Evidence for bounded factual checks. Implement Change can be selected for authorized implementation. Discussion entrypoints retain their user-invoked boundaries. Activation does not expand authority.
+- **Deliberate activation:** Yak can be selected by the model to protect engineering work, and Investigate with Evidence for bounded factual checks. Implement Change requires explicit user selection for an implementation task. Discussion entrypoints retain their user-invoked boundaries. Activation does not expand authority.
 - **Narrow ownership:** Each skill changes one responsibility and leaves the current task, other skills, and mandatory checkpoints in place.
 - **Evidence before expansion:** Facts come from the repository, real use, current documentation, and traceable sources rather than plausible guesses.
 - **Bounded exploration:** Broad research has an explicit stopping condition and returns control at a named checkpoint.

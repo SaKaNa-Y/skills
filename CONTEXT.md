@@ -445,7 +445,7 @@ The shared skill that performs Evidence Investigation for Expand the Frame and C
 _Avoid_: Debate judge, workflow router, implementation authorization
 
 **Finding Assessment**:
-A bounded evaluation of an observed finding or Feature Opportunity that separates evidence, expected or proposed outcomes, impact, and the value and scope of a response. It returns a traceable next-action recommendation and preserves unresolved facts without treating reproducibility as proof of a defect or lack of necessity as proof against an improvement.
+A bounded evaluation of an observed finding or Feature Opportunity that separates evidence, expected or proposed outcomes, impact, and the value and scope of a response. It returns a traceable next-action recommendation and preserves unresolved facts without treating reproducibility as proof of a defect or lack of necessity as proof against an improvement. Impact describes the consequence for affected users; suggested priority recommends response timing under the assessed goal. An owner's handling decision can change scope or timing while the evidence and supported assessment remain intact.
 _Avoid_: Bug confirmation by repetition, adversarial voting, automatic PR creation
 
 **Assess Findings**:

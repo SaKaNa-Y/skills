@@ -80,12 +80,12 @@ Priority recommends how urgently to address a finding; severity describes its im
 | --- | --- |
 | P0 | Respond immediately: major harm is occurring or imminent and requires immediate containment or action. |
 | P1 | Fix ahead of routine work: a critical user path is severely blocked with no acceptable alternative. |
-| P2 | Schedule a fix: demonstrated impact is bounded or an acceptable workaround exists. |
-| P3 | Defer if needed: the impact is minor and does not materially obstruct task completion. |
+| P2 | Schedule work: the affected task and response goal justify addressing the finding in routine planned work. |
+| P3 | Defer: the assessed product goal and trade-offs support leaving the finding outside planned work for now. |
 
-Judge actual impact, trigger conditions, affected scope, urgency, and available alternatives together. A workaround does not make ongoing major harm routine. Do not infer a low priority from a documentation label or missing evidence, and do not infer P0 from an unverified security suspicion. These levels imply no fixed repair deadline.
+Before assigning a level, identify whose task is affected, the obstruction or cost under the trigger conditions, and why the response goal supports the proposed timing. Judge scope, recurrence, urgency, and alternatives available to those users together. For P2, state the positive reason to schedule work; bounded impact or absence of P1 urgency alone does not establish it. For P3, explain the deferral trade-off without reducing the stated impact on affected users. A workaround does not make ongoing major harm routine. Labels such as accessibility or documentation do not determine priority, and missing evidence does not establish low impact. An unverified security suspicion does not establish P0. These levels imply no fixed repair deadline.
 
-Return the level, its scale, a short evidence-based reason, and material limits with the existing assessment. If a missing fact prevents a defensible level, return **Priority undetermined**, name that fact and the next check; retain the observation's classification. When the classification itself is unresolved, a follow-up's urgency is not a confirmed bug priority. Preserve immediate warnings for credible harm while further assessment is pending.
+Return the level, its scale, a short evidence-based reason, and material limits with the existing assessment. If a missing fact prevents a defensible level, return **Priority undetermined**, name that fact and the next check; retain the observation's classification. If the remaining dependency is a product goal or scheduling choice, identify the owner and decision needed rather than requesting another reproduction. When the classification itself is unresolved, a follow-up's urgency is not a confirmed bug priority. Preserve immediate warnings for credible harm while further assessment is pending.
 
 Proceed when the recommendation follows from the assessed goal and evidence, with ownership and decision-relevant limits explicit, and any requested priority has a supported level or an explicit unresolved dependency.
 
@@ -95,6 +95,12 @@ When persistent capture applies, preserve the assessment in the original authori
 
 Return the scenario account, the finding's disposition, its decisive evidence and expectation basis, the response recommendation and rationale, any assessed priority and its basis, and any remaining dependency. Scale the report to the finding rather than requiring a fixed template. The coordinator reconciles the results into the consuming task's final report; it checks the evidence and unresolved conditions rather than treating worker agreement as proof.
 
-On follow-up, retain the version, scenario, response goal, and previous reasons. Keep unresolved, evidence-backed reasons for questioning a judgment with that judgment. When updating it, explain which reasons the new evidence, corrected inference, or changed requirement addresses; revise only the judgments it affects. Retain limits that still apply and drop reasons that no longer apply. A renewed request for objections invites examination of the same proposition, not an automatic verdict reset. If an objection concerns a different goal, distinguish that question and preserve the earlier result. When accepted facts leave a value trade-off, explain the choice and who bears its cost.
+On follow-up, retain the version, scenario, response goal, and previous reasons, including unresolved evidence-backed objections. Identify whether the update concerns the assessment's basis or the owner's handling decision.
+
+For new evidence, corrected expectations or inferences, or changed requirements, determine which judgments are affected. Revise those judgments and explain each actual change; classification can remain unchanged. Retain limits that still apply and drop reasons that no longer apply.
+
+For an owner's choice of scope or timing, record the selected work-item label or priority as a handling decision. Preserve the observed behavior, affected users and any still-supported assessment separately. Explain the trade-off and who bears its cost; deferral alone does not establish lower impact or disprove a defect.
+
+A renewed request for objections invites examination of the same proposition, not an automatic verdict reset. If an objection concerns a different goal, distinguish that question and preserve the earlier result. When accepted facts leave another value trade-off, explain the choice and who bears its cost.
 
 Finish when permitted decisive checks and concrete counterevidence leads have been resolved and no specific remaining check could materially change the recommendation. For pending gates, missing access, queued work, or unresolved user-owned requirements, report what is established, the exact pending work, and the resumption condition. Continue unaffected work. Assessment completion does not authorize implementation or external publication.

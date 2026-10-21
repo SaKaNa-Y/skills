@@ -53,6 +53,8 @@ Handle in-scope defects discovered during implementation. Preserve independently
 
 Keep three questions distinct: does the change implement the agreement, does it follow repository standards, and does the behavior work under the tested conditions? An available code-review method can help with the first two; it does not replace execution. Additional skills are optional; activate explicit-only skills only when the user selects them.
 
+When repairing runnable commands or configuration examples, use the [documentation verification example](references/documentation-verification.md) to check the edited document from its stated starting conditions.
+
 Choose independent review or verification when complexity, risk or hidden author assumptions justify it and delegation is available. Give a verifier the acceptance conditions, delivered artifacts, setup and safety constraints, not a preferred verdict. Inline checks remain valid where proportionate but are not labeled independent.
 
 Record each meaningful review finding's disposition: repair a supported in-scope issue, explain evidence against an unsupported claim, or return a scope-changing choice to the user. Recheck affected behavior after repairs or integration changes. Bind evidence to the examined code state and environment; an earlier worker branch passing does not establish that the final integrated result passed. Missing execution access remains an explicit verification limit.

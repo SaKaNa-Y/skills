@@ -34,6 +34,10 @@ When project history is available under the consuming workflow's access gates, l
 
 Match by user problem and acceptance boundary before creating an indexed record. When independent-audit gates prohibit historical matching, preserve a uniquely named provisional capture in an authorized task-owned location without reading old records; defer index registration and identity reconciliation until the gate opens. Report that pending state and retain the evidence before cleanup. Recheck the index immediately before allocating a new identifier; concurrent changes require reconciliation, not overwrite. Keep stable identifiers and paths. Reuse existing numbered files and evidence directories without mandatory migration.
 
+Maintain one current navigation entry for each established Problem Identity. It can point to an existing record or a stable section in a multi-finding report; a new file per problem is optional. In the project README, identify its current state, last assessment date and next action, and link supporting observations from other records. Keep independent problems distinct even when one repair can address them together.
+
+When observations match an existing identity, add materially useful evidence or link its existing location. Preserve unique reproduction paths, versions and prior decisions. If duplicate current entries already exist, select the established or better-supported entry as the current destination and leave explicit links from the others. Reconcile conflicting judgments before presenting one current status; unresolved conflicts remain visible. Read relevant cross-project records for shared upstream identities without expanding the requested assessment to unrelated problems. Preserve stable links and existing reports instead of requiring a full migration.
+
 One coordinator owns writes for the current task. Workers return evidence and proposed updates; the coordinator rereads current contents and integrates changes at coherent checkpoints. Detect concurrent edits before saving. A local writer or Work Claim is advisory, not cross-chat locking.
 
 ## Keep the minimum useful account
@@ -50,6 +54,8 @@ Scale the record to the work; retain these facts when applicable rather than fil
 
 Save concrete observations before final assessment. A provisional record is not a confirmed defect. Revising a conclusion preserves the decisive earlier evidence and why the judgment changed. Keep related-but-distinct problems separate; one record can link several PRs, and one PR can cover several records.
 
+Before a capture or assessment handoff, check whether an agent without the originating conversation can understand the user scenario and trigger, distinguish expected from observed behavior, locate the evidence and affected version, and identify the current judgment and next action. Assessment records also retain priority when assessed, relevant issue/PR coverage, remaining acceptance conditions and the reason for a changed status. Link supporting artifacts instead of duplicating them. For provisional capture, identify missing facts and the check that would resolve them; do not invent a diagnosis or require completed assessment before saving. A status label alone is not a usable handoff.
+
 Preserve essential evidence before disposable cleanup. Prefer a small replayable input, command and result over full logs; retain the version and known limitations. Sanitize secrets and unrelated personal data. A temporary path about to be removed is not durable evidence. Large evidence deletion requires an applicable retention policy or explicit instruction.
 
 ## Qualify evidence on entry
@@ -63,6 +69,18 @@ When upstream differs or cannot be verified, promptly tell the user what was est
 Respect source and history gates: permitted identity checks do not open implementation or tracker access. Defer gated comparisons with their resumption condition, or disclose an authorized change of provenance.
 
 Ready when the execution target and upstream verification state are explicit, material differences or uncertainty have been communicated, and each affected conclusion has a supported next action.
+
+## Reassess a records folder
+
+Use this procedure when the user selects a folder or collection for joint reassessment, whether work continues in the same conversation or a new one. The selected path bounds the records to assess; it does not identify their product upstream or authorize product repair.
+
+1. Inventory the selected records and README entries, including relevant archived items. Establish the in-scope problems and existing identities before planning checks. Follow related evidence and duplicate links outside the folder when needed, while leaving unrelated records outside scope. Respect active history gates; name any entries awaiting permission or access.
+2. Resolve the product and original upstream for each problem. Apply [evidence qualification](#qualify-evidence-on-entry) and [delivery reconciliation](#reconcile-delivery-on-access). Share fresh version checks and searches across related entries. Use current upstream by default for current-status questions, preserving an explicitly selected release or revision. Inspect changed behavior and run the smallest decisive check when source and prior evidence cannot settle current existence.
+3. Assess each distinct problem through Assess Findings. Record whether the reported behavior still applies, is partly resolved, is resolved within its acceptance boundary, or remains unverified, with target version, date and evidence limits. Keep that result separate from classification, priority, issue/PR state and record lifecycle. An inaccessible upstream leaves freshness pending; issue closure or PR merge alone does not establish resolution.
+4. Reconcile identities and relationships using the observed scenarios and acceptance boundaries. Several observations can support one problem. Several independent problems can share a repair group while retaining separate acceptance checks. Preserve rejected matches and uncertain relationships when they affect the next action. Recommend the responsible repository and a scoped next action without creating duplicate repair work.
+5. Complete the [save checkpoint](#save-and-commit-a-checkpoint): update current summaries, identity links, status reasons, delivery coverage, remaining work and README together. Report every in-scope problem's outcome or exact unresolved dependency, plus the actual save and commit results. Preserve unrelated edits and other folders' independent findings.
+
+Discovery and assessment can finish while repair remains pending. The user can select implementation immediately or later; neither a new conversation nor a waiting period is required. This procedure adds no automatic product changes or tracker publication.
 
 ## Retain coverage and repair context
 

@@ -93,6 +93,9 @@ Proceed when the recommendation follows from the assessed goal and evidence, wit
 
 When persistent capture applies, preserve the assessment in the authorized primary Working Record: decisive evidence, relationships, selected goal and scope, preserved behavior, acceptance conditions, unresolved user decisions and supported next action. Reuse agreed discussion or link an existing spec; 'worth doing' alone does not establish readiness to implement. The coordinator owns the save and index update under the working-record contract. For a batch, account for every in-scope problem, including unresolved checks and duplicate links, and complete the primary record and affected root/project overview checkpoint together. Apply the contract's [handoff-quality check](references/working-records.md#check-handoff-quality) before reporting the records ready for another agent.
 
+When saving or updating records, apply the contract's [classification and overview rules](references/working-records.md#classify-work-and-maintain-the-overviews). Classify by the problem or intended outcome, independently of the invoking skill and handling status. Keep detailed item tables in project overviews and maintain the root project summary at the same checkpoint.
+
+
 Return the scenario account, the finding's disposition, its decisive evidence and expectation basis, the response recommendation and rationale, any assessed priority and its basis, and any remaining dependency. Scale the report to the finding rather than requiring a fixed template. The coordinator reconciles the results into the consuming task's final report; it checks the evidence and unresolved conditions rather than treating worker agreement as proof.
 
 On follow-up, retain the version, scenario, response goal, and previous reasons, including unresolved evidence-backed objections. Identify whether the update concerns the assessment's basis or the owner's handling decision.

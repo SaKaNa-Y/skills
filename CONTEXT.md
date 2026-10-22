@@ -404,6 +404,14 @@ _Avoid_: Accepted feature specification, published issue, conversation transcrip
 A persistent account of a concrete engineering problem or improvement, including a Feature Opportunity, its evidence, assessment, user decisions and related implementation and verification work. One current primary record follows each problem or opportunity across discovery methods and work stages; supporting audit records retain separate evidence and refer to that account for current decisions. It may preserve an unconfirmed observation and is distinct from general research notes, a published tracker issue or an accepted specification.
 _Avoid_: Confirmed bug, canonical issue, implementation authorization
 
+**Finding Record Category**:
+Concrete problems in existing behavior, including unconfirmed observations, confirmed defects and improvements. It describes the work independently of how it was discovered, assessment confidence, handling decisions or lifecycle.
+_Avoid_: Confirmed defect only, source skill, handling status
+
+**Exploration Record Category**:
+Proposed capabilities, workflows or extended uses whose value, scope or design is being considered, including subsequent work on the same opportunity. Its identity is independent of the discovering skill or a decision to implement, defer or close it.
+_Avoid_: Explore-only output, implementation authorization, handling status
+
 **Finding Relationship**:
 An evidenced or explicitly provisional connection between findings, such as causation, blocking or masking. A relationship does not erase distinct Problem Identities or acceptance boundaries.
 _Avoid_: Shared-component identity, assumed common cause, automatic duplicate

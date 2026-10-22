@@ -401,7 +401,7 @@ A project-specific history of presented Feature Opportunities and their evolving
 _Avoid_: Accepted feature specification, published issue, conversation transcript
 
 **Working Record**:
-A persistent account of a concrete engineering problem or improvement, including a Feature Opportunity, its evidence, assessment, user decisions and related implementation and verification work. It may preserve an unconfirmed observation and is distinct from general research notes, a published tracker issue or an accepted specification.
+A persistent account of a concrete engineering problem or improvement, including a Feature Opportunity, its evidence, assessment, user decisions and related implementation and verification work. One current primary record follows each problem or opportunity across discovery methods and work stages; supporting audit records retain separate evidence and refer to that account for current decisions. It may preserve an unconfirmed observation and is distinct from general research notes, a published tracker issue or an accepted specification.
 _Avoid_: Confirmed bug, canonical issue, implementation authorization
 
 **Finding Relationship**:

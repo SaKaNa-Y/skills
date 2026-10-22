@@ -16,7 +16,7 @@ Read the project's guidance, purpose, and public capabilities. Use the user's di
 
 When the user also selects Just Use It, follow its [outcome scope](../just-use-it/SKILL.md#establish-the-outcome-scope) before usage and preserve its source and tracker gates. Otherwise, read relevant source as part of project grounding.
 
-Use [Assess Findings](../assess-findings/SKILL.md), installed with `investigate-with-evidence`, for common evidence, relationship and action judgment. Read its [working-record contract](../assess-findings/references/working-records.md) on project entry to resolve configured history, reconcile the project directory with its README and relevant records, qualify current evidence, and handle saves, delivery and lifecycle. Reuse configured paths without another question; when unavailable, continue project grounding but defer presenting a new opportunity until its history can be checked and saved. Missing assessment support leaves the judgment pending rather than claimed complete.
+Use [Assess Findings](../assess-findings/SKILL.md), installed with `investigate-with-evidence`, for common evidence, relationship and action judgment. Read its [working-record contract](../assess-findings/references/working-records.md) on project entry to resolve configured history, reconcile the root overview, project overview and relevant primary records, qualify current evidence, and handle saves, delivery and lifecycle. Reuse configured paths without another question; when unavailable, continue project grounding but defer presenting a new opportunity until its history can be checked and saved. Missing assessment support leaves the judgment pending rather than claimed complete.
 
 Match ideas by user problem and intended capability. Continue an unfinished match in its existing record. Read relevant completed records for reusable methods, constraints or combinations that could support a different user outcome, retaining attribution and the earlier disposition. Reopen the same concluded opportunity only for material new evidence or an explicit request; otherwise move to another lead. Borrowing a method does not by itself establish a new opportunity: identify the additional user outcome. Repeat this identity check before first presentation. Preserve the existing layout and previously authorized commit scope.
 
@@ -68,16 +68,16 @@ The skill works independently. When the user also invokes a grilling skill, let 
 
 ## 4. Preserve the outcome and return control
 
-Update the opportunity record at meaningful discussion boundaries and before closing. Keep a concise current account plus dated material changes, preserving why earlier judgments changed. Each record should let a later conversation recover:
+Update the opportunity record at meaningful discussion boundaries and before closing. Keep a concise current account plus dated material changes, preserving why earlier judgments changed. Use the shared [handoff-quality check](../assess-findings/references/working-records.md#check-handoff-quality) for continuation of discussion and, when selected and authorized, implementation. Each record should let a later conversation recover:
 
 - The project identity, idea, user scenario, and intended capability.
 - Inspiration and evidence, with source links or code references, checked revisions or dates where useful, and what each source actually establishes.
 - Prior related work and the scope or limitations of duplicate checks.
 - Open assumptions, feasibility limits, and results of any disposable checks.
-- The discussion's current state, decisions and reasons, and conditions for reconsideration.
+- The discussion's current state, selected and rejected alternatives with reasons, remaining questions, next action, and conditions for reconsideration.
 
-At these boundaries, reconcile the current record and README through the [working-record checkpoint procedure](../assess-findings/references/working-records.md#save-and-commit-a-checkpoint), then complete authorized local commits. An unfinished discussion remains unfinished; silence does not select a disposition. If saving fails, retain the update in the conversation, report the failure, and resolve persistence before presenting another idea. These records preserve exploration, not formal feature specifications or tracker items; follow the project's conventions when the user later requests those artifacts.
+At these boundaries, reconcile the primary record and affected root/project overview entries through the [working-record checkpoint procedure](../assess-findings/references/working-records.md#save-and-commit-a-checkpoint), then complete authorized local commits. An unfinished discussion remains unfinished; silence does not select a disposition. If saving fails, retain the update in the conversation, report the failure, and resolve persistence before presenting another idea. These records preserve exploration, not formal feature specifications or tracker items; follow the project's conventions when the user later requests those artifacts.
 
 Close with the current conclusion, unresolved evidence, record location, and the commit result when committing was authorized. Let the user decide whether to continue this idea, explore another, or stop. Choosing to pursue an idea does not itself start implementation.
 
-**Complete when:** the record and index are saved and consistent, each authorized commit is verified or reported as pending with its cause, and the user has the current conclusion, unresolved questions, and record location.
+**Complete when:** the primary record and both overview levels are saved and consistent, the handoff supports its stated next use, each authorized commit is verified or reported as pending with its cause, and the user has the current conclusion, unresolved questions, and record location.

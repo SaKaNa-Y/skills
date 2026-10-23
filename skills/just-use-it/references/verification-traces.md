@@ -4,7 +4,7 @@ Read this reference before assigning the first `Verified` state. A Verification 
 
 ## Prove the Journey
 
-Keep one compact trace per independently verifiable capability. Identify:
+Keep one compact trace per independently verifiable capability. Bind it to its batch observation and actual execution identity under [coverage records](../../assess-findings/references/coverage-records.md); shared header fields may be inherited. Reused traces keep their original revision and date, with current applicability recorded separately. Identify:
 
 - the capability and user outcome;
 - the public interface, relevant initial state, fixture, and prerequisites;

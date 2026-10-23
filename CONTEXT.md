@@ -117,7 +117,7 @@ A Usage-First Audit traversal that preserves complete documented journeys and fr
 _Avoid_: Global entrance sweep, source-interleaved audit, phase-wide button tour
 
 **Coverage Ledger**:
-A compact, resumable account of each Vertical Capability Slice's coverage state and next action, preserving honest boundaries between completed, active, blocked, and unexercised work. Observed coverage means the journey was exercised while a possible finding still awaits assessment; it does not imply Verified behavior.
+A compact, resumable account of each Vertical Capability Slice's coverage state, exercised boundaries and next action. Actual observations retain their execution versions and evidence; judgments about reuse on another version remain separate. It preserves honest boundaries between completed, active, blocked, and unexercised work. Observed coverage means the journey was exercised while a possible finding still awaits assessment; it does not imply Verified behavior.
 _Avoid_: Raw browser transcript, screenshot archive, implied coverage
 
 **Verification Trace**:

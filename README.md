@@ -50,7 +50,7 @@ This repository does not publish its own npm package. `npx` runs the general-pur
 | Make an important question or answer understandable and actionable | [`make-it-land`](skills/make-it-land/SKILL.md) | The missing context, terms, evidence, implications, and next action |
 | Stop a workflow from asking you to decide routine details | [`prune-the-tree`](skills/prune-the-tree/SKILL.md) | Fewer low-value interruptions without losing user-owned decisions |
 | Keep a valid side problem from replacing the current task | [`yak-shaving-triage`](skills/yak-shaving-triage/SKILL.md) | A preserved, issue-ready finding and a return to the original problem |
-| Evaluate a source-accessible library, framework, CLI, or developer tool as a user | [`just-use-it`](skills/just-use-it/SKILL.md) | Hands-on coverage evidence and reproducible Finding Packets |
+| Evaluate a source-accessible library, framework, CLI, or developer tool as a user | [`just-use-it`](skills/just-use-it/SKILL.md) | Version-bound usage coverage, resumable records and reproducible Finding Packets |
 | Decide whether an observed finding warrants a fix, improvement, or PR | [`assess-findings`](skills/assess-findings/SKILL.md) | A supported classification and scoped action recommendation |
 | Browse recorded problems, decisions and progress | [`browse-records`](skills/browse-records/SKILL.md) | A read-only view with source links, filters and visible uncertainty; explicit invocation only |
 | Implement an agreed change | [`implement-change`](skills/implement-change/SKILL.md) | Verified work, a Draft PR and source-record updates |
@@ -133,7 +133,9 @@ These skills create evidence and decision checkpoints. They stop before implemen
 
 **You get:** A slice-first Usage-First Audit that completes real user journeys, then reads source for missed public capabilities and runnable environments that expose meaningful component states or integrations. Usage evidence reaches Assess early; source investigation and tracker checks wait for the audit gates. The report includes coverage, replayable observations, assessed defects, improvement opportunities, unresolved observations, and excluded claims.
 
-Daily continuation uses relevant records to choose routes without replacing actual usage or free exploration. An explicitly independent audit defers historical findings and preserves the original phase gates; prior exposure is reported honestly.
+Just saves version-bound coverage under your configured records authority even when an audit finds no problems, without requiring Yak. Each target repository has its own coverage index linked to batch evidence. Later use reads that history to select new depth or affected revalidation; reuse keeps the original execution revision and date. Actual source and artifact identities distinguish an executed result from a current applicability judgment.
+
+Continuation uses relevant records to choose routes without replacing actual usage or free exploration. An explicitly independent audit defers historical findings and preserves the original phase gates; prior exposure is reported honestly.
 
 **Boundary:** Usage and assessment remain separate responsibilities, not mandatory separate agents. An isolated example does not establish untested integration behavior. Assessment can investigate missing facts needed for a recommendation; repair and publication require separate authorization. Disposable resources are cleaned up or reported if cleanup fails.
 
@@ -145,12 +147,12 @@ npx skills@latest add SaKaNa-Y/skills --skill just-use-it assess-findings invest
 
 `just-use-it` exercises the tool and records observable results. `assess-findings` judges those results and recommends next actions. `investigate-with-evidence` resolves factual questions that can change the assessment.
 
-Start in the project you want to evaluate. If you want persistent findings, reuse your configured records directory or provide one when asked. [Setup](#configure-defaults-and-projects) is optional for reusable defaults. Directory selection does not grant commit or publication permission.
+Start in the project you want to evaluate. Reuse your configured records directory and save policy, or provide them when asked. Coverage persistence is part of the audit; an unavailable destination or save permission is reported as pending. [Setup](#configure-defaults-and-projects) is optional for reusable defaults. Directory selection does not grant commit or publication permission.
 
 Invoke the primary skill. Its instructions use the installed shared methods:
 
 ```text
-$just-use-it Exercise this project's primary user workflows and report observable findings with their evidence. Reuse my records configuration, or ask for a directory if persistent records need one. Do not repair the product or publish issues.
+$just-use-it Exercise this project's primary user workflows and report observable findings with their evidence. Reuse my records configuration, or ask for a records directory if none is configured. Do not repair the product or publish issues.
 ```
 
 For additional side-finding capture and tracker reconciliation, optionally install `yak-shaving-triage` and use the [Just and Yak example](#find-a-problem-through-actual-use).
@@ -297,10 +299,10 @@ These are recommended workflows. Their contracts and structural checks do not es
 
 ```mermaid
 flowchart TD
-    J["Just: use the product"] --> R["Shared working records"]
+    J["Just: use, save coverage and read it on continuation"] --> R["Shared working records"]
     Y["Yak: preserve side findings"] --> R
     E["Explore: discover and discuss opportunities"] --> R
-    R --> A["Assess: evidence, value and relationships"]
+    R -->|Findings or opportunities needing judgment| A["Assess: evidence, value and relationships"]
     A --> R
     A --> U["User selects the work"]
     U --> X["User explicitly invokes Implement Change"]
@@ -319,7 +321,7 @@ Setup supplies the records configuration and agent entrypoints used across this 
 $just-use-it $yak-shaving-triage Exercise this project's user workflows. Use my configured records to preserve findings and assess related problems. Do not implement fixes yet.
 ```
 
-Just owns the declared coverage, real usage and evidence. Yak protects the audit task and saves independent observations, including unassessed ones. Assess qualifies behavior, compares related findings and recommends next actions. One coordinator reuses their owners and evidence instead of launching a separate team per skill. The result is coverage plus records and recommendations, not automatic repairs or published issues.
+Just owns the declared coverage, real usage, saved batch evidence and project coverage index, including runs without findings. This record loop also works when Just is invoked alone. Yak protects the audit task and saves independent observations, including unassessed ones. Assess qualifies behavior, compares related findings and recommends next actions. One coordinator reuses their owners and evidence instead of launching a separate team per skill. The result is saved coverage and, where findings exist, records and recommendations; repairs and issue publication require separate authorization.
 
 For daily continuation, relevant history helps choose useful routes; old verification is not proof about today's version. To request independent experience, say so explicitly. Historical finding summaries and tracker research then wait for the audit gate. Starting a fresh worker does not erase earlier exposure.
 

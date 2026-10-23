@@ -23,7 +23,8 @@ Return a compact result using the existing Verification Traces and Finding Packe
 - Assigned slice and coverage states, including exclusions and unfinished work.
 - Observed outcomes, discriminating contrasts, expectation basis, demonstrated impact, and material unknowns; distinguish proposed classification from established evidence.
 - Replayable inputs and key evidence, with paths or references for longer artifacts already retained.
-- Artifact identity and any source or tracker exposure that changed the evidence scope.
+- Batch and actual artifact identity, distinguishing newly executed traces from inherited evidence, and any source or tracker exposure that changed the evidence scope.
+- Proposed coverage updates for the coordinator to integrate; shared index writes stay with the coordinator, who checks their saved result.
 - Resources created, cleanup completed, and anything explicitly transferred to the main agent.
 
 Reference existing artifacts instead of copying full logs or the conversation. Remove secrets and unrelated personal information. The main agent reads additional evidence when needed to evaluate a claim; a concise conclusion alone cannot establish Verified coverage. It routes candidate findings to the responsible Assess owner under [finding handoff](finding-packets.md#hand-off-for-assessment-and-reconciliation). Usage workers continue their assigned slices and return requested contrasts through the coordinator rather than creating further workers.

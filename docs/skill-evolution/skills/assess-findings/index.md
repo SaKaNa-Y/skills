@@ -7,3 +7,5 @@ These selected summaries retain their local sequence numbers. Separate installat
 - [025: Scope and record quality](025-scope-and-record-quality/record.md)
 
 - [026: Assessment actions and saved record coverage](026-assessment-reliability/record.md)
+
+- [027: Shared usage coverage records](027-versioned-usage-coverage/record.md)

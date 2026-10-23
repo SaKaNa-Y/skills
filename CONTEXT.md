@@ -404,6 +404,10 @@ _Avoid_: Accepted feature specification, published issue, conversation transcrip
 A persistent account of a concrete engineering problem or improvement, including a Feature Opportunity, its evidence, assessment, user decisions and related implementation and verification work. One current primary record follows each problem or opportunity across discovery methods and work stages; supporting audit records retain separate evidence and refer to that account for current decisions. It may preserve an unconfirmed observation and is distinct from general research notes, a published tracker issue or an accepted specification.
 _Avoid_: Confirmed bug, canonical issue, implementation authorization
 
+**Browse Records**:
+The Explicit-only Skill that presents a read-only view of current Working Records, preserving their Problem Identities, assessments, handling decisions, uncertainty and source links. It supports scoped browsing and detail without reassessing the recorded problem or changing its account.
+_Avoid_: Assessment, record maintenance, live tracker verification
+
 **Finding Record Category**:
 Concrete problems in existing behavior, including unconfirmed observations, confirmed defects and improvements. It describes the work independently of how it was discovered, assessment confidence, handling decisions or lifecycle.
 _Avoid_: Confirmed defect only, source skill, handling status

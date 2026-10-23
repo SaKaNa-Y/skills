@@ -12,6 +12,10 @@
       "status": "active",
       "previous_names": [],
       "successors": []
+    },
+    {
+      "name": "browse-records",
+      "status": "active"
     }
   ],
   "records": [
@@ -40,6 +44,15 @@
       "validation": "supported",
       "limitations": [
         "Public summary only. Source commit 6afe7270f54cc5ec25cf60d1c22183f169a80a63 and its parent preserve the delta. Earlier synthetic comparison supports record outcomes; scope-discovery improvement is unproven. Final wording received instruction review, not new behavioral trials."
+      ]
+    },
+    {
+      "path": "skills/browse-records/001-record-browser/record.md",
+      "status": "completed",
+      "adoption": "applied",
+      "validation": "supported",
+      "limitations": [
+        "Bounded source-to-view checks and inactive-routing probe; no universal behavioral or usability claim. Source delta recoverable from the introducing commit and its parent; exact private recovery is retained separately. Installation unchanged."
       ]
     }
   ],

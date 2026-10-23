@@ -54,6 +54,15 @@
       "limitations": [
         "Bounded source-to-view checks and inactive-routing probe; no universal behavioral or usability claim. Source delta recoverable from the introducing commit and its parent; exact private recovery is retained separately. Installation unchanged."
       ]
+    },
+    {
+      "path": "skills/assess-findings/026-assessment-reliability/record.md",
+      "status": "completed",
+      "adoption": "applied",
+      "validation": "supported",
+      "limitations": [
+        "Bounded record-layer and saved-content coverage improvement; core assessment comparison tied. Final inventory revision received a fresh added-file test, not a full rerun of the earlier 21-item comparison. Source-only; introducing commit and parent preserve the delta. Detailed evidence remains local."
+      ]
     }
   ],
   "files": [],

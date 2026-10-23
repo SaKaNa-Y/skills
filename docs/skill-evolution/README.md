@@ -8,6 +8,6 @@ See the [history policy](../agents/evolution-history.md) for selection and reten
 
 - [Evolve Skills](skills/evolve-skills/index.md): proactive research and record organization.
 
-- [Assess Findings](skills/assess-findings/index.md): affected scope and saved record checks.
+- [Assess Findings](skills/assess-findings/index.md): assessment actions, affected scope and saved record coverage.
 
 - [browse-records](skills/browse-records/index.md) — explicit, read-only record browsing.

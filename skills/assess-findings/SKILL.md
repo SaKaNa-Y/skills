@@ -25,7 +25,9 @@ Keep a concise scenario account through assessment and handoff: user task, trigg
 
 A packet may initially lack some of these facts. Preserve the gaps instead of filling them with inferred certainty. Related observations share an assessment when the same response and acceptance boundary resolve them; independently valuable responses remain distinguishable.
 
-Proceed when ownership, the question, existing evidence, and permitted checks are explicit.
+For a batch, resumed work, or several evidence handoffs, turn the original questions and accepted scope into a compact worklist before selecting checks. For each identity, link its original scenario and acceptance boundary, applicable evidence, decision-changing gap, and next executable action or actual limitation. Reuse record fields and adequate prior evidence. A straightforward single finding can keep this account inline. The worklist guides this task; primary records remain authoritative. At interruption, retain it with the existing checkpoint and reconcile it with current records on resumption. A correction may change the question or identity; preserve the mapping and reason.
+
+Proceed when each selected question has applicable evidence or a next action, and scope and permissions are explicit. A follow-up changes only the dimensions it addresses; carry forward the other accepted decisions.
 
 ## 2. Respect the evidence phase
 
@@ -43,7 +45,11 @@ Separate what happened from why it matters. Establish the expected outcome from 
 
 Trace the affected user path far enough to establish impact. Distinguish observed obstruction or misleading output from possible consequences. A workaround may reduce severity while leaving the original path defective. An isolated component example demonstrates that environment; verify the consumer path when the classification depends on integration. Source anomalies can explain behavior but do not supply missing user impact by themselves.
 
-Use the smallest discriminating check for each material uncertainty. Before requesting it, state which possible results would change the judgment. Investigate root cause only as far as correctness, remedy, ownership, or scope requires. Repeatedly reproducing an established fact adds no decision evidence.
+Start with the supplied evidence. On each result or handoff, locate the evidence behind the claim and match it to the original question, tested conditions and relevant run or artifact identity. Record what it establishes and which gap remains before revising the judgment. A claim about one execution needs artifacts from that execution; evidence from separate runs can support an explicitly labeled inference. A neighboring symptom gets its own question or relationship, leaving the original acceptance boundary intact.
+
+Update the worklist from that result. Reuse evidence that answers the same question under applicable conditions. For a remaining gap, state which possible results would change the judgment, then take the smallest available, authorized discriminating action. Investigate root cause only as far as correctness, remedy, ownership, or scope requires. Return the result through the evidence intake above before choosing another action.
+
+Keep genuinely unavailable evidence with its exact limitation and reopening condition. A queued executable check stays in the worklist until performed or interrupted; it does not become a completed assessment merely by appearing in a recommendation.
 
 Express the supported disposition in ordinary language, optionally using these labels:
 
@@ -99,9 +105,11 @@ Proceed when the recommendation follows from the assessed goal and evidence, wit
 
 ## 5. Preserve the judgment across follow-ups
 
-When persistent capture applies, preserve the assessment in the authorized primary Working Record: decisive evidence, relationships, selected goal and scope, preserved behavior, acceptance conditions, unresolved user decisions and supported next action. Reuse agreed discussion or link an existing spec; 'worth doing' alone does not establish readiness to implement. The coordinator owns the save and index update under the contract's [classification and overview rules](references/working-records.md#classify-work-and-maintain-the-overviews). For a batch, account for every in-scope problem, including unresolved checks and duplicate links, and complete the primary record and affected root/project overview checkpoint together. Complete the contract's [saved-state check](references/working-records.md#save-and-commit-a-checkpoint) before reporting the records ready for another agent.
+Reconcile outcomes against the original questions and current worklist: evidence-supported judgments, judgments bounded by genuine limitations, and work interrupted before its checks. For repair scope or grouping, include the [affected-scope check](#establish-the-affected-scope). Worker agreement and a full set of status labels do not establish completion.
 
-Return the scenario account, the finding's disposition, its decisive evidence and expectation basis, the response recommendation and rationale, any assessed priority and its basis, and any remaining dependency. Scale the report to the finding rather than requiring a fixed template. The coordinator reconciles the results into the consuming task's final report; it checks the evidence and unresolved conditions rather than treating worker agreement as proof.
+When persistent capture applies, the coordinator carries these outcomes through the [save checkpoint](references/working-records.md#save-and-commit-a-checkpoint): primary assessments first, affected overview fields from those saved assessments, then coverage of the actual changed files. Preserve decisive evidence, relationships, accepted goal and scope, acceptance conditions, user decisions and next action; link existing discussion or specs. Readiness to discuss a finding and readiness to implement it remain separate.
+
+Build the return from that reconciled state: scenario, disposition and expectation basis, decisive evidence, response rationale, assessed priority and remaining dependency. Account for every original in-scope question, including duplicate links and bounded unresolved outcomes. Report the actual saved/committed state separately from the assessment. The coordinator owns the consuming task's final synthesis.
 
 On follow-up, retain the version, scenario, response goal, and previous reasons, including unresolved evidence-backed objections. Identify whether the update concerns the assessment's basis or the owner's handling decision.
 
@@ -111,4 +119,4 @@ For an owner's choice of scope or timing, record the selected work-item label or
 
 A renewed request for objections invites examination of the same proposition, not an automatic verdict reset. If an objection concerns a different goal, distinguish that question and preserve the earlier result. When accepted facts leave another value trade-off, explain the choice and who bears its cost.
 
-Finish when permitted decisive checks and concrete counterevidence leads for the requested judgment are resolved. For a repair-scope or grouping recommendation, also complete the [affected-scope check](#establish-the-affected-scope). For pending gates, missing access, queued work, or unresolved user-owned requirements, report what is established, the exact pending work, and the resumption condition. Continue unaffected work. Assessment completion does not authorize implementation or external publication.
+Finish when each requested question has a supported judgment or genuine limitation, no authorized decisive action remains available, and any required saved-state check covers the affected files. An interruption returns the completed portion and exact remaining work. Assessment completion does not authorize implementation or external publication.

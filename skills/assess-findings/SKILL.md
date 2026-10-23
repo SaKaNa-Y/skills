@@ -54,11 +54,19 @@ Express the supported disposition in ordinary language, optionally using these l
 
 Proceed when the classification has a traceable basis or an exact unresolved dependency. Keep evidence about behavior, cause, and impact distinct.
 
+### Establish the affected scope
+
+Before recommending repair scope or grouping, distinguish evidence that the problem exists from evidence about where it applies. Start from the affected contract or mechanism. Derive the relevant entry points, consumers, representations and outputs, then inspect those supported by that connection. Follow references and call paths as well as matching text. For documentation, this can include public type comments and generated references. Local output establishes only that artifact, not the contents of a published release.
+
+Keep a concise coverage account with evidence locations: what was checked, what was excluded and why, and what remains unknown. Reuse existing coverage for the same version and question. Check concrete leads until each applicable surface is accounted for within the proposed scope. Similar names or nearby directories alone do not justify expanding the investigation. Respect the consuming task's source and history gates throughout.
+
+An inaccessible or untested surface remains unknown. If it can change ownership, remedy or grouping, keep that decision pending with the next check and its reopening condition. Otherwise give the bounded recommendation and its limits. Scope is ready when relevant surfaces and material leads are resolved or excluded with evidence. A successful reproduction or an empty text search alone does not establish complete coverage.
+
 ### Evaluate an opportunity and related observations
 
 For an idea, evaluate its concrete user situation, incremental value over the closest working alternative, plausible implementation evidence and meaningful costs. Separate observed demand from hypothesized benefit. Reuse Explore's research and prior-work results; request only decision-changing gaps. Explore owns discovery and user discussion; Assess owns the resulting judgment, not a second discovery campaign. An opportunity need not establish a defect or necessity to be worthwhile.
 
-Compare newly accumulated observations with relevant records before choosing repair units. Distinguish one Problem Identity, independent problems, and distinct problems with possible causal, blocking or masking relationships. Record each relationship's evidence and uncertainty. A common component or suspected cause does not merge acceptance boundaries. An individual finding with sufficient evidence need not wait for a batch.
+Compare observations from the scope check with relevant records before choosing repair units. Distinguish one Problem Identity, independent problems, and distinct problems with possible causal, blocking or masking relationships. Record each relationship's evidence and uncertainty. A common component or suspected cause does not merge acceptance boundaries. An individual finding with sufficient evidence need not wait for a batch.
 
 When a relationship could change scope, ownership or remedy, request the smallest check that separates the competing explanations through Investigate. Return confirmed and rejected relationships to the coordinator, revise only affected judgments, and notify affected usage or implementation owners. If one symptom disappears while another remains, retain the latter's acceptance boundary rather than declaring the whole group resolved.
 
@@ -91,10 +99,7 @@ Proceed when the recommendation follows from the assessed goal and evidence, wit
 
 ## 5. Preserve the judgment across follow-ups
 
-When persistent capture applies, preserve the assessment in the authorized primary Working Record: decisive evidence, relationships, selected goal and scope, preserved behavior, acceptance conditions, unresolved user decisions and supported next action. Reuse agreed discussion or link an existing spec; 'worth doing' alone does not establish readiness to implement. The coordinator owns the save and index update under the working-record contract. For a batch, account for every in-scope problem, including unresolved checks and duplicate links, and complete the primary record and affected root/project overview checkpoint together. Apply the contract's [handoff-quality check](references/working-records.md#check-handoff-quality) before reporting the records ready for another agent.
-
-When saving or updating records, apply the contract's [classification and overview rules](references/working-records.md#classify-work-and-maintain-the-overviews). Classify by the problem or intended outcome, independently of the invoking skill and handling status. Keep detailed item tables in project overviews and maintain the root project summary at the same checkpoint.
-
+When persistent capture applies, preserve the assessment in the authorized primary Working Record: decisive evidence, relationships, selected goal and scope, preserved behavior, acceptance conditions, unresolved user decisions and supported next action. Reuse agreed discussion or link an existing spec; 'worth doing' alone does not establish readiness to implement. The coordinator owns the save and index update under the contract's [classification and overview rules](references/working-records.md#classify-work-and-maintain-the-overviews). For a batch, account for every in-scope problem, including unresolved checks and duplicate links, and complete the primary record and affected root/project overview checkpoint together. Complete the contract's [saved-state check](references/working-records.md#save-and-commit-a-checkpoint) before reporting the records ready for another agent.
 
 Return the scenario account, the finding's disposition, its decisive evidence and expectation basis, the response recommendation and rationale, any assessed priority and its basis, and any remaining dependency. Scale the report to the finding rather than requiring a fixed template. The coordinator reconciles the results into the consuming task's final report; it checks the evidence and unresolved conditions rather than treating worker agreement as proof.
 
@@ -106,4 +111,4 @@ For an owner's choice of scope or timing, record the selected work-item label or
 
 A renewed request for objections invites examination of the same proposition, not an automatic verdict reset. If an objection concerns a different goal, distinguish that question and preserve the earlier result. When accepted facts leave another value trade-off, explain the choice and who bears its cost.
 
-Finish when permitted decisive checks and concrete counterevidence leads have been resolved and no specific remaining check could materially change the recommendation. For pending gates, missing access, queued work, or unresolved user-owned requirements, report what is established, the exact pending work, and the resumption condition. Continue unaffected work. Assessment completion does not authorize implementation or external publication.
+Finish when permitted decisive checks and concrete counterevidence leads for the requested judgment are resolved. For a repair-scope or grouping recommendation, also complete the [affected-scope check](#establish-the-affected-scope). For pending gates, missing access, queued work, or unresolved user-owned requirements, report what is established, the exact pending work, and the resumption condition. Continue unaffected work. Assessment completion does not authorize implementation or external publication.

@@ -6,6 +6,12 @@
       "status": "active",
       "previous_names": [],
       "successors": []
+    },
+    {
+      "name": "assess-findings",
+      "status": "active",
+      "previous_names": [],
+      "successors": []
     }
   ],
   "records": [
@@ -25,6 +31,15 @@
       "validation": "supported",
       "limitations": [
         "Public summary only. Source commit and parent preserve the code delta; historical runtime replay is not asserted. Behavioral improvement is not established."
+      ]
+    },
+    {
+      "path": "skills/assess-findings/025-scope-and-record-quality/record.md",
+      "status": "completed",
+      "adoption": "applied",
+      "validation": "supported",
+      "limitations": [
+        "Public summary only. Source commit 6afe7270f54cc5ec25cf60d1c22183f169a80a63 and its parent preserve the delta. Earlier synthetic comparison supports record outcomes; scope-discovery improvement is unproven. Final wording received instruction review, not new behavioral trials."
       ]
     }
   ],

@@ -7,3 +7,5 @@ See the [history policy](../agents/evolution-history.md) for selection and reten
 ## Selected history
 
 - [Evolve Skills](skills/evolve-skills/index.md): proactive research and record organization.
+
+- [Assess Findings](skills/assess-findings/index.md): affected scope and saved record checks.

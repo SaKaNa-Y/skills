@@ -27,6 +27,8 @@ A packet may initially lack some of these facts. Preserve the gaps instead of fi
 
 For a batch, resumed work, or several evidence handoffs, turn the original questions and accepted scope into a compact worklist before selecting checks. For each identity, link its original scenario and acceptance boundary, applicable evidence, decision-changing gap, and next executable action or actual limitation. Reuse record fields and adequate prior evidence. A straightforward single finding can keep this account inline. The worklist guides this task; primary records remain authoritative. At interruption, retain it with the existing checkpoint and reconcile it with current records on resumption. A correction may change the question or identity; preserve the mapping and reason.
 
+When comparing an implementation with earlier ideas, proposals or requirements, use [scope comparison](references/scope-comparison.md) to qualify the worklist before selecting checks and to derive feedback from the resulting coverage. Follow the active evidence gates when retrieving the comparison sources.
+
 Proceed when each selected question has applicable evidence or a next action, and scope and permissions are explicit. A follow-up changes only the dimensions it addresses; carry forward the other accepted decisions.
 
 ## 2. Respect the evidence phase

@@ -9,3 +9,5 @@ These selected summaries retain their local sequence numbers. Separate installat
 - [026: Assessment actions and saved record coverage](026-assessment-reliability/record.md)
 
 - [027: Shared usage coverage records](027-versioned-usage-coverage/record.md)
+
+- [028: Comparison scope and engineering record updates](028-comparison-and-record-updates/record.md)

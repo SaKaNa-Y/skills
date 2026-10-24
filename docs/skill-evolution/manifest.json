@@ -85,6 +85,15 @@
       "limitations": [
         "Bounded local CLI execution; no general reliability gain or concurrent-writer execution claim. Exact private recovery evidence is retained locally. Baseline is Git commit 1e33abceb2880ab1ff904b66d3cbd67156d263d1; the commit introducing this entry preserves the source delta. Final writing refinements received static review and structural checks; execution trials tested the preceding candidate."
       ]
+    },
+    {
+      "path": "skills/assess-findings/028-comparison-and-record-updates/record.md",
+      "status": "completed",
+      "adoption": "applied",
+      "validation": "supported",
+      "limitations": [
+        "Scope-comparison benefit is codification; paired behavioral results tied. Final instructions were tested in continuations and a fresh lifecycle control, not a complete fresh paired trial. Baseline commit 24b010d522559204a2a279e9897ddc43c89d5709 and the commit introducing this entry preserve the source delta; exact private recovery remains local."
+      ]
     }
   ],
   "files": [],

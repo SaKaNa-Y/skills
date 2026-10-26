@@ -74,7 +74,17 @@ For example, A verifies ESM and CJS; B verifies only ESM; C's source comparison 
 
 While an independent history gate is closed, save only the unique provisional batch and its evidence; defer result-bearing index reads, merges and navigation updates until the gate opens. Mark that reconciliation gate-pending, not a failed write.
 
-Initialize the active batch after target/scope selection; save each completed group or material observation, pause and final result through the [save checkpoint](working-records.md#save-and-commit-a-checkpoint). Match index claims to saved traces and actual execution identity, follow the batch/evidence links, and check preserved modes, history and pending work. An unchanged project summary or root problem count needs no artificial update. A schema or link check alone does not establish that the recorded usage occurred.
+Initialize the active batch after target/scope selection; save each completed group or material observation, pause and final result through the [save checkpoint](working-records.md#save-and-commit-a-checkpoint).
+
+Once the history gate permits index reconciliation, verify the saved checkpoint from the reader's entrypoint:
+
+1. Open the project README. Put its coverage entry beside equivalent project-navigation links, then follow README → coverage index → batch evidence.
+2. Match every outcome or mode in the current batch, including partial and blocked work, to an independently readable index entry. Check its result and execution identity against the saved trace using the [identity and minimum content](#identity-and-minimum-content) contract. Confirm that the entry distinguishes actual execution, applicability and remaining work. Compact groups pass only when each boundary remains distinguishable.
+3. Follow the retained historical batch links and check that the merge preserved unaffected modes and their original observations. Known older batches may remain dated navigation links; import only the history relevant to the current selection.
+
+For example, “library consumption passed” is insufficient when ESM passed and CJS was blocked. The index must expose both modes and lead to their respective evidence and next actions, even if they share a row.
+
+Accept index reconciliation only when all three checks pass. Otherwise repair the mismatch or record the exact pending integration and resumption condition. Preserve unchanged overview entries and problem counts. In the audit handoff, link the project coverage index and current batch. These checks establish usable navigation and correspondence to saved evidence; they do not independently prove that usage occurred.
 
 Check persistence separately from usage and assessment. A pause stops further product use; retain returned evidence and the next step. Missing authority or destination, failed writes, or unsafe index integration leaves an exact pending update, reason and resumption condition. Preserve necessary evidence within existing authority before cleanup and report retained resources. A successful journey remains observed even when its save is blocked, but the record loop remains incomplete.
 

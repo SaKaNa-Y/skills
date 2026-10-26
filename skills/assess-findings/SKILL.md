@@ -68,6 +68,8 @@ Before recommending repair scope or grouping, distinguish evidence that the prob
 
 Keep a concise coverage account with evidence locations: what was checked, what was excluded and why, and what remains unknown. Reuse existing coverage for the same version and question. Check concrete leads until each applicable surface is accounted for within the proposed scope. Similar names or nearby directories alone do not justify expanding the investigation. Respect the consuming task's source and history gates throughout.
 
+For an actual repair proposal, record how it addresses each affected behavior or representation: a specific correction, evidence that it is already correct, or an unresolved gap. Check both directions: every required correction maps to a proposed change, and every proposed change serves the agreed outcome, an applicable repository constraint, or an accepted optional improvement. Keep these matches in the existing coverage account and update them when the proposal or evidence changes. A small repair can use a few sentences.
+
 An inaccessible or untested surface remains unknown. If it can change ownership, remedy or grouping, keep that decision pending with the next check and its reopening condition. Otherwise give the bounded recommendation and its limits. Scope is ready when relevant surfaces and material leads are resolved or excluded with evidence. A successful reproduction or an empty text search alone does not establish complete coverage.
 
 ### Evaluate an opportunity and related observations
@@ -112,6 +114,8 @@ Reconcile outcomes against the original questions and current worklist: evidence
 When persistent capture applies, the coordinator carries these outcomes through the [save checkpoint](references/working-records.md#save-and-commit-a-checkpoint): primary assessments first, affected overview fields from those saved assessments, then coverage of the actual changed files. Preserve decisive evidence, relationships, accepted goal and scope, acceptance conditions, user decisions and next action; link existing discussion or specs. Readiness to discuss a finding and readiness to implement it remain separate.
 
 Build the return from that reconciled state: scenario, disposition and expectation basis, decisive evidence, response rationale, assessed priority and remaining dependency. Account for every original in-scope question, including duplicate links and bounded unresolved outcomes. Report the actual saved/committed state separately from the assessment. The coordinator owns the consuming task's final synthesis.
+
+Before returning or shortening a repair assessment, compare the outgoing text with the coverage account. Use the proposal matches when a proposal exists; otherwise use the derived scope and evidence. Include the basis for required corrections, already-correct connected surfaces, material exclusions and remaining checks, either briefly or through precise evidence pointers. Follow those pointers to check that the recipient can recover the scope and its applicability to the assessed version. The return is ready when this basis is recoverable; fill any gaps using the existing account.
 
 On follow-up, retain the version, scenario, response goal, and previous reasons, including unresolved evidence-backed objections. Identify whether the update concerns the assessment's basis or the owner's handling decision.
 

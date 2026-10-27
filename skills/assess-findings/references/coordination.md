@@ -9,7 +9,7 @@ Each assignment states:
 - The question or observable outcome, boundaries and completion or stopping condition.
 - Relevant records, accepted decisions, evidence paths and version/provenance, including what remains unknown.
 - Source/history permissions and allowed actions; writable paths, shared resources and cleanup ownership.
-- Required return: findings or changes, inspectable evidence, limits, last completed action and next step.
+- Required return: findings or changes, inspectable evidence, limits, last completed action and next step. For tracker reconciliation, return the [related-work account](tracker-decisions.md#return-the-decision-basis), including discussion coverage and the basis for the contribution route.
 
 Pass the relevant context and pointers, not the entire archive. Workers request missing context or further investigation through the coordinator rather than spawning overlapping teams. Keep implementation, assessment, tracker reconciliation, code review and runtime verification distinct even when one executor performs several roles. Worker agreement is not evidence.
 

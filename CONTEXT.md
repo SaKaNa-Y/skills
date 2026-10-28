@@ -421,7 +421,7 @@ Concrete problems in existing behavior, including unconfirmed observations, conf
 _Avoid_: Confirmed defect only, source skill, handling status
 
 **Exploration Record Category**:
-Proposed capabilities, workflows or extended uses whose value, scope or design is being considered, including subsequent work on the same opportunity. Its identity is independent of the discovering skill or a decision to implement, defer or close it.
+Proposed capabilities, workflows or extended uses whose value, scope or design is being considered, including subsequent work on the same opportunity. Its identity is independent of the discovering skill or a decision to implement, defer or archive it.
 _Avoid_: Explore-only output, implementation authorization, handling status
 
 **Finding Relationship**:
@@ -437,7 +437,7 @@ A visible statement of responsibility for an active implementation, with enough 
 _Avoid_: Distributed lock, permanent ownership, permission to overwrite
 
 **Archived Working Record**:
-A Working Record that no longer needs active attention but retains its outcome, reason and relevant evidence for later reference or reopening. Archival can reflect resolution, a decision not to proceed or replacement by other work; it does not itself establish that a defect was fixed.
+A Working Record that no longer needs active attention but retains its outcome, reason and relevant evidence for later reference or reopening. Its outcome states whether the accepted problem was resolved and why active follow-up ended. Archival can reflect resolution, an existing alternative, a decision not to proceed, exclusion after assessment or replacement by other work; it does not itself establish that a defect was fixed.
 _Avoid_: Deleted record, merged PR, confirmed resolution
 
 **Explore New Capabilities**:

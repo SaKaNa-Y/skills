@@ -45,8 +45,8 @@ The batch retains:
 | Account | Required information |
 | --- | --- |
 | Identity and scope | Target project; exploration date; relevant source/reference identities and dates; selected scenarios, selection rationale, known exclusions and inherited history gates. Record the actual artifact and execution identity when usage occurred. |
-| Examined leads | Question, evidence inspected or executed, result and its limits. Distinguish documentation, source inference, observed use and community proposals. Preserve successful and failed checks. |
-| Judgment and relationships | What each lead establishes, closest existing alternatives, matched prior work and links to any primary opportunity records. Keep proposed value separate from demonstrated demand. |
+| Examined leads | Question, supporting and contrary evidence inspected or executed, result and its limits. Distinguish documentation, source inference, observed use and community proposals. Preserve successful and failed checks. |
+| Judgment and relationships | What each lead establishes, closest existing alternatives, matched prior work and links to any primary opportunity records. For contributions to matched work, retain demand provenance where recurrence matters, the assessed relationship and uncertainty, and covered versus remaining outcomes of a consolidation recommendation. Keep proposed value separate from demonstrated demand. |
 | Continuation | Progress, remaining meaningful checks, unresolved prerequisites and next actions. Record why discovery continues, enters one opportunity's discussion or stops, and what can justify revisiting it. |
 
 A record needs enough evidence to distinguish “no independent opportunity found here” from “not examined”. Reading documents can support discovery coverage without becoming verified usage. Link existing execution evidence with its original identity rather than copying logs or claiming a new run.
@@ -59,6 +59,7 @@ Execute the shared [save checkpoint](../../assess-findings/references/working-re
 
 - README → exploration index → batch → evidence is navigable, subject to the active history gates.
 - Each selected scenario's progress, judgment, limits and next action match its batch and any linked opportunity record.
+- Material contributions to matched work are reported or explicitly pending, with links to the appropriate primary record when one exists.
 - Earlier batch links, unaffected boundaries, prior decisions and independently owned usage coverage remain intact.
 
 On resumption, recover the saved scope, pending checks and actual history exposure. Use the [discovery decision](../SKILL.md#2-find-and-ground-an-opportunity) to choose the next action, then retain that decision and its evidence in the batch.

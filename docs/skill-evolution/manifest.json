@@ -20,6 +20,10 @@
     {
       "name": "just-use-it",
       "status": "active"
+    },
+    {
+      "name": "explore-new-capabilities",
+      "status": "active"
     }
   ],
   "records": [
@@ -93,6 +97,15 @@
       "validation": "supported",
       "limitations": [
         "Scope-comparison benefit is codification; paired behavioral results tied. Final instructions were tested in continuations and a fresh lifecycle control, not a complete fresh paired trial. Baseline commit 24b010d522559204a2a279e9897ddc43c89d5709 and the commit introducing this entry preserve the source delta; exact private recovery remains local."
+      ]
+    },
+    {
+      "path": "skills/explore-new-capabilities/015-issue-informed-discovery/record.md",
+      "status": "completed",
+      "adoption": "applied",
+      "validation": "supported",
+      "limitations": [
+        "Bounded contribution-handoff gain; two cases tied. General creative quality, repeatability and live product feasibility unproven. Final organizational wording received instruction, reference and recovery checks, not repeated behavioral trials. Source delta is recoverable from the introducing commit and its parent; exact private recovery remains local. Installation unchanged."
       ]
     }
   ],

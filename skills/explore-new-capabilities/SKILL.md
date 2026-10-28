@@ -1,6 +1,6 @@
 ---
 name: explore-new-capabilities
-description: Discover and discuss new capabilities for a project, one evidence-grounded idea at a time, with persistent exploration history.
+description: Discover and discuss new capabilities for a project, one evidence-grounded idea at a time, with resumable exploration coverage and opportunity history.
 disable-model-invocation: true
 ---
 
@@ -14,16 +14,20 @@ This explicitly invoked workflow serves contributors, maintainers, and product d
 
 Read the project's guidance, purpose, and public capabilities. Use the user's direction, role, and available effort when supplied; ask only for missing context that would change the exploration. Establish enough grounding to identify concrete user outcomes without requiring a whole-project audit.
 
-When the user also selects Just Use It, follow its [outcome scope](../just-use-it/SKILL.md#establish-the-outcome-scope) before usage and preserve its source and tracker gates. Otherwise, read relevant source as part of project grounding.
+When the user also selects Just Use It, follow its [outcome scope](../just-use-it/SKILL.md#establish-the-outcome-scope) before usage and preserve its source and tracker gates. Just owns usage completion; Explore owns the discovery decision that follows. Otherwise, read relevant source as part of project grounding.
 
 Use [Assess Findings](../assess-findings/SKILL.md), installed with `investigate-with-evidence`, for common evidence, relationship and action judgment. Read its [working-record contract](../assess-findings/references/working-records.md) on project entry to resolve configured history, reconcile the root overview, project overview and relevant primary records, qualify current evidence, and handle saves, delivery and lifecycle. Reuse configured paths without another question; when unavailable, continue project grounding but defer presenting a new opportunity until its history can be checked and saved. Missing assessment support leaves the judgment pending rather than claimed complete.
+
+Before selecting discovery routes, read [exploration coverage](references/exploration-coverage.md) and recover the project's index and relevant batches under the active history gates. Compare their scenarios, conditions and evidence with the current task. Retain coverage for every exploration batch, including runs with no opportunity or no execution. Explore maintains its own account; a Just usage ledger supplies evidence rather than replacing it.
+
+Select a bounded set of user scenarios and intended outcomes from the user's goal, project capabilities, previous depth and concrete leads. Explain the selection and known exclusions, then initialize the batch. Keep scope proportional to the request rather than using a fixed number of ideas or a whole-project checklist. On continuation, recover pending work before selecting new routes.
 
 When saving or updating records, apply the contract's [classification and overview rules](../assess-findings/references/working-records.md#classify-work-and-maintain-the-overviews). Classify by the problem or intended outcome, independently of the invoking skill and handling status. Keep detailed item tables in project overviews and maintain the root project summary at the same checkpoint.
 
 
 Match ideas by user problem and intended capability. Continue an unfinished match in its existing record. Read relevant completed records for reusable methods, constraints or combinations that could support a different user outcome, retaining attribution and the earlier disposition. Reopen the same concluded opportunity only for material new evidence or an explicit request; otherwise move to another lead. Borrowing a method does not by itself establish a new opportunity: identify the additional user outcome. Repeat this identity check before first presentation. Preserve the existing layout and previously authorized commit scope.
 
-**Ready when:** the project identity and relevant constraints are established, the record location is usable, relevant earlier records have been read, and any supplied idea has been matched to the history branches above.
+**Ready when:** project identity, record authority, history gates and relevant prior work are established; the batch has a bounded discovery scope, selection rationale and pending routes; and any supplied idea has been matched to its history. Record any persistence blocker while continuing independent grounding.
 
 ## 2. Find and ground an opportunity
 
@@ -49,9 +53,11 @@ Supply the existing Assess owner with the following evidence before presenting t
 - **Feasibility:** traceable evidence in the target project's interfaces, data, architecture, or demonstrated behavior supporting a plausible implementation path. Check the assumptions required to transfer an outside example.
 - **Prior work:** whether existing capabilities already satisfy the scenario, and whether exploration records or relevant project issues, PRs, and discussions already cover it. Before checking community work or using it to refine an idea, read [prior work and discussion](references/prior-work.md).
 
-Use the history branches above for local matches. For related community work, retain its status, scope, and reasoning; an unchanged idea already covered there or a scenario satisfied by shipped capabilities sends discovery to another lead. Revisit it when the user asks or material evidence or conditions change, linking the earlier work. If a source cannot be checked, state the uncertainty and avoid claims of novelty.
+Use the history branches above for local matches. For related community work, retain its status, scope, and reasoning; an unchanged idea already covered there or a scenario satisfied by shipped capabilities closes that lead with its evidence and returns discovery to the remaining relevant leads in the selected scope. Revisit it when the user asks or material evidence or conditions change, linking the earlier work. If a source cannot be checked, state the uncertainty and avoid claims of novelty.
 
-**Ready when:** one opportunity has a concrete scenario, a supported plausible path, and an account of prior work and remaining uncertainty. If relevant leads yield no such opportunity, report the examined scope and evidence limits instead of filling the gap with an unsupported idea. Do not keep widening the search merely to produce a result.
+At each material discovery checkpoint, save the examined leads, judgments and next actions through the [exploration checkpoint](references/exploration-coverage.md#save-and-resume). When Just finishes a usage batch, use its evidence and remaining questions to decide the next discovery action. Further usage keeps the established source and tracker exposure.
+
+**Ready when:** one opportunity has a concrete scenario, a supported plausible path, and an account of prior work and remaining uncertainty. Move to its discussion and retain other pending routes. End without an opportunity when no meaningful authorized check remains within the selected scope, or when the user stops or narrows the task. An unavailable prerequisite blocks only the affected routes; continue other feasible in-scope work. Save the examined limits, remaining work and specific stopping reason. A duplicate lead or completed usage batch alone does not settle discovery; a no-opportunity result describes this batch, not an exhausted opportunity space.
 
 ### Delegate a factual question when useful
 
@@ -59,7 +65,7 @@ Use the shared [coordination method](../assess-findings/references/coordination.
 
 ## 3. Present one idea and discuss it
 
-Save the initial record with its assessment or explicit pending state when first presenting the idea. Explain what users could do, why it is worth discussing now, why it appears feasible, and what remains uncertain. Cite the supporting sources and explain why this opportunity was selected. Keep the initial proposal understandable without treating it as a settled specification.
+Save the initial opportunity record with its assessment or explicit pending state when first presenting the idea, and link it from the exploration batch. Explain what users could do, why it is worth discussing now, why it appears feasible, and what remains uncertain. Cite the supporting sources and explain why this opportunity was selected. Keep the initial proposal understandable without treating it as a settled specification.
 
 Invite the user's reaction, then follow the questions it opens. Investigate factual uncertainties yourself; ask the user about goals and trade-offs with concrete alternatives and a recommendation when warranted. Use answers to revise the current idea, narrow or broaden its scope, or discard it. Ask dependent questions after their prerequisites are answered. Respect settled choices unless new evidence changes their basis.
 
@@ -71,7 +77,9 @@ The skill works independently. When the user also invokes a grilling skill, let 
 
 ## 4. Preserve the outcome and return control
 
-Update the opportunity record at meaningful discussion boundaries and before closing. Keep a concise current account plus dated material changes, preserving why earlier judgments changed. Use the shared [handoff-quality check](../assess-findings/references/working-records.md#check-handoff-quality) for continuation of discussion and, when selected and authorized, implementation. Each record should let a later conversation recover:
+At meaningful discussion boundaries and before closing, save the exploration batch and index through the [exploration checkpoint](references/exploration-coverage.md#save-and-resume). A batch with no opportunity retains the examined scope, judgments, evidence, limits and next action described there.
+
+When an opportunity record exists, update it at the same checkpoint. Keep its current account and dated material changes, preserving why earlier judgments changed. Apply the shared [handoff-quality check](../assess-findings/references/working-records.md#check-handoff-quality) so a later conversation can recover:
 
 - The project identity, idea, user scenario, and intended capability.
 - Inspiration and evidence, with source links or code references, checked revisions or dates where useful, and what each source actually establishes.
@@ -79,8 +87,8 @@ Update the opportunity record at meaningful discussion boundaries and before clo
 - Open assumptions, feasibility limits, and results of any disposable checks.
 - The discussion's current state, selected and rejected alternatives with reasons, remaining questions, next action, and conditions for reconsideration.
 
-At these boundaries, reconcile the primary record and affected root/project overview entries through the [working-record checkpoint procedure](../assess-findings/references/working-records.md#save-and-commit-a-checkpoint), then complete authorized local commits. An unfinished discussion remains unfinished; silence does not select a disposition. If saving fails, retain the update in the conversation, report the failure, and resolve persistence before presenting another idea. These records preserve exploration, not formal feature specifications or tracker items; follow the project's conventions when the user later requests those artifacts.
+An unfinished discussion remains unfinished; silence does not select a disposition. Resolve any persistence blocker before presenting another idea. These records preserve exploration, not formal feature specifications or tracker items; follow the project's conventions when the user later requests those artifacts.
 
-Close with the current conclusion, unresolved evidence, record location, and the commit result when committing was authorized. Let the user decide whether to continue this idea, explore another, or stop. Choosing to pursue an idea does not itself start implementation.
+Close with the current conclusion, unresolved evidence, record location, and the commit result when committing was authorized. Let the user decide whether to continue the current discussion or exploration, change direction, or stop. Choosing to pursue an idea does not itself start implementation.
 
-**Complete when:** the primary record and both overview levels are saved and consistent, the handoff supports its stated next use, each authorized commit is verified or reported as pending with its cause, and the user has the current conclusion, unresolved questions, and record location.
+**Complete when:** the exploration batch and index, any opportunity record and affected overviews are saved and consistent; pending work and the stopping or discussion state are recoverable; each authorized commit is verified or reported as pending; and the user has the conclusion, evidence limits and record locations.

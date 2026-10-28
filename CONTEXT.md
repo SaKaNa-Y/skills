@@ -400,6 +400,14 @@ _Avoid_: Feature backlog generation, implementation plan, simultaneous candidate
 A project-specific history of presented Feature Opportunities and their evolving evidence, uncertainties, discussion outcomes, and reasons for reconsideration, kept in a user-designated directory that can be reused across conversations. Its identity follows the user problem and intended capability through continued discussion and reconsideration, without implying that the project's wider community has never proposed the idea.
 _Avoid_: Accepted feature specification, published issue, conversation transcript
 
+**Exploration Coverage**:
+A resumable account of examined user scenarios and intended outcomes, their evidence-backed judgments, remaining boundaries and next actions. It includes investigations that produce no opportunity and remains distinct from actual usage coverage and individual opportunity decisions.
+_Avoid_: Exhausted idea space, usage verification, feature count
+
+**Exploration Batch**:
+One bounded investigation of selected scenarios, retaining its selection rationale, examined leads, evidence, limits and decision to continue, discuss an opportunity or stop. Its completion describes the investigation rather than the absence of further possible opportunities.
+_Avoid_: Opportunity record, full-project audit, quota of ideas
+
 **Working Record**:
 A persistent account of a concrete engineering problem or improvement, including a Feature Opportunity, its evidence, assessment, user decisions and related implementation and verification work. One current primary record follows each problem or opportunity across discovery methods and work stages; supporting audit records retain separate evidence and refer to that account for current decisions. It may preserve an unconfirmed observation and is distinct from general research notes, a published tracker issue or an accepted specification.
 _Avoid_: Confirmed bug, canonical issue, implementation authorization

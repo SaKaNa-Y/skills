@@ -55,7 +55,7 @@ This repository does not publish its own npm package. `npx` runs the general-pur
 | Browse recorded problems, decisions and progress | [`browse-records`](skills/browse-records/SKILL.md) | A read-only view with source links, filters and visible uncertainty; explicit invocation only |
 | Implement an agreed change | [`implement-change`](skills/implement-change/SKILL.md) | Verified work, a Draft PR and source-record updates |
 | Find where an existing project's value could serve more real contexts | [`set-theory-for-projects`](skills/set-theory-for-projects/SKILL.md) | Evidence-backed candidates, rejection reasons, and experiment ladders |
-| Find and discuss new capabilities for a project | [`explore-new-capabilities`](skills/explore-new-capabilities/SKILL.md) | One grounded idea at a time, with feasibility evidence and persistent exploration history |
+| Find and discuss new capabilities for a project | [`explore-new-capabilities`](skills/explore-new-capabilities/SKILL.md) | One grounded idea at a time, with resumable discovery coverage and opportunity history |
 | Decide whether a tool fits a repository need | [`tool-fit-for-projects`](skills/tool-fit-for-projects/SKILL.md) | A comparison against the current baseline and a progressive adoption path |
 | Get started with a library, framework, or developer tool | [`get-up-to-speed`](skills/get-up-to-speed/SKILL.md) | One complete guide with runnable examples and depth matched to your goal |
 | Discover project questions you did not know to ask | [`expand-the-frame`](skills/expand-the-frame/SKILL.md) | Explained perspectives, informed trade-offs, and follow-up questions derived from your answers |
@@ -185,7 +185,7 @@ Install the complete combination for this task:
 npx skills@latest add SaKaNa-Y/skills --skill explore-new-capabilities assess-findings investigate-with-evidence
 ```
 
-`explore-new-capabilities` develops one idea for discussion. `assess-findings` evaluates its value, alternatives and feasibility. `investigate-with-evidence` resolves factual uncertainties that affect that judgment.
+`explore-new-capabilities` records the scenarios and leads it explores, including runs with no new opportunity, and develops one grounded idea at a time for discussion. Its independent coverage index helps later runs resume useful work. `assess-findings` evaluates its value, alternatives and feasibility. `investigate-with-evidence` resolves factual uncertainties that affect that judgment.
 
 Start in the project you want to explore and invoke the primary skill:
 
@@ -339,7 +339,7 @@ Necessary diagnosis remains with the active task. Yak captures a separate observ
 $explore-new-capabilities Find one useful new capability for this project. Reuse my configured history and bring me evidence and trade-offs to discuss.
 ```
 
-Explore owns discovery and the conversation. It can assign one factual research question while Assess maintains the opportunity's value, feasibility, alternatives and related evidence. The same record retains decisions and an eventual implementation agreement; there is no second full evaluation by each skill. Work stops at the user's decision to pursue, defer or dismiss, not at an automatic implementation.
+Explore owns discovery, its coverage records and the conversation. When paired with Just, each keeps its own coverage account and links reusable evidence. Just supplies usage results; Explore decides whether discovery continues or closes. It can assign one factual research question while Assess maintains the opportunity's value, feasibility, alternatives and related evidence. The same record retains decisions and an eventual implementation agreement; there is no second full evaluation by each skill. Work stops at the user's decision to pursue, defer or dismiss, not at an automatic implementation.
 
 ### Reassess accumulated observations
 

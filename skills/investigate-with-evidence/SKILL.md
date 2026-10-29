@@ -32,6 +32,8 @@ Identify the fact to determine, its relevant conditions and version, and what di
 
 For a claim about an existing system, identify the relevant entry point or documented contract. Choose the smallest sufficient check below; trace consumers, implementation, and tests when actual execution paths, ownership, or integration behavior could change the answer. For a proposal or unrealized idea, distinguish requirements and assumptions from demonstrated behavior. Match documentation and source to the version under discussion. Resolve accessible facts yourself; ask the user only for unavailable context or user-owned requirements that change what counts as relevant evidence.
 
+For questions about removed or changed capabilities, read [trace a capability change](references/capability-changes.md). Use that route to establish the old effect and its current equivalent before proposing a migration.
+
 ## Choose a discriminating check
 
 Use the smallest check that can settle the uncertainty: primary documentation, source inspection, an existing test, a minimal reproduction, actual UI use, or a controlled measurement. Neither reading code nor executing it is universally sufficient. Runtime ordering, integration behavior, and performance claims may need execution when source alone leaves a material uncertainty.

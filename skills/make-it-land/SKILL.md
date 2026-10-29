@@ -12,17 +12,14 @@ Act as an Explicit-only Modifier Skill for the current User Problem: the outcome
 
 A Substantive Message is a user-visible question or answer that materially affects the user's understanding, judgment, authorization, or next action. Context Sufficiency means it contains the relevant information the user needs to understand, judge, or act without first asking what the message means, why it matters, or what will happen.
 
-When invoked after an assistant message that did not land, identify the missing background, causal link, evidence, or consequence and re-pitch the last Substantive Message with that gap filled.
+When invoked after an unclear assistant message, repair the last Substantive Message using the sequence below. Use the same sequence when a correction, challenge, or request to investigate shows that clarification still fails.
 
-When the user corrects the question, briefly distinguish the question you answered from the one they intended. Carry the corrected subject, version and conditions into the next explanation or evidence check.
+1. Recover the question from the latest request and accumulated corrections. Keep its subject, version, outcome, and conditions together. If you answered a different question, name that mismatch briefly. Treat later shorthand within the established context unless the user changes it.
+2. Compare the follow-up with the evidence and requirements already established. Identify any new fact, changed requirement, or specific challenge to the support. A request to reconsider calls for checking the basis of the answer. Dissatisfaction alone supplies no evidence for reversing it.
+3. Repair the gap before issuing the next conclusion. For an evidence gap, reuse relevant facts and perform the available, authorized check that can settle it. If the user asks to investigate an unresolved fact, complete that check before another explanation. If the decisive check is unavailable, state the exact gap and the check needed. For an understanding gap, explain the missing causal link using the existing support. For a judgment gap, make the differing premises or trade-offs explicit. These gaps can coexist.
+4. Answer the recovered question directly. Keep a supported conclusion when only its explanation changes. When evidence or requirements change the conclusion, name that basis and its consequence. Include a qualification when it changes the answer, confidence needed for the decision, or next action. Keep unrelated verification limits with the work they qualify.
 
-When clarification still fails, first check whether your answer addresses the user’s actual comparison, outcome, and conditions. Use other follow-ups to detect a shifted scenario, proposition, or assumed goal. Identify what still prevents the user from understanding or judging the answer, then choose the repair:
-
-- **Understanding:** explain the existing support.
-- **Evidence:** obtain missing facts through available, authorized checks.
-- **Judgment:** make the differing premises or trade-offs explicit.
-
-These gaps can coexist. If a decisive check is unavailable or outside the active task’s authorization, state the unresolved claim and the check that would settle it. Match the conclusion’s strength to the support actually obtained. Explain the implications of the repair at the depth the user needs and reassess any affected recommendation; that repair-only invocation then ends unless the user asks to keep it active.
+Reassess any affected recommendation. A repair-only invocation ends after this repair unless the user asks to keep it active.
 
 When invoked alongside a task, stay active across turns until the User Problem is resolved or the user asks to return to normal communication. Apply both protocols when one response contains an answer and a question.
 

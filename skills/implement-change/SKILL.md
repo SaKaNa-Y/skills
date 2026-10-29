@@ -12,6 +12,23 @@ Deliver the selected outcome through code, evidence and a Draft PR, with progres
 
 Use Assess Findings and its Investigate with Evidence dependency for shared records and decision-changing factual gaps. Reuse an existing assessment; implementing an agreed request does not require running discovery first. Read the [working-record contract](../assess-findings/references/working-records.md) when source records or configured history exist and [coordination](../assess-findings/references/coordination.md) before assigning work. If a dependency is unavailable, report the missing method and continue only work whose scope and evidence remain supported; do not claim its checks occurred.
 
+## English output
+
+Before writing or revising English prose, use the installed `simple-english`
+skill. Load it by name, or read its `SKILL.md` and applicable references.
+Reuse instructions already loaded in this context.
+After reading this contract, load the dependency before sending any English
+progress update, draft or final response.
+
+Preserve meaning, uncertainty, requirement strength, domain terms and
+task-required formats when style rules conflict. Keep the requested language.
+Preserve code, identifiers, commands, original quotations and historical evidence.
+
+If required instructions are unavailable, report the gap once and continue
+independent work. Keep affected English output as a draft until the dependency
+is available or the user explicitly authorizes an exception. Do not install
+dependencies automatically or claim that an unchecked draft meets this requirement.
+
 ## 1. Recover the agreement and current work
 
 Read applicable repository instructions, the requested record/issue/spec and relevant decisions. Inspect current code, worktree changes and related PR state. Reuse sufficient prior research, checking its revision and material assumptions. The Implementation Agreement states the selected outcome, scope, preserved behavior, observable acceptance and remaining decisions. A small fix may need only its reproduction, expected result and regression boundary; link a larger spec rather than copying it.

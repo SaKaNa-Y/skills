@@ -9,6 +9,23 @@ Turn an observed finding into a supported judgment and a useful next-action reco
 
 Use [investigate-with-evidence](../investigate-with-evidence/SKILL.md) for factual uncertainties that could change the judgment. Install both skills together. This workflow authorizes analysis and bounded investigation within the consuming task's permissions; repair and publication remain separate actions.
 
+## English output
+
+Before writing or revising English prose, use the installed `simple-english`
+skill. Load it by name, or read its `SKILL.md` and applicable references.
+Reuse instructions already loaded in this context.
+After reading this contract, load the dependency before sending any English
+progress update, draft or final response.
+
+Preserve meaning, uncertainty, requirement strength, domain terms and
+task-required formats when style rules conflict. Keep the requested language.
+Preserve code, identifiers, commands, original quotations and historical evidence.
+
+If required instructions are unavailable, report the gap once and continue
+independent work. Keep affected English output as a draft until the dependency
+is available or the user explicitly authorizes an exception. Do not install
+dependencies automatically or claim that an unchecked draft meets this requirement.
+
 ## 1. Establish the assessment and its owner
 
 Keep one accountable assessment owner for a bounded set of related findings or opportunities. The coordinator may assess directly or delegate under [coordination](references/coordination.md); reuse that owner and existing judgments across Just, Yak and Explore. Investigations return through the coordinator rather than recursively creating teams. Missing investigation support leaves only the dependent judgment pending.

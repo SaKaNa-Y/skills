@@ -11,6 +11,23 @@ Act as a Modifier Skill for the current User Problem: the outcome and boundaries
 
 Optimize Decision Load — the user's effort and synchronous interruption — rather than question count or model reasoning time. Use no numeric question budget.
 
+## English output
+
+Before writing or revising English prose, use the installed `simple-english`
+skill. Load it by name, or read its `SKILL.md` and applicable references.
+Reuse instructions already loaded in this context.
+After reading this contract, load the dependency before sending any English
+progress update, draft or final response.
+
+Preserve meaning, uncertainty, requirement strength, domain terms and
+task-required formats when style rules conflict. Keep the requested language.
+Preserve code, identifiers, commands, original quotations and historical evidence.
+
+If required instructions are unavailable, report the gap once and continue
+independent work. Keep affected English output as a draft until the dependency
+is available or the user explicitly authorizes an exception. Do not install
+dependencies automatically or claim that an unchecked draft meets this requirement.
+
 ## Route Before Asking
 
 Before sending a question, route every candidate on the current frontier. The Decision Boundary has precedence: an unresolved user-owned choice may enter DEFER until its decision point, but convenience or convention cannot turn it into FIND, DROP, or DEFAULT.

@@ -11,6 +11,23 @@ Start with the engineering task, whether selected by the model or the user. A la
 
 Use [Assess Findings](../assess-findings/SKILL.md), installed with `investigate-with-evidence`, for qualification, relationships and recommendations. Reuse existing assessments from Just or Explore. A missing dependency leaves the judgment pending while feasible main work continues.
 
+## English output
+
+Before writing or revising English prose, use the installed `simple-english`
+skill. Load it by name, or read its `SKILL.md` and applicable references.
+Reuse instructions already loaded in this context.
+After reading this contract, load the dependency before sending any English
+progress update, draft or final response.
+
+Preserve meaning, uncertainty, requirement strength, domain terms and
+task-required formats when style rules conflict. Keep the requested language.
+Preserve code, identifiers, commands, original quotations and historical evidence.
+
+If required instructions are unavailable, report the gap once and continue
+independent work. Keep affected English output as a draft until the dependency
+is available or the user explicitly authorizes an exception. Do not install
+dependencies automatically or claim that an unchecked draft meets this requirement.
+
 ## 1. Establish capture and guard the next branch
 
 Read the [working-record contract](../assess-findings/references/working-records.md) to resolve the user-selected repository, project identity, save/commit authority and existing record layout. Reuse configuration; if the destination is missing, ask once while continuing the main task. Preserve unsaved observations with that blocker until it is resolved. Read prior findings only when the active task's history gates permit it. Setup is optional and is not invoked automatically.

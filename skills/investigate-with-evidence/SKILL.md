@@ -9,6 +9,23 @@ Resolve the factual uncertainty that could change the current judgment. This is 
 
 Return evidence to the consuming task. General factual inquiries can finish in the conversation. Before creating a persistent Working Record, apply [record eligibility](../assess-findings/references/working-records.md#establish-record-eligibility); using this investigation method does not itself start a recording workflow.
 
+## English output
+
+Before writing or revising English prose, use the installed `simple-english`
+skill. Load it by name, or read its `SKILL.md` and applicable references.
+Reuse instructions already loaded in this context.
+After reading this contract, load the dependency before sending any English
+progress update, draft or final response.
+
+Preserve meaning, uncertainty, requirement strength, domain terms and
+task-required formats when style rules conflict. Keep the requested language.
+Preserve code, identifiers, commands, original quotations and historical evidence.
+
+If required instructions are unavailable, report the gap once and continue
+independent work. Keep affected English output as a draft until the dependency
+is available or the user explicitly authorizes an exception. Do not install
+dependencies automatically or claim that an unchecked draft meets this requirement.
+
 ## Establish the question
 
 Identify the fact to determine, its relevant conditions and version, and what different answers would change. Reuse evidence already obtained when its source, conditions, and freshness still fit. For inherited Working Records, use their [identity and freshness rules](../assess-findings/references/working-records.md#qualify-evidence-on-entry), carrying unresolved source correspondence and relationships into the answer. An adjacent issue becomes a separate direction for the consuming task rather than silently replacing the question.

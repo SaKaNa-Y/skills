@@ -12,6 +12,23 @@ This is an explicitly invoked, standalone skill. It works well alongside a separ
 
 For a requested rollback of a recorded evolution, start from that iteration and follow [history and recovery](references/history.md). Its existing evidence supports the reversal; a new improvement proposal is unnecessary.
 
+## English output
+
+Before writing or revising English prose, use the installed `simple-english`
+skill. Load it by name, or read its `SKILL.md` and applicable references.
+Reuse instructions already loaded in this context.
+After reading this contract, load the dependency before sending any English
+progress update, draft or final response.
+
+Preserve meaning, uncertainty, requirement strength, domain terms and
+task-required formats when style rules conflict. Keep the requested language.
+Preserve code, identifiers, commands, original quotations and historical evidence.
+
+If required instructions are unavailable, report the gap once and continue
+independent work. Keep affected English output as a draft until the dependency
+is available or the user explicitly authorizes an exception. Do not install
+dependencies automatically or claim that an unchecked draft meets this requirement.
+
 ## 1. Establish the targets and their purposes
 
 Establish target scope and allowed evidence separately. Named skills delimit the targets; a named repository or collection delimits where to screen. An explicit evidence restriction applies within that target set. For example, a repository review limited to actual use includes only its skills with observed method execution in the selected history. Without a specified target scope, start with skills actually used in the selected conversation. Preserve these boundaries in the scope record across follow-ups. Match eligible evidence to each target's purpose before deeper assessment; keep contextual skills outside the target set. Present any required expansion of targets or evidence for selection before reviewing that branch.

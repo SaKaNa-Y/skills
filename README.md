@@ -16,6 +16,16 @@ Install from this GitHub repository:
 npx skills@latest add SaKaNa-Y/skills
 ```
 
+Every skill uses the external [simple-english skill](https://github.com/AminBlg/SimpleEnglish) for new or revised English prose. Install it for the same agents and scope as this collection:
+
+```bash
+npx skills@latest add AminBlg/SimpleEnglish --skill simple-english
+```
+
+This dependency also applies when you install a single skill. It is installed separately; the workflows do not install it at runtime. Each skill loads it directly, so setup is not a prerequisite. If required instructions are unavailable, affected English output remains a draft while independent work continues. An explicit user exception applies only to its stated scope.
+
+Meaning, uncertainty, requirement strength, domain terms and task-required formats take priority over style rules. The requirement covers English replies, records, documentation, issue and PR descriptions, commit messages and natural-language code explanations. It preserves the requested language, code, commands, quotations and historical evidence. Setup can configure the same policy for ordinary tasks through agent instruction entrypoints. See [the shared-output decision](docs/adr/0012-share-english-output-requirements.md).
+
 The interactive installer discovers the available skills and lets you choose which ones and which detected agents to use. Installation is project-scoped by default. Select `investigate-with-evidence` alongside `expand-the-frame` or `challenge-the-claim`: both entry points use it for factual investigation. Select `assess-findings` and `investigate-with-evidence` alongside `just-use-it`, `yak-shaving-triage`, `explore-new-capabilities` or `implement-change` for shared assessment, investigation and record methods. Setup also needs these installed when configuring working records. These declared dependencies must be installed separately; the workflows do not install them at runtime.
 
 Preview the available skills without installing anything:

@@ -11,6 +11,23 @@ Run a bounded, read-only discovery around one **Anchor Project**. Look for a sta
 
 The user owns the Expansion Aim and every later scope change. The agent owns the search: user-supplied projects are useful seeds, never a prerequisite or a limit on discovery. Stop at a conversational Discovery Report and Exploration Checkpoint. Implementation, prototyping, integration, and changes to other projects begin only after the user explicitly makes one candidate a new or revised User Problem.
 
+## English output
+
+Before writing or revising English prose, use the installed `simple-english`
+skill. Load it by name, or read its `SKILL.md` and applicable references.
+Reuse instructions already loaded in this context.
+After reading this contract, load the dependency before sending any English
+progress update, draft or final response.
+
+Preserve meaning, uncertainty, requirement strength, domain terms and
+task-required formats when style rules conflict. Keep the requested language.
+Preserve code, identifiers, commands, original quotations and historical evidence.
+
+If required instructions are unavailable, report the gap once and continue
+independent work. Keep affected English output as a draft until the dependency
+is available or the user explicitly authorizes an exception. Do not install
+dependencies automatically or claim that an unchecked draft meets this requirement.
+
 ## 1. Establish the Anchor
 
 Identify the Anchor Project from the user's request or the active workspace. Establish an **Expansion Aim**: one sentence naming which existing value should become useful in more concrete contexts. Ask one focused question when that value choice is missing or genuinely ambiguous; investigate factual gaps directly.

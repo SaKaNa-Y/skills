@@ -8,6 +8,23 @@ disable-model-invocation: true
 
 Show a read-only view of the configured current Working Records when the user explicitly invokes this viewer. A general status question or another workflow finishing does not activate it. The records remain authoritative; this view helps the user locate and understand them without reassessing or maintaining them.
 
+## English output
+
+Before writing or revising English prose, use the installed `simple-english`
+skill. Load it by name, or read its `SKILL.md` and applicable references.
+Reuse instructions already loaded in this context.
+After reading this contract, load the dependency before sending any English
+progress update, draft or final response.
+
+Preserve meaning, uncertainty, requirement strength, domain terms and
+task-required formats when style rules conflict. Keep the requested language.
+Preserve code, identifiers, commands, original quotations and historical evidence.
+
+If required instructions are unavailable, report the gap once and continue
+independent work. Keep affected English output as a draft until the dependency
+is available or the user explicitly authorizes an exception. Do not install
+dependencies automatically or claim that an unchecked draft meets this requirement.
+
 ## Resolve the view
 
 Use the current explicit instruction, applicable project guidance, then global configuration to locate the records root. Reuse a known location. Follow a configured migration map to current records; retained historical stores are supporting history. Resolve the project by repository identity or another unambiguous identifier, rather than its folder name alone. If the root is unknown or inaccessible, state that limit and ask for the missing location or access; do not create a replacement store.

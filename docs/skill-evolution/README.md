@@ -15,3 +15,5 @@ See the [history policy](../agents/evolution-history.md) for selection and reten
 - [Just Use It](skills/just-use-it/index.md): version-bound coverage and continuation.
 
 - [Explore New Capabilities](skills/explore-new-capabilities/index.md): feedback discovery and useful contributions to existing work.
+
+- [Shared English output](discussions/030-plain-english-output/record.md): common external writing dependency, preserved semantics and setup configuration.

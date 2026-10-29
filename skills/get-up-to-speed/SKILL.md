@@ -10,6 +10,23 @@ Deliver one **Quickstart Guide** with accompanying runnable examples in an indep
 
 Complete the agreed scope in one delivery. Document sections organize the reading; they are not separate teaching sessions awaiting permission to continue. Follow-up conversation clarifies or extends the guide. Learner exercises, assessments, and learning records are not part of this workflow.
 
+## English output
+
+Before writing or revising English prose, use the installed `simple-english`
+skill. Load it by name, or read its `SKILL.md` and applicable references.
+Reuse instructions already loaded in this context.
+After reading this contract, load the dependency before sending any English
+progress update, draft or final response.
+
+Preserve meaning, uncertainty, requirement strength, domain terms and
+task-required formats when style rules conflict. Keep the requested language.
+Preserve code, identifiers, commands, original quotations and historical evidence.
+
+If required instructions are unavailable, report the gap once and continue
+independent work. Keep affected English output as a draft until the dependency
+is available or the user explicitly authorizes an exception. Do not install
+dependencies automatically or claim that an unchecked draft meets this requirement.
+
 ## 1. Establish the Learning Context
 
 Build on the learner's existing language foundations. Programming languages taught from scratch, systematic foundational courses, and long-term study plans fall outside a Library Quickstart. Explain that mismatch before preparing material or creating a workspace, and let the learner choose another direction or narrow the request.

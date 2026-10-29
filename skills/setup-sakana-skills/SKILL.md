@@ -1,6 +1,6 @@
 ---
 name: setup-sakana-skills
-description: Configure global defaults and project conventions for working records, issue tracking and agent instruction entrypoints.
+description: Configure global defaults and project conventions for English output, working records, issue tracking and agent instruction entrypoints.
 disable-model-invocation: true
 ---
 
@@ -8,9 +8,26 @@ disable-model-invocation: true
 
 Prepare conventions that installed consumers can read directly. Run only when the user invokes this skill. Reuse existing guidance; sufficient configuration works without setup. Setup owns configuration, not runtime scheduling, skill installation or record migration.
 
+## English output
+
+Before writing or revising English prose, use the installed `simple-english`
+skill. Load it by name, or read its `SKILL.md` and applicable references.
+Reuse instructions already loaded in this context.
+After reading this contract, load the dependency before sending any English
+progress update, draft or final response.
+
+Preserve meaning, uncertainty, requirement strength, domain terms and
+task-required formats when style rules conflict. Keep the requested language.
+Preserve code, identifiers, commands, original quotations and historical evidence.
+
+If required instructions are unavailable, report the gap once and continue
+independent work. Keep affected English output as a draft until the dependency
+is available or the user explicitly authorizes an exception. Do not install
+dependencies automatically or claim that an unchecked draft meets this requirement.
+
 ## 1. Inspect effective guidance
 
-Read applicable user-level and project `AGENTS.md`, `CLAUDE.md` and their pointers, including `docs/agents/` when present. Verify the selected clients' actual instruction locations rather than inventing a native configuration key. Inspect repository identity and installed consumers' requirements. Distinguish working records from canonical issues, evaluation fixtures and private evolution history.
+Read applicable user-level and project `AGENTS.md`, `CLAUDE.md` and their pointers, including `docs/agents/` when present. Verify the selected clients' actual instruction locations rather than inventing a native configuration key. Inspect repository identity and installed consumers' requirements. Distinguish working records from canonical issues, evaluation fixtures and private evolution history. For English output, inspect the installed `simple-english` skill and any existing writing policy. Verify that each selected client can read the dependency and required references. A readable skill file works without a dedicated invocation tool.
 
 Resolve settings from the current explicit instruction, then project overrides, then global defaults. Record the source of each effective value. Existing user-selected record locations and commit permissions remain valid within their stated scope. Detect conflicting guidance, duplicate pointers and shared or symlinked files before editing.
 
@@ -21,6 +38,7 @@ Resolve settings from the current explicit instruction, then project overrides, 
 Carry forward decisions already made. Configure only supported consumers and the requested scope:
 
 - **Scope and clients:** global defaults, project overrides or both; Claude Code, Codex or both. Show how a project inherits or overrides values. Project tracker identity stays project-specific even when general conventions are inherited.
+- **English output:** use the collection-wide writing requirement. Identify the installed dependency, shared policy location and selected client entrypoints. Read the [English output guidance](references/english-output.md). Record missing access separately from configuration choices.
 - **Working records:** exact root, verified project/upstream/fork identity, existing index and individual-record layout, and useful author identities or explicit provenance for locating the user's PRs. Use one common format for observations and opportunities; reuse existing history without moving it.
 - **Record authority:** which kinds permit ordinary saves and substantive updates; separately, whether each new record and substantive update should receive a local commit. This policy may cover observations, opportunities, assessments and implementation progress when the user selects it. Amendments and pushes remain separate instructions. Do not infer broader permission from an Explore-only rule.
 - **Canonical tracker:** reuse established Tracker Guidance. When absent and needed, propose GitHub Issues for a verified GitHub project or a user-selected local Markdown directory. Preserve another established tracker. Confirm its exact destination and tool; supplemental remote evidence does not create a second canonical destination.
@@ -31,17 +49,17 @@ Read the [working-record guidance template](references/working-records.md) when 
 
 ## 3. Show the concrete configuration
 
-Keep one authoritative document per guidance topic. Reuse existing locations; for new project guidance, `docs/agents/working-records.md` and `docs/agents/issue-tracker.md` are suitable. For global defaults, propose an exact user-level document and pointer reachable from the selected client's verified global instructions. Global configuration here is agent-readable guidance, not a new application setting.
+Keep one authoritative document per guidance topic. Reuse existing locations; for new project guidance, `docs/agents/english-output.md`, `docs/agents/working-records.md` and `docs/agents/issue-tracker.md` are suitable. For global defaults, propose an exact user-level document and pointer reachable from the selected client's verified global instructions. Global configuration here is agent-readable guidance, not a new application setting.
 
 Show the exact text, paths, scope and resulting effective values before writing. Agent entrypoints carry concise, conditional pointers. The record pointer must cover ordinary chats: before starting implementation or a PR, read relevant records and claims; after delivery, reconcile links and update progress within configured authority. Preserve independent-audit history gates. Do not copy skill bodies or install runtime routers into entrypoints.
 
-Preserve unrelated domain, label and project rules. Both clients may point to the same guidance. Resolve symlinks once. Include a narrow ignore rule only when the user has selected private local storage; do not assume a records repository is private. Creation of a destination or changes to existing records are separate from documenting its location.
+Preserve unrelated domain, label and project rules. Both clients may point to the same guidance. The English policy applies to ordinary tasks as well as skill use. Each skill also declares the requirement directly, so setup is not a prerequisite. Keep writing rules in the external skill rather than copying them into configuration. Resolve symlinks once. Include a narrow ignore rule only when the user has selected private local storage; do not assume a records repository is private. Creation of a destination or changes to existing records are separate from documenting its location.
 
 **Complete when:** the user has approved the exact configuration changes. Prior approval for that same text and scope remains valid. Approval of the reusable skill's design is not approval to edit a user's global settings.
 
 ## 4. Apply and verify
 
-Apply only approved configuration. Verify pointers from each selected entrypoint, effective precedence, project identity, the distinction between record and tracker authority, and preservation of unrelated content. Confirm any authorized directory creation and report inaccessible paths separately.
+Apply only approved configuration. Verify pointers from each selected entrypoint, effective precedence, project identity, the distinction between record and tracker authority, and preservation of unrelated content. Confirm any authorized directory creation and report inaccessible paths separately. For English output, check dependency access from each client and the complete entrypoint-to-policy path. Report the policy as not ready if required instructions are unavailable. Continue independent configuration work without installing the dependency or claiming readiness.
 
 Re-read the result as a second setup pass: unchanged guidance should require no further edits. Report changed files, global versus project effect, consumers and unverified access. Do not create findings, publish issues, migrate history or schedule synchronization as part of setup.
 

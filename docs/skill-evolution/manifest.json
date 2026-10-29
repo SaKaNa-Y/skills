@@ -107,6 +107,15 @@
       "limitations": [
         "Bounded contribution-handoff gain; two cases tied. General creative quality, repeatability and live product feasibility unproven. Final organizational wording received instruction, reference and recovery checks, not repeated behavioral trials. Source delta is recoverable from the introducing commit and its parent; exact private recovery remains local. Installation unchanged."
       ]
+    },
+    {
+      "path": "discussions/030-plain-english-output/record.md",
+      "status": "completed",
+      "adoption": "applied",
+      "validation": "supported",
+      "limitations": [
+        "Bounded source-level writing and disposable setup probes passed; universal future compliance and full engineering workflows are not established. Installed copies are unchanged. The source delta is recoverable from the introducing commit and its parent. Exact recovery is also retained in the local archive."
+      ]
     }
   ],
   "files": [],

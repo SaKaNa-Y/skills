@@ -10,6 +10,23 @@ Examine whether a specified claim withstands a directed search for countereviden
 
 This is an explicit discussion and investigation entry point. Use [investigate-with-evidence](../investigate-with-evidence/SKILL.md) for factual investigation and controlled execution. Load the installed skill by name, or read its `SKILL.md` when the host has no skill invocation tool. Install both skills together. If the dependency cannot be found, identify it and leave dependent investigation pending; continue only conclusions supported by already available evidence, without claiming that the investigation is complete.
 
+## English output
+
+Before writing or revising English prose, use the installed `simple-english`
+skill. Load it by name, or read its `SKILL.md` and applicable references.
+Reuse instructions already loaded in this context.
+After reading this contract, load the dependency before sending any English
+progress update, draft or final response.
+
+Preserve meaning, uncertainty, requirement strength, domain terms and
+task-required formats when style rules conflict. Keep the requested language.
+Preserve code, identifiers, commands, original quotations and historical evidence.
+
+If required instructions are unavailable, report the gap once and continue
+independent work. Keep affected English output as a draft until the dependency
+is available or the user explicitly authorizes an exception. Do not install
+dependencies automatically or claim that an unchecked draft meets this requirement.
+
 ## Fix the claim and its conditions
 
 Restate the actual proposition, relevant conditions, and the judgment it bears on. Use the speaker's words and available context; separate their stated position from a charitable interpretation or your own implication. Preserve the strength of that position: an action being warranted, necessary, or the only possible option are different claims. When the request concerns a decision, preserve its intended outcome and each linked judgment the user asks to examine. Establishing a defect, choosing a remedy, and locating responsibility can require different evidence; state what is supported, refuted, or unresolved at each relevant link and how that affects the action recommendation. When ambiguity materially changes what would count as a rebuttal, resolve it before choosing a target. Keep the request focused: a claim about one failure mechanism does not imply endorsement of an entire PR or implementation.

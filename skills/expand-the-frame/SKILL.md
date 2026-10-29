@@ -10,6 +10,23 @@ Help the user recognize project-relevant questions they did not know to ask, und
 
 This is an explicitly invoked exploration and discussion entry point. One invocation lasts through the current discussion until the user ends it. It uses the shared `investigate-with-evidence` skill for factual investigation and controlled execution. It supports an existing project or an unrealized idea and may examine the project's goals as well as its design. The user owns goals and trade-offs; broader agent knowledge is a responsibility to investigate and explain, not authority to decide for them.
 
+## English output
+
+Before writing or revising English prose, use the installed `simple-english`
+skill. Load it by name, or read its `SKILL.md` and applicable references.
+Reuse instructions already loaded in this context.
+After reading this contract, load the dependency before sending any English
+progress update, draft or final response.
+
+Preserve meaning, uncertainty, requirement strength, domain terms and
+task-required formats when style rules conflict. Keep the requested language.
+Preserve code, identifiers, commands, original quotations and historical evidence.
+
+If required instructions are unavailable, report the gap once and continue
+independent work. Keep affected English output as a draft until the dependency
+is available or the user explicitly authorizes an exception. Do not install
+dependencies automatically or claim that an unchecked draft meets this requirement.
+
 ## 1. Ground the discussion
 
 Establish the intended outcome, affected users, current proposal, the decision under discussion, and known constraints from the conversation and available project material. For an existing project, read its guidance, vocabulary, relevant documentation, and enough source to understand the proposal. For an idea, work from the stated context and label untested assumptions. Ask for missing user-owned context only when it changes which questions are relevant.

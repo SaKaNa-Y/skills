@@ -10,6 +10,23 @@ Find capabilities that could create value for a project's users, then refine one
 
 This explicitly invoked workflow serves contributors, maintainers, and product developers. It works without a supplied feature idea. Discovery is the agent's responsibility; the user owns priorities, trade-offs, and whether to pursue an opportunity. Work ends at discussion, bounded evidence gathering, and exploration records. Product implementation and external publication require a further instruction.
 
+## English output
+
+Before writing or revising English prose, use the installed `simple-english`
+skill. Load it by name, or read its `SKILL.md` and applicable references.
+Reuse instructions already loaded in this context.
+After reading this contract, load the dependency before sending any English
+progress update, draft or final response.
+
+Preserve meaning, uncertainty, requirement strength, domain terms and
+task-required formats when style rules conflict. Keep the requested language.
+Preserve code, identifiers, commands, original quotations and historical evidence.
+
+If required instructions are unavailable, report the gap once and continue
+independent work. Keep affected English output as a draft until the dependency
+is available or the user explicitly authorizes an exception. Do not install
+dependencies automatically or claim that an unchecked draft meets this requirement.
+
 ## 1. Establish the project and history
 
 Read the project's guidance, purpose, and public capabilities. Use the user's direction, role, and available effort when supplied; ask only for missing context that would change the exploration. Establish enough grounding to identify concrete user outcomes without requiring a whole-project audit.

@@ -75,9 +75,9 @@ Express the supported disposition in ordinary language, optionally using these l
 - **Confirmed defect:** demonstrated behavior conflicts with a supported expected outcome under the stated conditions.
 - **Improvement opportunity:** a concrete user outcome supports a valuable change without an established contract violation.
 - **Unresolved observation:** a named missing fact prevents classification or impact judgment.
-- **Excluded:** evidence defeats the claimed defect or opportunity within its stated scope; record the reason.
+- **Excluded:** identify the specific problem claim and the evidence that defeats it within the stated scope. Missing documentation, an empty search or an unmatched artifact is not counterevidence by itself.
 
-Proceed when the classification has a traceable basis or an exact unresolved dependency. Keep evidence about behavior, cause, and impact distinct.
+Before excluding an observation, distinguish an unsupported expectation from use of the wrong interface or artifact. If the agent guessed an entry point, inspect the selected target's public surface and exercise the supported route. If no route exists, establish that absence through applicable interface or source evidence, then judge the unmet user outcome as misuse, a capability gap or an unresolved question. If a material fact remains unknown, continue the available decisive checks; return an unresolved result only with a concrete blocker or user-directed stop. Keep evidence about behavior, cause, and impact distinct.
 
 ### Establish the affected scope
 

@@ -16,7 +16,7 @@ Reaching a navigation item, tab, panel, dialog, menu, or other container verifie
 
 ## UI Journey Gate
 
-Stay inside the active user outcome until its Vertical Capability Slice is terminal. The gate closes only after the nested controls, scroll boundaries, rendered interaction states, native visual surfaces, and applicable sibling modes required below have observable evidence or an explicit exclusion or `Blocked` reason.
+Stay inside the active user outcome until the required UI journey has observable evidence. Account for nested controls, scroll boundaries, rendered states, native surfaces and applicable sibling modes below. A justified scope exclusion removes that outcome from the gate; a `Blocked` reason preserves unfinished work under the [audit stopping conditions](../SKILL.md#3-complete-vertical-slices).
 
 ### Traverse the Active Slice
 
@@ -55,4 +55,4 @@ When the UI exposes only part of the Capability Surface, finish that part throug
 
 Treat an unavailable required control surface, an unlaunchable UI, or missing safe test state as Blocked coverage. A documented UI launch that fails may also be a documentation or product Finding. Continue through every unaffected capability.
 
-**Complete when:** every UI-exposed capability in the active slice has a terminal state, every meaningful rendered state has proportionate visual evidence or an explicit exclusion or `Blocked` reason, every applicable sibling mode has a Mode Parity Probe or an explicit exclusion or `Blocked` reason, and no entry point or non-UI path has been counted as UI verification.
+**Complete when:** every required UI journey, meaningful rendered state and applicable sibling mode has proportionate observable evidence, with justified scope exclusions explicit. Entry points and non-UI paths do not substitute for UI verification. Required blocked observations remain unfinished; apply the audit stopping conditions above.

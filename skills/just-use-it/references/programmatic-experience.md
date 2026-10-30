@@ -30,7 +30,7 @@ Keep the original checkout's tracked files unchanged and preserve existing autho
 
 Confirm where the consumer resolves the tool or package; a global launcher, link, or stale build can select a different artifact despite a matching version label. Use the minimum evidence sufficient to establish which artifact actually runs and its correspondence to the selected target. When a launcher delegates to a separately installed package, establish both parts of that execution path.
 
-After an operation that can replace or redirect an exercised tool or package, such as dependency installation, rebuilding, or changing a link, recheck the affected resolution before crediting further outcomes. Matching version labels do not renew the evidence. If the artifact changed, keep earlier observations scoped to their original artifact and establish the new correspondence or uncertainty before continuing attribution.
+After an operation that can replace or redirect an exercised tool or package, such as dependency installation, rebuilding, or changing a link, recheck the affected resolution before crediting further outcomes. Keep earlier observations bound to the artifact that produced them. If the new artifact's correspondence to the selected target is unknown, follow [target recovery](prerequisites.md#recover-the-selected-target). Credit further target coverage only after that correspondence is established.
 
 Unrelated consumer edits leave that evidence valid. Recheck only the affected part of the execution path; repeated full-tree hashing or identity checks after every command are unnecessary.
 
@@ -44,4 +44,4 @@ Exercise the documented path first. Then vary inputs, repeat operations, combine
 
 During the main workflow's cleanup step, preserve required evidence and compare the recorded destinations before deleting resources they may reference. Remove audit-created registrations or restore the recorded state within the authorized scope, preserving unrelated later edits. Report unrecovered state and residual references rather than treating deletion of the consumer directory as complete cleanup.
 
-**Complete when:** every non-UI public capability in the active slice has a terminal state, the target integrity baseline is preserved, and every recorded launch destination is cleaned, restored, or reported as residual state.
+**Complete when:** the required non-UI journeys have target-bound evidence, the target integrity baseline is preserved, and launch effects are accounted for. If a required journey or cleanup action remains blocked, retain it as unfinished under the [audit stopping conditions](../SKILL.md#3-complete-vertical-slices).

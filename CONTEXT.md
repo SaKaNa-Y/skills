@@ -109,7 +109,7 @@ A one-variable change to a Capability Journey whose correct behavior produces an
 _Avoid_: Random second input, ceremonial retry, exhaustive combination
 
 **Vertical Capability Slice**:
-A coherent feature-group audit unit built around a primary Capability Journey and one discriminating variation or recovery path. Its executor carries it to a terminal coverage state with inspectable evidence; independent slices may progress concurrently within the same audit.
+A coherent feature-group audit unit built around a primary Capability Journey and one discriminating variation or recovery path. Its executor resolves the selected target journey with inspectable evidence or retains the concrete barrier and unfinished work; independent slices may progress concurrently within the same audit.
 _Avoid_: Shallow feature sweep, panel tour, exhaustive state matrix
 
 **Slice-First Audit**:
@@ -125,7 +125,7 @@ Compact positive evidence for a verified Capability Journey: its initial conditi
 _Avoid_: Status-only claim, full interaction transcript, success screenshot archive
 
 **Partial Audit**:
-An audit report with one or more known in-scope capabilities still Not Exercised. It may claim completion for named Vertical Capability Slices; explicitly excluded outcomes are outside its completion claim.
+An audit report ended at a user-directed stop, scope change or concrete barrier while target correspondence, an in-scope journey or a material assessment remains unresolved. It identifies answered outcomes, unfinished questions and the action needed to resume. Explicitly excluded outcomes are outside its completion claim.
 _Avoid_: Complete audit, representative completion, implied full coverage
 
 **Surface Discovery Pass**:

@@ -28,6 +28,10 @@
     {
       "name": "issue-writing",
       "status": "active"
+    },
+    {
+      "name": "make-it-land",
+      "status": "active"
     }
   ],
   "records": [
@@ -146,6 +150,15 @@
       "validation": "supported",
       "limitations": [
         "Bounded candidate execution and artifact review; no comparative gain claim. Source only, installation unchanged. Exact recovery retained locally. Child tool-event logs unavailable."
+      ]
+    },
+    {
+      "path": "skills/make-it-land/032-understanding-before-design/record.md",
+      "status": "completed",
+      "adoption": "applied",
+      "validation": "supported",
+      "limitations": [
+        "Bounded five-turn execution; no comparative or human-comprehension gain claim. Source only. Recovery retained locally."
       ]
     }
   ],

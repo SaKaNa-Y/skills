@@ -1,6 +1,6 @@
 ---
 name: make-it-land
-description: Make substantive questions and answers understandable and actionable by supplying enough relevant context. Use only when the user explicitly invokes $make-it-land, either after an unclear message or alongside another task.
+description: Make substantive questions and answers understandable and actionable by supplying enough relevant context.
 disable-model-invocation: true
 ---
 
@@ -44,7 +44,10 @@ dependencies automatically or claim that an unchecked draft meets this requireme
 
 Before sending a question or request for input:
 
-1. **Prepare it.** Resolve facts through safe, in-scope, reasonably available checks of the conversation, repository, documentation, tools, or environment. When material evidence remains unavailable, state what was checked and ask only for information the user can supply. Ask for user-owned input or a mandatory human checkpoint, not facts the agent can discover. When `$prune-the-tree` is also active, apply this protocol only after its routing leaves a candidate in ASK.
+1. **Prepare it.**
+   - When `$prune-the-tree` is also active, apply this protocol only after its routing leaves a candidate in ASK.
+   - Resolve facts through safe, in-scope, reasonably available checks of the conversation, repository, documentation, tools, or environment. When material evidence remains unavailable, state what was checked and ask only for information the user can supply. Ask for user-owned input or a mandatory human checkpoint, not facts the agent can discover.
+   - If a choice depends on an unexplained premise, use [Depth and Feedback](#depth-and-feedback) to supply that connection before asking. Independent questions with sufficient context can proceed.
 2. **Place it.** State the current goal, where the work has reached, what is already settled, and what the answer will unblock. Use the smallest recap that lets someone returning later understand the decision point.
 3. **Frame it.** Say exactly what input is needed and why it belongs to the user. Separate verified facts, inferences, assumptions, and unknowns when that distinction affects the answer.
 4. **Make it concrete.** Define necessary technical terms in everyday language. Present only viable options and explain their user-visible differences, downstream effects, cost, risk, and reversibility. Give a concrete scenario when a term or distinction is abstract. For permission requests, identify the operation, target, effect, safeguards, and recovery path.
@@ -61,7 +64,10 @@ When correcting or narrowing an earlier conclusion, explain together which facts
 
 Build the explanation before expanding its detail:
 
-1. **Establish the task.** Identify what the user needs to understand, decide, or do, using the latest request and accumulated corrections. Check required tools, product surfaces, setup, and output constraints before choosing a scenario or procedure. Select a route that meets them; if none is established, state the unmet requirement and what remains to be checked before offering an alternative.
+1. **Establish the task.**
+   - Identify what the user needs to understand, decide, or do, using the latest request and accumulated corrections.
+   - When existing capabilities and proposed changes appear together, identify which one the user is asking about, including any conditions for using it. Use their responses to locate missing premises for the current judgment, then follow [Depth and Feedback](#depth-and-feedback).
+   - Check required tools, product surfaces, setup, and output constraints before choosing a scenario or procedure. Select a route that meets them; if none is established, state the unmet requirement and what remains to be checked before offering an alternative.
 2. **Build the main explanation.** Lead with the answer and organize its support for the question being answered:
    - For a problem and proposed fix, connect the user's action, expected and observed behavior, supported cause, and where the remedy acts. Keep an unknown cause explicit.
    - For a mechanism or concept, connect a concrete input or situation to the process or relationship and its result. Use a consistent example to carry those links; label illustrative examples.
@@ -77,7 +83,9 @@ Match depth to the claim. Ordinary answers must be actionable. Material recommen
 
 ## Depth and Feedback
 
-When understanding needs to develop across layers, start from what the user's responses show they understand. Choose a meaningful unexplained link and connect the mechanism behind it to the behavior or idea already discussed. Let the user's question determine the direction; the useful next layer may concern an abstraction, a design choice, or an implementation detail. Keep each explanation coherent at a manageable depth while supplying the context needed for the current judgment.
+Start from the understanding shown in the user's responses. Agreement with one summary supports that part of the explanation, not every premise behind it. Locate the missing connection needed for the current question or choice.
+
+For a gap between an existing capability and a proposed change, use one concrete task to connect the information source, action, result, and subsequent use. Show where the proposal changes that task. Supply only the missing connections and skip established context; these relationships are not a fixed output template. If the user asks about a deeper mechanism, explain that mechanism rather than restarting the product introduction.
 
 When explaining commands, code, configuration, or steps from an earlier message, restate the complete material being explained in the current reply. Keep required arguments, flags, values, and setup intact so the reader can follow the explanation without assembling fragments from earlier turns. State the working directory, terminal or environment, and retained process or state when they affect the steps. For a detailed walkthrough, present each complete command or block followed immediately by its purpose, effect, and observable result. Restate the whole procedure when the user asks to start from the beginning; for a focused question, include the relevant complete blocks and their necessary prerequisites. When the user requests a single copyable sequence, put the complete command sequence first and explain it afterward. Preserve confidentiality and label illustrative placeholders clearly.
 
@@ -85,7 +93,7 @@ Use an example, source excerpt, small experiment, or observable behavior when it
 
 Supply all context and depth requested for the current question directly. Invite continuation only for useful additional scope after that request is answered; explain what the extra discussion would help the user understand. Let their choice extend the discussion's scope. During requested learning, keep offering meaningful next directions; when several branches matter, give a small set with their reasons. Ordinary answers can end once sufficient, and a request to stop or return to the task ends the detour.
 
-Use follow-up questions, restatements, and applications from the user to locate remaining gaps. Repair a gap with a different example, connection, or observation; continue when the user indicates readiness or asks to go deeper. Treat delivering an explanation as distinct from evidence of understanding. An optional prediction followed by observation can clarify a key concept; keep it an invitation rather than a test required to proceed.
+Use follow-up questions, restatements, and applications from the user to locate remaining gaps. Repair a gap with a different example, connection, or observation. Continue when the relevant connection is supplied or the user indicates readiness, asks to go deeper, or moves into a concrete next question. Treat delivering an explanation as distinct from evidence of understanding. An optional prediction followed by observation can clarify a key concept; keep it an invitation rather than a test required to proceed.
 
 ## Language and Proportion
 

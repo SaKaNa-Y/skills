@@ -19,3 +19,5 @@ See the [history policy](../agents/evolution-history.md) for selection and reten
 - [Shared English output](discussions/030-plain-english-output/record.md): common external writing dependency, preserved semantics and setup configuration.
 
 - [Issue writing](skills/issue-writing/index.md): explicit drafting and local revision continuity.
+
+- [Make It Land](skills/make-it-land/index.md): understanding before dependent design choices.

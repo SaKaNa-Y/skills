@@ -62,6 +62,7 @@ This repository does not publish its own npm package. `npx` runs the general-pur
 | Keep a valid side problem from replacing the current task | [`yak-shaving-triage`](skills/yak-shaving-triage/SKILL.md) | A preserved, issue-ready finding and a return to the original problem |
 | Evaluate a source-accessible library, framework, CLI, or developer tool as a user | [`just-use-it`](skills/just-use-it/SKILL.md) | Version-bound usage coverage, resumable records and reproducible Finding Packets |
 | Decide whether an observed finding warrants a fix, improvement, or PR | [`assess-findings`](skills/assess-findings/SKILL.md) | A supported classification and scoped action recommendation |
+| Clarify an idea and write or revise an issue draft | [`issue-writing`](skills/issue-writing/SKILL.md) | A draft for the user to submit, with agreed local saving; explicit invocation only |
 | Browse recorded problems, decisions and progress | [`browse-records`](skills/browse-records/SKILL.md) | A read-only view with source links, filters and visible uncertainty; explicit invocation only |
 | Implement an agreed change | [`implement-change`](skills/implement-change/SKILL.md) | Verified work, a Draft PR and source-record updates |
 | Find where an existing project's value could serve more real contexts | [`set-theory-for-projects`](skills/set-theory-for-projects/SKILL.md) | Evidence-backed candidates, rejection reasons, and experiment ladders |

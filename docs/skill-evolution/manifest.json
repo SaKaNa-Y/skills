@@ -125,6 +125,15 @@
       "limitations": [
         "Bounded real Vite+ recovery and controlled access/release checks; no general reliability gain. Initial pnpm cache isolation deviated; corrected child-install replay preserved observed metadata and artifact hashes. Source only; exact reversal evidence retained privately."
       ]
+    },
+    {
+      "path": "skills/assess-findings/035-finding-relationships/record.md",
+      "status": "completed",
+      "adoption": "applied",
+      "validation": "supported",
+      "limitations": [
+        "Six bounded fresh executions; no general or statistical reliability claim. Exact source snapshots and scoped recovery patch retained in the private archive. Installation unchanged. Later wording review removed repetition and clarified that a combined correction alone cannot establish duplication; behavioral trials were not rerun for those edits."
+      ]
     }
   ],
   "files": [],

@@ -29,7 +29,7 @@ The mandatory act of checking every Issue-ready Problem against the canonical tr
 _Avoid_: Duplicate issue, unconditional comment
 
 **Problem Identity**:
-The reconciliation boundary between one problem expressed through multiple observations and independently resolvable problems. Finding Packets share an identity when one resolution and acceptance boundary would resolve them together; different wording, entry points, or reproduction paths alone do not split them, while the ability to resolve one without the other does.
+The reconciliation boundary between one specific failure or unmet outcome expressed through multiple observations and independently valuable problem outcomes. Finding Packets share an identity when evidence supports one coherent correction and acceptance boundary. Different symptoms, entry points, reproduction paths or separate code edits alone do not split them. Independently violated conditions can belong to one broader contract without being duplicate observations. A combined correction or shared work item does not establish identity. Fixing only some entry points of the same failure is partial coverage.
 _Avoid_: Title match, shared-component bucket, suspected-root-cause merge
 
 **Audit Reconciliation Gate**:

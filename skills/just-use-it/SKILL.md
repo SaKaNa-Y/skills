@@ -53,7 +53,7 @@ At entry or resumption, resolve the selected target through [evidence freshness 
 
 Before starting a slice, use launch and build metadata to establish which artifact will execute and its correspondence to the selected target. Include the delegated engine when it owns the outcome; a fresh wrapper alone is insufficient. Keep behavioral source closed under the current audit phase.
 
-If correspondence is unknown, follow the [prerequisite workflow](references/prerequisites.md#recover-the-selected-target) before counting target coverage. That workflow governs recovery and the separate use of comparison artifacts.
+If launch or build fails, a prerequisite is missing, or artifact correspondence is unknown, read [target recovery](references/prerequisites.md). Make recovery the next task before installation or further usage of that target. Resume its journeys once recovery establishes a runnable target and its identity. Continue independent slices whose own targets are ready.
 
 Use pending outcomes, changed behavior and related evidence to prioritize actual usage, leaving space for new observations. An old Verified result is evidence about its recorded artifact, not the current version. A fresh audit without continuation context starts from public user tasks. When the user requests independent experience, defer historical finding bodies, summaries and tracker research until the audit gate; configuration lookup alone need not expose findings. If history is already known, disclose that limit rather than claiming fresh independence. These choices change provenance and route order, not the declared outcome scope.
 
@@ -66,8 +66,6 @@ Source-closed means behaviorally blind, not safety-blind. Inspect the minimum in
 For CLI, public API, or package use, read [references/programmatic-experience.md](references/programmatic-experience.md) before consumer setup, installation, or first invocation, including help and version probes.
 
 For journeys whose judgment depends on automatically selected project, workspace, or configuration sources, or on workload size or processing scope, read [context and workload checks](references/exploration-lenses.md#realistic-scale-and-degraded-surroundings) before execution.
-
-When launch or build fails, build inputs are missing, artifact correspondence is unknown, or a required runtime, compiler toolchain, SDK, system package or container runtime is absent, read [references/prerequisites.md](references/prerequisites.md) before installing anything or abandoning the affected capability.
 
 Before costly execution or uncertain workload, read [resource control](references/resource-control.md). Apply its aggregate budget across direct work, workers and descendants; filesystem isolation does not bound memory.
 

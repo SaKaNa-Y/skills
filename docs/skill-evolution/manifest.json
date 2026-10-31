@@ -116,6 +116,15 @@
       "limitations": [
         "Bounded source-level writing and disposable setup probes passed; universal future compliance and full engineering workflows are not established. Installed copies are unchanged. The source delta is recoverable from the introducing commit and its parent. Exact recovery is also retained in the local archive."
       ]
+    },
+    {
+      "path": "skills/just-use-it/034-audit-verification-obligations/record.md",
+      "status": "completed",
+      "adoption": "applied",
+      "validation": "supported",
+      "limitations": [
+        "Bounded real Vite+ recovery and controlled access/release checks; no general reliability gain. Initial pnpm cache isolation deviated; corrected child-install replay preserved observed metadata and artifact hashes. Source only; exact reversal evidence retained privately."
+      ]
     }
   ],
   "files": [],

@@ -15,9 +15,14 @@ Evaluate alternatives against the target established during framing. Build prere
 
 ## Recover the selected target
 
-Classify the observed failure before selecting a fallback: missing source or generated input, unresolved dependency/link, incompatible existing tool, or unavailable runtime/system tool. Inspect the documented preparation path and its effects. Complete authorized, reversible preparation in the disposable environment, then retry the failed operation and establish the resulting artifact identity. A missing file in a temporary copy is a recovery lead, not proof that the target cannot be built.
+Keep preparation as the active task until the selected target can run. For each failed preparation step:
 
-If an alternative artifact can answer a specific preparation or comparison question, state that question before using it. Keep its observations separate; resume the selected target after recovery. If a proposed recovery requires new authority, external access or material resources beyond the established budget, prepare the concrete action and request only that missing decision. An unavailable measurement alone does not establish resource exhaustion; use another supported bound or present the specific unresolved resource requirement.
+1. Identify the failed command, required input and actual execution conditions. Distinguish external constraints from conditions you chose: offline flags, incomplete copies, stale links or an assumed resource budget.
+2. Inspect the documented preparation route and its effects. Complete the next authorized, reversible step in the disposable environment, then retry the failed operation. A missing cache entry calls for the supported fetch or installation path when network use is permitted. If sandbox access is required, use the available approval path. Preserve user-imposed restrictions and actual denials.
+3. Use the failure evidence to choose the next action. For recoverable conditions, continue authorized preparation. If evidence establishes an external constraint on the next required action, follow [Continue or Block](#continue-or-block). For resource uncertainty, use a supported execution bound or present the concrete resource decision needed to proceed.
+4. Once preparation succeeds, establish the executable and delegated engine for the selected target. Resume its capability journeys from that state.
+
+Use an alternative artifact only to answer a named preparation or comparison question. State how its result will change the next recovery action, run that comparison, then return to preparation. Its observations remain separate from the selected target's coverage; uncertainty labels do not turn it into an audit substitute.
 
 ## Resolve installation authority
 
@@ -44,7 +49,7 @@ Skill invocation does not authorize persistent machine-level changes. Preserve a
 
 When the user approves an installation, verify the resulting version, record every temporary and persistent resource it creates, and continue from the documented path.
 
-After a failed attempt, inspect its cause and continue the next supported, authorized recovery that can resolve it. Mark affected capabilities `Blocked` only when a specific authority, access, resource or user-decision barrier prevents progress. Record the failed operation, the evidence for that barrier, alternatives investigated and the concrete action needed to resume. Continue unaffected work. A Blocked status preserves unfinished target work; it does not complete the audit.
+Mark an affected capability `Blocked` when the next required action faces an external constraint: denied authority, failed access, a reached resource limit or a specific pending user decision. Record that action, the attempted operation and result where permitted, alternatives investigated, and the exact action or decision needed to resume. An explicit restriction needs no forbidden attempt to prove it. Complete the permitted preparation before requesting the missing decision, and continue unaffected work. Saving a checkpoint preserves this unfinished task; it does not authorize ending recoverable work.
 
 A missing prerequisite in the user's environment is not by itself an Audit Finding. Create a separate Documentation Finding when the public documentation omits a required prerequisite, states an incompatible version, or promises a setup path that cannot work as described.
 

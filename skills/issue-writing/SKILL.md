@@ -15,9 +15,14 @@ This explicitly invoked skill ends with discussion or a draft for the user to us
 
 ## English output
 
-Before writing or revising English prose, use the installed `simple-english` skill. Read its `SKILL.md` and applicable references, or reuse instructions already loaded. Preserve meaning, uncertainty, requirement strength, domain terms, quotations, and requested formats when style rules conflict. Keep the requested language.
+`simple-english` is optional. If it is installed and readable, use it when
+writing or revising English prose. Reuse instructions already loaded.
+If it is unavailable, write clear English and complete the task normally.
+Its absence does not require installation, an exception, or draft-only delivery.
 
-If the dependency is unavailable, report the gap once and continue independent work. Keep affected English output as a draft until the dependency is available or the user authorizes an exception. Do not install dependencies automatically or claim that unchecked text meets this requirement.
+Preserve meaning, uncertainty, requirement strength, domain terms, and requested
+formats when style rules conflict. Keep the requested language. Preserve code,
+identifiers, commands, original quotations, and historical evidence.
 
 ## 1. Recover the current intent
 

@@ -17,20 +17,14 @@ For a requested rollback of a recorded evolution, start from that iteration and 
 
 ## English output
 
-Before writing or revising English prose, use the installed `simple-english`
-skill. Load it by name, or read its `SKILL.md` and applicable references.
-Reuse instructions already loaded in this context.
-After reading this contract, load the dependency before sending any English
-progress update, draft or final response.
+`simple-english` is optional. If it is installed and readable, use it when
+writing or revising English prose. Reuse instructions already loaded.
+If it is unavailable, write clear English and complete the task normally.
+Its absence does not require installation, an exception, or draft-only delivery.
 
-Preserve meaning, uncertainty, requirement strength, domain terms and
-task-required formats when style rules conflict. Keep the requested language.
-Preserve code, identifiers, commands, original quotations and historical evidence.
-
-If required instructions are unavailable, report the gap once and continue
-independent work. Keep affected English output as a draft until the dependency
-is available or the user explicitly authorizes an exception. Do not install
-dependencies automatically or claim that an unchecked draft meets this requirement.
+Preserve meaning, uncertainty, requirement strength, domain terms, and requested
+formats when style rules conflict. Keep the requested language. Preserve code,
+identifiers, commands, original quotations, and historical evidence.
 
 ## 1. Establish the targets and their purposes
 

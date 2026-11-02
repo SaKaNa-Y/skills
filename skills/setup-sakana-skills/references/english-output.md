@@ -1,53 +1,47 @@
 # Configure English Output
 
-Use this guidance when configuring the collection's shared English output requirement. Each skill declares the requirement directly, so setup is not a prerequisite.
+Use this guidance when configuring optional English writing support. Each skill works without `simple-english`; setup is not a prerequisite.
 
-## Inspect the dependency and existing policy
+## Inspect existing guidance
 
-Find the installed `simple-english` skill by name. If the host has no invocation tool, read its `SKILL.md` and applicable references. Reuse instructions already loaded in the current context. Check access from each selected client, including the actual target of any symbolic link.
-
-The external source is [AminBlg/SimpleEnglish](https://github.com/AminBlg/SimpleEnglish). Verify the source before giving installation instructions. Setup configures guidance and does not install skills. If required files are unavailable, report the gap and leave English output readiness pending. Continue independent configuration work.
-
-Read existing entrypoints and writing policies before proposing files. Reuse sufficient guidance. Preserve unrelated instructions and resolve shared files once.
+Read existing entrypoints and writing policies before proposing files. Reuse sufficient guidance and preserve unrelated instructions.
+If `simple-english` is installed, check whether each selected client can read its `SKILL.md` and applicable references.
+Reuse instructions already loaded. A readable skill file works without a dedicated invocation tool.
+If it is absent or unreadable, continue configuration and normal delivery without it.
 
 ## Prepare the shared policy
 
-Use one authoritative policy per effective scope. For a new project policy, propose `docs/agents/english-output.md`. For global guidance, inspect the selected client's real entrypoint before proposing a destination. Keep machine-specific dependency paths in local configuration, not in distributed skill instructions.
+Use one authoritative policy per effective scope. For a new project policy, propose `docs/agents/english-output.md`.
+For global guidance, inspect the selected client's actual entrypoint before proposing a destination.
+Keep machine-specific paths in local configuration. Include a skill path only when it exists and is readable.
 
-Include the dependency's verified location and the following contract in the policy:
+Use this contract:
 
-Before writing or revising English prose, use the installed `simple-english`
-skill. Load it by name, or read its `SKILL.md` and applicable references.
-Reuse instructions already loaded in this context.
-After reading this contract, load the dependency before sending any English
-progress update, draft or final response.
+`simple-english` is optional. If it is installed and readable, use it when
+writing or revising English prose. Reuse instructions already loaded.
+If it is unavailable, write clear English and complete the task normally.
+Its absence does not require installation, an exception, or draft-only delivery.
 
-Preserve meaning, uncertainty, requirement strength, domain terms and
-task-required formats when style rules conflict. Keep the requested language.
-Preserve code, identifiers, commands, original quotations and historical evidence.
+Preserve meaning, uncertainty, requirement strength, domain terms, and requested
+formats when style rules conflict. Keep the requested language. Preserve code,
+identifiers, commands, original quotations, and historical evidence.
 
-If required instructions are unavailable, report the gap once and continue
-independent work. Keep affected English output as a draft until the dependency
-is available or the user explicitly authorizes an exception. Do not install
-dependencies automatically or claim that an unchecked draft meets this requirement.
+Apply it to new or revised English replies, records, documentation, issue and PR descriptions, commit messages, and natural-language code explanations.
+Preserve task-required headings, tables, interview formats, templates, and domain vocabulary.
 
-Apply the contract to new or revised English replies, records, documentation, issue and PR descriptions, commit messages and natural-language code explanations. A Chinese conversation stays Chinese; any English artifact within it follows the contract. Preserve task-required headings, tables, interview formats, templates and domain vocabulary. The shared policy defines scope and precedence; the external skill supplies writing rules.
+## Apply and verify configuration
 
-A user's explicit exception applies only to its stated scope. Missing dependency access does not authorize a silent substitute or an automatic installation.
-
-## Prepare the entrypoint and apply
-
-Show the exact policy, destination, dependency location and selected client entrypoints before applying configuration. Replace the placeholder in this example with the verified policy path:
+Show the exact policy, destination, and selected client entrypoints before applying configuration.
+Replace the placeholder in this example with the verified policy path:
 
 ```markdown
 Before writing or revising English prose, read the English output policy
-at <verified policy path> and follow its dependency and preservation rules.
+at <verified policy path>. Use optional writing support when available,
+and continue normal delivery when it is unavailable.
 ```
 
-Write only the approved configuration. Do not leave placeholder paths in applied guidance. If a sufficient pointer exists, reuse it. Preserve other entrypoint content and edit a shared or linked file only once.
-
-## Check readiness and repeat behavior
-
-Read the saved entrypoint, follow its policy pointer and read the installed dependency from each selected client's context. Check required reference access, conflict precedence and the distinction between configured guidance and a ready dependency. Report any unavailable component explicitly.
-
-Repeat the inspection without changing inputs. A sufficient configuration requires no further edit. This check establishes configuration reachability, not a guarantee that every future output follows the policy.
+Write only approved configuration. Reuse sufficient pointers and edit a shared or linked file only once.
+Read the saved entrypoint and follow its policy pointer from each selected client's context.
+Make sure that the policy supports both available and unavailable optional instructions without blocking delivery.
+Do not install skills automatically. Repeat inspection without changing inputs; sufficient configuration needs no further edit.
+This establishes configuration reachability, not a guarantee that every future output follows the policy.

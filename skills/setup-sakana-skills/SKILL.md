@@ -13,24 +13,18 @@ Prepare conventions that installed consumers can read directly. Run only when th
 
 ## English output
 
-Before writing or revising English prose, use the installed `simple-english`
-skill. Load it by name, or read its `SKILL.md` and applicable references.
-Reuse instructions already loaded in this context.
-After reading this contract, load the dependency before sending any English
-progress update, draft or final response.
+`simple-english` is optional. If it is installed and readable, use it when
+writing or revising English prose. Reuse instructions already loaded.
+If it is unavailable, write clear English and complete the task normally.
+Its absence does not require installation, an exception, or draft-only delivery.
 
-Preserve meaning, uncertainty, requirement strength, domain terms and
-task-required formats when style rules conflict. Keep the requested language.
-Preserve code, identifiers, commands, original quotations and historical evidence.
-
-If required instructions are unavailable, report the gap once and continue
-independent work. Keep affected English output as a draft until the dependency
-is available or the user explicitly authorizes an exception. Do not install
-dependencies automatically or claim that an unchecked draft meets this requirement.
+Preserve meaning, uncertainty, requirement strength, domain terms, and requested
+formats when style rules conflict. Keep the requested language. Preserve code,
+identifiers, commands, original quotations, and historical evidence.
 
 ## 1. Inspect effective guidance
 
-Read applicable user-level and project `AGENTS.md`, `CLAUDE.md` and their pointers, including `docs/agents/` when present. Verify the selected clients' actual instruction locations rather than inventing a native configuration key. Inspect repository identity and installed consumers' requirements. Distinguish working records from canonical issues, evaluation fixtures and private evolution history. For English output, inspect the installed `simple-english` skill and any existing writing policy. Verify that each selected client can read the dependency and required references. A readable skill file works without a dedicated invocation tool.
+Read applicable user-level and project `AGENTS.md`, `CLAUDE.md` and their pointers, including `docs/agents/` when present. Verify the selected clients' actual instruction locations rather than inventing a native configuration key. Inspect repository identity and installed consumers' requirements. Distinguish working records from canonical issues, evaluation fixtures and private evolution history. For English output, inspect existing writing policies and any installed `simple-english` skill. Its absence does not block configuration. If present, check access from each selected client.
 
 Resolve settings from the current explicit instruction, then project overrides, then global defaults. Record the source of each effective value. Existing user-selected record locations and commit permissions remain valid within their stated scope. Detect conflicting guidance, duplicate pointers and shared or symlinked files before editing.
 
@@ -41,7 +35,7 @@ Resolve settings from the current explicit instruction, then project overrides, 
 Carry forward decisions already made. Configure only supported consumers and the requested scope:
 
 - **Scope and clients:** global defaults, project overrides or both; Claude Code, Codex or both. Show how a project inherits or overrides values. Project tracker identity stays project-specific even when general conventions are inherited.
-- **English output:** use the collection-wide writing requirement. Identify the installed dependency, shared policy location and selected client entrypoints. Read the [English output guidance](references/english-output.md). Record missing access separately from configuration choices.
+- **English output:** preserve the optional writing support. Identify any installed skill, shared policy location and selected client entrypoints. Read the [English output guidance](references/english-output.md). Keep normal delivery available when the optional skill is absent.
 - **Working records:** exact root, verified project/upstream/fork identity, existing index and individual-record layout, and useful author identities or explicit provenance for locating the user's PRs. Use one common format for observations and opportunities; reuse existing history without moving it.
 - **Record authority:** which kinds permit ordinary saves and substantive updates; separately, whether each new record and substantive update should receive a local commit. This policy may cover observations, opportunities, assessments and implementation progress when the user selects it. Amendments and pushes remain separate instructions. Do not infer broader permission from an Explore-only rule.
 - **Canonical tracker:** reuse established Tracker Guidance. When absent and needed, propose GitHub Issues for a verified GitHub project or a user-selected local Markdown directory. Preserve another established tracker. Confirm its exact destination and tool; supplemental remote evidence does not create a second canonical destination.
@@ -62,7 +56,7 @@ Preserve unrelated domain, label and project rules. Both clients may point to th
 
 ## 4. Apply and verify
 
-Apply only approved configuration. Verify pointers from each selected entrypoint, effective precedence, project identity, the distinction between record and tracker authority, and preservation of unrelated content. Confirm any authorized directory creation and report inaccessible paths separately. For English output, check dependency access from each client and the complete entrypoint-to-policy path. Report the policy as not ready if required instructions are unavailable. Continue independent configuration work without installing the dependency or claiming readiness.
+Apply only approved configuration. Verify pointers from each selected entrypoint, effective precedence, project identity, the distinction between record and tracker authority, and preservation of unrelated content. Confirm any authorized directory creation and report inaccessible paths separately. For English output, check the entrypoint-to-policy path and access to any configured optional skill. Missing optional instructions must leave normal delivery available. Do not install the optional skill automatically.
 
 Re-read the result as a second setup pass: unchanged guidance should require no further edits. Report changed files, global versus project effect, consumers and unverified access. Do not create findings, publish issues, migrate history or schedule synchronization as part of setup.
 

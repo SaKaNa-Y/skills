@@ -5,20 +5,14 @@ Agent skills by sakana for investigating problems, exploring ideas, and deliveri
 ## Installation
 
 You need Node.js with `npx` and an agent supported by the [skills CLI](https://skills.sh).
-Run these commands from the project where you want to use the skills:
+Run this command from the project where you want to use the skills:
 
 ```bash
 npx skills@latest add SaKaNa-Y/skills
-npx skills@latest add AminBlg/SimpleEnglish --skill simple-english
 ```
 
 The installer lets you select skills and agents. Installation is project-scoped by default.
-Add `--global` to both commands for agents that support a user-level skills directory.
-
-Every skill requires the external [simple-english skill](https://github.com/AminBlg/SimpleEnglish) for new or revised English prose.
-Install it for the same agents and scope, including when you select a single skill.
-It preserves the requested language, meaning, uncertainty, and required formats.
-If it is unavailable, affected English output remains a draft while independent work continues.
+Add `--global` to the command for agents that support a user-level skills directory.
 
 Some skills also need shared methods from this collection. Select these dependencies during installation:
 
@@ -77,7 +71,6 @@ See the [installation guide](docs/guide.md#quick-start) for individual selection
 
 ## Examples
 
-Install `simple-english` as described above before using these examples.
 The commands below select each task's required skills from this collection.
 Use your agent's explicit skill invocation syntax. These examples use `$skill-name`.
 Invocation does not expand the task's authority. See the [invocation guide](docs/guide.md#invoke-skills) for selection rules.

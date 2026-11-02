@@ -1,9 +1,15 @@
 # Share English Output Requirements
 
-All skills in this collection use the external `simple-english` skill for new or revised English prose. This is a selected collection contract for readable engineering output, not an inferred personal preference. The [personal-preference boundary](0006-keep-personal-preferences-outside-shared-skill-methods.md) still applies to other evolution proposals.
+Updated on 2026-11-02: `simple-english` is optional. This decision replaces the earlier mandatory installation and draft-only fallback.
+The user clarified that this collection must work without the external skill, and installation documentation must not require it.
 
-Each consumer carries a short loading, preservation and missing-dependency contract. Writing rules stay in the external skill. This repeats the integration boundary so independently installed consumers work without setup or repository-root guidance. It avoids maintaining a separate writing method, at the cost of an explicit external installation dependency.
+Each consumer carries a short availability and preservation contract. When `simple-english` is installed and readable, the consumer uses its writing guidance.
+Otherwise, the consumer writes clear English and completes the task normally. Missing support requires neither installation nor an exception.
+This keeps writing support available without making it an installation prerequisite.
 
-Meaning, uncertainty, requirement strength, domain terms and task-required formats take priority over style. The contract covers authored English output and preserves the requested language, code, original quotations and historical evidence. It does not authorize rewriting existing skill instructions or historical records as a side effect of ordinary use.
+Meaning, uncertainty, requirement strength, domain terms, and task-required formats take priority over style.
+The contract preserves the requested language, code, original quotations, and historical evidence.
+It does not authorize unrelated rewrites. The [personal-preference boundary](0006-keep-personal-preferences-outside-shared-skill-methods.md) still applies.
 
-If required instructions are unavailable, affected English output remains a draft while independent work continues. An explicit user exception applies only to its stated scope. Setup configures shared policy pointers for ordinary tasks; it neither installs the dependency nor becomes a prerequisite for skill use. Source changes and installed-copy updates remain separate operations.
+Setup can configure shared policy pointers for ordinary tasks. It preserves the optional fallback and does not install the external skill.
+Source changes and installed-copy updates remain separate operations.

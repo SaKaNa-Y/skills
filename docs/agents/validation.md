@@ -22,7 +22,7 @@ It does not fall back to the current checkout. It reads files without editing
 them and never fetches URLs. Run `--help` for options, source patterns, and exit
 codes. Use `--json` for a structured report.
 
-The source scope includes root Markdown, all skill Markdown, agent guidance,
+The source scope includes root Markdown, direct `docs/*.md` guides, all skill Markdown, agent guidance,
 ADRs, and curated evolution README, skill indexes and iteration/discussion
 records. It excludes test and fixture directories, dependencies, original
 evolution evidence snapshots, planning, and research records. An explicit link into an excluded

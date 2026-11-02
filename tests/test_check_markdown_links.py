@@ -151,15 +151,15 @@ class LinkChecks(unittest.TestCase):
         self.assertEqual(self.run_check()['exit_code'], 2)
 
     def test_scope_includes_unchanged_public_docs_excludes_private_and_fixtures(self):
-        for path in ('AGENTS.md', 'skills/demo/SKILL.md', 'docs/agents/guide.md', 'docs/adr/0001.md'):
+        for path in ('AGENTS.md', 'skills/demo/SKILL.md', 'docs/guide.md', 'docs/agents/guide.md', 'docs/adr/0001.md'):
             self.put(path, '[bad](missing.md)\n')
         for path in ('docs/skill-evolution/old.md', 'docs/plans/plan.md',
                      'docs/research/a.md', 'tests/fixtures/a.md',
                      'skills/demo/tests/example.md', 'skills/demo/node_modules/a.md'):
             self.put(path, '[bad](missing.md)\n')
         report = self.run_check()
-        self.assertEqual(report['files_scanned'], 4)
-        self.assertEqual(len(report['errors']), 4)
+        self.assertEqual(report['files_scanned'], 5)
+        self.assertEqual(len(report['errors']), 5)
 
     def test_empty_missing_and_unreadable_roots(self):
         self.assertEqual(self.run_check()['exit_code'], 2)

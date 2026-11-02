@@ -14,7 +14,7 @@ HISTORY_PATTERNS = ('docs/skill-evolution/README.md',
                     'docs/skill-evolution/skills/*/index.md',
                     'docs/skill-evolution/skills/*/*/record.md',
                     'docs/skill-evolution/discussions/*/record.md')
-SOURCE_PATTERNS = ('*.md', 'skills/**/*.md', 'docs/agents/**/*.md', 'docs/adr/**/*.md') + HISTORY_PATTERNS
+SOURCE_PATTERNS = ('*.md', 'docs/*.md', 'skills/**/*.md', 'docs/agents/**/*.md', 'docs/adr/**/*.md') + HISTORY_PATTERNS
 EXCLUDED_PARTS = {'node_modules', '.git', '.venv', '__pycache__', 'tests', 'fixtures'}
 
 
@@ -215,7 +215,7 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__, epilog=(
         'Exit 0: complete with no broken local links; 1: broken links; '
         '2: incomplete check. External URLs are listed but never fetched. '
-        'Sources: root *.md, skills/**/*.md, docs/agents/**/*.md, docs/adr/**/*.md; '
+        'Sources: root *.md, docs/*.md, skills/**/*.md, docs/agents/**/*.md, docs/adr/**/*.md; '
         'tests, fixtures and dependency directories are excluded.'))
     parser.add_argument('--root', required=True, type=Path, help='Complete candidate tree, not a diff overlay')
     parser.add_argument('--json', action='store_true', help='Print the structured report')

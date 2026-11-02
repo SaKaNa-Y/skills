@@ -1,6 +1,9 @@
 ---
 name: investigate-with-evidence
 description: Resolve a bounded factual question through matching sources and, when needed, controlled execution. Use when expansion or claim challenges need evidence, or when the user asks to investigate a concrete fact.
+metadata:
+  author: sakana
+  version: "2026.11.02"
 ---
 
 # Investigate with Evidence

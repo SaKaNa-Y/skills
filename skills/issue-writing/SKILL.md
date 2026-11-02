@@ -2,6 +2,9 @@
 name: issue-writing
 description: Clarify an idea or problem and help write, revise, and retain an issue draft for the user to submit.
 disable-model-invocation: true
+metadata:
+  author: sakana
+  version: "2026.11.02"
 ---
 
 # Issue Writing

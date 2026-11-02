@@ -2,6 +2,9 @@
 name: setup-sakana-skills
 description: Configure global defaults and project conventions for English output, working records, issue tracking and agent instruction entrypoints.
 disable-model-invocation: true
+metadata:
+  author: sakana
+  version: "2026.11.02"
 ---
 
 # Setup Sakana Skills

@@ -2,6 +2,9 @@
 name: expand-the-frame
 description: Expand a project's decision space through informed questioning, uncovering relevant perspectives, explaining unfamiliar concepts, and tracing the implications of your answers.
 disable-model-invocation: true
+metadata:
+  author: sakana
+  version: "2026.11.02"
 ---
 
 # Expand the Frame

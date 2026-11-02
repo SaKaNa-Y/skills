@@ -2,6 +2,9 @@
 name: implement-change
 description: Implement an agreed change from findings, a spec, tickets or a concrete request; verify the result, prepare a draft PR and update authorized working records. Use only when the user explicitly selects this skill.
 disable-model-invocation: true
+metadata:
+  author: sakana
+  version: "2026.11.02"
 ---
 
 # Implement Change

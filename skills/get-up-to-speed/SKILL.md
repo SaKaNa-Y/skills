@@ -2,6 +2,9 @@
 name: get-up-to-speed
 description: Deliver a complete, self-contained quickstart guide with runnable examples for a library, framework, or developer tool, with implementation depth matched to the learner's goal.
 disable-model-invocation: true
+metadata:
+  author: sakana
+  version: "2026.11.02"
 ---
 
 # Get Up to Speed

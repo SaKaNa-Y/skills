@@ -1,6 +1,9 @@
 ---
 name: prune-the-tree
 description: Prune low-value questions while preserving decisions that belong to the user. Use only when the user explicitly invokes $prune-the-tree.
+metadata:
+  author: sakana
+  version: "2026.11.02"
 ---
 
 # Prune the Tree

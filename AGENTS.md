@@ -1,5 +1,9 @@
 ## Agent skills
 
+### Skill metadata
+
+When adding or changing a skill or its supporting files, follow the [metadata policy](docs/agents/skill-metadata.md) for author and date-version updates.
+
 ### Repository validation
 
 When changing public Markdown, file paths, headings, or the reference checker, follow [repository validation](docs/agents/validation.md) before reporting completion. Check the complete candidate tree, including unchanged reference sources.

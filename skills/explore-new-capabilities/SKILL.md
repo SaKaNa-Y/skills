@@ -2,6 +2,9 @@
 name: explore-new-capabilities
 description: Discover and discuss new capabilities for a project, one evidence-grounded idea at a time, with resumable exploration coverage and opportunity history.
 disable-model-invocation: true
+metadata:
+  author: sakana
+  version: "2026.11.02"
 ---
 
 # Explore New Capabilities

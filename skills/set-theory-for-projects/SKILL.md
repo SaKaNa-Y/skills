@@ -1,6 +1,9 @@
 ---
 name: set-theory-for-projects
 description: Discover evidence-backed ways an existing project could serve more real contexts while preserving necessary specificity. Use only when the user explicitly invokes $set-theory-for-projects.
+metadata:
+  author: sakana
+  version: "2026.11.02"
 ---
 
 # Set Theory for Projects

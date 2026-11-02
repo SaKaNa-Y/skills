@@ -2,6 +2,9 @@
 name: challenge-the-claim
 description: Test a specific claim with the strongest relevant evidence, distinguish factual disagreement from design trade-offs, and conclude honestly when no supported rebuttal is found.
 disable-model-invocation: true
+metadata:
+  author: sakana
+  version: "2026.11.02"
 ---
 
 # Challenge the Claim

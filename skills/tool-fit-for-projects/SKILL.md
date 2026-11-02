@@ -1,6 +1,9 @@
 ---
 name: tool-fit-for-projects
 description: Evaluate which tools fit a repository need, or audit the repository for material tool opportunities, without implementing a change. Use only when the user explicitly invokes $tool-fit-for-projects.
+metadata:
+  author: sakana
+  version: "2026.11.02"
 ---
 
 # Tool Fit for Projects

@@ -2,6 +2,9 @@
 name: make-it-land
 description: Make substantive questions and answers understandable and actionable by supplying enough relevant context.
 disable-model-invocation: true
+metadata:
+  author: sakana
+  version: "2026.11.02"
 ---
 
 # Make It Land

@@ -2,6 +2,9 @@
 name: evolve-skills
 description: Improve or derive skills from conversations, experience and external learning, with user-selected changes, validation and recoverable history.
 disable-model-invocation: true
+metadata:
+  author: sakana
+  version: "2026.11.02"
 ---
 
 # Evolve Skills

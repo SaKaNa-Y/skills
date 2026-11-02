@@ -2,6 +2,9 @@
 name: browse-records
 description: Browse working records, their recorded status, and the evidence behind each item.
 disable-model-invocation: true
+metadata:
+  author: sakana
+  version: "2026.11.02"
 ---
 
 # Browse Records

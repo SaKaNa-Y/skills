@@ -18,9 +18,11 @@ Some skills also need shared methods from this collection. Select these dependen
 
 | Selected skill | Also install |
 | --- | --- |
-| `assess-findings`, `expand-the-frame`, `challenge-the-claim` | `investigate-with-evidence` |
+| `assess-findings`, `expand-the-frame`, `challenge-the-claim`, `review-change` | `investigate-with-evidence` |
 | `just-use-it`, `yak-shaving-triage`, `explore-new-capabilities`, `implement-change` | `assess-findings`, `investigate-with-evidence` |
 | `setup-sakana-skills`, when configuring working records | `assess-findings`, `investigate-with-evidence` |
+
+Install `review-change` alongside implementation skills to use the shared review method. Without it, Implement Change keeps its proportionate inline review.
 
 The workflows do not install dependencies at runtime.
 See the [installation guide](docs/guide.md#quick-start) for individual selection and configuration details.
@@ -59,6 +61,7 @@ See the [installation guide](docs/guide.md#quick-start) for individual selection
 | Skill | Purpose |
 | --- | --- |
 | [issue-writing](skills/issue-writing/SKILL.md) | Clarify an idea and prepare an issue draft for you to submit. |
+| [review-change](skills/review-change/SKILL.md) | Review a specified change against project standards and intended requirements. |
 | [implement-change](skills/implement-change/SKILL.md) | Implement and verify an agreed change, with a Draft PR as the default delivery. |
 
 ### Configuration, records, and skill maintenance

@@ -40,7 +40,7 @@ This repository does not publish its own npm package. `npx` runs the general-pur
 
 ## Invoke Skills
 
-Yak Shaving Triage supports model selection at the start of engineering tasks. Assess Findings supports model selection for findings and opportunities and is reached by Just Use It, Yak Shaving Triage and Explore New Capabilities. Implement Change requires explicit user selection; an implementation request alone does not activate it. Investigate with Evidence supports bounded factual questions and is their assessment method as well as a dependency of Expand the Frame and Challenge the Claim. These shared methods also accept direct invocation. The remaining entrypoints retain their explicit-selection policy. Automatic selection depends on the host and task matching; it is not a guaranteed startup hook. The examples use the `$skill-name` convention; use the equivalent explicit-invocation syntax supported by your agent.
+Yak Shaving Triage supports model selection at the start of engineering tasks. Assess Findings supports model selection for findings and opportunities and is reached by Just Use It, Yak Shaving Triage and Explore New Capabilities. Implement Change requires explicit user selection; an implementation request alone does not activate it. Investigate with Evidence supports bounded factual questions and is their assessment method as well as a dependency of Expand the Frame and Challenge the Claim. These shared methods also accept direct invocation. Review Change supports model selection for a specified change and is used by Implement Change when installed. Its shared factual-check method is Investigate with Evidence. The remaining entrypoints retain their explicit-selection policy. Automatic selection depends on the host and task matching; it is not a guaranteed startup hook. The examples use the `$skill-name` convention; use the equivalent explicit-invocation syntax supported by your agent.
 
 ```text
 $prune-the-tree Help me implement this feature. Resolve routine choices yourself and ask me only about decisions that change the outcome.
@@ -252,6 +252,20 @@ $get-up-to-speed Help me get started with Rolldown so I can contribute. Write on
 
 Get Up to Speed delivers a bounded guide and examples as one artifact; it does not manage an ongoing teaching program.
 
+## Review a Change
+
+**Use it when:** You want a PR, branch, commit range or working-tree change reviewed against project standards and intended requirements. The model can select it for review requests, and Implement Change uses it when installed.
+
+**You get:** Standards and Spec judgments in one deduplicated findings list, with both axes' coverage, locations, evidence, actual checks and material limits. Design concerns remain qualified judgments. Follow-up reviews carry forward dispositions and inspect the repair and affected behavior.
+
+**Boundary:** Review covers the selected change and its impact. It can perform bounded checks under existing authority, but does not fix product code, publish comments or approve a merge. Implement Change retains final integrated-state verification. No spec evidence means that axis remains unavailable; it is not invented from the code.
+
+Install `review-change` with `investigate-with-evidence`. Implement can still review inline when the shared reviewer is unavailable.
+
+```text
+$review-change Review the current branch against main and the agreed issue requirements. Return supported findings and identify checks or requirements you could not verify.
+```
+
 ## Evolve Skills from Experience
 
 **Use it when:** You want to improve or derive skills from conversations, actual use or external methods. Named skills limit the review; a named repository permits screening for relevant targets, including unused skills. Without a specified scope, it starts with the skills actually used. Substantive reviews include proportionate exploration of relevant tool designs, talks, podcasts and technical writing, even without a known failure or supplied concept.
@@ -263,6 +277,8 @@ Get Up to Speed delivers a bounded guide and examples as one artifact; it does n
 ```text
 $evolve-skills Review the skills used in this conversation against their purposes. Discuss concrete improvements with me, then validate and record the changes I select, preserving what is needed to reverse them.
 ```
+
+When a selected evolution changes a review method, its reviewer-evaluation reference covers confirmed defects, valid changes, harmful suggestions and sequential re-review cases. Evolve still owns adoption and recovery; there is no separate calibration skill or automatic self-modification during review.
 
 It works independently and pairs well with separately installed grilling skills for deeper discussion of the proposed changes. Those skills are optional and installed separately.
 
@@ -283,7 +299,7 @@ flowchart TD
     U --> X["User explicitly invokes Implement Change"]
     D["An agreed direct request"] --> X
     X --> I["Implement Change: implement and integrate"]
-    I --> V["Review and runtime verification"]
+    I --> V["Review Change when available; runtime verification"]
     V --> P["Draft PR and result writeback"]
     P --> R
 ```

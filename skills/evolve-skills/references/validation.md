@@ -2,6 +2,8 @@
 
 Use this reference when proposing a change and evaluating its candidate. Choose evidence that can decide the intended value of each material change. Instruction quality, reusable knowledge, behavior, and efficiency require different evidence; a single metric need not represent the whole proposal.
 
+When the selected change affects a code-review method, read [reviewer evaluation](reviewer-evaluation.md) for grounded cases, valid-change controls and review-specific outcomes. It uses this validation contract rather than a separate evolution workflow.
+
 ## Define sufficient evidence before editing
 
 Choose evidence by the selected adoption reason before designing an exercise:

@@ -4,7 +4,7 @@ description: Implement an agreed change from findings, a spec, tickets or a conc
 disable-model-invocation: true
 metadata:
   author: sakana
-  version: "2026.11.02"
+  version: "2026.11.03"
 ---
 
 # Implement Change
@@ -44,9 +44,11 @@ Check relevant claims, branches, commits and PRs before starting duplicate work.
 
 For recorded work, save the owner, execution location/branch, last known progress and next action under existing record authority. Reread before writing the claim. If another owner is active or its state is uncertain, resolve continuation, collaboration or handoff before overlapping edits. Age alone does not release ownership. Inspect available task/process/branch state; ask for direction only when the conflict cannot be resolved from evidence and existing authority. Claims are advisory, not a distributed lock.
 
-For an interrupted task, recover the last action, evidence, pending checks and owned resources; confirm the former executor stopped affected actions before transfer. Preserve unrelated user changes. Use an isolated checkout when needed for parallel writable work, following repository and host rules; do not reset or clean an existing checkout to obtain isolation.
+For an interrupted task, recover the last action, evidence, pending checks and owned resources; confirm the former executor stopped affected actions before transfer. If a side-effecting request has no reliable result, use [external-action recovery](references/external-action-recovery.md) before repeating it, including when the current session continues after a timeout. Preserve unrelated user changes. Use an isolated checkout when needed for parallel writable work, following repository and host rules; do not reset or clean an existing checkout to obtain isolation.
 
 Keep small or tightly coupled changes with one executor. For larger work, split by independently demonstrable results and genuine dependency edges, not simply by file or technical layer. A broad migration may need expand, migrate and contract stages. Dispatch only ready work and also check shared-file, interface, environment and service conflicts: absence of a graph edge does not prove safe concurrency.
+
+Before expanding parallel implementation, account for contributions awaiting integration, review or verification and who will resolve them. If returns accumulate faster than those checks can finish, prioritize that pending work and reduce new dispatch until verification can keep pace. Keep unaffected work moving. Apply this to actual coordination pressure; small tasks need no separate queue or fixed worker quota.
 
 Read [roles and handoffs](references/roles.md) when delegating or integrating multiple contributions. Retain scope, shared-record writing and final delivery under one coordinator. No fixed team size is required.
 
@@ -54,7 +56,7 @@ Read [roles and handoffs](references/roles.md) when delegating or integrating mu
 
 ## 3. Implement and integrate
 
-Follow the repository's design and validation conventions. Use existing deterministic commands and reusable environments when appropriate. For a reproducible bug, use a discriminating regression check when it meaningfully guards behavior; for a new capability, check the agreed outcome and preservation conditions. Derive expected results from the agreement and observable contract rather than copying the implementation into the assertion. Low-impact wording edits need proportionate checks, not artificial tests.
+Follow the repository's design and validation conventions. Use existing deterministic commands and reusable environments when appropriate. For a reproducible bug, use a discriminating regression check when it meaningfully guards behavior; for a new capability, check the agreed outcome and preservation conditions. Derive expected results from the agreement and observable contract rather than copying the implementation into the assertion. Low-impact wording edits need proportionate checks, not artificial tests. When acceptance relies on new or changed tests whose ability to catch a relevant error is uncertain, use the shared [test-effectiveness method](../investigate-with-evidence/references/test-effectiveness.md). Existing reliable regression evidence can settle that question without another experiment.
 
 Before reusing a build or validation entry point, identify the executable that will run and its startup or persistent write effects. When those effects are uncertain, use the [investigation setup method](../investigate-with-evidence/SKILL.md#choose-a-discriminating-check). Wait for the build that produces a required artifact before running it; independent work can continue. A separate checkout does not isolate shared build outputs or user-level installation state.
 
@@ -68,7 +70,7 @@ Handle in-scope defects discovered during implementation. Preserve independently
 
 ## 4. Review and verify the actual result
 
-Keep three questions distinct: does the change implement the agreement, does it follow repository standards, and does the behavior work under the tested conditions? An available code-review method can help with the first two; it does not replace execution. Additional skills are optional; activate explicit-only skills only when the user selects them.
+Keep three questions distinct: does the change implement the agreement, does it follow repository standards, and does the behavior work under the tested conditions? Use [Review Change](../review-change/SKILL.md) when available for the Standards and Spec review of the selected change. Give it the agreement, examined state and relevant guidance; it returns evidence and findings for this workflow to handle. It does not replace execution. If unavailable, perform proportionate review inline and state that the shared method did not run. Activate explicit-only alternatives only when the user selects them.
 
 When repairing runnable commands or configuration examples, use the [documentation verification example](references/documentation-verification.md) to check the edited document from its stated starting conditions.
 
@@ -76,12 +78,14 @@ Choose independent review or verification when complexity, risk or hidden author
 
 Record each meaningful review finding's disposition: repair a supported in-scope issue, explain evidence against an unsupported claim, or return a scope-changing choice to the user. Recheck affected behavior after repairs or integration changes. Bind evidence to the examined code state and environment; an earlier worker branch passing does not establish that the final integrated result passed. Missing execution access remains an explicit verification limit.
 
+For follow-up reviews, use [Review Change's revision method](../review-change/SKILL.md#5-review-a-revision) when available. Otherwise, review inline: retain finding dispositions and examined revisions, recheck changed or affected behavior and unresolved findings, and widen for risk or new evidence. If inline review rounds add little evidence or undo earlier fixes, resolve the cause before continuing. In either path, the implementation owner handles findings and scope decisions; completing a review pass does not mean its findings are fixed.
+
 **Complete when:** material findings are resolved or explicitly pending, and the final change has proportionate evidence for its acceptance and preserved behavior without claiming unrun checks.
 
 ## 5. Deliver and write back
 
 Inspect the final diff, repository commit/PR conventions, target branch and existing PR before publishing. Prepare an accurate description of the scenario, trigger, impact, change value, evidence and limits. Include an issue or PR reference when it directly concerns this problem, is a necessary dependency, or explains correctness or compatibility relevant to review. Retain useful adjacent work and excluded matches in authorized Working Records; each published reference should have a clear role in assessing this change. Preserve that scenario account when producing a shorter author explanation; describe supported use without inventing personal experience. Under the user's implementation request and applicable authorization, commit and create a Draft PR, or update the matching PR without creating a duplicate. Preserve an existing PR's draft/ready state unless a change is authorized. Attach the PR to the current task when the host requires it. Never merge it as part of this skill.
 
-Write the actual PR link, provenance, coverage, checked state/date, final-state verification evidence, changed relationships or affected conclusions, and remaining work to each affected existing Working Record under its recording authority. Changes to a formal issue or spec follow that source's own authorization; a direct implementation request does not require creating a Working Record. Update claims and next actions: waiting for review is not resolved acceptance. Complete authorized record commits under the shared contract; code commits and record commits belong to their respective repositories. A failed publish or writeback is a named pending action with retained work, not a reason to repeat already successful external actions.
+Write the actual PR link, provenance, coverage, checked state/date, final-state verification evidence, changed relationships or affected conclusions, and remaining work to each affected existing Working Record under its recording authority. Changes to a formal issue or spec follow that source's own authorization; a direct implementation request does not require creating a Working Record. Update claims and next actions: waiting for review is not resolved acceptance. Complete authorized record commits under the shared contract; code commits and record commits belong to their respective repositories. Keep publishing and local writeback as separate outcomes. A failed writeback does not undo a successful publish. When the external result is uncertain, use [external-action recovery](references/external-action-recovery.md) to reconcile it before retrying; retain the specific pending action and its evidence.
 
 Clean or transfer only task-owned resources, preserving required evidence and unfinished work. Return the actual delivery link or local result, relevant verification, record paths and any blockers. Do not mark the change fully delivered while a required PR or record update remains pending.

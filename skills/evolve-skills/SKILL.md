@@ -4,7 +4,7 @@ description: Improve or derive skills from conversations, experience and externa
 disable-model-invocation: true
 metadata:
   author: sakana
-  version: "2026.11.02"
+  version: "2026.11.03"
 ---
 
 # Evolve Skills

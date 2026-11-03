@@ -432,6 +432,10 @@ _Avoid_: Shared-component identity, assumed common cause, automatic duplicate
 The user-selected outcome, scope, preserved behavior and observable acceptance conditions sufficient to guide a change, together with any unresolved decisions. It can be recovered from an existing discussion or record without becoming a separate specification.
 _Avoid_: Worthwhile recommendation, inferred product decision, mandatory long spec
 
+**Review Change**:
+The shared method that reviews a specified change against project standards and intended requirements. It returns supported findings, both judgments' coverage and evidence limits. The consuming task retains repair, delivery and final verification ownership.
+_Avoid_: Whole-repository audit, automatic repair, merge approval
+
 **Work Claim**:
 A visible statement of responsibility for an active implementation, with enough progress context to support continuation or an explicit handoff. It is a coordination agreement rather than a guarantee of exclusive execution.
 _Avoid_: Distributed lock, permanent ownership, permission to overwrite

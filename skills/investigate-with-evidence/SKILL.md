@@ -3,7 +3,7 @@ name: investigate-with-evidence
 description: Resolve a bounded factual question through matching sources and, when needed, controlled execution. Use when expansion or claim challenges need evidence, or when the user asks to investigate a concrete fact.
 metadata:
   author: sakana
-  version: "2026.11.02"
+  version: "2026.11.03"
 ---
 
 # Investigate with Evidence
@@ -32,6 +32,8 @@ For a claim about an existing system, identify the relevant entry point or docum
 For questions about removed or changed capabilities, read [trace a capability change](references/capability-changes.md). Use that route to establish the old effect and its current equivalent before proposing a migration.
 
 ## Choose a discriminating check
+
+When a conclusion depends on whether a test can detect a specific wrong behavior, use [test effectiveness](references/test-effectiveness.md). Reuse adequate existing regression evidence; this is a targeted investigation, not a required phase for every test.
 
 Use the smallest check that can settle the uncertainty: primary documentation, source inspection, an existing test, a minimal reproduction, actual UI use, or a controlled measurement. Neither reading code nor executing it is universally sufficient. Runtime ordering, integration behavior, and performance claims may need execution when source alone leaves a material uncertainty.
 

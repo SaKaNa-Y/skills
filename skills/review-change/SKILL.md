@@ -3,7 +3,7 @@ name: review-change
 description: Review a PR, branch, commit range or working-tree change against project standards and its intended requirements. Use for code review, review since a fixed point, or the review stage of implementation.
 metadata:
   author: sakana
-  version: "2026.11.03"
+  version: "2026.11.04"
 ---
 
 # Review Change
@@ -42,6 +42,8 @@ If no supported requirement source is available, report the Spec axis as unavail
 
 ## 3. Examine and verify findings
 
+For changes with several behaviors or shared boundaries, organize inspection by observable outcomes, contracts and behavior that must remain intact. Connect each to changed code, necessary unchanged context and shared dependencies. Use failure consequences and unresolved questions to choose focused checks and review depth. Check interactions between these behaviors as well as each behavior itself. Keep the selected change covered by both axes. A small change can keep this reasoning inline.
+
 Keep the two axes distinct while inspecting the same change:
 
 - **Standards:** identify violations of applicable rules and consequential design concerns. Cite the rule for a violation. Label design heuristics as judgments, with the concrete maintenance problem they could prevent.
@@ -70,6 +72,8 @@ Return the result to the consuming workflow. It decides how to handle findings a
 ## 5. Review a revision
 
 Recover the previous examined state, findings, evidence and dispositions before reviewing a follow-up. Inspect the repair, new changes and affected behavior. Widen review when risk or new evidence warrants it, including consumers outside the latest diff.
+
+For example, a caller stays unchanged while its dependency changes from throwing an error to returning an empty value. Recheck the caller's error handling before reusing the earlier conclusion. An unrelated copy edit leaves that conclusion usable when its conditions still hold. Retain earlier checks with their examined state. A changed condition makes the current conclusion uncertain until checked, rather than proving a defect.
 
 Preserve supported resolutions. Reopen a finding when new evidence changes its basis, rather than repeating an unchanged objection. Assess newly supported material problems even in unchanged code. Report resolved, remaining and new findings with their evidence changes; do not repeat the entire earlier report without a reason.
 

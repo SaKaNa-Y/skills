@@ -3,7 +3,7 @@ name: assess-findings
 description: Assess findings and feature opportunities, preserve evidence and decisions, and recommend scoped next actions. Use for Just, Yak or Explore handoffs, reassessing a specified records folder, and decisions about a fix, improvement or PR.
 metadata:
   author: sakana
-  version: "2026.11.02"
+  version: "2026.11.04"
 ---
 
 # Assess Findings
@@ -62,6 +62,10 @@ Separate what happened from why it matters. Establish the expected outcome from 
 Trace the affected user path far enough to establish impact. Distinguish observed obstruction or misleading output from possible consequences. A workaround may reduce severity while leaving the original path defective. An isolated component example demonstrates that environment; verify the consumer path when the classification depends on integration. Source anomalies can explain behavior but do not supply missing user impact by themselves.
 
 Start with the supplied evidence. On each result or handoff, locate the evidence behind the claim and match it to the original question, tested conditions and relevant run or artifact identity. Record what it establishes and which gap remains before revising the judgment. A claim about one execution needs artifacts from that execution; evidence from separate runs can support an explicitly labeled inference. A neighboring symptom gets its own question or relationship, leaving the original acceptance boundary intact.
+
+When new evidence changes a material condition, identify the judgment it affects and the recommendations that depend on it. Carry forward judgments whose conditions still hold. Mark affected judgments for recheck, and withdraw a judgment when evidence defeats it. Keep historical observations tied to their original conditions. Update the existing worklist or inline account with these distinctions.
+
+For example, an earlier release showed a data-isolation defect and the assessment recommended a new upstream PR. A related PR now exists. Preserve the historical observation, check current version and coverage evidence, and reconsider the contribution route. The PR's existence alone changes neither the demonstrated impact nor the suggested priority.
 
 Update the worklist from that result. Reuse evidence that answers the same question under applicable conditions. For a remaining gap, state which possible results would change the judgment, then take the smallest available, authorized discriminating action. Investigate root cause only as far as correctness, remedy, ownership, or scope requires. Return the result through the evidence intake above before choosing another action.
 

@@ -21,3 +21,7 @@ Independent histories belong only to skills maintained or formerly maintained he
 Execution environments belong in `.scratch/skill-evolution/`. Migration items awaiting a specific decision belong in `.local/skill-evolution-quarantine/`; completed retention moves to the local archive. Verify minimal evidence and recovery inputs before authorized deletion. File age does not authorize cleanup. Report missing historical evidence without upgrading old claims.
 
 Follow [repository validation](validation.md) for public changes and clean-tree export checks. Use its explicit local-history check for the private archive. Publication scans assist review; they cannot certify privacy or decide deletion. Report local saves, commits and pushes separately. Private records and backup refs must not be included in a push.
+
+## Situation navigation
+
+Use [Evolve history reuse](../../skills/evolve-skills/references/history-reuse.md) for substantive history lookup and maintenance. In this repository, detailed history remains in the central `.local/skill-evolution/` archive even when evidence originates in another project. Situation blocks live in their owning records. The private `reuse/` directory contains generated navigation, screening progress and explicit source-review metadata. It is not a public history dependency. Validate these files with the local-history checker; source changes request review rather than automatically changing a conclusion.

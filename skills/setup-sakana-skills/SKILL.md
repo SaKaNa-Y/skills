@@ -1,10 +1,10 @@
 ---
 name: setup-sakana-skills
-description: Configure global defaults and project conventions for English output, working records, issue tracking and agent instruction entrypoints.
+description: Configure global defaults and project conventions for English output, working records, evolution history, issue tracking and agent instruction entrypoints.
 disable-model-invocation: true
 metadata:
   author: sakana
-  version: "2026.11.02"
+  version: "2026.11.04"
 ---
 
 # Setup Sakana Skills
@@ -38,6 +38,7 @@ Carry forward decisions already made. Configure only supported consumers and the
 - **English output:** preserve the optional writing support. Identify any installed skill, shared policy location and selected client entrypoints. Read the [English output guidance](references/english-output.md). Keep normal delivery available when the optional skill is absent.
 - **Working records:** exact root, verified project/upstream/fork identity, existing index and individual-record layout, and useful author identities or explicit provenance for locating the user's PRs. Use one common format for observations and opportunities; reuse existing history without moving it.
 - **Record authority:** which kinds permit ordinary saves and substantive updates; separately, whether each new record and substantive update should receive a local commit. This policy may cover observations, opportunities, assessments and implementation progress when the user selects it. Amendments and pushes remain separate instructions. Do not infer broader permission from an Explore-only rule.
+- **Evolution history:** when Evolve is a supported consumer, resolve its central archive independently of Working Records. Read the [evolution-history guidance](references/evolution-history.md) for source identity, policy, access and cross-project behavior. Reuse existing values; configuration does not run screening or migrate records.
 - **Canonical tracker:** reuse established Tracker Guidance. When absent and needed, propose GitHub Issues for a verified GitHub project or a user-selected local Markdown directory. Preserve another established tracker. Confirm its exact destination and tool; supplemental remote evidence does not create a second canonical destination.
 
 Read the [working-record guidance template](references/working-records.md) when configuring records. Its shared contract comes from Assess; declare that dependency for consumers using it. Read the existing [GitHub](references/issue-tracker-github.md) or [local tracker](references/issue-tracker-local.md) template only when configuring that tracker.

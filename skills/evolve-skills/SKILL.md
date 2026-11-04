@@ -4,7 +4,7 @@ description: Improve or derive skills from conversations, experience and externa
 disable-model-invocation: true
 metadata:
   author: sakana
-  version: "2026.11.03"
+  version: "2026.11.04"
 ---
 
 # Evolve Skills
@@ -45,6 +45,8 @@ Review the full available history of the current conversation by default: user r
 For conversation evidence, trace what the user wanted, the approach taken, material adaptations or feedback, the observed result and unresolved facts. Include successful episodes as well as friction. Map the decision to the target's purpose, then inspect its current method. Attribute a historical result to skill use only when the available execution and version evidence supports it; otherwise assess the current method without assigning historical responsibility.
 
 For external material already supplied or previously consulted, preserve its original context, access limits and relevance to the target. Use [external learning](references/external-learning.md) to interpret sources and distinguish inspiration from demonstrated outcomes.
+
+Before proposals in a substantive assessment, follow [history reuse](references/history-reuse.md) to match the current task and outcome against situation navigation and bounded original-record searches. Carry the relevant prior decision, missing evidence or applicability limit into this assessment. Mechanical edits and recorded rollbacks use their existing history paths.
 
 Read [history and recovery](references/history.md) to establish ownership, the detailed local record location and the separate publication policy and consult relevant prior iterations. Reconcile existing targets with their last recorded active states. Use its [screening and proposed-skill records](references/history.md#screening-and-proposed-skills) when no target has entered assessment or a new skill has no agreed source location. Preserve identifiable external changes and honest history gaps before developing a new change. Before presenting proposals, briefly connect the relevant history to this review: what was previously tried or decided, why, and what new evidence or changed conditions justify revisiting it. Carry forward applicable decisions when that basis is unchanged; extend an existing pending iteration when continuing the same hypothesis.
 
@@ -121,6 +123,8 @@ For an authorized modification follow-up, recover the selected change, perform i
 At a pause, preserve the current candidate, decisions, results, unresolved questions and next action using [retention and migration](references/retention-and-migration.md). Keep work status separate from adoption and validation. On resumption, reconcile the saved baseline with current source before continuing.
 
 Close screening-only work in its scope record, reporting coverage, evidence limits and any resumption condition. For assessed targets, complete the applicable record and update established per-skill indexes according to [history and recovery](references/history.md); proposed skills without a resolved location retain their provisional records. State what was proposed, selected, changed, validated, deferred, and left uncertain; link the exact recovery material. Record no-change conclusions and unsuccessful experiments as useful history, not successful evolution.
+
+At substantive save or pause checkpoints, update relevant situation associations and their review inputs under [history reuse](references/history-reuse.md#maintain-one-association), then refresh and check navigation. Preserve pending work when the configured archive is unavailable.
 
 At closure, follow [retention and migration](references/retention-and-migration.md) to retain necessary evidence, check references and recovery inputs, and clean reproducible task-owned environments. Report files saved, committed and pushed separately under the actual project policy and authorization.
 

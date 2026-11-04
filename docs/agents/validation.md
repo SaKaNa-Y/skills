@@ -170,3 +170,10 @@ Active identity checks read the initial YAML header (up to 64 KiB) and accept
 one top-level kebab-case `name` scalar, optionally quoted or followed by a
 comment. Unsupported or duplicate name fields fail explicitly. This bounded
 check detects source-name changes without claiming general YAML validation.
+
+
+When the private archive contains `reuse/`, local-history validation also checks
+situation schema, references, redirects, screening metadata and generated-view
+freshness through Evolve's portable helper. Review-needed and coverage counts
+remain separate from structural success. They are not automatically resolved by
+rendering navigation. The public checker does not require the private archive.

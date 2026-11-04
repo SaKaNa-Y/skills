@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Read-only checks for public summaries or explicitly selected local history."""
 import argparse
+import importlib.util
 import hashlib
 import json
 from pathlib import Path
@@ -212,11 +213,13 @@ class HistoryChecker:
                         self.issue(source, 'Sanitized migration lacks matching derivative provenance')
         allowed_root = {'README.md', 'manifest.json', 'skills', 'discussions'}
         if self.local:
-            allowed_root.update({'retained', 'migration'})
+            allowed_root.update({'retained', 'migration', 'reuse'})
         for path in self.history.iterdir():
             if path.name not in allowed_root:
                 self.issue(path.name, 'Unexpected history root entry')
         expected_files = {'README.md', 'manifest.json'} | records | {f'skills/{name}/index.md' for name in names}
+        if self.local:
+            expected_files.update('reuse/' + name for name in ('index.md', 'screening.json', 'reviews.json'))
         record_dirs = {str(Path(value).parent) for value in records}
         self.target('README.md')
         for path in sorted(self.history.rglob('*')):
@@ -251,9 +254,25 @@ class HistoryChecker:
                 else:
                     if PRIVATE.search(text):
                         self.issue(relative, 'Possible private material needs publication review', warning=True)
+        reuse_status = None
+        if self.local and (self.history / 'reuse').exists():
+            module_path = self.root / 'skills/evolve-skills/scripts/history_reuse.py'
+            spec = importlib.util.spec_from_file_location('evolution_history_reuse', module_path)
+            module = importlib.util.module_from_spec(spec)
+            try:
+                spec.loader.exec_module(module)
+                reuse_status, code = module.run('check', self.history)
+                for error in reuse_status['errors']:
+                    self.issue(error['path'], error['reason'])
+                if reuse_status['navigation'] != 'current':
+                    self.issue('reuse/index.md', 'Generated situation navigation is stale')
+            except (OSError, ValueError, TypeError, KeyError) as error:
+                self.issue('reuse', 'Reuse check incomplete: ' + str(error))
         checker = Checker(self.root)
         patterns = [pattern.removeprefix(str(HISTORY) + '/') for pattern in HISTORY_PATTERNS]
         sources = sorted({p for pattern in patterns for p in self.history.glob(pattern)})
+        if self.local and (self.history / 'reuse/index.md').is_file():
+            sources.append(self.history / 'reuse/index.md')
         for source in sources:
             if not checker.inside(source):
                 self.issue(str(source.relative_to(self.root)), 'Source escapes candidate tree')
@@ -276,6 +295,9 @@ class HistoryChecker:
         self.stats = {'skills': len(names), 'records': len(records), 'integrity_files': len(listed),
                       'migration_entries': len(data['migration']), 'curated_documents': len(sources),
                       'local_links_checked': checker.checked}
+        if reuse_status is not None:
+            self.stats['reuse_review_needed'] = len(reuse_status['review_needed'])
+            self.stats['reuse_coverage'] = {key: len(value) for key, value in reuse_status['coverage'].items()}
         return self.report()
 
     def report(self):

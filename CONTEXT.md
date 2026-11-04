@@ -77,7 +77,7 @@ The presence of all skill files required by a selected workflow within the state
 _Avoid_: Workflow readiness, host availability, execution guarantee
 
 **Setup Sakana Skills**:
-The Explicit-only Skill that establishes global defaults and project conventions required by the installed skills in this collection. It reuses existing choices and prepares user-reviewed configuration, independently of the skills' runtime invocation.
+The Explicit-only Skill that establishes global defaults and project conventions required by the installed skills in this collection, including a separately configured evolution-history root. It reuses existing choices and prepares user-reviewed configuration, independently of the skills' runtime invocation.
 _Avoid_: Yak-only setup, skill router, issue migration
 
 **Usage-First Audit**:
@@ -507,3 +507,12 @@ _Avoid_: Compliance checker, unscoped skill generation, mandatory grilling depen
 **Evolution Quarantine**:
 An ignored staging location outside formal evolution history for external skill records or material whose ownership, publication safety or required inputs remain unresolved. Its manifest preserves provenance and pending disposition; placement there neither backs up a unique input nor authorizes deletion.
 _Avoid_: Permanent history, normal execution cache, completed migration
+
+
+**Evolution Situation**:
+An association of source-backed experiences that are useful to examine together for a task, intended result or observed outcome. It preserves event identity, applicability, uncertainty and reconsideration conditions. Association does not establish a shared cause or require a skill change.
+_Avoid_: Repetition threshold, automatic improvement, common root cause
+
+**Evolution Situation Navigation**:
+A derived entrypoint that helps an evolution assessment find relevant Evolution Situations and their original evidence. The owning records retain the interpretation; navigation does not independently establish adoption or validation.
+_Avoid_: Second evidence store, complete recall, automatic assessment

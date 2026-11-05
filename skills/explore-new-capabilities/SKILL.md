@@ -4,7 +4,7 @@ description: Discover and discuss new capabilities for a project, one evidence-g
 disable-model-invocation: true
 metadata:
   author: sakana
-  version: "2026.11.02"
+  version: "2026.11.05"
 ---
 
 # Explore New Capabilities
@@ -26,7 +26,7 @@ identifiers, commands, original quotations, and historical evidence.
 
 ## 1. Establish the project and history
 
-Read the project's guidance, purpose, and public capabilities. Use the user's direction, role, and available effort when supplied; ask only for missing context that would change the exploration. Establish enough grounding to identify concrete user outcomes without requiring a whole-project audit.
+Use the permitted project guidance, examples, and public capabilities to identify users, their situations, intended results, and the part the project serves. Treat this task understanding as provisional and revise it when later evidence conflicts. Establish enough context to choose useful tasks before tracing their implementation. Use the user's supplied direction, role, and available effort. Ask only for missing context that changes the exploration scope.
 
 When the user also selects Just Use It, follow its [outcome scope](../just-use-it/SKILL.md#establish-the-outcome-scope) before usage and preserve its source and tracker gates. Just owns usage completion; Explore owns the discovery decision that follows. Otherwise, read relevant source as part of project grounding.
 
@@ -34,7 +34,7 @@ Use [Assess Findings](../assess-findings/SKILL.md), installed with `investigate-
 
 Before selecting discovery routes, read [exploration coverage](references/exploration-coverage.md) and recover the project's index and relevant batches under the active history gates. Compare their scenarios, conditions and evidence with the current task. Retain coverage for every exploration batch, including runs with no opportunity or no execution. Explore maintains its own account; a Just usage ledger supplies evidence rather than replacing it.
 
-Select a bounded set of user scenarios and intended outcomes from the user's goal, project capabilities, previous depth and concrete leads. Explain the selection and known exclusions, then initialize the batch. Keep scope proportional to the request rather than using a fixed number of ideas or a whole-project checklist. On continuation, recover pending work before selecting new routes.
+For open exploration, use the initial mapping in [project-purpose discovery](references/discovery-entrypoints.md#from-project-purpose-to-user-results) before selecting scenarios. Consider both improvements to existing tasks and new user tasks that fit the project's purpose. Use the task results and existing routes from that inquiry, prior coverage, and concrete leads to select a bounded set of scenarios. Each perspective can end without an opportunity. A supplied idea or narrower request retains its scope. Explain the selection and known exclusions, then initialize the batch. Keep scope proportional to the request rather than a whole-project checklist. On continuation, recover pending work before selecting new routes.
 
 When saving or updating records, apply the contract's [classification and overview rules](../assess-findings/references/working-records.md#classify-work-and-maintain-the-overviews). Classify by the problem or intended outcome, independently of the invoking skill and handling status. Keep detailed item tables in project overviews and maintain the root project summary at the same checkpoint.
 
@@ -47,7 +47,7 @@ Match ideas by user problem and intended capability. Continue an unfinished matc
 
 When community feedback supplies a discovery lead or the user requests an issue review, use [feedback discovery](references/prior-work.md#discover-from-feedback) before selecting an opportunity. Keep the declared research scope and active tracker gates.
 
-Start from a concrete situation and what the user is trying to understand, decide, or do. For clues involving missing context, information organization or presentation, simultaneous reference, preparation before action, or users' existing tools, consult [discovery entrypoints](references/discovery-entrypoints.md). Follow the relevant clue rather than treating these routes as a coverage checklist.
+Start from a concrete situation and what the user is trying to understand, decide, or do. For open exploration, continue the selected task inquiry and revise its mapping when new evidence changes it. Use the other [discovery entrypoints](references/discovery-entrypoints.md) when clues concern context, presentation, information needed together, preparation, or users' existing tools. These routes guide investigation within the selected scope rather than require a candidate from each route.
 
 When exploring combinations of existing capabilities, follow the user's next task after an operation succeeds. Identify repeated transfer, conversion, or setup needed to carry its result forward. Locate the information and behavior the connection needs and who already owns them. Follow relevant clues into comparable projects, complementary tools, and user-assembled workflows. Explain which part of an outside idea transfers and what must change for this project. Another product having a feature is inspiration, not evidence that this project's users need it.
 
@@ -55,7 +55,7 @@ When an existing capability affects content from several sources, trace one user
 
 Favor opportunities that fit the project's purpose, while allowing a compelling broader direction if its changed assumptions and maintenance burden are explicit. For example, a check run only before releases because it was too costly might become useful during everyday changes when incremental processing lowers that cost. If users chose infrequent checks to avoid interruptions, faster processing alone would not address that reason. Consider small and large ideas on their merits rather than favoring novelty or size. The agent may compare several leads internally; choose one for discussion instead of presenting a candidate list.
 
-Before settling on a solution, compare materially different ways to meet the same need when plausible alternatives exist. Judge each by the additional user outcome, useful behavior it preserves, and complexity it adds. When an existing command, script or configuration already achieves the outcome, identify the recurring effort, error risk or coordination burden the proposal would remove. Ground that benefit in the scenario rather than treating automation itself as value; a small convenience can still qualify. Keep the strongest approach for discussion and explain the trade-offs that could change the choice. A clear solution needs no invented alternatives; new evidence or user feedback can reopen the comparison.
+Before settling on a solution, compare materially different ways to meet the same need when plausible alternatives exist. Judge each by the additional user outcome, useful behavior it preserves, and complexity it adds. Where relevant, compare support in the core product, an extension, an integration, or an existing external tool. Explain why the proposed owner fits the task, including the maintenance responsibility it takes on. When an existing command, script or configuration already achieves the outcome, identify the recurring effort, error risk or coordination burden the proposal would remove. Ground that benefit in the scenario rather than treating automation itself as value; a small convenience can still qualify. Keep the strongest approach for discussion and explain the trade-offs that could change the choice. A clear solution needs no invented alternatives; new evidence or user feedback can reopen the comparison.
 
 Before adding an investigation, name the current decision and the unknown most likely to change it. This may concern value, an existing alternative, or feasibility; choose the smallest phase-eligible check that can distinguish the relevant answers. When value is unsettled, compare the closest working alternative before deepening implementation evidence if that comparison can decide whether to continue. When feasibility is the blocker, test that assumption instead. A user-requested technical comparison remains the decision to answer, and a useful optional improvement need not prove necessity.
 

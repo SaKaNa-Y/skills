@@ -44,8 +44,8 @@ The batch retains:
 
 | Account | Required information |
 | --- | --- |
-| Identity and scope | Target project; exploration date; relevant source/reference identities and dates; selected scenarios, selection rationale, known exclusions and inherited history gates. Record the actual artifact and execution identity when usage occurred. |
-| Examined leads | Question, supporting and contrary evidence inspected or executed, result and its limits. Distinguish documentation, source inference, observed use and community proposals. Preserve successful and failed checks. |
+| Identity and scope | Target project; exploration date; relevant source/reference identities and dates; selected scenarios, selection rationale, known exclusions and inherited history gates. Keep the task result and existing-route evidence that guided scope or the first question. If the mapping leaves the initial scope unchanged, retain the reason. Record the actual artifact and execution identity when usage occurred. |
+| Examined leads | Question, supporting and contrary evidence inspected or executed, result and its limits. For open exploration, retain the brief basis and outcome of examining existing-task improvements and new tasks, including a route with no candidate or an unexamined boundary. Distinguish documentation, source inference, observed use and community proposals. Preserve successful and failed checks. |
 | Judgment and relationships | What each lead establishes, closest existing alternatives, matched prior work and links to any primary opportunity records. For contributions to matched work, retain demand provenance where recurrence matters, the assessed relationship and uncertainty, and covered versus remaining outcomes of a consolidation recommendation. Keep proposed value separate from demonstrated demand. |
 | Continuation | Progress, remaining meaningful checks, unresolved prerequisites and next actions. Record why discovery continues, enters one opportunity's discussion or stops, and what can justify revisiting it. |
 

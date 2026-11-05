@@ -1,6 +1,17 @@
 # Discovery entrypoints
 
-Choose an entrypoint that matches a project clue, then trace it to an additional user outcome. The main workflow owns evidence, existing alternatives, feasibility, and prior-work checks.
+The main workflow selects the exploration scope. For open exploration, use the project-purpose route below alongside relevant clues about existing tasks. The main workflow owns evidence, existing alternatives, feasibility, and prior-work checks.
+
+## From project purpose to user results
+
+Before selecting scenarios, use the permitted project grounding to describe relevant user tasks by their intended results. Identify known support and unresolved results across those tasks, including results outside current feature shapes. Keep this initial mapping provisional. Return it to scope selection before deeper investigation or trying to map every possible stage.
+
+After initializing the batch, investigate the selected results. Map the project's capabilities, external tools, and manual work back to them. Follow a concrete result that remains unsupported, requires users to assemble several solutions, or becomes plausible under changed assumptions. A new useful result can merit investigation without a reported complaint. Keep inferred needs distinct from observed demand.
+
+Use this mapping to choose the next question or evidence source. Describe the result missing from the closest existing route before choosing a feature shape. For transfers after a successful operation, reuse the main workflow's next-task route. Return promising leads to its alternative comparison and feasibility checks. A result outside current coverage is a lead, not proof that this project must implement it.
+
+For example, a tool can explain one result without helping a user determine whether a later intervention worked. Investigate how users make that decision today before proposing history storage or a comparison interface. If an existing workflow already supports the decision well, retain that evidence and follow another relevant lead.
+
 
 ## Missing context
 

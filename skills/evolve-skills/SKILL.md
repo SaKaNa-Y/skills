@@ -4,7 +4,7 @@ description: Improve or derive skills from conversations, experience and externa
 disable-model-invocation: true
 metadata:
   author: sakana
-  version: "2026.11.04"
+  version: "2026.11.05"
 ---
 
 # Evolve Skills
@@ -89,7 +89,7 @@ For a proposed capability or new skill, start with a concrete task from the evid
 
 When adapting an existing skill in ways that can affect its scope, distinguish preserved behavior from method changes in the proposal. Identify the supported inputs, use cases and output obligations to retain, then explain the internal steps to change. Make any intended responsibility or scope change a separate decision. Simple wording edits need no scope comparison.
 
-Before selecting checks, connect each material change to the original gap, its adoption reason, sufficient evidence, useful behavior to preserve, and claims that would remain unproven. Use [purpose-led validation](references/validation.md) to choose checks for that reason. When method value and improved execution are both proposed, state which is required for adoption and assess each separately. Carry the selected basis into the existing proposal or scope record; later results do not silently change it.
+In the proposal, explain why each material change is worth retaining, what evidence adoption requires, and which expected benefits can remain unproven. Weigh its concrete action or decision benefit against instruction cost, overlap, and behavior to preserve. Distinguish a sufficient adoption reason from a benefit under investigation. Agreement to run an experiment does not by itself make a comparative win necessary for adoption. Preserve the user's selected requirements and resolve only material open choices. If the user requests an exploratory trial before deciding adoption, keep that decision open. Then use [purpose-led validation](references/validation.md) to choose checks that answer those questions. Retain this basis and any open adoption decision in the existing proposal or scope record.
 
 Let the user select concrete hypotheses before implementing them. Reuse an explicit selection already present in the conversation; a request to review or a skill invocation by itself is not selection of an unseen patch. Resolve dependent decisions in subsequent rounds. With co-active grilling, bring the evidence and proposals into its rounds rather than running a second interview.
 
@@ -103,9 +103,9 @@ When a current scope index is in use, reconcile it before preparing the candidat
 
 Before changing target files, follow [history and recovery](references/history.md) to create or resume the iteration record and preserve its actual baseline. Scope recovery material to the affected files, including resources outside the target folder when selected. Preserve existing unrelated edits.
 
-Build the candidate separately from the active version, review its instructions, then perform the agreed checks using [purpose-led validation](references/validation.md). Assess each material change against its selected adoption rule and required evidence; one change's success does not support another.
+Build the candidate separately from the active version, review its instructions, then perform the agreed checks using [purpose-led validation](references/validation.md).
 
-After each evaluation, compare the original problem or failed transition with what the exercise actually tested and what the result establishes. Determine whether any candidate defect or uncertainty remains. If so, state what the next repair or check would decide. Use this account to judge candidate adoption separately from completion of the selected improvement work and choose the next action:
+After evaluation, return to each material change's adoption reason in the selected proposal. Explain what the evidence supports, what remains uncertain, and whether the necessary adoption conditions are met. One change's success does not support another. Where method value is a selected reason, judge the concrete action or decision gained against instruction cost, overlap, and regressions. Clearer organization alone is insufficient. Where comparative gain is required, keep adoption pending until the required evidence supports it. Compare the original problem or failed transition with what the exercise actually tested. Identify any remaining defect or uncertainty and what the next repair or check can decide. Use this assessment to distinguish candidate adoption from completion of the selected improvement work and choose the next action:
 
 - **Revise:** When an observed deficiency supports a concrete repair within the selected hypothesis, target, boundaries, and acceptance basis, prepare that revision and run the affected checks. Carry the finding into the change; a known repair is work to do, not merely a future direction to report.
 - **Repair the evaluation:** When the exercise cannot answer the selected question, including when it misses the relevant transition or supplies the judgment under test, correct the mismatch within the selected acceptance basis before adding more trials. Each additional run must resolve a named uncertainty; otherwise choose another action here.
@@ -114,7 +114,7 @@ After each evaluation, compare the original problem or failed transition with wh
 
 A failed or inconclusive candidate does not by itself complete the selected improvement work. Preserve regressions and unsupported claims; an inconclusive comparison limits only the claim tested. User instructions to stop take precedence. An explicit user choice can authorize an unverified trial with separate adoption and validation states.
 
-When that evidence supports adoption, recheck the active baseline. Reconcile later edits and rerun affected checks before applying the selected candidate in the same run. An unchanged approved change and target need no repeat approval. Treat source editing and updating separate installed copies as distinct targets; update only the selected locations.
+When the evidence supports adoption and application is authorized, recheck the active baseline. Reconcile later edits and rerun affected checks before applying the selected candidate in the same run. An unchanged approved change and target need no repeat approval. If the user reserved adoption, present the assessment and recommendation for that decision before applying the candidate. Permission to prepare or test it does not replace that choice. Treat source editing and updating separate installed copies as distinct targets; update only the selected locations.
 
 For an authorized modification follow-up, recover the selected change, perform it, and inspect the saved delta before reporting it as done. Distinguish that delta from earlier work. A review-only request or a review with no supported edit may leave files unchanged; state that outcome without inventing a change.
 

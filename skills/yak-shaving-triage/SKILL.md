@@ -3,7 +3,7 @@ name: yak-shaving-triage
 description: Guard engineering tasks against yak shaving. Capture independent observations in configured working records, assess related findings, and reconcile formal tracker work without diverting the active task.
 metadata:
   author: sakana
-  version: "2026.11.02"
+  version: "2026.11.05"
 ---
 
 # Yak Shaving Triage

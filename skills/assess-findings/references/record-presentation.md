@@ -27,9 +27,9 @@ Archived records use:
 
 `Item | Type | Outcome and reason | Related delivery`
 
-Link each Item to its current summary or independently managed section. Type is Finding or Exploration. State whether the accepted problem or outcome is resolved and why the item was archived in Outcome and reason. Use a concrete explanation such as `Resolved: first migration preserves workspace membership; applicable verification covers the accepted scope.` or `Not implemented: user chose the existing manual workflow.` A bare `Archived`, `Done` or `See record` leaves the reason missing. Keep detailed dates, acceptance evidence, limitations and reopening conditions in the primary record.
+Link each Item to the current summary of its independent primary record. Type is Finding or Exploration. State whether the accepted problem or outcome is resolved and why the item was archived in Outcome and reason. Use a concrete explanation such as `Resolved: first migration preserves workspace membership; applicable verification covers the accepted scope.` or `Not implemented: user chose the existing manual workflow.` A bare `Archived`, `Done` or `See record` leaves the reason missing. Keep detailed dates, acceptance evidence, limitations and reopening conditions in the primary record.
 
-Coverage and supporting material links existing coverage indexes and additional audits, reproductions or drafts with their purpose and related primary records. Primary records are already listed above. A coverage index is optional when no coverage account exists.
+Coverage and supporting material links the existing usage and exploration indexes. Link a support packet here only when it supplies a distinct navigation need. Primary records and coverage indexes own their detailed evidence links. Keep batch narratives, assessment history and repeated aggregate counts out of the project introduction. A coverage index is optional when no coverage account exists. The records and evidence directories do not need duplicate item or batch inventories.
 
 ## Delivery notation
 
@@ -39,7 +39,7 @@ For work without a PR, state the actual route: a linked commit, local implementa
 
 ## Current summary
 
-Keep one top-level Current summary per primary record. For a multi-item record, give each item its own assessment and lifecycle within that summary. Include its next action and applicable evidence links. For each archived item, explain:
+Keep one top-level Current summary for the single problem or opportunity in each primary record. Include its next action and applicable evidence links. For each archived item, explain:
 
 - **Outcome and reason:** whether it was resolved, satisfied by an existing alternative, left unimplemented by decision, excluded after assessment, duplicated or superseded; explain why active follow-up ended.
 - **Decision basis and date:** the user decision or acceptance evidence supporting archival, with its recorded date. The editor is not automatically the decision owner.
@@ -53,7 +53,7 @@ Put superseded assessments under History and label old status headings Historica
 
 ## Evidence guide
 
-An authored evidence README uses Scope and related records, Artifacts, Replay, and Results and limits sections. Identify the supported record, artifact roles, recorded execution conditions, replay entry point, observed results and limitations. Link an existing detailed account rather than duplicating it; explicitly state unavailable replay inputs. Historical snapshots, imported evidence and deliberately broken test fixtures retain their original contents. Their enclosing guide supplies navigation.
+An authored evidence README uses Scope and related records, Artifacts, Replay, and Results and limits sections. Identify the supported records, artifact roles, recorded execution conditions, replay entry point, observed results and limitations. Distinguish actual execution, source assessment and unpublished drafts. A batch with no finding links its coverage entry instead of inventing a primary record. Link an existing detailed account rather than duplicating it; explicitly state unavailable replay inputs. Historical snapshots, imported evidence and deliberately broken test fixtures retain their original contents. Their enclosing guide supplies navigation.
 
 ## Check the saved result
 

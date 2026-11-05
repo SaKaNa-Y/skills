@@ -10,9 +10,12 @@ Use a separate directory for each verified target repository within the configur
 <records-root>/<project>/
   README.md                  # project identity and coverage entry
   coverage.md                # current navigation by user outcome
-  <batch>-usage-audit.md      # version-bound observations
-  <existing-problem>.md       # only when a problem needs its own account
-  evidence/<batch>/           # minimal inputs and results
+  exploration-coverage.md    # optional exploration decisions, separate from usage
+  records/<problem>.md       # one independently tracked problem
+  evidence/<batch>/
+    README.md                # roles, replay and limits
+    report.md                # version-bound observations
+    <artifacts>              # minimal inputs and results
 ```
 
 Keep the index compact; it links evidence rather than copying logs or every historical result into a table. Batch observations preserve the detailed account. Coverage and audit batches do not increase Findings or Explorations counts. No-finding coverage needs no invented problem or assessment. Known unexercised, blocked and excluded outcomes belong in the map with their discovery basis and next action; the known map need not enumerate the whole product.
@@ -42,12 +45,14 @@ For example, a batch header can supply repository, full executed SHA, build iden
 
 The project index presents each outcome's exercised modes/depth, relevant last actual observations with revision and batch links, applicability judgments where checked, unresolved failures and remaining gaps. Each object can have a small history-links section. For example:
 
-| Outcome / boundary | Actual observation | Applicability / next action |
-| --- | --- | --- |
-| Consume a library: ESM | Passed at revision B; link to batch trace | Source comparison supports reuse for target C; not rerun on C |
-| Consume a library: CJS | Failed at revision B; link to batch trace and finding | Recheck the original failing input after the relevant change |
+| Outcome / boundary | Last actual target | Execution date | Result and limits | Evidence | Applicability / next action |
+| --- | --- | --- | --- | --- | --- |
+| Consume a library: ESM | Revision B, identified build | Recorded execution date | Passed within ESM scope | Batch trace | Source comparison supports reuse for target C; not rerun on C |
+| Consume a library: CJS | Revision A, identified build | Original execution date | Failed on the retained input | Batch trace and primary record | Recheck after the relevant change |
 
-Keep the complete SHA in the linked identity evidence; an index may use its short form. Keep usage state, scope exclusions, problem assessment and version applicability separate. A failed journey can be exercised coverage; a reused pass is not new execution. Verification still requires the consuming workflow's positive trace, not an index label.
+Organize the current index by stable outcome and independently assessable mode, not by chronological batch sections. Show the last actual observation, including failures, partial execution and blocked attempts. Keep unexplained earlier failures visible beside later passes. A shared batch key can supply dates and identities only when each row resolves them unambiguously. Keep complete SHAs and artifact provenance in linked identity evidence; an index can use short SHAs. Use explicit unknowns instead of inferring execution dates from filenames. Keep historical batches as links.
+
+Exploration coverage records examined scenarios, alternatives, judgments and their dated basis. Keep it separate from usage verification coverage. Neither an examined opportunity nor a source comparison establishes runtime coverage. Keep usage state, scope exclusions, problem assessment and version applicability separate. A failed journey can be exercised coverage; a reused pass is not new execution. Verification still requires the consuming workflow's positive trace, not an index label.
 
 ## Compare before reuse
 

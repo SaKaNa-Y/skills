@@ -3,7 +3,7 @@ name: assess-findings
 description: Assess findings and feature opportunities, preserve evidence and decisions, and recommend scoped next actions. Use for Just, Yak or Explore handoffs, reassessing a specified records folder, and decisions about a fix, improvement or PR.
 metadata:
   author: sakana
-  version: "2026.11.04"
+  version: "2026.11.05"
 ---
 
 # Assess Findings
@@ -61,6 +61,10 @@ Separate what happened from why it matters. Establish the expected outcome from 
 
 Trace the affected user path far enough to establish impact. Distinguish observed obstruction or misleading output from possible consequences. A workaround may reduce severity while leaving the original path defective. An isolated component example demonstrates that environment; verify the consumer path when the classification depends on integration. Source anomalies can explain behavior but do not supply missing user impact by themselves.
 
+When a claim depends on a synthetic state, a theoretical edge case, or disputed reachability, trace the supported entry point and check whether the required inputs, configuration and prior state can coexist. Check any constraint offered as an exclusion against the relevant entry points and state sources, including supplied objects, persisted state and later updates. Reuse applicable evidence; send a decision-changing gap through the investigation step below, within the current evidence permissions. A reachability judgment is ready when the evidence establishes a supported path or rules out the claimed path under stated conditions; otherwise retain the specific gap.
+
+For example, validation in the default constructor may leave a supported caller-supplied object unchecked. Check that route before excluding the failure. Conversely, if every relevant supported route enforces the constraint before use and preserves it afterward, a reproduction that bypasses that constraint establishes only the altered environment. Bound exclusions to the checked version and conditions; keep adjacent unknown paths explicit.
+
 Start with the supplied evidence. On each result or handoff, locate the evidence behind the claim and match it to the original question, tested conditions and relevant run or artifact identity. Record what it establishes and which gap remains before revising the judgment. A claim about one execution needs artifacts from that execution; evidence from separate runs can support an explicitly labeled inference. A neighboring symptom gets its own question or relationship, leaving the original acceptance boundary intact.
 
 When new evidence changes a material condition, identify the judgment it affects and the recommendations that depend on it. Carry forward judgments whose conditions still hold. Mark affected judgments for recheck, and withdraw a judgment when evidence defeats it. Keep historical observations tied to their original conditions. Update the existing worklist or inline account with these distinctions.
@@ -82,7 +86,7 @@ Before excluding an observation, distinguish an unsupported expectation from use
 
 ### Establish the affected scope
 
-Before recommending repair scope or grouping, separate the observed failure from its contract and supported mechanism. A title or the first failing entry point does not bound the problem. Within the permitted source scope:
+Before recommending repair scope or grouping, reuse the established trigger and reachability evidence, and separate the observed failure from its contract and supported mechanism. A title or the first failing entry point does not bound the problem. Within the permitted source scope:
 
 1. Locate the operation that produces the failure. Follow its references outward through callers to the public entry points and affected outputs, across package boundaries where the call path leads. For documentation, include connected public type comments and generated references.
 2. For each connected entry point, check the accepted inputs and prior state against the failure conditions. Follow alternative setup paths, including supplied objects or persisted state; the default construction path alone cannot establish an exclusion. Identify the condition that makes each path affected, already correct or still unknown.
@@ -112,6 +116,8 @@ For example, several exporters that ignore the same promised locale can share on
 This step is complete when each observation has an evidence-supported identity or an explicit unresolved match, and each decision-changing scope or relationship lead has a result or a genuine limitation. Report screening separately from verified relationships. A ready independent recommendation can proceed while an unrelated match remains unresolved.
 
 ## 4. Recommend a response
+
+Keep reachability, observed occurrence and response value separate: a supported path establishes that a failure can occur, while claims about frequency need their own evidence. Unknown usage frequency leaves the supported behavior intact; judge the response from the affected task, consequences and trade-offs.
 
 Fix the response goal before evaluating a remedy. Connect a proposed change to that goal, its evidence-backed benefit, the responsible consumer or repository, and meaningful costs or existing alternatives. Separate independent goals and remedies: explaining an empty view and correcting a library calculation may each have value without either requiring the other.
 
@@ -144,7 +150,7 @@ Reconcile outcomes against the original questions and current worklist: evidence
 
 When persistent capture applies, the coordinator carries these outcomes through the [save checkpoint](references/working-records.md#save-and-commit-a-checkpoint): primary assessments first, affected overview fields from those saved assessments, then coverage of the actual changed files. Preserve decisive evidence, relationships, accepted goal and scope, acceptance conditions, user decisions and next action; link existing discussion or specs. Readiness to discuss a finding and readiness to implement it remain separate.
 
-Build the return from that reconciled state: scenario, disposition and expectation basis, decisive evidence, response rationale, assessed priority and remaining dependency. Account for every original in-scope question, including duplicate links and bounded unresolved outcomes. Report the actual saved/committed state separately from the assessment. The coordinator owns the consuming task's final synthesis.
+Build the return from that reconciled state: scenario, disposition and expectation basis, decisive evidence, response rationale, assessed priority and remaining dependency. When reachability affects the judgment, retain in the existing scenario account the conditions and evidence that establish reachability or exclude the claimed path, with material occurrence or frequency limits. A brief explanation or precise evidence pointer is enough. Account for every original in-scope question, including duplicate links and bounded unresolved outcomes. Report the actual saved/committed state separately from the assessment. The coordinator owns the consuming task's final synthesis.
 
 Before returning or shortening a repair assessment, compare the outgoing text with the coverage account. Use the proposal matches when a proposal exists; otherwise use the derived scope and evidence. Include the basis for required corrections, already-correct connected surfaces, material exclusions and remaining checks, either briefly or through precise evidence pointers. Follow those pointers to check that the recipient can recover the scope and its applicability to the assessed version. The return is ready when this basis is recoverable; fill any gaps using the existing account.
 

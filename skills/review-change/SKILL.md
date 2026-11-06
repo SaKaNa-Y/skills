@@ -3,7 +3,7 @@ name: review-change
 description: Review a PR, branch, commit range or working-tree change against project standards and its intended requirements. Use for code review, review since a fixed point, or the review stage of implementation.
 metadata:
   author: sakana
-  version: "2026.11.04"
+  version: "2026.11.06"
 ---
 
 # Review Change
@@ -42,6 +42,25 @@ If no supported requirement source is available, report the Spec axis as unavail
 
 ## 3. Examine and verify findings
 
+### Assign the review
+
+Use an isolated reviewer when the current agent implemented the change, selected its remedy, or already formed a substantive judgment about its correctness. An explicit request for independent review also requires isolation. Apply this requirement regardless of change size. Locating refs and files or clarifying the task alone does not trigger it. Otherwise, choose direct or delegated review according to complexity and judgment risk.
+
+When isolation is required, assign at least one reviewer with a fresh context to cover Standards and Spec. Split work by behaviors and boundaries when useful, and check interactions across assignments. Confirm the host's context isolation before describing the review as independent.
+
+Prepare the handoff for its purpose:
+
+- **Check for omissions:** provide original requirements, agreed scope, the identified change, relevant guidance, and necessary environment and evidence. Let the reviewer form its own conclusions rather than treating the earlier verdict as a premise.
+- **Verify a repair:** also provide the original finding, trigger, prior evidence and repair. Have the reviewer verify the finding's disposition and affected behavior.
+
+Distinguish agreed requirements, verifiable facts and earlier inferences. Reused checks retain their source, examined version and conditions. The coordinator checks findings and counterevidence, fills coverage gaps and integrates the result. Its supplementary checks do not replace a required independent review.
+
+If isolated review is unavailable, continue useful direct checks and report the unmet requirement, reason and what would enable completion.
+
+**Ready when:** both axes have assigned coverage and the required isolated review can proceed, or its limitation is explicit.
+
+### Inspect the change
+
 For changes with several behaviors or shared boundaries, organize inspection by observable outcomes, contracts and behavior that must remain intact. Connect each to changed code, necessary unchanged context and shared dependencies. Use failure consequences and unresolved questions to choose focused checks and review depth. Check interactions between these behaviors as well as each behavior itself. Keep the selected change covered by both axes. A small change can keep this reasoning inline.
 
 Keep the two axes distinct while inspecting the same change:
@@ -50,8 +69,6 @@ Keep the two axes distinct while inspecting the same change:
 - **Spec:** identify missing or partial requirements, unrequested behavior, and implementations that appear to meet a requirement but fail under relevant conditions. Connect each finding to its supported expectation.
 
 Follow callers, configuration, state transitions and consumers when the change can affect them. Inspect unchanged code needed to judge the change; do not turn that trace into an unrelated audit. Security, performance, data integrity and documentation accuracy matter where they bear on these judgments. A test gap is material when it leaves a concrete promised behavior or preservation condition unsupported, not simply because a file lacks a test.
-
-Use proportionate delegation. Independent Standards and Spec reviewers can help when the change or assumptions justify separate judgments. Give them the actual change, original requirements, relevant guidance and allowed checks, without a preferred verdict. Check the host's context isolation before calling a review independent. Small or tightly coupled changes may be reviewed directly; report that honestly. Roles do not require a fixed agent count.
 
 Before accepting a finding, inspect the exact source and the strongest relevant counterevidence. For a behavioral defect, establish the trigger, expected and actual behavior, and consequence. For an explicit standards violation, the applicable rule and conflicting code can suffice without a runtime failure. For a design concern, explain the maintenance situation and cost rather than inventing a failing input. Use a bounded test or reproduction when it could distinguish competing explanations. Inspect setup effects and use existing authorized, controlled environments. Preserve product files and unrelated work. Report actual commands and results separately from static reasoning; a reviewer's agreement or confidence is not evidence.
 
@@ -65,7 +82,7 @@ Start with the supported finding count and the concrete outcome. Return one dedu
 
 Each finding gives a precise title, priority or impact, the location in the examined state, expectation or rule, consequence and supporting evidence. Include triggering conditions for behavioral defects and the relevant maintenance situation for design concerns. Give a repair direction when supported, without requiring a patch. Label a justified heuristic as a design concern rather than a confirmed defect. Keep pure preferences and tool-enforced formatting noise out of the findings; include material check failures in the check results. Use the project's priority convention when present, otherwise explain impact plainly.
 
-Conclude with the comparison and examined state, coverage of both axes, actual checks and their material limits. Keep relevant pre-existing issues and unresolved questions distinct from introduced defects. Report "no supported findings in the reviewed scope" when appropriate; do not manufacture findings or imply that unexamined behavior is correct. A passing axis cannot conceal that the other was not reviewed.
+Conclude with the comparison and examined state, coverage of both axes, actual checks and their material limits. State whether review was direct or isolated, each reviewer’s actual coverage, and which checks were run now or reused. Keep any unmet isolation requirement explicit. Keep relevant pre-existing issues and unresolved questions distinct from introduced defects. Report "no supported findings in the reviewed scope" when appropriate; do not manufacture findings or imply that unexamined behavior is correct. A passing axis cannot conceal that the other was not reviewed.
 
 Return the result to the consuming workflow. It decides how to handle findings and performs final integrated-state acceptance checks. Review evidence does not replace that verification or grant publication authority.
 

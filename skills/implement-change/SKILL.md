@@ -4,7 +4,7 @@ description: Implement an agreed change from findings, a spec, tickets or a conc
 disable-model-invocation: true
 metadata:
   author: sakana
-  version: "2026.11.05"
+  version: "2026.11.06"
 ---
 
 # Implement Change
@@ -56,7 +56,7 @@ Read [roles and handoffs](references/roles.md) when delegating or integrating mu
 
 ## 3. Implement and integrate
 
-Follow the repository's design and validation conventions. Use existing deterministic commands and reusable environments when appropriate. For a reproducible bug, use a discriminating regression check when it meaningfully guards behavior; for a new capability, check the agreed outcome and preservation conditions. Derive expected results from the agreement and observable contract rather than copying the implementation into the assertion. Low-impact wording edits need proportionate checks, not artificial tests. When acceptance relies on new or changed tests whose ability to catch a relevant error is uncertain, use the shared [test-effectiveness method](../investigate-with-evidence/references/test-effectiveness.md). Existing reliable regression evidence can settle that question without another experiment.
+Follow the repository's design and validation conventions. When deciding whether a change needs new or updated tests, use the shared [test-value method](../investigate-with-evidence/references/test-value.md). For a new capability, check the agreed outcome and preservation conditions. Low-impact wording edits need proportionate checks, not artificial tests.
 
 Before reusing a build or validation entry point, identify the executable that will run and its startup or persistent write effects. When those effects are uncertain, use the [investigation setup method](../investigate-with-evidence/SKILL.md#choose-a-discriminating-check). Wait for the build that produces a required artifact before running it; independent work can continue. A separate checkout does not isolate shared build outputs or user-level installation state.
 

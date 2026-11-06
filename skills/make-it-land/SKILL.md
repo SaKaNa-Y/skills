@@ -4,7 +4,7 @@ description: Make substantive questions and answers understandable and actionabl
 disable-model-invocation: true
 metadata:
   author: sakana
-  version: "2026.11.02"
+  version: "2026.11.06"
 ---
 
 # Make It Land
@@ -98,7 +98,7 @@ Use the user's language and the useful principles of Simplified Technical Englis
 
 Keep the Context Sufficiency requirements fixed and adapt the presentation. Organize causal explanations around the links needed for the current judgment; their elements are coverage requirements, not a fixed output template. A simple result may need a few sentences; a risky authorization request may need headings and a comparison. Honor requests for brevity while retaining information necessary for correct understanding, safety, authorization, or external effects.
 
-Keep explanations in the conversational wrapper by default. Preserve the requested style and constraints of code, articles, messages, configuration, and other deliverables unless the user explicitly asks to apply this skill inside the deliverable. When revising an explanation or deliverable, use its latest version and the accumulated user corrections as the baseline. Local edits preserve accepted content elsewhere; rewriting and translation preserve the claims’ scope, conditions, and certainty. If requested wording would change a material factual commitment beyond the evidence, explain that specific change in the wrapper and make the smallest supported correction.
+Keep explanations in the conversational wrapper by default. Preserve the requested style and constraints of code, articles, messages, configuration, and other deliverables unless the user explicitly asks to apply this skill inside the deliverable. When revising an explanation or deliverable, work from its latest version and preserve the accumulated user corrections. When showing a diff, use and identify the two versions established by the request and context. Local edits preserve accepted content elsewhere; rewriting and translation preserve the claims’ scope, conditions, and certainty. If requested wording would change a material factual commitment beyond the evidence, explain that specific change in the wrapper and make the smallest supported correction.
 
 Keep acknowledgements and non-material progress updates brief. Include only context, terms, examples, options, and history that help the user understand, judge, or act.
 

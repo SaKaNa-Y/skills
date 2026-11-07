@@ -12,7 +12,7 @@ Install from this GitHub repository:
 npx skills@latest add SaKaNa-Y/skills
 ```
 
-The interactive installer discovers the available skills and lets you choose which ones and which detected agents to use. Installation is project-scoped by default. Select `investigate-with-evidence` alongside `assess-findings`, `review-change`, `expand-the-frame` or `challenge-the-claim`. These skills use it for factual investigation. Select `assess-findings` and `investigate-with-evidence` alongside `just-use-it`, `yak-shaving-triage`, `explore-new-capabilities` or `implement-change` for shared assessment, investigation and record methods. Setup also needs these installed when configuring working records. These declared dependencies must be installed separately; the workflows do not install them at runtime.
+The interactive installer discovers the available skills and lets you choose which ones and which detected agents to use. Installation is project-scoped by default. Select `investigate-with-evidence` alongside `assess-findings`, `review-change`, `expand-the-frame` or `challenge-the-claim`. These skills use it for factual investigation. Select `assess-findings` and `investigate-with-evidence` alongside `just-use-it`, `yak-shaving-triage`, `explore-new-capabilities` or `implement-change` for shared assessment, investigation and record methods. Setup also uses these dependencies for working records. For ordinary change-risk review alone, install Setup with Investigate. These declared dependencies must be installed separately; the workflows do not install them at runtime.
 
 Preview the available skills without installing anything:
 
@@ -54,6 +54,12 @@ Invoke [`setup-sakana-skills`](../skills/setup-sakana-skills/SKILL.md) to config
 
 ```text
 $setup-sakana-skills Configure a global default for working records, then show any overrides this project needs. Include ordinary-chat guidance for checking existing work and recording PR results. Show the save and local-commit policy separately from tracker publication.
+```
+
+To apply review preferences to ordinary repairs, install `setup-sakana-skills` with `investigate-with-evidence`. For example:
+
+```text
+$setup-sakana-skills Configure ordinary code reviews in my Codex instructions. Keep project risk labels. Allow self-review only for low-consequence changes and use a fresh AI reviewer otherwise. Show me the exact policy and its installed reference.
 ```
 
 The records repository contains project indexes, individual observations or opportunities, and necessary evidence. It is separate from the project's canonical issue tracker. A configured local-commit policy can cover one commit per new record or substantive assessment, decision or implementation update. Pushes and amendments remain separate instructions. Setup neither migrates existing records nor schedules background synchronization.
@@ -308,7 +314,7 @@ flowchart TD
 
 - **Fix a problem directly.** The agent follows the request and applicable project and personal instructions. A plain repair request does not activate Implement Change. The user can ask for local changes and verification.
 - **Start with evidence.** Just saves coverage even when it finds no problems. Yak handles separate findings. Explore investigates possible improvements. Assess can work from the evidence as it arrives or reassess existing records.
-- **Implement agreed work.** Explicitly select Implement Change to use its implementation and delivery workflow. It accepts a direct request or a selected finding. It uses Review Change when available and verifies the integrated behavior.
+- **Implement agreed work.** Explicitly select Implement Change and state the delivery endpoint. The default is an authorized Draft PR. Ask for local changes only when you want to inspect the result before a commit or push. It accepts a direct request or a selected finding. It uses Review Change when available and verifies the integrated behavior.
 - **Ask for review only.** Give Review Change a comparison point and the intended behavior. It returns supported findings and coverage limits to the requester. A prior assessment and a Working Record are optional.
 - **Prepare an issue or inspect prior work.** Select [Issue Writing](../skills/issue-writing/SKILL.md) to prepare a draft for you to submit. Select [Browse Records](../skills/browse-records/SKILL.md) to inspect recorded status and evidence. You can then decide whether to request a fresh assessment.
 
@@ -360,10 +366,16 @@ Assess can compare buffered observations without requiring a known root cause fo
 
 Start with an agreed outcome, scope and acceptance conditions in a record, issue or direct request. If you use working records, reuse the configured directory or provide one when asked. [Setup](#configure-defaults-and-projects) is optional for reusable defaults. Directory selection does not grant commit or publication permission.
 
-Install the complete combination for this task:
+For basic implementation with inline review, install:
 
 ```bash
 npx skills@latest add SaKaNa-Y/skills --skill implement-change assess-findings investigate-with-evidence
+```
+
+For independent Standards and Spec review, install the combination that includes Review Change:
+
+```bash
+npx skills@latest add SaKaNa-Y/skills --skill implement-change assess-findings investigate-with-evidence review-change
 ```
 
 `implement-change` implements and verifies the agreed outcome. `assess-findings` supplies assessment and shared record methods. `investigate-with-evidence` resolves factual gaps that affect the implementation.

@@ -20,6 +20,7 @@ Some skills also need shared methods from this collection. Select these dependen
 | --- | --- |
 | `assess-findings`, `expand-the-frame`, `challenge-the-claim`, `review-change` | `investigate-with-evidence` |
 | `just-use-it`, `yak-shaving-triage`, `explore-new-capabilities`, `implement-change` | `assess-findings`, `investigate-with-evidence` |
+| `setup-sakana-skills`, when configuring ordinary change-risk review | `investigate-with-evidence` |
 | `setup-sakana-skills`, when configuring working records | `assess-findings`, `investigate-with-evidence` |
 
 Install `review-change` alongside implementation skills to use the shared review method. Without it, Implement Change keeps its proportionate inline review.
@@ -102,8 +103,10 @@ The [audit guide](docs/guide.md#just-use-it) explains coverage, saved records, a
 
 ### Implement an agreed change
 
+Install the implementation skills with Review Change for independent review.
+
 ```bash
-npx skills@latest add SaKaNa-Y/skills --skill implement-change assess-findings investigate-with-evidence
+npx skills@latest add SaKaNa-Y/skills --skill implement-change assess-findings investigate-with-evidence review-change
 ```
 
 ```text

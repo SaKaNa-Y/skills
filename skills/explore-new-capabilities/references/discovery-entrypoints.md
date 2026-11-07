@@ -13,6 +13,12 @@ Use this mapping to choose the next question or evidence source. Describe the re
 For example, a tool can explain one result without helping a user determine whether a later intervention worked. Investigate how users make that decision today before proposing history storage or a comparison interface. If an existing workflow already supports the decision well, retain that evidence and follow another relevant lead.
 
 
+## One decision that affects several behaviors
+
+When a user decision affects several behaviors, trace what that decision means for each. Compare a similar case where the user wants a different outcome. Use the differences to identify which effects belong together, which need separate control, and what to investigate next.
+
+For example, a teacher can extend a deadline for one student or the whole class. Both decisions affect late submissions. Can the teacher tell who will receive a reminder in each case?
+
 ## Missing context
 
 When users inspect a result, identify the background needed to understand or judge it. Follow where that background lives and how users retrieve it. Consider whether bringing it into the task would improve their understanding or decision, and when it would add distraction.

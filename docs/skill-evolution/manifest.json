@@ -160,6 +160,15 @@
       "limitations": [
         "Bounded five-turn execution; no comparative or human-comprehension gain claim. Source only. Recovery retained locally."
       ]
+    },
+    {
+      "path": "skills/assess-findings/042-single-pr-origin-and-grouping/record.md",
+      "status": "completed",
+      "adoption": "applied",
+      "validation": "supported",
+      "limitations": [
+        "Exact recovery retained in the private archive. Source only. Bounded synthetic exercises."
+      ]
     }
   ],
   "files": [],

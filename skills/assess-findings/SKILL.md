@@ -3,7 +3,7 @@ name: assess-findings
 description: Assess findings and feature opportunities, preserve evidence and decisions, and recommend scoped next actions. Use for Just, Yak or Explore handoffs, reassessing a specified records folder, and decisions about a fix, improvement or PR.
 metadata:
   author: sakana
-  version: "2026.11.06"
+  version: "2026.11.07"
 ---
 
 # Assess Findings
@@ -41,7 +41,9 @@ A packet may initially lack some of these facts. Preserve the gaps instead of fi
 
 For a batch, resumed work, or several evidence handoffs, turn the original questions and accepted scope into a compact worklist before selecting checks. For each recorded observation, link its original scenario and acceptance boundary, applicable evidence, decision-changing gap, and next executable action or actual limitation. Keep existing identity links as starting claims to check, not fixed units for the recommendation. Reuse record fields and adequate prior evidence. A straightforward single finding can keep this account inline. The worklist guides this task; primary records remain authoritative. At interruption, retain it with the existing checkpoint and reconcile it with current records on resumption. A correction may change the question or identity; preserve the mapping and reason.
 
-When comparing an implementation with earlier ideas, proposals or requirements, use [scope comparison](references/scope-comparison.md) to qualify the worklist before selecting checks and to derive feedback from the resulting coverage. Follow the active evidence gates when retrieving the comparison sources.
+When assessing a PR for delivery, use the project’s records and linked audits, where available, to recover its origin, accepted outcomes and prior grouping decisions. Follow concrete leads to other records or PRs that could share the repair. Apply the [identity and grouping method](#decide-problem-identities) to those candidates.
+
+Use [scope comparison](references/scope-comparison.md) for that PR assessment or any comparison with earlier proposals or requirements. Apply it to findings uncovered during review before recommending what belongs in the PR. Follow the active evidence gates and limit retrieval to the question asked.
 
 Proceed when each selected question has applicable evidence or a next action, and scope and permissions are explicit. A follow-up changes only the dimensions it addresses; carry forward the other accepted decisions.
 

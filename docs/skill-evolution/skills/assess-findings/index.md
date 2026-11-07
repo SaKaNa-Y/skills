@@ -13,3 +13,5 @@ These selected summaries retain their local sequence numbers. Separate installat
 - [028: Comparison scope and engineering record updates](028-comparison-and-record-updates/record.md)
 
 - [035: Finding identities before repair groups](035-finding-relationships/record.md)
+
+- [042: Assess the scope of a single PR](042-single-pr-origin-and-grouping/record.md)

@@ -4,7 +4,7 @@ description: Improve or derive skills from conversations, experience and externa
 disable-model-invocation: true
 metadata:
   author: sakana
-  version: "2026.11.05"
+  version: "2026.11.07"
 ---
 
 # Evolve Skills
@@ -83,7 +83,9 @@ When an opportunity appears to need a new skill, compare organizing a reusable m
 
 ## 4. Select a concrete change
 
-After checking the evidence and overlap with existing methods, present a small concrete proposal by skill. Include a draft passage, method outline or before/after example, its expected value, meaningful alternatives and trade-offs. Focus discussion on decisions that change the proposal. Develop conceptual boundaries first when they prevent a useful draft, or when the user requests that depth. Keep original source links and the specific borrowed idea beside each externally informed proposal. Distinguish the source's claim from your adaptation so the user can inspect and correct it.
+For each target, open with what the skill would do differently on a concrete task and why you recommend that change. When the evidence supports different directions, say which problem each would solve. Recommend where to start and explain why. While the direction is open, give the user the choice between outcomes. Return to the selected direction for decisions about how it would work. Use a draft passage, method outline or before/after example to make the proposal concrete.
+
+Resolve questions the evidence can answer and carry those judgments into the proposal. Ask about an unresolved choice when the answer would change the decision at hand. Explain what each answer would change. Bring a detail into the direction choice only if it changes which outcome is possible or worth pursuing. Develop conceptual boundaries first when they prevent a useful draft, or when the user requests that depth. Keep original source links and the specific borrowed idea beside each externally informed proposal. Distinguish the source's claim from your adaptation so the user can inspect and correct it.
 
 For a proposed capability or new skill, start with a concrete task from the evidence. Show how the closest existing method handles it and which action, result or decision the proposal changes. Use that comparison to explain the value of extending an existing skill or creating a separate one. Once the task and result are clear, discuss only unresolved naming, workflow placement or invocation choices that affect the proposal. If the user asks what the capability does, clarify the task and result before advancing dependent design choices. Fit this explanation into the active discussion without adding a separate approval round.
 

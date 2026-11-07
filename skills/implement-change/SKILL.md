@@ -34,6 +34,8 @@ Before editing, apply [evidence freshness and target selection](../assess-findin
 
 Before editing, use the proposed mechanism to identify affected behavior. When changing a shared transformation, comparator, cache or derived state, trace how relevant inputs are created, transformed, updated and consumed again. Use those paths to identify preservation conditions and discriminating checks in the existing agreement. Stop at the paths needed to establish the change's impact; a local wording edit needs only proportionate inspection.
 
+When the repair takes shape, use the [change-risk criteria](../investigate-with-evidence/references/change-risk.md) to choose checks before editing. Recheck the assumptions behind an earlier proposal rating or make the first assessment here. Identify a failure the checks must distinguish. If the criteria are unavailable, use an applicable project scale or explain the consequences and missing rating basis.
+
 Investigate factual gaps. Ask the user only about unresolved behavior or scope decisions that block correct implementation. A positive Assess recommendation alone is not authorization to select new product behavior. A direct, sufficiently clear implementation request can supply the agreement without a Working Record or a new spec.
 
 Check relevant claims, branches, commits and PRs before starting duplicate work. If a matching PR already exists, reconcile its coverage and continue the authorized work there when appropriate. Distinguish others' related work from this task's deliverables. Keep unavailable remote evidence explicit.
@@ -62,7 +64,7 @@ Before reusing a build or validation entry point, identify the executable that w
 
 Workers return changes, inspected code state, actual checks, new evidence and remaining limits. Integrate dependency-ready contributions while preserving unrelated work. Resolve conflicts against the agreement, then validate the integrated state. If new evidence changes a shared assumption, update the record and affected owners before they continue dependent work.
 
-When the repair changes mechanism or intervention layer, revisit the affected paths and preservation checks before relying on the earlier validation plan.
+When the repair changes mechanism or intervention layer, revisit the affected paths and preservation checks. Update the rating and validation plan when their assumptions change.
 
 Handle in-scope defects discovered during implementation. Preserve independently actionable side findings through co-active Yak or the authorized working-record method without silently adding their repair to the task. A deeper cause can change the proposed repair unit; keep separate acceptance boundaries and return genuinely new product scope to the user.
 
@@ -85,6 +87,8 @@ For follow-up reviews, use [Review Change's revision method](../review-change/SK
 ## 5. Deliver and write back
 
 Inspect the final diff, repository commit/PR conventions, target branch and existing PR before publishing. Prepare an accurate description of the scenario, trigger, impact, change value, evidence and limits. Include an issue or PR reference when it directly concerns this problem, is a necessary dependency, or explains correctness or compatibility relevant to review. Retain useful adjacent work and excluded matches in authorized Working Records; each published reference should have a clear role in assessing this change. Preserve that scenario account when producing a shorter author explanation; describe supported use without inventing personal experience. Under the user's implementation request and applicable authorization, commit and create a Draft PR, or update the matching PR without creating a duplicate. Preserve an existing PR's draft/ready state unless a change is authorized. Attach the PR to the current task when the host requires it. Never merge it as part of this skill.
+
+Report the actual patch's risk with its reason, the decisive checks and any gap that affects the requested endpoint. Reconcile differences from the initial estimate using evidence from the integrated change. For recorded work, include this judgment in the same writeback.
 
 Write the actual PR link, provenance, coverage, checked state/date, final-state verification evidence, changed relationships or affected conclusions, and remaining work to each affected existing Working Record under its recording authority. Changes to a formal issue or spec follow that source's own authorization; a direct implementation request does not require creating a Working Record. Update claims and next actions: waiting for review is not resolved acceptance. Complete authorized record commits under the shared contract; code commits and record commits belong to their respective repositories. Keep publishing and local writeback as separate outcomes. A failed writeback does not undo a successful publish. When the external result is uncertain, use [external-action recovery](references/external-action-recovery.md) to reconcile it before retrying; retain the specific pending action and its evidence.
 

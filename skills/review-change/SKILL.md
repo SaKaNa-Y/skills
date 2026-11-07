@@ -54,6 +54,8 @@ If a reviewer cannot run or its context isolation cannot be confirmed, record wh
 
 ### Inspect the change
 
+Use the [change-risk criteria](../investigate-with-evidence/references/change-risk.md) to judge the actual patch independently and choose the depth of inspection. A direct review can make the first rating. If the reference is unavailable, use an applicable project scale or explain the consequences and missing rating basis. The reviewer assignments above apply at every level.
+
 For changes with several behaviors or shared boundaries, organize inspection by observable outcomes, contracts and behavior that must remain intact. Connect each to changed code, necessary unchanged context and shared dependencies. Use failure consequences and unresolved questions to choose focused checks and review depth. Check interactions between these behaviors as well as each behavior itself. Keep the selected change covered by both axes. A small change can keep this reasoning inline.
 
 Keep the two axes distinct while inspecting the same change:
@@ -75,6 +77,8 @@ Distinguish issues introduced, exposed or worsened by this change from problems 
 
 Before reporting, collect each assigned reviewer’s result or identify its pass as incomplete. Check the findings against counterevidence and resolve gaps across the two reports where possible. Start with the supported finding count and the concrete outcome. Return one deduplicated list ordered by impact, retaining **Standards**, **Spec**, or both on each item. Merge observations only when they describe the same problem and correction boundary; a shared file or suspected cause alone is insufficient.
 
+Report the whole patch's risk and its basis even with zero supported findings. Compare with any prior estimate after forming the review judgment. If they differ, check the assumption that explains the difference. Say what the evidence supports for the requested next step.
+
 Each finding gives a precise title, priority or impact, the location in the examined state, expectation or rule, consequence and supporting evidence. Include triggering conditions for behavioral defects and the relevant maintenance situation for design concerns. Give a repair direction when supported, without requiring a patch. Label a justified heuristic as a design concern rather than a confirmed defect. Keep pure preferences and tool-enforced formatting noise out of the findings; include material check failures in the check results. Use the project's priority convention when present, otherwise explain impact plainly.
 
 Conclude with the comparison and examined state, coverage of both axes, actual checks and their material limits. State which reviewer covered each axis, any cross-axis evidence, and which checks were run now or reused. Keep any unmet isolation requirement explicit. Keep relevant pre-existing issues and unresolved questions distinct from introduced defects. Report "no supported findings in the reviewed scope" when appropriate; do not manufacture findings or imply that unexamined behavior is correct. A passing axis cannot conceal that the other was not reviewed.
@@ -83,7 +87,7 @@ Return the result to the consuming workflow. It decides how to handle findings a
 
 ## 5. Review a revision
 
-Recover the previous examined state, findings, evidence and dispositions before reviewing a follow-up. Inspect the repair, new changes and affected behavior. Widen review when risk or new evidence warrants it, including consumers outside the latest diff.
+Recover the previous examined state, findings, evidence and dispositions before reviewing a follow-up. Inspect the repair, new changes and affected behavior. Widen review when risk or new evidence warrants it, including consumers outside the latest diff. Recheck the original trigger against the repaired state before closing a finding. Revisit the whole-change rating if the failure path, consequences, affected users or recovery conditions change. A repair can pass its new checks and retain its original risk level.
 
 For example, a caller stays unchanged while its dependency changes from throwing an error to returning an empty value. Recheck the caller's error handling before reusing the earlier conclusion. An unrelated copy edit leaves that conclusion usable when its conditions still hold. Retain earlier checks with their examined state. A changed condition makes the current conclusion uncertain until checked, rather than proving a defect.
 

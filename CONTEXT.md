@@ -417,8 +417,12 @@ The Explicit-only Skill that presents a read-only view of current Working Record
 _Avoid_: Assessment, record maintenance, live tracker verification
 
 **Finding Record Category**:
-Concrete problems in existing behavior, including unconfirmed observations, confirmed defects and improvements. It describes the work independently of how it was discovered, assessment confidence, handling decisions or lifecycle.
+Observed or suspected problems in existing behavior with a specific expectation to check. It describes the work independently of how it was discovered, assessment confidence, handling decisions or lifecycle.
 _Avoid_: Confirmed defect only, source skill, handling status
+
+**Improvement Record Category**:
+A concrete change to an existing capability with an identified benefit, such as easier discovery, clearer guidance or better performance.
+_Avoid_: Confirmed defect, proposed new workflow
 
 **Exploration Record Category**:
 Proposed capabilities, workflows or extended uses whose value, scope or design is being considered, including subsequent work on the same opportunity. Its identity is independent of the discovering skill or a decision to implement, defer or archive it.

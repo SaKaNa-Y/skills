@@ -6,20 +6,21 @@ Use these templates when creating or updating working-record navigation and curr
 
 Keep the repository purpose, reading instructions and a Projects table:
 
-`Project | Findings | Explorations | Archived records`
+`Project | Findings | Improvements | Explorations | Archived records`
 
-Link each project name to its README. Findings and Explorations count active independently tracked items, including deferred items. Archived records count archived items of either type. Derive counts from project entries, including separate items within one file. Keep item-level conclusions in the project overview and primary record.
+Link each project name to its README. Each category column counts its active items, including deferred work. Archived records count all archived items. Count each indexed identity once. In a legacy store with several items in one file, use their individual entries. Keep item-level conclusions in the project overview and primary record.
 
 ## Project overview
 
 Start with the project title, repository link and link to the root overview. Use this section order in every project:
 
 1. Findings
-2. Explorations
-3. Archived records
-4. Coverage and supporting material
+2. Improvements
+3. Explorations
+4. Archived records
+5. Coverage and supporting material
 
-Keep empty sections and write `None recorded.`. Findings and Explorations use:
+Keep empty sections and write `None recorded.`. Active items use:
 
 `Item | Current assessment | Handling status | Next action`
 
@@ -27,13 +28,13 @@ Archived records use:
 
 `Item | Type | Outcome and reason | Related delivery`
 
-Link each Item to the current summary of its independent primary record. Type is Finding or Exploration. State whether the accepted problem or outcome is resolved and why the item was archived in Outcome and reason. Use a concrete explanation such as `Resolved: first migration preserves workspace membership; applicable verification covers the accepted scope.` or `Not implemented: user chose the existing manual workflow.` A bare `Archived`, `Done` or `See record` leaves the reason missing. Keep detailed dates, acceptance evidence, limitations and reopening conditions in the primary record.
+Link each Item to the current summary of its independent primary record. Type is the item’s category at archival. State whether the accepted problem or outcome is resolved and why the item was archived in Outcome and reason. Use a concrete explanation such as `Resolved: first migration preserves workspace membership; applicable verification covers the accepted scope.` or `Not implemented: user chose the existing manual workflow.` A bare `Archived`, `Done` or `See record` leaves the reason missing. Keep detailed dates, acceptance evidence, limitations and reopening conditions in the primary record.
 
-Coverage and supporting material links the existing usage and exploration indexes. Link a support packet here only when it supplies a distinct navigation need. Primary records and coverage indexes own their detailed evidence links. Keep batch narratives, assessment history and repeated aggregate counts out of the project introduction. A coverage index is optional when no coverage account exists. The records and evidence directories do not need duplicate item or batch inventories.
+Coverage and supporting material links the existing usage and exploration indexes. Link a support packet here only when it supplies a distinct navigation need. Primary records and coverage indexes own their detailed evidence links. Keep batch narratives, assessment history and repeated aggregate counts out of the project introduction. A coverage index is optional when no coverage account exists. The project README owns the item inventory.
 
 ## Delivery notation
 
-In active rows, place delivery with Handling status; in archived rows, use Related delivery. Give each PR a clickable link and its last verified state: draft, open, merged or closed without merge. For several PRs, state each role, such as `Fix: PR #123 (merged); documentation: PR #124 (merged)`. Record the check date, provenance and covered acceptance in the primary record. Distinguish merged changes from released or deployed behavior when that affects the outcome.
+When a recorded relationship affects submission, include its reason with the relevant item, such as a shared fix, separate acceptance, or a suggestion discussed on another PR. In active rows, place delivery with Handling status; in archived rows, use Related delivery. Give each PR a clickable link and its last verified state: draft, open, merged or closed without merge. For several PRs, state each role, such as `Fix: PR #123 (merged); documentation: PR #124 (merged)`. Record the check date, provenance and covered acceptance in the primary record. Distinguish merged changes from released or deployed behavior when that affects the outcome.
 
 For work without a PR, state the actual route: a linked commit, local implementation, an existing alternative, an assessment without repair, or no implementation selected. An unknown link or state stays explicitly unknown or last-known. Formatting work reuses dated evidence; it does not refresh remote status.
 

@@ -5,7 +5,7 @@ Use when a supported consumer needs persistent observations, opportunities, asse
 Prepare a guidance document with the exact choices the user has made:
 
 - Records root and project identity; upstream/fork when relevant.
-- Existing project index and individual-record convention. Default to sibling `records/` and `evidence/` directories, with optional usage and exploration indexes at project level. Preserve explicit project layout overrides.
+- Existing project index and individual-record convention. Use the shared contract’s category and archive layout by default. Locate the project’s evidence and coverage indexes. Preserve explicit project layout overrides.
 - Which record kinds may be saved or updated during ordinary work.
 - Whether local commits are authorized for those kinds: one per new record or substantive update, wording changes grouped. State that amendments and pushes require separate instructions.
 - The canonical tracker guidance pointer, separately from records.

@@ -4,7 +4,7 @@ description: Discover and discuss new capabilities for a project, one evidence-g
 disable-model-invocation: true
 metadata:
   author: sakana
-  version: "2026.11.05"
+  version: "2026.11.07"
 ---
 
 # Explore New Capabilities

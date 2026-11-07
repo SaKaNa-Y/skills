@@ -4,7 +4,7 @@ description: Configure global defaults and project conventions for English outpu
 disable-model-invocation: true
 metadata:
   author: sakana
-  version: "2026.11.05"
+  version: "2026.11.07"
 ---
 
 # Setup Sakana Skills

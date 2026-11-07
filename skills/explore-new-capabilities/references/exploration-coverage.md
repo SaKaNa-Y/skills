@@ -28,7 +28,7 @@ evidence/<batch>/
 <existing-opportunity>.md
 ```
 
-Link exploration coverage from the project README beside usage coverage. Keep its index and batches independent of Just's `coverage.md` and usage audits. Both can link the same evidence. Exploration batches and coverage entries do not increase the Findings or Explorations counts; those counts follow primary problem and opportunity identities.
+Link exploration coverage from the project README beside usage coverage. Keep its index and batches independent of Just's `coverage.md` and usage audits. Both can link the same evidence. Exploration batches and coverage entries do not increase item counts; those counts follow primary problem and opportunity identities.
 
 Read the index and relevant batch evidence before choosing routes. Compare the actual scenario, constraints, inspected capabilities and relevant prior work with the current task. Retain dated judgments when their conditions remain useful. Reopen only the affected part when new evidence or changed conditions can alter the decision. A new source revision alone supplies neither a reason to repeat everything nor proof that old conclusions still apply.
 

@@ -4,7 +4,7 @@ description: Browse working records, their recorded status, and the evidence beh
 disable-model-invocation: true
 metadata:
   author: sakana
-  version: "2026.11.02"
+  version: "2026.11.07"
 ---
 
 # Browse Records
@@ -26,7 +26,7 @@ identifiers, commands, original quotations, and historical evidence.
 
 Use the current explicit instruction, applicable project guidance, then global configuration to locate the records root. Reuse a known location. Follow a configured migration map to current records; retained historical stores are supporting history. Resolve the project by repository identity or another unambiguous identifier, rather than its folder name alone. If the root is unknown or inaccessible, state that limit and ask for the missing location or access; do not create a replacement store.
 
-Default to the current or clearly identified project. When no project is identified, show the root's project directory and recorded summaries instead of expanding every project. Within a project, show active Findings and Explorations separately, with archived counts and a link to archived records. Honor explicit category, item, group and lifecycle scope; “only Findings” excludes Explorations from the view. Keep lifecycle scope separate: a category or keyword filter retains the active-only default unless the user asks to include archived items. On follow-up, retain applicable scope and replace only the dimensions the user changes; an explicit whole-group request selects its recorded members.
+Default to the current or clearly identified project. When no project is identified, show the root's project directory and recorded summaries instead of expanding every project. Within a project, show active Findings, Improvements and Explorations separately, with archived counts and a link to archived records. Honor explicit category, item, group and lifecycle scope; “only Improvements” selects the recorded Improvements. Keep lifecycle scope separate: a category or keyword filter retains the active-only default unless the user asks to include archived items. On follow-up, retain applicable scope and replace only the dimensions the user changes; an explicit whole-group request selects its recorded members.
 
 Read the applicable overview and compare its entries with the project record files. Follow primary-record sections for the requested items, displayed status and relevant filter fields. Inspect enough of unindexed candidate records to distinguish an omitted identity from supporting material. Evidence files and audit reports are not automatically additional items. Read lengthy evidence and history only when requested or needed to explain a material conflict.
 
@@ -36,7 +36,7 @@ A Problem Identity is the recorded problem or opportunity and its acceptance bou
 
 Keep these dimensions separate:
 
-- **Category:** Findings concern existing behavior, including unconfirmed observations, defects and improvements. Explorations concern proposed capabilities or workflows. Display the recorded category; this viewer does not reclassify it.
+- **Category:** Read the category from the current record and its project entry. If they disagree, report the conflict. For older stores, follow any migration map and preserve the categories recorded there.
 - **Assessment:** the recorded judgment, confidence, rationale and suggested priority where present.
 - **Handling and lifecycle:** decisions, selection, deferral, implementation, verification, delivery and active/archived status. An assessed item may still await selection; deferred does not mean archived, and a shared PR does not give every member the same outcome.
 
@@ -57,8 +57,8 @@ Keep “unassessed” distinct from “assessed, awaiting selection.” Interpre
 Use the conversation for the default view:
 
 1. State scope, source and freshness limits. Put material conflicts, missing entries and count limitations before totals.
-2. Show qualified totals and separate category tables with **Item | Recorded assessment | Handling status | Recorded next action**. Link each item directly to its original primary file or section; keep issue/PR links with handling. Include priority when recorded. Provide the archived-record entry point for the selected scope.
-3. For requested archived items, show whether the accepted problem was resolved, why it was archived and its related delivery. Expand requested details rather than inserting full evidence into every row.
+2. Show qualified totals and separate category tables with **Item | Recorded assessment | Handling status | Recorded next action**. Link each item to its current primary file or section. Keep issue/PR links with handling. When a recorded relationship changes the submission decision, include the reason to group or separate items, or identify a discussion-only link. If the user asks about a relationship the records leave open, say it is unassessed. Include priority when recorded. Provide the archived-record entry point for the selected scope.
+3. For requested archived items, show the category at archival, whether the accepted problem was resolved, why it was archived and its related delivery. Expand requested details rather than inserting full evidence into every row.
 
 A focused item detail contains its scenario and impact, assessment with basis/date/version, handling and delivery, decision-changing unknowns, next action and acceptance, plus original record/evidence links. Keep consequential contrary evidence or conflicts visible in that detail. Full logs, long reproduction procedures and history are optional on request. A group view shows shared work and each member's own assessment, handling and acceptance.
 

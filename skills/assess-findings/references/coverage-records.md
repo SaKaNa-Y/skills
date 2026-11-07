@@ -11,14 +11,14 @@ Use a separate directory for each verified target repository within the configur
   README.md                  # project identity and coverage entry
   coverage.md                # current navigation by user outcome
   exploration-coverage.md    # optional exploration decisions, separate from usage
-  records/<problem>.md       # one independently tracked problem
+  findings/<number>-<short-name>/record.md  # example item linked by an audit
   evidence/<batch>/
     README.md                # roles, replay and limits
     report.md                # version-bound observations
     <artifacts>              # minimal inputs and results
 ```
 
-Keep the index compact; it links evidence rather than copying logs or every historical result into a table. Batch observations preserve the detailed account. Coverage and audit batches do not increase Findings or Explorations counts. No-finding coverage needs no invented problem or assessment. Known unexercised, blocked and excluded outcomes belong in the map with their discovery basis and next action; the known map need not enumerate the whole product.
+Keep the index compact; it links evidence rather than copying logs or every historical result into a table. Batch observations preserve the detailed account. Only primary items count toward category totals. No-finding coverage needs no invented problem or assessment. Known unexercised, blocked and excluded outcomes belong in the map with their discovery basis and next action; the known map need not enumerate the whole product.
 
 When historical reports exist without an index, import only evidence relevant to the current selection. Preserve its original version, depth and limits; unknown fields stay unknown. Label the import as historical organization, not new execution. Preserve existing report links and avoid a mandatory repository-wide backfill.
 

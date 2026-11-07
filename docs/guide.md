@@ -12,7 +12,7 @@ Install from this GitHub repository:
 npx skills@latest add SaKaNa-Y/skills
 ```
 
-The interactive installer discovers the available skills and lets you choose which ones and which detected agents to use. Installation is project-scoped by default. Select `investigate-with-evidence` alongside `expand-the-frame` or `challenge-the-claim`: both entry points use it for factual investigation. Select `assess-findings` and `investigate-with-evidence` alongside `just-use-it`, `yak-shaving-triage`, `explore-new-capabilities` or `implement-change` for shared assessment, investigation and record methods. Setup also needs these installed when configuring working records. These declared dependencies must be installed separately; the workflows do not install them at runtime.
+The interactive installer discovers the available skills and lets you choose which ones and which detected agents to use. Installation is project-scoped by default. Select `investigate-with-evidence` alongside `assess-findings`, `review-change`, `expand-the-frame` or `challenge-the-claim`. These skills use it for factual investigation. Select `assess-findings` and `investigate-with-evidence` alongside `just-use-it`, `yak-shaving-triage`, `explore-new-capabilities` or `implement-change` for shared assessment, investigation and record methods. Setup also needs these installed when configuring working records. These declared dependencies must be installed separately; the workflows do not install them at runtime.
 
 Preview the available skills without installing anything:
 
@@ -256,7 +256,7 @@ Get Up to Speed delivers a bounded guide and examples as one artifact; it does n
 
 **Use it when:** You want a PR, branch, commit range or working-tree change reviewed against project standards and intended requirements. The model can select it for review requests, and Implement Change uses it when installed.
 
-**You get:** Standards and Spec judgments in one deduplicated findings list, with both axes' coverage, locations, evidence, actual checks and material limits. Design concerns remain qualified judgments. Follow-up reviews carry forward dispositions and inspect the repair and affected behavior.
+**You get:** Standards and Spec judgments in one deduplicated findings list, with both axes' coverage, locations, evidence, actual checks and material limits. Each substantive pass uses a fresh Standards reviewer. When requirements are available, a separate fresh Spec reviewer examines the same change. A repair review gives them the original finding, its trigger and the repair. The report identifies any review that could not run.
 
 **Boundary:** Review covers the selected change and its impact. It can perform bounded checks under existing authority, but does not fix product code, publish comments or approve a merge. Implement Change retains final integrated-state verification. No spec evidence means that axis remains unavailable; it is not invented from the code.
 
@@ -284,27 +284,43 @@ It works independently and pairs well with separately installed grilling skills 
 
 ## Combine Skills
 
-These are recommended workflows. Their contracts and structural checks do not establish a measured productivity gain; real use can refine the combinations. The linked skills own runtime rules. This section explains how to start, who does what, and where work stops.
+Choose the entry that matches the work you want done. The [skill catalog](../README.md#skills) lists all entry points.
 
 ### Workflow overview
 
 ```mermaid
 flowchart TD
-    J["Just: use, save coverage and read it on continuation"] --> R["Shared working records"]
-    Y["Yak: preserve side findings"] --> R
-    E["Explore: discover and discuss opportunities"] --> R
-    R -->|Findings or opportunities needing judgment| A["Assess: evidence, value and relationships"]
-    A --> R
-    A --> U["User selects the work"]
-    U --> X["User explicitly invokes Implement Change"]
-    D["An agreed direct request"] --> X
-    X --> I["Implement Change: implement and integrate"]
-    I --> V["Review Change when available; runtime verification"]
-    V --> P["Draft PR and result writeback"]
-    P --> R
+    F["Fix this problem"] --> O["Ordinary repair under project instructions"]
+    O --> L["Requested local result and verification"]
+    J["Just: exercise user workflows"] --> A["Assess a finding or proposed improvement"]
+    Y["Yak: preserve a separate finding"] --> A
+    E["Explore: investigate an opportunity"] --> A
+    A --> W["Update the primary record when capture applies"]
+    A --> D["User selects an outcome"]
+    D --> X["Explicitly select Implement Change"]
+    T["Agreed request, spec or ticket"] --> X
+    X --> I["Implement and integrate"]
+    I --> V["Review and verify the integrated result"]
+    V --> P["Draft PR or requested local endpoint"]
+    P --> W2["Update related records when present"]
+    R["Review a PR, branch or local diff"] --> S["Review Change returns evidence and findings"]
 ```
 
-Setup supplies the records configuration and agent entrypoints used across this flow. Each stage describes a responsibility. The number of agents depends on the task. The scenarios below explain the starting commands, required evidence and stopping points. An agreed direct request can enter implementation without discovery first.
+- **Fix a problem directly.** The agent follows the request and applicable project and personal instructions. A plain repair request does not activate Implement Change. The user can ask for local changes and verification.
+- **Start with evidence.** Just saves coverage even when it finds no problems. Yak handles separate findings. Explore investigates possible improvements. Assess can work from the evidence as it arrives or reassess existing records.
+- **Implement agreed work.** Explicitly select Implement Change to use its implementation and delivery workflow. It accepts a direct request or a selected finding. It uses Review Change when available and verifies the integrated behavior.
+- **Ask for review only.** Give Review Change a comparison point and the intended behavior. It returns supported findings and coverage limits to the requester. A prior assessment and a Working Record are optional.
+- **Prepare an issue or inspect prior work.** Select [Issue Writing](../skills/issue-writing/SKILL.md) to prepare a draft for you to submit. Select [Browse Records](../skills/browse-records/SKILL.md) to inspect recorded status and evidence. You can then decide whether to request a fresh assessment.
+
+### Follow change risk from a proposal to a repair
+
+Assess can rate the first concrete fix in an assessment. For a direct implementation request, Implement can make the first rating during planning. For a direct review, Review can make it against the actual patch. All three use the [change-risk guide](../skills/investigate-with-evidence/references/change-risk.md). Use a project risk scale when one applies. Finding priority describes when to act. Change risk describes what could happen if a particular change is wrong.
+
+For example, a proposed download retry might only touch temporary files. If the patch also deletes files from the installation directory, check whether a failed retry can leave the application unable to start. Implement uses that consequence to choose a recovery check. Review independently checks the actual patch. After a repair, repeat checks whose assumptions changed. Identify the revision and platform for any result you reuse.
+
+If a Working Record exists, keep the proposal, current patch rating and reason for a material change in the same primary record. The review report names the supported findings, change risk, evidence and gaps that affect the next authorized step. A missing platform check can leave a release decision open while a Draft PR gathers CI evidence.
+
+For ordinary repairs, a user can put a pointer to the installed change-risk guide in their personal agent instructions. The user can specify when to use an independent AI reviewer and what to report. This route works without invoking Implement Change or creating a Working Record.
 
 ### Find a problem through actual use
 

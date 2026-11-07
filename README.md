@@ -115,7 +115,7 @@ This example requests local delivery. The [implementation guide](docs/guide.md#i
 ## Guides and maintenance
 
 - [Skill guide](docs/guide.md): Detailed use, configuration, dependencies, and boundaries.
-- [Combined workflows](docs/guide.md#combine-skills): Task ownership, handoffs, and stopping points.
+- [Workflow overview](docs/guide.md#workflow-overview) for direct repairs, independent reviews, assessment, and delivery.
 - [Update installed skills](docs/guide.md#update-installed-skills): CLI update commands.
 - [Metadata policy](docs/agents/skill-metadata.md): Author and date-version maintenance rules.
 - [Repository validation](docs/agents/validation.md): Checks for the complete candidate tree.

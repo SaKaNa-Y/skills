@@ -178,6 +178,15 @@
       "limitations": [
         "Navigation, file integrity and installation were checked. No fresh agent assessment trial was run."
       ]
+    },
+    {
+      "path": "discussions/049-risk-based-human-review/record.md",
+      "status": "completed",
+      "adoption": "applied",
+      "validation": "supported",
+      "limitations": [
+        "Exact recovery retained in the private archive. Local fixtures and bounded agent exercises cover the tested decisions. Windows and production behavior were not verified."
+      ]
     }
   ],
   "files": [],

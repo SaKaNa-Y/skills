@@ -23,3 +23,5 @@ See the [history policy](../agents/evolution-history.md) for selection and reten
 - [Make It Land](skills/make-it-land/index.md): understanding before dependent design choices.
 
 - [Working record categories](discussions/047-vite-plus-record-organization/record.md): category selection, archive moves and submission relationships.
+
+- [Change risk and verification](discussions/049-risk-based-human-review/record.md) covers proposed repairs, independent review and evidence after a revision.

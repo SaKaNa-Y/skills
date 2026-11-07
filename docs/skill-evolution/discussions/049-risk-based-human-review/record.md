@@ -1,0 +1,5 @@
+# Use change risk to choose verification
+
+A change can have no open findings and still affect a critical path. Assess Findings can rate a proposed repair before a patch exists. Implement Change uses that rating to choose checks. Review Change rates the actual patch and revisits the rating when the failure path, reach or recovery conditions change. Each workflow can also start without a prior rating. They use the same [change-risk guide](../../../../skills/investigate-with-evidence/references/change-risk.md).
+
+In local updater exercises, a replacement failure removed the installed program in one version. After the repair, the previous version still started and a retry installed the new version. Both changes carried high risk because they affected startup. A separate Windows path still required Windows evidence before a cross-platform release. Small display and help-text changes used focused checks. These exercises cover the tested decisions. They do not measure a change in defect detection rates.

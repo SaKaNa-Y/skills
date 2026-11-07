@@ -1,9 +1,9 @@
 ---
 name: review-change
-description: Review a PR, branch, commit range or working-tree change against project standards and its intended requirements. Use for code review, review since a fixed point, or the review stage of implementation.
+description: Review a PR, branch, commit range or working-tree change against project standards and its intended requirements. Use for code review, review since a fixed point, or the review stage of implementation. Use the requested or established conversation language from the first progress message.
 metadata:
   author: sakana
-  version: "2026.11.06"
+  version: "2026.11.07"
 ---
 
 # Review Change
@@ -14,9 +14,9 @@ This method supports direct requests and calls from other skills. Its scope is t
 
 For factual uncertainty that could change a finding, use [Investigate with Evidence](../investigate-with-evidence/SKILL.md). Install that shared method alongside this skill. If it is unavailable, continue supported review and identify the dependent check that remains unresolved; do not install it at runtime. Review output alone does not create a working-record or tracker workflow.
 
-## English output
+## Response language
 
-Use `simple-english` for English prose when it is installed and readable. Otherwise write clear English normally. Preserve meaning, uncertainty, requirement strength, source quotations and requested formats; keep the requested language.
+A skill mention and a PR link carry no language request. Use the conversation language or the user's established language preference from the first update. Honor explicit language requests for the output they apply to. Use `simple-english` only for prose that will be in English and only when the skill is available. Preserve meaning, uncertainty, requirement strength, source quotations and requested formats.
 
 ## 1. Identify the change
 

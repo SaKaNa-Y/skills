@@ -118,7 +118,7 @@ A failed or inconclusive candidate does not by itself complete the selected impr
 
 When the evidence supports adoption and application is authorized, recheck the active baseline. Reconcile later edits and rerun affected checks before applying the selected candidate in the same run. An unchanged approved change and target need no repeat approval. If the user reserved adoption, present the assessment and recommendation for that decision before applying the candidate. Permission to prepare or test it does not replace that choice. Treat source editing and updating separate installed copies as distinct targets; update only the selected locations.
 
-For an authorized modification follow-up, recover the selected change, perform it, and inspect the saved delta before reporting it as done. Distinguish that delta from earlier work. A review-only request or a review with no supported edit may leave files unchanged; state that outcome without inventing a change.
+For a review-only request, report the findings and any concrete edits worth making. A brief instruction to apply an edit refers to the pending change and target established in the conversation. When both are clear, apply it and inspect the saved delta before reporting what changed. If the change is already complete or the intended edit or target is unclear, ask what the user wants modified. An assistant suggestion or delivery status alone does not select another target.
 
 ## 6. Close or pause the iteration
 

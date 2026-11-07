@@ -44,7 +44,7 @@ Review the full available history of the current conversation by default: user r
 
 For conversation evidence, trace what the user wanted, the approach taken, material adaptations or feedback, the observed result and unresolved facts. Include successful episodes as well as friction. Map the decision to the target's purpose, then inspect its current method. Attribute a historical result to skill use only when the available execution and version evidence supports it; otherwise assess the current method without assigning historical responsibility.
 
-For external material already supplied or previously consulted, preserve its original context, access limits and relevance to the target. Use [external learning](references/external-learning.md) to interpret sources and distinguish inspiration from demonstrated outcomes.
+For external material already supplied or previously consulted, preserve its original context, access limits and relevance to the target. Read the source’s outbound references as part of [external learning](references/external-learning.md) before summarizing it or proposing changes. Distinguish inspiration from demonstrated outcomes.
 
 Before proposals in a substantive assessment, follow [history reuse](references/history-reuse.md) to match the current task and outcome against situation navigation and bounded original-record searches. Carry the relevant prior decision, missing evidence or applicability limit into this assessment. Mechanical edits and recorded rollbacks use their existing history paths.
 

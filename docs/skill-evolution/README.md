@@ -21,3 +21,5 @@ See the [history policy](../agents/evolution-history.md) for selection and reten
 - [Issue writing](skills/issue-writing/index.md): explicit drafting and local revision continuity.
 
 - [Make It Land](skills/make-it-land/index.md): understanding before dependent design choices.
+
+- [Working record categories](discussions/047-vite-plus-record-organization/record.md): category selection, archive moves and submission relationships.

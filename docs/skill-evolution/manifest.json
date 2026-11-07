@@ -169,6 +169,15 @@
       "limitations": [
         "Exact recovery retained in the private archive. Source only. Bounded synthetic exercises."
       ]
+    },
+    {
+      "path": "discussions/047-vite-plus-record-organization/record.md",
+      "status": "completed",
+      "adoption": "applied",
+      "validation": "supported",
+      "limitations": [
+        "Navigation, file integrity and installation were checked. No fresh agent assessment trial was run."
+      ]
     }
   ],
   "files": [],

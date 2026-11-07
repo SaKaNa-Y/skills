@@ -1,6 +1,6 @@
 ---
 name: setup-sakana-skills
-description: Configure global defaults and project conventions for English output, working records, evolution history, issue tracking and agent instruction entrypoints.
+description: Configure global defaults and project conventions for change-risk review, English output, working records, evolution history, issue tracking and agent instruction entrypoints.
 disable-model-invocation: true
 metadata:
   author: sakana
@@ -35,6 +35,7 @@ Resolve settings from the current explicit instruction, then project overrides, 
 Carry forward decisions already made. Configure only supported consumers and the requested scope:
 
 - **Scope and clients:** global defaults, project overrides or both; Claude Code, Codex or both. Show how a project inherits or overrides values. Project tracker identity stays project-specific even when general conventions are inherited.
+- **Change-risk review:** When configuring ordinary code changes, locate the installed [change-risk guide](../investigate-with-evidence/references/change-risk.md) from each selected client. Point its ordinary-task instructions to that file at the first concrete repair plan or review of a patch. Keep the project’s scale for reporting and use failure consequences to choose review depth even when project labels differ. Reuse the user’s reviewer policy or resolve who may self-review and when independent review is required. Preserve project approval rules and the requested delivery endpoint. If the guide is missing, report the unavailable dependency before writing its pointer.
 - **English output:** preserve the optional writing support. Identify any installed skill, shared policy location and selected client entrypoints. Read the [English output guidance](references/english-output.md). Keep normal delivery available when the optional skill is absent.
 - **Working records:** exact root, verified project/upstream/fork identity, existing index and individual-record layout, and useful author identities or explicit provenance for locating the user's PRs. Use one common format for observations and opportunities; reuse existing history without moving it.
 - **Record authority:** which kinds permit ordinary saves and substantive updates; separately, whether each new record and substantive update should receive a local commit. This policy may cover observations, opportunities, assessments and implementation progress when the user selects it. Amendments and pushes remain separate instructions. Do not infer broader permission from an Explore-only rule.
@@ -58,6 +59,8 @@ Preserve unrelated domain, label and project rules. Both clients may point to th
 ## 4. Apply and verify
 
 Apply only approved configuration. Verify pointers from each selected entrypoint, effective precedence, project identity, the distinction between record and tracker authority, and preservation of unrelated content. Confirm any authorized directory creation and report inaccessible paths separately. For English output, check the entrypoint-to-policy path and access to any configured optional skill. Missing optional instructions must leave normal delivery available. Do not install the optional skill automatically.
+
+For a configured risk policy, trace an ordinary repair with no selected skill and a project with its own scale. Verify that each client can read the guide and distinguish the reported grade from its reviewer choice.
 
 Re-read the result as a second setup pass: unchanged guidance should require no further edits. Report changed files, global versus project effect, consumers and unverified access. Do not create findings, publish issues, migrate history or schedule synchronization as part of setup.
 

@@ -3,7 +3,7 @@ name: review-change
 description: Review a PR, branch, commit range or working-tree change against project standards and its intended requirements. Use for code review, review since a fixed point, or the review stage of implementation. Use the requested or established conversation language from the first progress message.
 metadata:
   author: sakana
-  version: "2026.11.07"
+  version: "2026.11.08"
 ---
 
 # Review Change
@@ -77,7 +77,7 @@ Distinguish issues introduced, exposed or worsened by this change from problems 
 
 Before reporting, collect each assigned reviewer’s result or identify its pass as incomplete. Check the findings against counterevidence and resolve gaps across the two reports where possible. Start with the supported finding count and the concrete outcome. Return one deduplicated list ordered by impact, retaining **Standards**, **Spec**, or both on each item. Merge observations only when they describe the same problem and correction boundary; a shared file or suspected cause alone is insufficient.
 
-Report the whole patch's risk and its basis even with zero supported findings. Compare with any prior estimate after forming the review judgment. If they differ, check the assumption that explains the difference. Say what the evidence supports for the requested next step.
+Report the whole patch's risk and its basis even with zero supported findings. Compare with any prior estimate after forming the review judgment. If they differ, check the assumption that explains the difference. Say what the evidence supports for the requested next step. When recommending a fix in this change, name the requirement, regression or applicable project rule that makes it part of the change. If you recommend holding the merge, identify the findings or missing acceptance evidence that justify waiting. Explain the consequence. Keep missing evidence outside the defect count. Priority alone does not establish either judgment. If an unresolved requirement would change the verdict, ask for the missing decision and keep it outside the defect count.
 
 Each finding gives a precise title, priority or impact, the location in the examined state, expectation or rule, consequence and supporting evidence. Include triggering conditions for behavioral defects and the relevant maintenance situation for design concerns. Give a repair direction when supported, without requiring a patch. Label a justified heuristic as a design concern rather than a confirmed defect. Keep pure preferences and tool-enforced formatting noise out of the findings; include material check failures in the check results. Use the project's priority convention when present, otherwise explain impact plainly.
 

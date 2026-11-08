@@ -27,3 +27,5 @@ See the [history policy](../agents/evolution-history.md) for selection and reten
 - [Change risk and verification](discussions/049-risk-based-human-review/record.md) covers proposed repairs, independent review and evidence after a revision.
 
 - [Priority and change risk in project overviews](discussions/050-pr484-review-and-record-grades/record.md).
+
+- [Scope of a PR assessment](discussions/051-pr3378-assess-and-review/record.md).

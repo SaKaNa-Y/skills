@@ -196,6 +196,15 @@
       "limitations": [
         "The table trial used copies of project records. The two review cases do not establish a general detection rate. Exact recovery is held in the private archive."
       ]
+    },
+    {
+      "path": "discussions/051-pr3378-assess-and-review/record.md",
+      "status": "completed",
+      "adoption": "applied",
+      "validation": "supported",
+      "limitations": [
+        "Two assessment questions on one synthetic patch. Exact recovery is in the private archive."
+      ]
     }
   ],
   "files": [],

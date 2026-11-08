@@ -1,6 +1,6 @@
 ---
 name: assess-findings
-description: Assess Findings, Improvements and Explorations, preserve evidence and decisions, and recommend scoped next actions. Use for Just, Yak or Explore handoffs, reassessing a specified records folder, and decisions about a fix, improvement or PR.
+description: Assess Findings, Improvements and Explorations, preserve evidence and decisions, and recommend scoped next actions. Use for Just, Yak or Explore handoffs, reassessing a specified records folder, and decisions about whether an observed finding warrants a fix, improvement or PR.
 metadata:
   author: sakana
   version: "2026.11.08"
@@ -9,6 +9,8 @@ metadata:
 # Assess Findings
 
 Turn an observed finding into a supported judgment and a useful next-action recommendation. Assess the finding's basis separately from the value of a proposed response. A worthwhile optional improvement can justify a PR without being necessary; reproducibility alone establishes behavior, not a defect.
+
+If the user supplies only a PR, recover the finding from its stated purpose and linked records. Assess its impact, the proposed response and coverage of the original outcome. Select checks, delegated work and evidence from existing records by the same question: can this fact change the judgment about the original finding? State the remaining gap against that finding’s acceptance conditions. Leave other recorded defects and their repair decisions in their own records. A patch review or merge verdict requires a separate request.
 
 Use [investigate-with-evidence](../investigate-with-evidence/SKILL.md) for factual uncertainties that could change the judgment. Install both skills together. This workflow authorizes analysis and bounded investigation within the consuming task's permissions; repair and publication remain separate actions.
 
@@ -41,9 +43,7 @@ A packet may initially lack some of these facts. Preserve the gaps instead of fi
 
 For a batch, resumed work, or several evidence handoffs, turn the original questions and accepted scope into a compact worklist before selecting checks. For each recorded observation, link its original scenario and acceptance boundary, applicable evidence, decision-changing gap, and next executable action or actual limitation. Keep existing identity links as starting claims to check, not fixed units for the recommendation. Reuse record fields and adequate prior evidence. A straightforward single finding can keep this account inline. The worklist guides this task; primary records remain authoritative. At interruption, retain it with the existing checkpoint and reconcile it with current records on resumption. A correction may change the question or identity; preserve the mapping and reason.
 
-When assessing a PR for delivery, use the project’s records and linked audits, where available, to recover its origin, accepted outcomes and prior grouping decisions. Follow concrete leads to other records or PRs that could share the repair. Apply the [identity and grouping method](#decide-problem-identities) to those candidates.
-
-Use [scope comparison](references/scope-comparison.md) for that PR assessment or any comparison with earlier proposals or requirements. Apply it to findings uncovered during review before recommending what belongs in the PR. Follow the active evidence gates and limit retrieval to the question asked.
+When comparing an implementation with earlier ideas, proposals or requirements, use [scope comparison](references/scope-comparison.md) to qualify the worklist before selecting checks and to derive feedback from the resulting coverage. Follow the active evidence gates when retrieving the comparison sources.
 
 Proceed when each selected question has applicable evidence or a next action, and scope and permissions are explicit. A follow-up changes only the dimensions it addresses; carry forward the other accepted decisions.
 
@@ -106,7 +106,7 @@ For an idea, evaluate its concrete user situation, incremental value over the cl
 
 ### Decide problem identities
 
-Use the scope evidence to decide what the problems are before deciding how to submit fixes. For a batch, compare observations across record boundaries as well as within each record. Reuse the worklist; a separate matrix or a root-cause investigation for every pair is unnecessary.
+When the user asks which repairs belong together, recover prior grouping decisions and follow concrete leads to related records or PRs. Use the scope evidence to decide what the problems are before deciding how to submit fixes. For a batch, compare observations across record boundaries as well as within each record. Reuse the worklist; a separate matrix or a root-cause investigation for every pair is unnecessary.
 
 1. Connect each observation's trigger, failed contract or state transition, visible consequence and acceptance condition. Trace downstream consequences back to the failure that produces them. Follow the same contract through the other applicable entry points found in the scope check. This reveals both repeated reports of one failure and missing scope within a single report.
 2. Examine candidate matches supported by shared mechanisms, state propagation or overlapping acceptance. Ask what still fails if the suspected shared failure is removed or bypassed. Use applicable evidence first; when the answer could change identity, ownership, scope or grouping, use Investigate for the smallest comparison that distinguishes the alternatives. Check what the comparison changes: a combined correction that changes several behavior conditions cannot by itself establish that the observations are duplicates. Isolate the conditions that distinguish the competing explanations. Do not infer causation from a common file, symptom or proposed patch.

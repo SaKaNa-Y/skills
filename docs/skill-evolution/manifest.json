@@ -205,6 +205,15 @@
       "limitations": [
         "Two assessment questions on one synthetic patch. Exact recovery is in the private archive."
       ]
+    },
+    {
+      "path": "discussions/052-evolve-regression-history/record.md",
+      "status": "completed",
+      "adoption": "applied",
+      "validation": "supported",
+      "limitations": [
+        "One bounded history lookup. General reliability is unmeasured."
+      ]
     }
   ],
   "files": [],

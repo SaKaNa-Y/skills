@@ -4,7 +4,7 @@ description: Improve or derive skills from conversations, experience and externa
 disable-model-invocation: true
 metadata:
   author: sakana
-  version: "2026.11.07"
+  version: "2026.11.08"
 ---
 
 # Evolve Skills
@@ -52,7 +52,7 @@ For conversation evidence, trace what the user wanted, the approach taken, mater
 
 For external material already supplied or previously consulted, preserve its original context, access limits and relevance to the target. Read the source’s outbound references as part of [external learning](references/external-learning.md) before summarizing it or proposing changes. Distinguish inspiration from demonstrated outcomes.
 
-Before proposals in a substantive assessment, follow [history reuse](references/history-reuse.md) to match the current task and outcome against situation navigation and bounded original-record searches. Carry the relevant prior decision, missing evidence or applicability limit into this assessment. Mechanical edits and recorded rollbacks use their existing history paths.
+Before proposals in a substantive assessment, follow [history reuse](references/history-reuse.md) to match the current task and outcome against situation navigation and bounded original-record searches. If the user reports that a skill behaves differently than before, trace that behavior through the applied versions before proposing a remedy. Carry the relevant prior decision, missing evidence or applicability limit into this assessment. Mechanical edits and recorded rollbacks use their existing history paths.
 
 Read [history and recovery](references/history.md) to establish ownership, the detailed local record location and the separate publication policy and consult relevant prior iterations. Reconcile existing targets with their last recorded active states. Use its [screening and proposed-skill records](references/history.md#screening-and-proposed-skills) when no target has entered assessment or a new skill has no agreed source location. Preserve identifiable external changes and honest history gaps before developing a new change. Before presenting proposals, briefly connect the relevant history to this review: what was previously tried or decided, why, and what new evidence or changed conditions justify revisiting it. Carry forward applicable decisions when that basis is unchanged; extend an existing pending iteration when continuing the same hypothesis.
 

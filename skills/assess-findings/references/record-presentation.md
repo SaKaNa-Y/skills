@@ -22,7 +22,11 @@ Start with the project title, repository link and link to the root overview. Use
 
 Keep empty sections and write `None recorded.`. Active items use:
 
-`Item | Current assessment | Handling status | Next action`
+`Item | Current assessment | Priority | Change risk | Handling status | Next action`
+
+When you create or next update a project overview, bring its active tables to this format. Use the current primary records for that project. Keep the finding or opportunity and its evidence in Current assessment. In Priority, preserve the recorded level and its basis, such as `Suggested P2` or `P3 (owner decision)`. If the assessment and handling decision differ, retain both with their labels. Preserve an explicitly undetermined priority. If the record gives no priority, use `Not recorded`.
+
+In Change risk, name the rated proposal or patch, including its revision when recorded. A shared patch can have the same rating on several rows with different priorities. Keep alternative ratings attached to their proposals when they affect the next decision. For a concrete proposal or patch without a rating, write `Not yet rated` and identify it. Use `No concrete proposal` when the record establishes that state. If the record is silent, use `Not recorded`. Update the primary record before bringing a new judgment into the overview.
 
 Archived records use:
 

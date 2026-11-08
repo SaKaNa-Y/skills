@@ -3,7 +3,7 @@ name: assess-findings
 description: Assess Findings, Improvements and Explorations, preserve evidence and decisions, and recommend scoped next actions. Use for Just, Yak or Explore handoffs, reassessing a specified records folder, and decisions about a fix, improvement or PR.
 metadata:
   author: sakana
-  version: "2026.11.07"
+  version: "2026.11.08"
 ---
 
 # Assess Findings

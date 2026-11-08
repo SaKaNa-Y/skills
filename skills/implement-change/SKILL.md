@@ -4,7 +4,7 @@ description: Implement an agreed change from findings, a spec, tickets or a conc
 disable-model-invocation: true
 metadata:
   author: sakana
-  version: "2026.11.07"
+  version: "2026.11.08"
 ---
 
 # Implement Change

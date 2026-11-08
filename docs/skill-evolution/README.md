@@ -25,3 +25,5 @@ See the [history policy](../agents/evolution-history.md) for selection and reten
 - [Working record categories](discussions/047-vite-plus-record-organization/record.md): category selection, archive moves and submission relationships.
 
 - [Change risk and verification](discussions/049-risk-based-human-review/record.md) covers proposed repairs, independent review and evidence after a revision.
+
+- [Priority and change risk in project overviews](discussions/050-pr484-review-and-record-grades/record.md).

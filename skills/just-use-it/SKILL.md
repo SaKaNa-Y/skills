@@ -4,7 +4,7 @@ description: Experience a source-accessible library or developer tool through ou
 disable-model-invocation: true
 metadata:
   author: sakana
-  version: "2026.11.07"
+  version: "2026.11.08"
 ---
 
 # Just Use It

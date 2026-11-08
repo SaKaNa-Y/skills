@@ -187,6 +187,15 @@
       "limitations": [
         "Exact recovery retained in the private archive. Local fixtures and bounded agent exercises cover the tested decisions. Windows and production behavior were not verified."
       ]
+    },
+    {
+      "path": "discussions/050-pr484-review-and-record-grades/record.md",
+      "status": "completed",
+      "adoption": "applied",
+      "validation": "supported",
+      "limitations": [
+        "The table trial used copies of project records. The two review cases do not establish a general detection rate. Exact recovery is held in the private archive."
+      ]
     }
   ],
   "files": [],

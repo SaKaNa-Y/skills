@@ -4,7 +4,7 @@ description: Browse working records, their recorded status, and the evidence beh
 disable-model-invocation: true
 metadata:
   author: sakana
-  version: "2026.11.07"
+  version: "2026.11.09"
 ---
 
 # Browse Records
@@ -57,7 +57,7 @@ Keep “unassessed” distinct from “assessed, awaiting selection.” Interpre
 Use the conversation for the default view:
 
 1. State scope, source and freshness limits. Put material conflicts, missing entries and count limitations before totals.
-2. Show qualified totals and separate category tables with **Item | Recorded assessment | Handling status | Recorded next action**. Link each item to its current primary file or section. Keep issue/PR links with handling. When a recorded relationship changes the submission decision, include the reason to group or separate items, or identify a discussion-only link. If the user asks about a relationship the records leave open, say it is unassessed. Include priority when recorded. Provide the archived-record entry point for the selected scope.
+2. Show qualified totals and separate category tables with **Item | Recorded assessment | Change risk | Handling status | Recorded next action**. Link each item to its current primary file or section. Keep issue/PR links with handling. When a recorded relationship changes the submission decision, include the reason to group or separate items, or identify a discussion-only link. If the user asks about a relationship the records leave open, say it is unassessed. Include priority when recorded. Show the recorded change risk with the proposal or patch it applies to. Preserve unrated or missing values. Provide the archived-record entry point for the selected scope.
 3. For requested archived items, show the category at archival, whether the accepted problem was resolved, why it was archived and its related delivery. Expand requested details rather than inserting full evidence into every row.
 
 A focused item detail contains its scenario and impact, assessment with basis/date/version, handling and delivery, decision-changing unknowns, next action and acceptance, plus original record/evidence links. Keep consequential contrary evidence or conflicts visible in that detail. Full logs, long reproduction procedures and history are optional on request. A group view shows shared work and each member's own assessment, handling and acceptance.

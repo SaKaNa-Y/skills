@@ -4,7 +4,7 @@ description: Experience a source-accessible library or developer tool through ou
 disable-model-invocation: true
 metadata:
   author: sakana
-  version: "2026.11.08"
+  version: "2026.11.09"
 ---
 
 # Just Use It
@@ -35,6 +35,8 @@ Identify the target, its intended user, its user-facing documentation, and the e
 ### Establish the outcome scope
 
 At entry, resolve the configured records destination, save authority and target repository through the [record contract](../assess-findings/references/working-records.md). Read [coverage records](../assess-findings/references/coverage-records.md) before selecting routes or creating the batch. Reuse known settings; a missing destination or permission leaves persistence pending while independent usage can proceed.
+
+For ordinary usage, read the matched [project guidance](../assess-findings/references/working-records.md#read-project-guidance) before choosing routes. For independent discovery, defer the whole file until the Audit Reconciliation Gate opens. Apply that limit to workers too.
 
 Under the established history gates, read the project's coverage index and relevant batch evidence before choosing routes. Compare actual execution identity and prior depth to select new use, deeper coverage or affected revalidation. When old reports exist without an index, reconstruct only relevant historical coverage with its original identities and limits; this is record import, not fresh execution. For explicitly independent experience, defer result-bearing indexes as well as finding history, save provisional observations, and reconcile them after the gate opens.
 

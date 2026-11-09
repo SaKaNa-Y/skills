@@ -4,7 +4,7 @@ description: Discover and discuss new capabilities for a project, one evidence-g
 disable-model-invocation: true
 metadata:
   author: sakana
-  version: "2026.11.08"
+  version: "2026.11.09"
 ---
 
 # Explore New Capabilities
@@ -31,6 +31,8 @@ Use the permitted project guidance, examples, and public capabilities to identif
 When the user also selects Just Use It, follow its [outcome scope](../just-use-it/SKILL.md#establish-the-outcome-scope) before usage and preserve its source and tracker gates. Just owns usage completion; Explore owns the discovery decision that follows. Otherwise, read relevant source as part of project grounding.
 
 Use [Assess Findings](../assess-findings/SKILL.md), installed with `investigate-with-evidence`, for common evidence, relationship and action judgment. Read its [working-record contract](../assess-findings/references/working-records.md) on project entry to resolve configured history, reconcile the root overview, project overview and relevant primary records, qualify current evidence, and handle saves, delivery and lifecycle. Reuse configured paths without another question; when unavailable, continue project grounding but defer presenting a new opportunity until its history can be checked and saved. Missing assessment support leaves the judgment pending rather than claimed complete.
+
+Read the matched [project guidance](../assess-findings/references/working-records.md#read-project-guidance) before choosing discovery scenarios, within the active history limits.
 
 Before selecting discovery routes, read [exploration coverage](references/exploration-coverage.md) and recover the project's index and relevant batches under the active history gates. Compare their scenarios, conditions and evidence with the current task. Retain coverage for every exploration batch, including runs with no opportunity or no execution. Explore maintains its own account; a Just usage ledger supplies evidence rather than replacing it.
 

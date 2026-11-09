@@ -4,7 +4,7 @@ description: Implement an agreed change from findings, a spec, tickets or a conc
 disable-model-invocation: true
 metadata:
   author: sakana
-  version: "2026.11.08"
+  version: "2026.11.09"
 ---
 
 # Implement Change
@@ -29,6 +29,8 @@ identifiers, commands, original quotations, and historical evidence.
 ## 1. Recover the agreement and current work
 
 Read applicable repository instructions, the requested record/issue/spec and relevant decisions. Inspect current code, worktree changes and related PR state. Reuse sufficient prior research, checking its revision and material assumptions. The Implementation Agreement states the selected outcome, scope, preserved behavior, observable acceptance and remaining decisions. A small fix may need only its reproduction, expected result and regression boundary; link a larger spec rather than copying it.
+
+After recovering the agreement, read the matched [project guidance](../assess-findings/references/working-records.md#read-project-guidance) before choosing verification scenarios. This also applies to direct repair requests.
 
 Before editing, apply [evidence freshness and target selection](../assess-findings/references/working-records.md#qualify-evidence-on-entry), including for direct repair requests without a Working Record. For prior findings, restore the scenario, impact, acceptance, related evidence and uncertainty, rejected explanations and existing work. State which evidence remains usable, what needs refresh and what this repair will validate. Load related records by demonstrated relevance rather than copying the entire history.
 

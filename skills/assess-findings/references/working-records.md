@@ -18,6 +18,14 @@ Require an exact user-selected records root before persistent capture. If none i
 
 A configured destination does not by itself authorize every action. Reuse the scope of existing permission for ordinary record saves and substantive updates. Keep save permission, local commit permission and tracker/publication permission distinct. Ask only for missing authority; do not repeat approval for already authorized capture. Follow any narrower project restrictions and preserve unrelated edits. Never infer that Explore-specific commit permission also covers bugs or implementation updates.
 
+## Read project guidance
+
+Match the target repository to its project directory in the configured records store. When the task can use project history, read that directory's AGENTS.md if present. Continue without it when the file or store is absent. A read authorizes no creation or update. Keep the entire file outside independent work while historical hints are restricted.
+
+Use the guidance for work on the identified project. Resolve copied source paths and commands against the target checkout. Check its current instructions, including applicable subdirectory rules for the paths in scope. Use the checkout for current upstream requirements and the records copy for the user's project experience. A previous conclusion still needs evidence for the current task.
+
+When initialization is authorized, inspect both destination files first. Preserve existing files and report a conflicting entry point before converting it. For a new guide, seed AGENTS.md from the upstream root instructions. Follow an explicit pointer to the authoritative body. If both files contain independent guidance, copy AGENTS.md and report meaningful differences in CLAUDE.md. If only CLAUDE.md exists, copy its body. Keep package-specific rules in the upstream checkout. Exclude fixtures and distributable templates. Without upstream instructions, create the files when the user supplies the first lasting project convention. Place a single plain-text line, `@AGENTS.md`, in the adjacent CLAUDE.md. Record the copied revision and path in the records store. Preserve later user edits on subsequent visits.
+
 ## Locate the project and record
 
 Use verified repository identity (including upstream and fork when relevant) or another unambiguous project identifier. A matching folder basename alone is insufficient. Different target repositories have separate project directories; branches and worktrees of one target retain that project identity, while independently targeted forks retain their own identity. Reuse the current layout. For a new project history use:

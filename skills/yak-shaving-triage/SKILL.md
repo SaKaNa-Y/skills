@@ -3,7 +3,7 @@ name: yak-shaving-triage
 description: Guard engineering tasks against yak shaving. Capture independent observations in configured working records, assess related findings, and reconcile formal tracker work without diverting the active task.
 metadata:
   author: sakana
-  version: "2026.11.08"
+  version: "2026.11.09"
 ---
 
 # Yak Shaving Triage
@@ -28,6 +28,8 @@ identifiers, commands, original quotations, and historical evidence.
 ## 1. Establish capture and guard the next branch
 
 Read the [working-record contract](../assess-findings/references/working-records.md) to resolve the user-selected repository, project identity, save/commit authority and existing record layout. Reuse configuration; if the destination is missing, ask once while continuing the main task. Preserve unsaved observations with that blocker until it is resolved. Read prior findings only when the active task's history gates permit it. Setup is optional and is not invoked automatically.
+
+When triaging a concrete project clue, consult the matched [project guidance](../assess-findings/references/working-records.md#read-project-guidance) within the main task’s history limits. Reuse guidance the coordinator already read.
 
 Compare each concrete clue or contemplated task switch with the User Problem. With Just, use its declared batch: retain necessary investigation in that batch and save independent new outcomes for future work. Remaining side findings do not extend the batch or prevent its closure. Necessary investigation or repair remains with the main workflow at whatever depth it needs. Independent observations can be captured before final assessment; a suspicion without concrete evidence remains a note, not a confirmed finding. Use [discovery lenses](references/discovery-lenses.md) for a bounded check of an unresolved clue, or exploration explicitly requested by the user. Reuse already sufficient evidence.
 

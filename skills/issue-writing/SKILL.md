@@ -4,7 +4,7 @@ description: Clarify an idea or problem and help write, revise, and retain an is
 disable-model-invocation: true
 metadata:
   author: sakana
-  version: "2026.11.02"
+  version: "2026.11.09"
 ---
 
 # Issue Writing
@@ -27,6 +27,8 @@ identifiers, commands, original quotations, and historical evidence.
 ## 1. Recover the current intent
 
 Read the available conversation, supplied material, and latest draft. Carry forward accepted wording, decisions, examples, and open questions. Identify what the user needs now: help thinking, a first draft, a focused revision, or a complete current version.
+
+For a new project issue, look for AGENTS.md in the matching project directory of the configured records store. Use relevant writing or contribution guidance alongside the current upstream issue template. Skip this lookup for a wording-only edit.
 
 For a new draft, establish the intended audience and the response the user wants. Distinguish an invitation to discuss an idea from a defect report or a request with settled acceptance conditions. Recover these facts from context before asking. For a local edit, preserve the surrounding draft and work only on the requested change.
 

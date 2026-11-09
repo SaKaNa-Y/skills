@@ -20,6 +20,8 @@ A skill mention and a PR link carry no language request. Use the conversation la
 
 ## 1. Identify the change
 
+After identifying the target repository, the coordinator reads its project AGENTS.md in the configured records store when available. Use relevant experience to select checks. For a first review or omission check, only the coordinator reads the records copy. Give reviewers neutral conditions and explicitly exclude that file from their inputs and delegated investigations. Withhold prior verdicts and proposed fixes. For a repair review, follow the existing finding handoff below. Judge risk and findings from the current patch.
+
 Recover the requested target and comparison point from the user, active task and repository state. Resolve refs and inspect the worktree before selecting a diff. Ask only when a remaining ambiguity would change what gets reviewed.
 
 - For a branch or PR relative to a base, record the resolved base, target and merge-base. Use the merge-base comparison when that is the requested meaning of "since".

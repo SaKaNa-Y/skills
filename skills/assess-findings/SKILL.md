@@ -3,7 +3,7 @@ name: assess-findings
 description: Assess Findings, Improvements and Explorations, preserve evidence and decisions, and recommend scoped next actions. Use for Just, Yak or Explore handoffs, reassessing a specified records folder, and decisions about whether an observed finding warrants a fix, improvement or PR.
 metadata:
   author: sakana
-  version: "2026.11.08"
+  version: "2026.11.09"
 ---
 
 # Assess Findings
@@ -26,6 +26,8 @@ formats when style rules conflict. Keep the requested language. Preserve code,
 identifiers, commands, original quotations, and historical evidence.
 
 ## 1. Establish the assessment and its owner
+
+Before selecting reproduction conditions or assessment scope, read the matched [project guidance](references/working-records.md#read-project-guidance) when history access permits. For an independent assessment, the coordinator supplies only the guidance allowed by the independent-input rules.
 
 Keep one accountable assessment owner for a bounded set of related findings or opportunities. The coordinator may assess directly or delegate under [coordination](references/coordination.md); reuse that owner and existing judgments across Just, Yak and Explore. Investigations return through the coordinator rather than recursively creating teams. Missing investigation support leaves only the dependent judgment pending.
 

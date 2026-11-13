@@ -63,3 +63,5 @@ Execute the shared [save checkpoint](../../assess-findings/references/working-re
 - Earlier batch links, unaffected boundaries, prior decisions and independently owned usage coverage remain intact.
 
 On resumption, recover the saved scope, pending checks and actual history exposure. Use the [discovery decision](../SKILL.md#2-find-and-ground-an-opportunity) to choose the next action, then retain that decision and its evidence in the batch.
+
+Give each unselected direction one self-contained user scenario in the batch, with a stable heading when another record cites it. Link its inspiration and state the remaining assumption. Preserve the current judgment, evidence that changed it and conditions for reconsideration. A choice without a reason has no effect on later reading priority.

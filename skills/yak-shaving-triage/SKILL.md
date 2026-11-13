@@ -3,7 +3,7 @@ name: yak-shaving-triage
 description: Guard engineering tasks against yak shaving. Capture independent observations in configured working records, assess related findings, and reconcile formal tracker work without diverting the active task.
 metadata:
   author: sakana
-  version: "2026.11.09"
+  version: "2026.11.13"
 ---
 
 # Yak Shaving Triage
@@ -26,6 +26,8 @@ formats when style rules conflict. Keep the requested language. Preserve code,
 identifiers, commands, original quotations, and historical evidence.
 
 ## 1. Establish capture and guard the next branch
+
+When capturing a side finding, compare its outcome with the parent lookup before deciding whether to reuse a record. Inherit the parent history gate. When it opens, reuse a matching receipt or query for the side finding and pass the result to the coordinator. Follow the shared [relationship lookup, handoff and save rules](../assess-findings/references/working-records.md#use-the-relationship-map).
 
 Read the [working-record contract](../assess-findings/references/working-records.md) to resolve the user-selected repository, project identity, save/commit authority and existing record layout. Reuse configuration; if the destination is missing, ask once while continuing the main task. Preserve unsaved observations with that blocker until it is resolved. Read prior findings only when the active task's history gates permit it. Setup is optional and is not invoked automatically.
 

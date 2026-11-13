@@ -52,7 +52,7 @@ See the [installation guide](docs/guide.md#quick-start) for individual selection
 
 | Skill | Purpose |
 | --- | --- |
-| [explore-new-capabilities](skills/explore-new-capabilities/SKILL.md) | Discover and discuss one grounded capability opportunity at a time. |
+| [explore-new-capabilities](skills/explore-new-capabilities/SKILL.md) | Explore several user outcomes and investigate the selected direction. |
 | [set-theory-for-projects](skills/set-theory-for-projects/SKILL.md) | Find other contexts where an existing project can provide value. |
 | [expand-the-frame](skills/expand-the-frame/SKILL.md) | Explore project perspectives and questions you have not considered. |
 | [get-up-to-speed](skills/get-up-to-speed/SKILL.md) | Deliver a complete guide and runnable examples for a developer tool. |

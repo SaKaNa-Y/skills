@@ -4,7 +4,7 @@ description: Experience a source-accessible library or developer tool through ou
 disable-model-invocation: true
 metadata:
   author: sakana
-  version: "2026.11.09"
+  version: "2026.11.13"
 ---
 
 # Just Use It
@@ -29,6 +29,8 @@ formats when style rules conflict. Keep the requested language. Preserve code,
 identifiers, commands, original quotations, and historical evidence.
 
 ## 1. Frame and Isolate
+
+Query before selecting a usage route when history is open. For independent experience, keep the graph closed, save the provisional observation, then query once history opens. Pass the receipt or the pending history gate to Yak and Assess. Follow the shared [relationship lookup, handoff and save rules](../assess-findings/references/working-records.md#use-the-relationship-map).
 
 Identify the target, its intended user, its user-facing documentation, and the environment needed to exercise it. Infer these from the request and workspace; ask only when more than one materially different target remains.
 

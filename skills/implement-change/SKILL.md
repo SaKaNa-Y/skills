@@ -4,7 +4,7 @@ description: Implement an agreed change from findings, a spec, tickets or a conc
 disable-model-invocation: true
 metadata:
   author: sakana
-  version: "2026.11.09"
+  version: "2026.11.13"
 ---
 
 # Implement Change
@@ -27,6 +27,8 @@ formats when style rules conflict. Keep the requested language. Preserve code,
 identifiers, commands, original quotations, and historical evidence.
 
 ## 1. Recover the agreement and current work
+
+Query when recovering a record-backed agreement to identify shared repairs and independent acceptance conditions. At delivery recheck changed scope, evidence or graph state and write back each verified outcome. Follow the shared [relationship lookup, handoff and save rules](../assess-findings/references/working-records.md#use-the-relationship-map).
 
 Read applicable repository instructions, the requested record/issue/spec and relevant decisions. Inspect current code, worktree changes and related PR state. Reuse sufficient prior research, checking its revision and material assumptions. The Implementation Agreement states the selected outcome, scope, preserved behavior, observable acceptance and remaining decisions. A small fix may need only its reproduction, expected result and regression boundary; link a larger spec rather than copying it.
 

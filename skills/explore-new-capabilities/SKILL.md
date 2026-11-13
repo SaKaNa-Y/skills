@@ -1,10 +1,10 @@
 ---
 name: explore-new-capabilities
-description: Discover and discuss new capabilities for a project, one evidence-grounded idea at a time, with resumable exploration coverage and opportunity history.
+description: Discover and discuss new capabilities for a project, from several directions to one selected opportunity, with resumable exploration coverage and opportunity history.
 disable-model-invocation: true
 metadata:
   author: sakana
-  version: "2026.11.09"
+  version: "2026.11.13"
 ---
 
 # Explore New Capabilities
@@ -25,6 +25,8 @@ formats when style rules conflict. Keep the requested language. Preserve code,
 identifiers, commands, original quotations, and historical evidence.
 
 ## 1. Establish the project and history
+
+Before choosing discovery routes, query by user scenario across projects, including archived work. Follow a real downstream consumer when available. Otherwise look for the same task, a complementary tool or a comparable workflow elsewhere. Also search project indexes and batch notes for leads with no recorded links. Follow the shared [relationship lookup, handoff and save rules](../assess-findings/references/working-records.md#use-the-relationship-map).
 
 Use the permitted project guidance, examples, and public capabilities to identify users, their situations, intended results, and the part the project serves. Treat this task understanding as provisional and revise it when later evidence conflicts. Establish enough context to choose useful tasks before tracing their implementation. Use the user's supplied direction, role, and available effort. Ask only for missing context that changes the exploration scope.
 
@@ -55,7 +57,7 @@ When exploring combinations of existing capabilities, follow the user's next tas
 
 When an existing capability affects content from several sources, trace one user outcome through who supplies the content and where it is used. Compare product-owned content, extension-provided content, and materially different consumers where they exist. Follow a concrete gap into the existing data and integration interfaces to assess an incremental extension. Preserve compatibility requirements that current consumers rely on. Use this as a discovery route when the project has such boundaries, not a requirement to invent extensions or cover every consumer.
 
-Favor opportunities that fit the project's purpose, while allowing a compelling broader direction if its changed assumptions and maintenance burden are explicit. For example, a check run only before releases because it was too costly might become useful during everyday changes when incremental processing lowers that cost. If users chose infrequent checks to avoid interruptions, faster processing alone would not address that reason. Consider small and large ideas on their merits rather than favoring novelty or size. The agent may compare several leads internally; choose one for discussion instead of presenting a candidate list.
+Favor opportunities that fit the project's purpose, while allowing a compelling broader direction if its changed assumptions and maintenance burden are explicit. For example, a check run only before releases because it was too costly might become useful during everyday changes when incremental processing lowers that cost. If users chose infrequent checks to avoid interruptions, faster processing alone would not address that reason. Consider small and large ideas on their merits rather than favoring novelty or size. In open discovery, offer a few directions with different user outcomes. Give each a scenario, its source of inspiration and the main untested assumption. Let the user choose one to investigate. A narrow request can go straight to its stated outcome. Do not fill a quota when evidence supports fewer directions.
 
 Before settling on a solution, compare materially different ways to meet the same need when plausible alternatives exist. Judge each by the additional user outcome, useful behavior it preserves, and complexity it adds. Where relevant, compare support in the core product, an extension, an integration, or an existing external tool. Explain why the proposed owner fits the task, including the maintenance responsibility it takes on. When an existing command, script or configuration already achieves the outcome, identify the recurring effort, error risk or coordination burden the proposal would remove. Ground that benefit in the scenario rather than treating automation itself as value; a small convenience can still qualify. Keep the strongest approach for discussion and explain the trade-offs that could change the choice. A clear solution needs no invented alternatives; new evidence or user feedback can reopen the comparison.
 
@@ -65,7 +67,7 @@ Use documentation, source, actual usage, or a small disposable check as appropri
 
 Start from the user question or task. Exercise the closest existing public route, including relevant companion tools or a practical manual workflow, when it can settle whether the outcome is already available. Describe the result it supplies and the result still missing; keep the capability need separate from a proposed command or UI. Prefer an ordinary working scenario when known defects would confound the comparison. If a supporting example fails, revise that example and investigate any concrete surviving lead before judging the whole idea.
 
-Supply the existing Assess owner with the following evidence before presenting the opportunity; use its judgment and investigate only the gaps it identifies:
+Supply the existing Assess owner with the following evidence before presenting a selected opportunity as assessed; use its judgment and investigate only the gaps it identifies:
 
 - **Value:** a concrete user situation and the additional outcome the capability could enable. Separate observed needs from hypothesized benefits.
 - **Feasibility:** traceable evidence in the target project's interfaces, data, architecture, or demonstrated behavior supporting a plausible implementation path. Check the assumptions required to transfer an outside example.
@@ -75,15 +77,15 @@ Use the history branches above for local matches. For related community work, us
 
 At each material discovery checkpoint, save the examined leads, judgments and next actions through the [exploration checkpoint](references/exploration-coverage.md#save-and-resume). When Just finishes a usage batch, use its evidence and remaining questions to decide the next discovery action. Further usage keeps the established source and tracker exposure.
 
-**Ready when:** one opportunity has a concrete scenario, a supported plausible path, and an account of prior work and remaining uncertainty. Move to its discussion and retain other pending routes. End without an opportunity when no meaningful authorized check remains within the selected scope, or when the user stops or narrows the task. An unavailable prerequisite blocks only the affected routes; continue other feasible in-scope work. Save the examined limits, remaining work and specific stopping reason. A duplicate lead or completed usage batch alone does not settle discovery; a no-opportunity result describes this batch, not an exhausted opportunity space.
+**Ready when:** in open discovery, the user can choose among distinct scenarios with sources and remaining assumptions. After selection, ground the chosen opportunity in a plausible path and prior work. Retain the other directions in the batch. End without an opportunity when no meaningful authorized check remains within the selected scope, or when the user stops or narrows the task. An unavailable prerequisite blocks only the affected routes; continue other feasible in-scope work. Save the examined limits, remaining work and specific stopping reason. A duplicate lead or completed usage batch alone does not settle discovery; a no-opportunity result describes this batch, not an exhausted opportunity space.
 
 ### Delegate a factual question when useful
 
 Use the shared [coordination method](../assess-findings/references/coordination.md) when an independent question about the user scenario, alternatives, prior work or feasibility merits a research worker. Give it the current opportunity, the decision-changing question, relevant records and phase permissions, allowed checks and a stopping condition. It returns evidence, limits and record-update suggestions; it does not choose a different opportunity, implement the product or write shared records. Keep the user discussion with the main agent and send material results to the same Assess owner. Small or tightly coupled research stays inline.
 
-## 3. Present one idea and discuss it
+## 3. Discuss the selected direction
 
-Save the initial opportunity record with its assessment or explicit pending state when first presenting the idea, and link it from the exploration batch. Explain what users could do, why it is worth discussing now, why it appears feasible, and what remains uncertain. Cite the supporting sources and explain why this opportunity was selected. Keep the initial proposal understandable without treating it as a settled specification.
+Store the initial directions in the batch. Once the user selects a direction, match or create its primary opportunity record and link it from the batch. Explain what users could do, why it is worth discussing now, why it appears feasible, and what remains uncertain. Cite the supporting sources and explain why this opportunity was selected. Keep the initial proposal understandable without treating it as a settled specification.
 
 Invite the user's reaction, then follow the questions it opens. Investigate factual uncertainties yourself; ask the user about goals and trade-offs with concrete alternatives and a recommendation when warranted. Use answers to revise the current idea, narrow or broaden its scope, or discard it. Ask dependent questions after their prerequisites are answered. Respect settled choices unless new evidence changes their basis.
 

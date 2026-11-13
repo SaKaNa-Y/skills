@@ -4,7 +4,7 @@ description: Browse working records, their recorded status, and the evidence beh
 disable-model-invocation: true
 metadata:
   author: sakana
-  version: "2026.11.09"
+  version: "2026.11.13"
 ---
 
 # Browse Records
@@ -65,3 +65,5 @@ A focused item detail contains its scenario and impact, assessment with basis/da
 Treat tables as comparable rows, not a mandatory shape for a single short answer. Avoid a combined completion percentage across different kinds of work. Interactive artifacts are an optional presentation request, not the default; any requested artifact is a labelled source snapshot, never a second canonical record store. The conversation itself needs no saved summary file.
 
 Before finishing, check that each displayed item and field maps to the inspected original record, counts use the same scope as filters, links resolve, and unknowns/conflicts remain visible. State any incomplete coverage. Completion means a faithful view with traceable sources, not repaired records or freshly verified product status.
+
+When showing relationships, read the configured central relationship map and follow its source and reverse links to the primary records. Keep the viewer read-only.

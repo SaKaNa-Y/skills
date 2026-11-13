@@ -3,7 +3,7 @@ name: investigate-with-evidence
 description: Resolve a bounded factual question through matching sources and, when needed, controlled execution. Use when expansion or claim challenges need evidence, or when the user asks to investigate a concrete fact.
 metadata:
   author: sakana
-  version: "2026.11.09"
+  version: "2026.11.13"
 ---
 
 # Investigate with Evidence
@@ -24,6 +24,8 @@ formats when style rules conflict. Keep the requested language. Preserve code,
 identifiers, commands, original quotations, and historical evidence.
 
 ## Establish the question
+
+For a question that uses Working Records, query before choosing the discriminating evidence. Return the receipt and observations to the requesting workflow. Ordinary questions without records keep their existing scope. Follow the shared [relationship lookup, handoff and save rules](../assess-findings/references/working-records.md#use-the-relationship-map).
 
 For a project-specific investigation, when project experience could change the evidence or experiment, match the repository identity to its directory in the configured records store. Read its AGENTS.md if present and history access permits. Check applicable upstream instructions in the current checkout. Continue without a lookup when no store is configured. General fact checks need no records lookup.
 

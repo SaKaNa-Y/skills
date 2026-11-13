@@ -27,6 +27,8 @@ identifiers, commands, original quotations, and historical evidence.
 
 ## 1. Establish the assessment and its owner
 
+Before selecting decisive evidence, query for the current outcome, contrary observations, existing alternatives and separate acceptance conditions. Keep feedback about reading order separate from your assessment. Follow the shared [relationship lookup, handoff and save rules](references/working-records.md#use-the-relationship-map).
+
 Before selecting reproduction conditions or assessment scope, read the matched [project guidance](references/working-records.md#read-project-guidance) when history access permits. For an independent assessment, the coordinator supplies only the guidance allowed by the independent-input rules.
 
 Keep one accountable assessment owner for a bounded set of related findings or opportunities. The coordinator may assess directly or delegate under [coordination](references/coordination.md); reuse that owner and existing judgments across Just, Yak and Explore. Investigations return through the coordinator rather than recursively creating teams. Missing investigation support leaves only the dependent judgment pending.

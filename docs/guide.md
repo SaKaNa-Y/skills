@@ -166,12 +166,12 @@ Install the complete combination for this task:
 npx skills@latest add SaKaNa-Y/skills --skill explore-new-capabilities assess-findings investigate-with-evidence
 ```
 
-`explore-new-capabilities` records the scenarios and leads it explores, including runs with no new opportunity, and develops one grounded idea at a time for discussion. Its independent coverage index helps later runs resume useful work. `assess-findings` evaluates its value, alternatives and feasibility. `investigate-with-evidence` resolves factual uncertainties that affect that judgment.
+`explore-new-capabilities` records the scenarios and leads it explores, including runs with no new opportunity, and offers distinct directions in open discovery and investigates the selected one. Its independent coverage index helps later runs resume useful work. `assess-findings` evaluates its value, alternatives and feasibility. `investigate-with-evidence` resolves factual uncertainties that affect that judgment.
 
 Start in the project you want to explore and invoke the primary skill:
 
 ```text
-$explore-new-capabilities Explore what this project could enable next. Reuse my exploration records configuration, or ask me for a directory if none is configured. Bring me one grounded idea to discuss at a time.
+$explore-new-capabilities Explore what this project could enable next. Reuse my exploration records configuration, or ask me for a directory if none is configured. Show me a few different user outcomes so I can choose one.
 ```
 
 The primary skill uses the installed shared methods. Optionally install and invoke `just-use-it` alongside Explore for usage-first exploration. Separately installed grilling skills, including `grill-with-docs`, can deepen discussion of the current idea.

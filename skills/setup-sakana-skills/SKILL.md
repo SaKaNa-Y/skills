@@ -4,7 +4,7 @@ description: Configure global defaults and project conventions for change-risk r
 disable-model-invocation: true
 metadata:
   author: sakana
-  version: "2026.11.07"
+  version: "2026.11.13"
 ---
 
 # Setup Sakana Skills
@@ -65,3 +65,5 @@ For a configured risk policy, trace an ordinary repair with no selected skill an
 Re-read the result as a second setup pass: unchanged guidance should require no further edits. Report changed files, global versus project effect, consumers and unverified access. Do not create findings, publish issues, migrate history or schedule synchronization as part of setup.
 
 **Complete when:** approved guidance is readable, effective choices are unambiguous, and a second pass finds no duplicate or necessary rewrite.
+
+When configuring Working Records, identify its relationship map, query command and save/check procedure in the repository guidance. Reuse existing configuration.

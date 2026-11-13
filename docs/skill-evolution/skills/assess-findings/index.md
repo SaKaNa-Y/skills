@@ -15,3 +15,5 @@ These selected summaries retain their local sequence numbers. Separate installat
 - [035: Finding identities before repair groups](035-finding-relationships/record.md)
 
 - [042: Assess the scope of a single PR](042-single-pr-origin-and-grouping/record.md)
+
+- [046: Verify change risk during folder reassessment](046-batch-risk-completion/record.md)

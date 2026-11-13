@@ -214,6 +214,15 @@
       "limitations": [
         "One bounded history lookup. General reliability is unmeasured."
       ]
+    },
+    {
+      "path": "skills/assess-findings/046-batch-risk-completion/record.md",
+      "status": "completed",
+      "adoption": "applied",
+      "validation": "supported",
+      "limitations": [
+        "Bounded offline cases. General omission rate is unknown."
+      ]
     }
   ],
   "files": [],

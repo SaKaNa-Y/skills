@@ -3,7 +3,7 @@ name: assess-findings
 description: Assess Findings, Improvements and Explorations, preserve evidence and decisions, and recommend scoped next actions. Use for Just, Yak or Explore handoffs, reassessing a specified records folder, and decisions about whether an observed finding warrants a fix, improvement or PR.
 metadata:
   author: sakana
-  version: "2026.11.13"
+  version: "2026.11.14"
 ---
 
 # Assess Findings
@@ -126,6 +126,8 @@ This step is complete when each observation has an evidence-supported identity o
 Keep reachability, observed occurrence and response value separate: a supported path establishes that a failure can occur, while claims about frequency need their own evidence. Unknown usage frequency leaves the supported behavior intact; judge the response from the affected task, consequences and trade-offs.
 
 Fix the response goal before evaluating a remedy. Connect a proposed change to that goal, its evidence-backed benefit, the responsible consumer or repository, and meaningful costs or existing alternatives. Separate independent goals and remedies: explaining an empty view and correcting a library calculation may each have value without either requiring the other.
+
+If a remedy could change what a result means or whether users can still complete a task that works today, identify one such task. Compare the current and proposed behavior on the same inputs. When assessing the proposed remedy, explain what users gain, what they could lose or have to do manually, and whether a narrower fix would address the original finding. Recommend the next step based on this assessment. The user or the responsible project maintainer decides which product change to adopt.
 
 When proposed or existing tests affect a repair recommendation or acceptance judgment, use the shared [test-value method](../investigate-with-evidence/references/test-value.md). An assessment without a patch does not require a test-suite audit.
 

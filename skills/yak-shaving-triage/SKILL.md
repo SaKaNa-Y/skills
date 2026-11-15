@@ -3,7 +3,7 @@ name: yak-shaving-triage
 description: Guard engineering tasks against yak shaving. Capture independent observations in configured working records, assess related findings, and reconcile formal tracker work without diverting the active task.
 metadata:
   author: sakana
-  version: "2026.11.13"
+  version: "2026.11.15"
 ---
 
 # Yak Shaving Triage
@@ -47,7 +47,7 @@ Before canonical tracker research, check [search eligibility](references/issue-c
 
 Assess owns action value and suggested priority; Yak owns record identity, reconciliation disposition, report ordering and approved tracker publication. Return material search results and delivery coverage to the same assessor; revise affected judgments instead of rerunning the whole assessment. For confirmed findings request suggested priority through Assess, preserving its scale and limits. Related problems can share a cause while keeping separate acceptance boundaries.
 
-Reconcile PR links under the working-record contract when history access is open. Known remote state is a dated observation, not a permanent truth. Missing Tracker Guidance blocks formal reconciliation, not authorized working-record capture; retain the draft and defer the canonical-destination question to completion.
+Once the tracker gate opens, [check known PRs and search for missing links](../assess-findings/references/working-records.md#reconcile-delivery-on-access), including on report-only tasks. Within the permitted scope, use the verified product upstream for read-only investigation when no canonical tracker is configured. Return what upstream reports, what the implementation covers, and any remaining gap to the reporting owner. For an inconclusive search, give its scope or access limit. Keep the canonical destination pending when Tracker Guidance is missing.
 
 **Complete when:** each eligible finding has an owner and result or a pending reason and next action, shared records reflect returned evidence, and ordinary side work has not displaced the User Problem.
 

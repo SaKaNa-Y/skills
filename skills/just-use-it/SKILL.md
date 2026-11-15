@@ -4,7 +4,7 @@ description: Experience a source-accessible library or developer tool through ou
 disable-model-invocation: true
 metadata:
   author: sakana
-  version: "2026.11.13"
+  version: "2026.11.15"
 ---
 
 # Just Use It
@@ -124,7 +124,7 @@ Read [references/repository-environments.md](references/repository-environments.
 
 Map source-discovered capabilities and relevant environments to existing coverage, a justified exclusion, or newly assigned usage. Choose executors for new slices under the same execution criteria and record their source-discovered provenance. Source inspection supplies leads; actual execution supplies usage evidence. When findings or source evidence expose a limit in earlier coverage, [revisit related coverage](references/finding-packets.md#revisit-related-coverage). Assessment workers may now investigate source-dependent questions within their assigned recommendation scope while independent usage continues.
 
-Record source-discovered outcomes and environments with their provenance, observed coverage and remaining gaps. Source leads and applicability judgments remain distinct from executed observations. After every in-scope source-confirmed public entrypoint and relevant environment is accounted for through usage or explicit exclusion, freeze the independently observed packets and open the Audit Reconciliation Gate. Reconcile any provisional coverage with permitted history and the project index at this boundary. A co-active recording workflow can reconcile the batch and return evidence to the assigned assessor. Without Yak, the assessor may perform the bounded read-only tracker check allowed by its method. Reading tracker history marks subsequent work tracker-informed; a new worker does not restore blind provenance.
+Record source-discovered outcomes and environments with their provenance, observed coverage and remaining gaps. Source leads and applicability judgments remain distinct from executed observations. After every in-scope source-confirmed public entrypoint and relevant environment is accounted for through usage or explicit exclusion, freeze the independently observed packets and open the Audit Reconciliation Gate. Reconcile any provisional coverage with permitted history and the project index at this boundary. A co-active recording workflow can reconcile the batch and return evidence to the assigned assessor. Without Yak, the assessor owns the read-only check for related upstream work. Within the permitted search scope, reuse adequate evidence or search the verified product upstream when no tracker is configured. Inspect plausible candidates before judging what they cover. Reading tracker history marks subsequent work tracker-informed; a new worker does not restore blind provenance.
 
 Public issue history may also be sampled after the gate as a final coverage calibration. Re-exercise relevant public paths; behavior first encountered there is a known-issue reproduction rather than independent discovery.
 
@@ -139,7 +139,8 @@ Collect assessment results before the final report using [finding handoff](refer
 - a compact Verification Trace for every `Verified` capability;
 - assessed findings, improvement opportunities, unresolved observations, and excluded claims with their evidence and distinct action recommendations;
 - Blocked and, for a partial run, Not Exercised capabilities;
-- tracker links or identifiers returned by a separately active recording workflow for Reused records or successfully published mutations; and
+- for each finding checked against upstream work, give the result in the first report. Link matching issues or PRs and state what they report, what the implementation covers, and what still reproduces on the tested revision. If no item matches or coverage remains uncertain, state the search scope or limit;
+- identifiers for reused records and successfully published tracker changes; and
 - cleanup results.
 
 Report completion only when the declared target journeys and their decision-relevant assessments are resolved by applicable evidence. If target correspondence, usage or a material judgment remains unresolved, continue the work under the stopping conditions above. When those conditions require ending the run, report a **Partial Audit**: name the answered outcomes, unfinished questions and concrete unblocking action. Counts of commands, terminal statuses, saved records and disclosed uncertainty do not establish completion. Keep justified scope exclusions visible; only a full-surface audit can claim whole-product coverage.

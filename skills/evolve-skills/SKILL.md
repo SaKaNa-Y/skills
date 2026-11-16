@@ -4,7 +4,7 @@ description: Improve or derive skills from conversations, experience and externa
 disable-model-invocation: true
 metadata:
   author: sakana
-  version: "2026.11.08"
+  version: "2026.11.16"
 ---
 
 # Evolve Skills
@@ -83,6 +83,8 @@ Distinguish screening from assessment: screening can report no relevant opportun
 
 Before presenting proposals or closing a no-change review, briefly account for each target's external learning: the question explored, sources inspected or reused, and how the evidence changed or supported the conclusion. When an exemption or access limit applies, state it. Keep the supporting detail in the existing evolution record.
 
+When an observation remains unexplained or a proposed change falls short, identify the smallest authorized check whose result could change your recommendation. If one is available, perform it and use the result before asking the user to choose. For example, after confirming that a source was available, check how the agent used it before attributing an omission to retrieval.
+
 When no hypothesis merits a change, connect the no-change conclusion to that target’s evidence and existing method, explaining why an alteration is unwarranted or not supported by the available evidence. Keep an unselected or deferred hypothesis distinct from a no-change assessment. Close a supported no-change iteration without candidate preparation.
 
 When an opportunity appears to need a new skill, compare organizing a reusable method separately with extending an existing skill, adding an example or reusing a shared method. Explain the invocation situation, intended result, boundaries and handoffs, what repeated explanation or scattered knowledge the skill would consolidate, and the duplication and maintenance cost. Existing methods may already complete the task; a separate skill can still be useful when it provides a coherent method worth invoking and maintaining independently. A new name or a generic reminder alone is insufficient. One clear episode can support a hypothesis; examine applicability beyond that episode rather than requiring an arbitrary number of prior failures. Propose creation only within the agreed scope, or return the scope expansion for selection.
@@ -91,7 +93,7 @@ When an opportunity appears to need a new skill, compare organizing a reusable m
 
 For each target, open with what the skill would do differently on a concrete task and why you recommend that change. When the evidence supports different directions, say which problem each would solve. Recommend where to start and explain why. While the direction is open, give the user the choice between outcomes. Return to the selected direction for decisions about how it would work. Use a draft passage, method outline or before/after example to make the proposal concrete.
 
-Resolve questions the evidence can answer and carry those judgments into the proposal. Ask about an unresolved choice when the answer would change the decision at hand. Explain what each answer would change. Bring a detail into the direction choice only if it changes which outcome is possible or worth pursuing. Develop conceptual boundaries first when they prevent a useful draft, or when the user requests that depth. Keep original source links and the specific borrowed idea beside each externally informed proposal. Distinguish the source's claim from your adaptation so the user can inspect and correct it.
+Resolve factual questions within the agreed scope before asking the user to choose. A request to discuss before editing leaves room for read-only investigation and a concrete proposal in the same reply. When the remaining options differ in outcome, scope, meaningful cost or acceptance criteria, present their consequences, your recommendation and the decision the user owns. Bring a detail into the direction choice only if it changes which outcome is possible or worth pursuing. Develop conceptual boundaries first when they prevent a useful draft, or when the user requests that depth. Keep original source links and the specific borrowed idea beside each externally informed proposal. Distinguish the source's claim from your adaptation so the user can inspect and correct it.
 
 For a proposed capability or new skill, start with a concrete task from the evidence. Show how the closest existing method handles it and which action, result or decision the proposal changes. Use that comparison to explain the value of extending an existing skill or creating a separate one. Once the task and result are clear, discuss only unresolved naming, workflow placement or invocation choices that affect the proposal. If the user asks what the capability does, clarify the task and result before advancing dependent design choices. Fit this explanation into the active discussion without adding a separate approval round.
 
@@ -113,7 +115,7 @@ Before changing target files, follow [history and recovery](references/history.m
 
 Build the candidate separately from the active version, review its instructions, then perform the agreed checks using [purpose-led validation](references/validation.md).
 
-After evaluation, return to each material change's adoption reason in the selected proposal. Explain what the evidence supports, what remains uncertain, and whether the necessary adoption conditions are met. One change's success does not support another. Where method value is a selected reason, judge the concrete action or decision gained against instruction cost, overlap, and regressions. Clearer organization alone is insufficient. Where comparative gain is required, keep adoption pending until the required evidence supports it. Compare the original problem or failed transition with what the exercise actually tested. Identify any remaining defect or uncertainty and what the next repair or check can decide. Use this assessment to distinguish candidate adoption from completion of the selected improvement work and choose the next action:
+After evaluation, return to each material change's adoption reason in the selected proposal. Explain what the evidence supports, what remains uncertain, and whether the necessary adoption conditions are met. One change's success does not support another. Where method value is a selected reason, judge the concrete action or decision gained against instruction cost, overlap, and regressions. Clearer organization alone is insufficient. Where comparative gain is required, keep adoption pending until the required evidence supports it. Compare the original problem or failed transition with what the exercise actually tested. Use this assessment to distinguish candidate adoption from completion of the selected improvement work and choose the next action:
 
 - **Revise:** When an observed deficiency supports a concrete repair within the selected hypothesis, target, boundaries, and acceptance basis, prepare that revision and run the affected checks. Carry the finding into the change; a known repair is work to do, not merely a future direction to report.
 - **Repair the evaluation:** When the exercise cannot answer the selected question, including when it misses the relevant transition or supplies the judgment under test, correct the mismatch within the selected acceptance basis before adding more trials. Each additional run must resolve a named uncertainty; otherwise choose another action here.
@@ -127,6 +129,8 @@ When the evidence supports adoption and application is authorized, recheck the a
 For a review-only request, report the findings and any concrete edits worth making. A brief instruction to apply an edit refers to the pending change and target established in the conversation. When both are clear, apply it and inspect the saved delta before reporting what changed. If the change is already complete or the intended edit or target is unclear, ask what the user wants modified. An assistant suggestion or delivery status alone does not select another target.
 
 ## 6. Close or pause the iteration
+
+Check the requested deliverable before closing. An open review can finish with grounded opportunities for the user to consider, or a supported finding that none emerged. For a selected improvement, account for the original behavior. Stop when the user asks you to stop. Otherwise, complete the remaining authorized work that could inform the decision. Pause when further progress requires the user’s choice or a prerequisite you cannot obtain. State what would resume the work.
 
 At a pause, preserve the current candidate, decisions, results, unresolved questions and next action using [retention and migration](references/retention-and-migration.md). Keep work status separate from adoption and validation. On resumption, reconcile the saved baseline with current source before continuing.
 

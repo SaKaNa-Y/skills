@@ -38,7 +38,9 @@ History gates take precedence over recovery. During an explicitly independent Ju
 
 ## Keep the minimum useful account
 
-The index points to evidence and decisions. A useful row contains the user scenario and intended result, latest examined boundaries and batch link, current judgment, and next action or reopening condition. Keep independent boundaries distinguishable even when they share a row.
+The index points to evidence and decisions. Give each user scenario a stable, short section. State the intended result, routes examined, dated evidence, and why work continues, pauses or ends. Name the next action or the evidence that would change the decision. Record product capability and evidence of demand separately when they support different judgments.
+
+On the next use, update the affected judgment in its existing section and keep the earlier batch links. For example, a release can supply a previously missing command while demand for a broader workflow remains unknown. If the same evidence changes a usage entry, update that entry under the [usage coverage rules](../../assess-findings/references/coverage-records.md). Both indexes can link the same batch.
 
 The batch retains:
 

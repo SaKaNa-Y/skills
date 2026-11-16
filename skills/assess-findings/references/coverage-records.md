@@ -43,16 +43,16 @@ A batch records common identity once; individual observations override it if the
 
 For example, a batch header can supply repository, full executed SHA, build identity and platform, while each row links its trace. Use an explicit identity override for a later rebuilt artifact. A release version or artifact digest alone does not establish a source SHA; retain unknown correspondence instead of borrowing the checkout's revision. The records repository's commit identifies a save, not the product tested; it need not be embedded in its own commit.
 
-The project index presents each outcome's exercised modes/depth, relevant last actual observations with revision and batch links, applicability judgments where checked, unresolved failures and remaining gaps. Each object can have a small history-links section. For example:
+Give each user task a stable section. Use one row per behavior that can be rerun independently. In each row, identify the last actual run, what supports reuse for the requested target, and what still needs checking. For example:
 
 | Outcome / boundary | Last actual target | Execution date | Result and limits | Evidence | Applicability / next action |
 | --- | --- | --- | --- | --- | --- |
 | Consume a library: ESM | Revision B, identified build | Recorded execution date | Passed within ESM scope | Batch trace | Source comparison supports reuse for target C; not rerun on C |
 | Consume a library: CJS | Revision A, identified build | Original execution date | Failed on the retained input | Batch trace and primary record | Recheck after the relevant change |
 
-Organize the current index by stable outcome and independently assessable mode, not by chronological batch sections. Show the last actual observation, including failures, partial execution and blocked attempts. Keep unexplained earlier failures visible beside later passes. A shared batch key can supply dates and identities only when each row resolves them unambiguously. Keep complete SHAs and artifact provenance in linked identity evidence; an index can use short SHAs. Use explicit unknowns instead of inferring execution dates from filenames. Keep historical batches as links.
+Show the last actual observation, including failures, partial execution and blocked attempts. Keep unexplained earlier failures visible beside later passes. A shared batch key can supply dates and identities only when each row resolves them unambiguously. Keep complete SHAs and artifact provenance in linked identity evidence; an index can use short SHAs. Use explicit unknowns instead of inferring execution dates from filenames. Keep historical batches as links.
 
-Exploration coverage records examined scenarios, alternatives, judgments and their dated basis. Keep it separate from usage verification coverage. Neither an examined opportunity nor a source comparison establishes runtime coverage. Keep usage state, scope exclusions, problem assessment and version applicability separate. A failed journey can be exercised coverage; a reused pass is not new execution. Verification still requires the consuming workflow's positive trace, not an index label.
+Exploration coverage records examined scenarios, alternatives, judgments and their dated basis. Keep it separate from usage verification coverage. Neither an examined opportunity nor a source comparison establishes runtime coverage. Keep usage state, scope exclusions, problem assessment and version applicability separate. A failed journey can be exercised coverage; a reused pass is not new execution. Verification still requires the consuming workflow's positive trace, not an index label. If a usage result changes a recorded exploration judgment, update the affected scenario under the [exploration coverage rules](../../explore-new-capabilities/references/exploration-coverage.md). Link the same evidence there.
 
 ## Compare before reuse
 
@@ -66,7 +66,7 @@ A source/history gate can postpone the comparison without erasing direct observa
 
 At each substantive checkpoint, save the batch evidence, reread the current index, and merge by outcome and comparable mode/conditions:
 
-- Update only the boundaries actually exercised. A new ESM run leaves the CJS observation at its original revision. New depth or another mode extends the object instead of duplicating it for every commit.
+- Update the existing row for each behavior exercised. Keep distinct upstream, release and patch observations identifiable when they affect the conclusion. A new ESM run leaves the CJS observation at its original revision. New depth or another mode extends the object instead of duplicating it for every commit.
 - Retain the historical batch links. Repeated results can have a compact index entry, but do not overwrite irreplaceable failed specimens or earlier version-bound observations. Correct a mistaken historical claim explicitly with dated evidence and rationale.
 - Keep conflicting observations visible. Compare source, artifact, configuration and environment before asserting a regression or intermittent failure; unresolved conflicts retain both results and a discriminating next action.
 - A later pass supports the exercised acceptance boundary, not automatic closure of a broader finding. Link the primary problem account rather than duplicating its current judgment.

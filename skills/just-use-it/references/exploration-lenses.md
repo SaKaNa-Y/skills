@@ -24,6 +24,8 @@ When a setting affects content supplied by multiple parties, follow one external
 
 Exercise applicable transitions such as first use, immediate repeat, warm repeat, mutation, removal, completion, settled idle, reload, restart, recovery, and cleanup. When caching or deferred work is visible, compare cold and warm behavior and inspect the state intended to persist or amortize the work.
 
+When ordinary callers can overlap on a shared resource and at least one can change it, have one audit executor exercise both calls through the public interface in a disposable setup. Compare sequential and overlapping calls from equivalent starting states. Check what each caller observes and use the resulting resource after both finish. If the overlap cannot be established, record that limit.
+
 ### Interface and Mode Parity
 
 Treat each shipped UI, CLI, public API, editor integration, interactive or unattended mode, watch mode, development or production mode, and materially distinct visual theme as its own surface. Complete the Capability Journey in the primary mode, then run a **Mode Parity Probe** in each applicable sibling mode: replay the same observable outcome and its key interaction states with the same discriminating input. A mode switch or visual glance verifies only the switch itself. Expand coverage locally when the probe reveals a material difference; do not multiply unrelated capabilities and modes into a full Cartesian product.

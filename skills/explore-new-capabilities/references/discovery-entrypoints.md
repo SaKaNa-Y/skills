@@ -39,6 +39,10 @@ When a task requires comparing or discussing multiple objects, observe whether u
 
 When users must load, convert, configure, or otherwise prepare something before their intended action, locate the prerequisite and its owner. Ask whether the action can handle that preparation while preserving meaningful control over cost, timing, or side effects. Distinguish an additional supported path from a repair of an existing promise.
 
+## Decisions before execution
+
+When a caller copies project rules to decide whether or how to act, identify the consumer, the decision, and the rules it has to reproduce. Try the closest existing query. If it answers the decision, close the lead. Otherwise, investigate which parts the project can reliably answer before execution and which depend on what happens during the operation. Use the remaining decision to judge whether exposing that information would help.
+
 ## Existing user environments
 
 When users already have a tool, account, data source, or local capability relevant to the task, inspect whether the project can use it. Identify the outcome this connection enables and the assumptions that differ from supported integrations. Available adapters or APIs establish a possible path, not demand by themselves.

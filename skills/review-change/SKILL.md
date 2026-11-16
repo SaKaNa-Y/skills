@@ -3,7 +3,7 @@ name: review-change
 description: Review a PR, branch, commit range or working-tree change against project standards and its intended requirements. Use for code review, review since a fixed point, or the review stage of implementation. Use the requested or established conversation language from the first progress message.
 metadata:
   author: sakana
-  version: "2026.11.09"
+  version: "2026.11.16"
 ---
 
 # Review Change
@@ -20,7 +20,7 @@ A skill mention and a PR link carry no language request. Use the conversation la
 
 ## 1. Identify the change
 
-After identifying the target repository, the coordinator reads its project AGENTS.md in the configured records store when available. Use relevant experience to select checks. For a first review or omission check, only the coordinator reads the records copy. Give reviewers neutral conditions and explicitly exclude that file from their inputs and delegated investigations. Withhold prior verdicts and proposed fixes. For a repair review, follow the existing finding handoff below. Judge risk and findings from the current patch.
+Once the target repository is known, the coordinator reads its project AGENTS.md in the configured records store, when available, and uses relevant experience to choose checks.
 
 Recover the requested target and comparison point from the user, active task and repository state. Resolve refs and inspect the worktree before selecting a diff. Ask only when a remaining ambiguity would change what gets reviewed.
 
@@ -36,11 +36,14 @@ Retain the comparison command or equivalent, file set and examined state. Commit
 
 Read relevant repository guidance, including `CONTRIBUTING.md`, `CODING_STANDARDS.md` and applicable `REVIEW.md` when present. Follow their pointers to rules relevant to the selected files. Read the [standards and design heuristics](references/standards.md) for the Standards axis. Repository rules take precedence over general heuristics.
 
-For Spec, recover the user's agreement and relevant issue, specification, PR discussion or project documentation. Use the configured tracker access method when a referenced issue matters. Current task decisions can supply requirements without a separate spec file. Resolve conflicting or missing requirements only when they affect a judgment. An author's explanation is a claim to examine, not proof that the implementation fulfills it.
+For Spec, start with the user's agreement, specifications and project documentation. Check both sources for related work:
 
-If no supported requirement source is available, report the Spec axis as unavailable and continue Standards review. If requirements are partial, state which judgments they support. Do not infer a missing requirement from the implementation or from a preferred design.
+- **Project tracker:** Use the configured tracker access method to find relevant issues and PRs in the target repository.
+- **Working records:** Look for the project's primary records that cover the change.
 
-**Ready when:** each axis has its applicable evidence, or its missing basis is explicit.
+In each source, start with direct links or the repository and issue or PR number. If they leave the match unresolved, search by the affected behavior and its trigger. Confirm a match by comparing the scenario, expected outcome and acceptance scope. Resolve conflicting accounts when they affect a judgment. Derive expectations from the agreement and sources. Check implementation claims against the patch.
+
+**Ready when:** each available source has been checked and each axis has an evidence basis or a stated limit. A missing match or unavailable source leaves the remaining evidence usable. If only part of Spec has support, name that part. If none has support, report Spec as unavailable and continue with Standards.
 
 ## 3. Examine and verify findings
 
@@ -50,7 +53,7 @@ The coordinator starts a fresh Standards reviewer for every substantive review, 
 
 Give each reviewer the full selected change, baseline, original requirements, repository guidance and relevant evidence. Direct each reviewer to **Inspect the change** below for its assigned axis and ask it to return any relevant cross-axis evidence. Use a fresh context without the coordinator's conversation or the other reviewer's conclusions.
 
-For a first review or an omission check, describe observations in neutral terms. Leave suspected defects, proposed fixes, priority ratings and merge recommendations out of the assignment so each reviewer can reach an independent verdict. For a repair review, give both reviewers the original finding, trigger, prior evidence and repair under review. Ask them to check the original trigger and affected behavior and decide whether the finding is resolved.
+For a first review or an omission check, pass the original requirements and neutral acceptance conditions. Explicitly exclude the records-store AGENTS.md, records containing prior results, and earlier verdicts or proposed fixes from reviewer inputs and delegated lookups. Keep prior ratings and merge recommendations with the coordinator. For a repair review, give both reviewers the original finding, trigger, prior evidence and repair under review. Ask them to check the trigger and affected behavior and decide whether the finding is resolved.
 
 If a reviewer cannot run or its context isolation cannot be confirmed, record which axis is incomplete and why.
 
@@ -88,6 +91,8 @@ For each finding, including your own, identify the requirement, affected caller 
 Each finding gives a precise title, priority or impact, the location in the examined state, expectation or rule, consequence and supporting evidence. Include triggering conditions for behavioral defects and the relevant maintenance situation for design concerns. Give a repair direction when supported, without requiring a patch. Label a justified heuristic as a design concern rather than a confirmed defect. Keep pure preferences and tool-enforced formatting noise out of the findings; include material check failures in the check results. Use the project's priority convention when present, otherwise explain impact plainly.
 
 Conclude with the comparison and examined state, coverage of both axes, actual checks and their material limits. State which reviewer covered each axis, any cross-axis evidence, and which checks were run now or reused. Keep any unmet isolation requirement explicit. Keep relevant pre-existing issues and unresolved questions distinct from introduced defects. Report "no supported findings in the reviewed scope" when appropriate; do not manufacture findings or imply that unexamined behavior is correct. A passing axis cannot conceal that the other was not reviewed.
+
+When a matched issue, PR or primary record bears on a finding, link it and distinguish the previously established behavior from what this review verified at the examined revision.
 
 Return the result to the consuming workflow. It decides how to handle findings and performs final integrated-state acceptance checks. Review evidence does not replace that verification or grant publication authority.
 

@@ -3,7 +3,7 @@ name: investigate-with-evidence
 description: Resolve a bounded factual question through matching sources and, when needed, controlled execution. Use when expansion or claim challenges need evidence, or when the user asks to investigate a concrete fact.
 metadata:
   author: sakana
-  version: "2026.11.13"
+  version: "2026.11.17"
 ---
 
 # Investigate with Evidence
@@ -36,6 +36,8 @@ For a claim about an existing system, identify the relevant entry point or docum
 For questions about removed or changed capabilities, read [trace a capability change](references/capability-changes.md). Use that route to establish the old effect and its current equivalent before proposing a migration.
 
 ## Choose a discriminating check
+
+If a decision depends on an empty search and a known match is cheap to check, see whether the same search can retrieve that match. For example, a package appears in a dependency list, but the index misses a source file known to import it. Inspect likely callers for use of the specific function, or limit the conclusion to what the search covered. A successful control establishes coverage for that example only.
 
 When a conclusion depends on whether a test can detect a specific wrong behavior, use [test effectiveness](references/test-effectiveness.md). Reuse adequate existing regression evidence; this is a targeted investigation, not a required phase for every test.
 

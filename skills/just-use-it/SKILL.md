@@ -4,7 +4,7 @@ description: Experience a source-accessible library or developer tool through ou
 disable-model-invocation: true
 metadata:
   author: sakana
-  version: "2026.11.16"
+  version: "2026.11.17"
 ---
 
 # Just Use It
@@ -122,7 +122,7 @@ Inspect public exports, routes, commands, flags, feature registration, examples,
 
 Read [references/repository-environments.md](references/repository-environments.md) to discover runnable repository environments that expose additional capability journeys, component states, or integrations. These environments can provide useful experience without themselves being end-user releases. Keep their evidence scope distinct from the product paths they represent.
 
-Map source-discovered capabilities and relevant environments to existing coverage, a justified exclusion, or newly assigned usage. Choose executors for new slices under the same execution criteria and record their source-discovered provenance. Source inspection supplies leads; actual execution supplies usage evidence. When findings or source evidence expose a limit in earlier coverage, [revisit related coverage](references/finding-packets.md#revisit-related-coverage). Assessment workers may now investigate source-dependent questions within their assigned recommendation scope while independent usage continues.
+Map source-discovered capabilities and relevant environments to existing coverage, a justified exclusion, or newly assigned usage. Choose executors for new slices under the same execution criteria and record their source-discovered provenance. During an ordinary audit, before creating an abnormal state to follow a source lead, identify the affected user task and the operation that could put a user in that state. Ground that path in observed use, documentation, a credible report, or the implementation of that operation. With this basis, use a bounded manual reproduction if its result could change the assessment. If the only path you can describe is your own test setup, drop that experiment and continue the user journey. Revisit it only if new evidence identifies a user operation that could cause the state. When findings or source evidence expose a limit in earlier coverage, [revisit related coverage](references/finding-packets.md#revisit-related-coverage). Assessment workers may now investigate source-dependent questions within their assigned recommendation scope while independent usage continues.
 
 Record source-discovered outcomes and environments with their provenance, observed coverage and remaining gaps. Source leads and applicability judgments remain distinct from executed observations. After every in-scope source-confirmed public entrypoint and relevant environment is accounted for through usage or explicit exclusion, freeze the independently observed packets and open the Audit Reconciliation Gate. Reconcile any provisional coverage with permitted history and the project index at this boundary. A co-active recording workflow can reconcile the batch and return evidence to the assigned assessor. Without Yak, the assessor owns the read-only check for related upstream work. Within the permitted search scope, reuse adequate evidence or search the verified product upstream when no tracker is configured. Inspect plausible candidates before judging what they cover. Reading tracker history marks subsequent work tracker-informed; a new worker does not restore blind provenance.
 

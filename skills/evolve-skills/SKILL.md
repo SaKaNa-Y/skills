@@ -4,7 +4,7 @@ description: Improve or derive skills from conversations, experience and externa
 disable-model-invocation: true
 metadata:
   author: sakana
-  version: "2026.11.16"
+  version: "2026.11.17"
 ---
 
 # Evolve Skills
@@ -118,7 +118,7 @@ Build the candidate separately from the active version, review its instructions,
 After evaluation, return to each material change's adoption reason in the selected proposal. Explain what the evidence supports, what remains uncertain, and whether the necessary adoption conditions are met. One change's success does not support another. Where method value is a selected reason, judge the concrete action or decision gained against instruction cost, overlap, and regressions. Clearer organization alone is insufficient. Where comparative gain is required, keep adoption pending until the required evidence supports it. Compare the original problem or failed transition with what the exercise actually tested. Use this assessment to distinguish candidate adoption from completion of the selected improvement work and choose the next action:
 
 - **Revise:** When an observed deficiency supports a concrete repair within the selected hypothesis, target, boundaries, and acceptance basis, prepare that revision and run the affected checks. Carry the finding into the change; a known repair is work to do, not merely a future direction to report.
-- **Repair the evaluation:** When the exercise cannot answer the selected question, including when it misses the relevant transition or supplies the judgment under test, correct the mismatch within the selected acceptance basis before adding more trials. Each additional run must resolve a named uncertainty; otherwise choose another action here.
+- **Repair the evaluation:** When the exercise cannot answer the selected question, including when it misses the relevant transition or supplies the judgment under test, correct the mismatch within the selected acceptance basis. Use the [criteria for another trial](references/validation.md#decide-whether-to-run-another-trial) before running the exercise again.
 - **Return a decision:** When the next step materially changes the proposal, scope, or acceptance basis, present that specific choice to the user. Preserve settled decisions and previous results.
 - **Record a limit:** When a prerequisite blocks progress, retain the candidate as Pending Validation and record the missing prerequisite and resumption condition. When no evidence-supported repair or informative check remains, explain that limit and the unresolved objective. Either can end current work without claiming successful improvement.
 

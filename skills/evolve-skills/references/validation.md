@@ -12,7 +12,9 @@ Choose evidence by the selected adoption reason before designing an exercise:
 - **New or changed operational method:** also exercise a representative task through the changed decision or transition. Check the resulting action or artifact and relevant preservation conditions. This supports execution in that case, not superiority over the baseline.
 - **Behavioral or efficiency gain under investigation:** compare applicable baseline and candidate outcomes with matching evidence. Keep preservation checks separate from gain claims. If the selected adoption basis requires that gain, missing comparative evidence leaves that condition pending. Method review cannot replace required comparative evidence. Otherwise, report the gain as supported or unresolved without adding it as an adoption requirement.
 
-Reuse adequate existing evidence and honor the user's selected requirements. When several reasons apply, assess them separately and preserve which conditions the user made necessary for adoption. Fix those conditions before evaluation; a tie leaves the comparative claim unresolved without deciding another independently selected adoption reason. Do not reclassify a behavior change as wording-only to avoid its checks. Distinguish historical evidence from fresh execution and retain relevant model, tool, input and environment limits.
+For an adoption decision, state before the run what result the user agrees would justify adoption for this task, what must still work, and which costs could change the decision. If several reasons support the proposal, identify which the user requires and assess each on its own evidence. For an exploratory trial, state the question and leave undecided conditions open. Record when and why the user adopts a threshold after seeing results.
+
+Reuse applicable evidence. Distinguish historical observations from fresh execution and retain relevant model, tool, input and environment limits. Apply behavioral checks to changes that affect behavior, including changes expressed through wording.
 
 Start exercise design from the original problem and the decision or state transition the candidate changes. When the evidence concerns a multi-turn failure, preserve the relevant handoffs, revisions and available information; a simplified case must state which part of that transition it can test. Inspect the actor-visible request, documentation, tool behavior, artifacts, and staged information to establish what judgment remains for the agent. Identify any part the setup performs or reveals, and material differences from the target workflow. Preserve information genuinely available in that workflow; hiding useful documentation merely to make a task harder changes what is being tested. If the setup supplies the judgment under test, revise the exercise or limit the claim it can support.
 
@@ -56,9 +58,21 @@ Recreate task conditions using disposable resources or permitted fixtures for si
 - **Structural check:** Metadata, reachable references, and clean diffs establish packaging and consistency rather than usefulness.
 - **Unresolved:** Missing prerequisites, confounded comparisons, incomplete evidence, or indistinguishable outcomes.
 
-A tie is inconclusive for the claimed comparative gain in that exercise; it does not establish general equivalence or statistical non-inferiority. Check whether the exercise preserved the relevant difficulty and whether its criteria can detect the difference of interest. Judge other selected values using their own evidence.
+## Compare matched outcomes
 
-Before an additional run, identify the unresolved question and why that exercise can answer it. A discriminating case can repair an insensitive exercise; repeated comparable trials can address meaningful variation. Stop repeating runs when they cannot add useful evidence, retaining uncertainty rather than sampling until a preferred version wins. Preserve prior outcomes and explain any evaluation mismatch. A material change to the acceptance basis needs the user's selection.
+Identify the cases only the candidate got right, only the baseline got right, both got right, and both missed. For clear verdicts, give counts with denominators. Explain material regressions, false alarms, observed costs and relevant unknown costs. Count independent attempts separately from assertions on one output.
+
+A tie leaves the claimed gain unresolved. It establishes neither equivalence nor non-inferiority. Check whether the exercise preserved the relevant difficulty and whether the grader could distinguish the outcomes.
+
+## Decide whether to run another trial
+
+Before another run, name the remaining uncertainty and how different plausible results would change the decision. If the decision would stay the same, stop running trials and report the limit. Choose the next check by the gap:
+
+- If repeatability matters to adoption, repeat the same task in fresh contexts under comparable conditions for each version being compared.
+- If an important boundary or intended use remains untested, choose a representative case that exercises it. Keep other conditions comparable where possible.
+- If the inputs, expected answer or grader cannot support the intended judgment, correct the faulty input, expected answer or grader. If only the grader changed and the saved outputs still answer the question, rescore them. Preserve the earlier result and explain its limit.
+
+Return a material change to the acceptance basis to the user for selection.
 
 Hand the result back to [the main workflow](../SKILL.md#5-prepare-validate-and-apply) with the candidate's adoption assessment, the remaining deficiency or uncertainty, and the next action the evidence supports. Completing a test or deciding against this candidate is not a decision that the selected improvement work is finished. A request to continue until improvement supplies direction, not evidence of success.
 

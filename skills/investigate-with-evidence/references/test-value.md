@@ -17,6 +17,8 @@ Respect required repository gates. For the remaining question, choose among thes
 - Add a test when it protects a distinct outcome or boundary that existing tests cannot express clearly.
 - Use a one-time reproduction, inspection or manual check when it supplies sufficient evidence and a durable test would add disproportionate setup or maintenance cost. Preserve the result and its limits in the task's existing evidence account.
 
+When a result depends on earlier operations, state what must hold at each observable checkpoint. Compare the operation orders covered by existing tests. Use a fixed sequence if it exposes the remaining failure. Consider generated sequences when several orders threaten the same property and fixed examples would leave relevant combinations untested. Keep separate assertions for guarantees the property cannot detect.
+
 Weigh the additional protection against fixtures, mocks, dependencies, runtime, flakiness and maintenance through valid changes. Required checks and material unsupported behavior still need resolution. An expensive harness is a reason to seek a cheaper valid check, not proof that the behavior works. Separate this repair's verification from a broader testing-infrastructure proposal.
 
 When reviewing or assessing tests already present, apply the same comparison before recommending retention, extension, replacement or removal. A passing duplicate can add little protection. A precise assertion can enforce a real contract: snapshots, empty results, constants and mock calls are clues to inspect, not automatic defects. Ask whether a valid implementation change would fail the assertion for an irrelevant reason. Keep genuine wire formats, defaults and boundary obligations intact.

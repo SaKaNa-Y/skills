@@ -3,7 +3,7 @@ name: review-change
 description: Review a PR, branch, commit range or working-tree change against project standards and its intended requirements. Use for code review, review since a fixed point, or the review stage of implementation. Use the requested or established conversation language from the first progress message.
 metadata:
   author: sakana
-  version: "2026.11.17"
+  version: "2026.11.18"
 ---
 
 # Review Change
@@ -87,6 +87,8 @@ Before reporting, collect each assigned reviewer’s result or identify its pass
 Report the whole patch's risk and its basis even with zero supported findings. Compare with any prior estimate after forming the review judgment. If they differ, check the assumption that explains the difference. Say what the evidence supports for the requested next step.
 
 When the known reach of a failure matters to a repair or merge recommendation, state it alongside the recommendation. Name the affected workflow if the evidence establishes one. If only a public API reproduction is known, say so. Distinguish downstream use that nobody checked from a search that found no caller in the sources examined. Use the evidence already available unless the decision depends on further investigation.
+
+When a public output changes a value callers use or an artifact users review or apply, name the affected use and show the old and new output. Omit differences in representation alone unless a project guarantee or a known consumer depends on that representation.
 
 For each finding, including your own, identify the requirement, affected caller or project rule that establishes the expected behavior in that case. If the expectation depends on a new design choice, report the observation and the open question outside the defect count and merge conditions. If a proposed fix for a confirmed regression would also extend a guarantee, keep that extension optional and judge the regression on its own evidence. If you recommend holding the merge, identify the findings or missing acceptance evidence that justify waiting. Explain the consequence. Keep missing evidence outside the defect count. Priority alone does not establish either judgment. If an unresolved requirement would change the verdict, ask for the missing decision and keep it outside the defect count.
 
